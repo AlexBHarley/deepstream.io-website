@@ -1,19 +1,17 @@
 <link rel="stylesheet" type="text/css" href="{{asset 'css/overview.css'}}">
+
 <section class="section-overview">
 	<div class="wrapper">
-		<h1>{{nav.level1}}</h1>
-
+		<h1>{{level1}}</h1>
 		{{#each data}}
-			<h2><a href="/{{../nav.level1}}/{{@key}}">{{@key}}</a></h2>
+			<h2><a href="{{@key}}">{{@key}}</a></h2>
 			<div class="categories {{@key}}">
-			{{#each this}}
-				<div class="entries {{@key}}">
+			<div class="entries {{@key}}">
 					<h3 class="{{@key}}">{{@key}}</h3>
-				{{#each this}}
-					<a href="{{slug_to_url slug}}">{{title}}</a>
-				{{/each}}
-				</div>
+			{{#each this}}
+					<a href="{{path}}">{{title}}</a>
 			{{/each}}
+			</div>
 			</div>
 		{{/each}}
 	</div>

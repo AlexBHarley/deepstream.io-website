@@ -36,5 +36,8 @@
     "metalsmith-register-helpers": "^0.1.2",
     "metalsmith-watch": "^1.0.1",
     "moment": "^2.10.6"
+  },
+  "dependencies": {
+    "lodash.merge": "^4.4.0"
   }
 }

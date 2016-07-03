@@ -22,13 +22,13 @@ metalsmith.use(metalsmithWatch({
 /************************************
  * Generate Missing Pages
  ***********************************/
-const pageGenerator = require( './page-generator' );
+const pageGenerator = require( './scripts/page-generator' );
 pageGenerator( metalsmith );
 
 /************************************
  * Add Navigation
  ***********************************/
-const navigationGenerator = require( './navigation-generator' );
+const navigationGenerator = require( './scripts/navigation-generator' );
 navigationGenerator( metalsmith );
 
 /************************************
@@ -65,7 +65,7 @@ metalsmith.use(metalsmithRegisterHelper());
 /************************************
  * PATTERN
  ***********************************/
-var globPattern = [ '**/*.md', '**/*.hbs', '**/*.html', '!**/docs/**', '**/docs/index.html' ];
+var globPattern = [ '**/*.md', '**/*.html' ];
 
 /************************************
  * IN PLACE
