@@ -1,0 +1,19 @@
+<link rel="stylesheet" type="text/css" href="{{asset 'css/docs.css'}}" />
+
+<div class="two-col docs">
+	<div class="col left small subnav">
+		{{> "treenav"}}
+	</div>
+	<div class="col big right">
+		<div class="header"
+		{{#if data.image}}
+			style="background-image:url({{data.image}})"
+		{{/if}}>
+			{{> "breadcrumbs"}}
+			<h1>{{data.title}}</h1>
+		</div>
+		<div class="content">
+			{{{data.html}}}
+		</div>
+	</div>
+</div>
