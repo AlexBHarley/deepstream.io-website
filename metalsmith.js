@@ -20,6 +20,24 @@ metalsmith.clean( true );
 // }));
 
 /************************************
+ * Browser Sync
+ ***********************************/
+var browserSync = require('metalsmith-browser-sync');
+metalsmith.use(browserSync({
+	server : "dist",
+	files  : ["src/**/*.css"]
+}));
+
+/************************************
+ * LESS
+ ***********************************/
+var metalsmithLess = require('metalsmith-less');
+metalsmith.use(metalsmithLess({
+	'pattern': '**/*.less'
+}));
+
+
+/************************************
  * Generate Missing Pages
  ***********************************/
 const pageGenerator = require( './scripts/page-generator' );
@@ -67,9 +85,9 @@ metalsmith.use(metalsmithInPlace({
  ***********************************/
 var markdown = require('metalsmith-markdown');
 metalsmith.use(markdown({
-  smartypants: false,
-  gfm: true,
-  tables: true
+	smartypants: false,
+	gfm: true,
+	tables: true
 }));
 
 /************************************
