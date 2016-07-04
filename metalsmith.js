@@ -59,7 +59,7 @@ var metalsmithInPlace = require('metalsmith-in-place');
 metalsmith.use(metalsmithInPlace({
 	'engine': 'handlebars',
 	'partials': 'partials',
-	'pattern': [ '**/index.md', '**/index.html' ]
+	'pattern': [ '**/*.md', '**/*.html' ]
 }));
 
 /************************************

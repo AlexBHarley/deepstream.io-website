@@ -80,6 +80,13 @@ module.exports = function( metalsmith ) {
 				var fileName = data.isLevel3 ? data.level3 : data.level2 ? data.level2 : data.level1;
 				var file = files[ filePath ];
 
+				// String table prefixes 'tuts'
+				file.contents = new Buffer(
+					file.contents
+							.toString()
+							.replace( /{{\/table}}\s*```/g, '{{/table}}\n')
+							.replace(/```\s*{{/g, '{{')
+				);
 
 				filePath = filePath.replace( `${fileName}.md`, 'index.md' )
 				filePath = filePath.replace( `${fileName}.html`, 'index.html' )
