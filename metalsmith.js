@@ -8,16 +8,16 @@ metalsmith.clean( true );
 /************************************
  * WATCH
  ***********************************/
-var metalsmithWatch = require('metalsmith-watch');
-metalsmith.use(metalsmithWatch({
-	'paths': {
-		'${source}/**/*': true,
-		'templates/**/*': true,
-		'layouts': true,
-		'partials': true
-	},
-	'livereload': false
-}));
+// var metalsmithWatch = require('metalsmith-watch');
+// metalsmith.use(metalsmithWatch({
+// 	'paths': {
+// 		'${source}/**/*': true,
+// 		'templates/**/*': true,
+// 		'layouts': true,
+// 		'partials': true
+// 	},
+// 	'livereload': false
+// }));
 
 /************************************
  * Generate Missing Pages
@@ -63,18 +63,13 @@ var metalsmithRegisterHelper = require('metalsmith-register-helpers');
 metalsmith.use(metalsmithRegisterHelper());
 
 /************************************
- * PATTERN
- ***********************************/
-var globPattern = [ '**/*.md', '**/*.html' ];
-
-/************************************
  * IN PLACE
  ***********************************/
 var metalsmithInPlace = require('metalsmith-in-place');
 metalsmith.use(metalsmithInPlace({
 	'engine': 'handlebars',
 	'partials': 'partials',
-	'pattern': globPattern
+	'pattern': [ '**/index.md', '**/index.html' ]
 }));
 
 /************************************
@@ -85,13 +80,8 @@ metalsmith.use(metalsmithLayouts({
 	'engine': 'handlebars',
 	'default': 'main-layout.html',
 	'directory': 'layouts',
-	'pattern': globPattern
+	'pattern': [ '**/index.md', '**/index.html' ]
 }));
-
-/************************************
- * Add data
- ***********************************/
-metalsmith.metadata().data = require( './data.json' );
 
 /************************************
  * RUN

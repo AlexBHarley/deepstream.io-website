@@ -79,14 +79,19 @@ module.exports = function( metalsmith ) {
 				var match;
 				var fileName = data.isLevel3 ? data.level3 : data.level2 ? data.level2 : data.level1;
 				var file = files[ filePath ];
-				delete files[ filePath ];
+
+
 				filePath = filePath.replace( `${fileName}.md`, 'index.md' )
 				filePath = filePath.replace( `${fileName}.html`, 'index.html' )
 				filePath = filePath.replace( `install.html`, 'index.html' ) //TODO
-				// file.filename = file;
-				files[ filePath ] = file;
+
+				files[ filePath ]	 = {
+					'filename': path,
+					'contents': new Buffer( file.contents )
+				};
 
 				// Merge meta data for levels
+				merge( files[ filePath ], data );
 				merge( file, data );
 			}
 		}

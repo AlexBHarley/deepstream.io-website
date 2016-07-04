@@ -90,7 +90,8 @@ $(function(){
     if ( $( '.docs .col' ).length === 0 ) {
         return;
     }
-    // var history = window.History.createHistory();
+
+    var history = window.History.createHistory();
     var adjustSize = function() {
         $( '.docs .col.big.right' ).width( $(window).width() -  ( $('.docs .col.left').width() + 2 ) );
         $( '.docs .col' ).height( $(window).height() - $( 'nav' ).height() );
@@ -106,12 +107,13 @@ $(function(){
     $( '.tree-nav .entry a' ).click(function( e ){
         e.preventDefault();
         var pathname = $(this).attr( 'href' );
-        // history.push( {pathname: pathname} );
+        history.push( {
+            pathname: pathname.replace( /\/[^/]*\.html/, '/' )
+        } );
         changeEntryPage( {
             pathname: pathname
-        })
+        } );
     });
-    //history.listen( changeEntryPage );
 
     function changeEntryPage( location ) {
         var pathname = location.pathname;
@@ -123,9 +125,8 @@ $(function(){
         $( '.col.right .header h1' ).text( link.text() );
         $.get( pathname, function( result ){
 
-            var content = $( result ).find( '.col.big.right .content' ).html();
             //TODO Error handling
-            $( '.col.big.right .content' ).html( content );
+            $( '.col.big.right .content' ).html( result );
 
             $('.content pre code').each(function(i, block) {
                     hljs.highlightBlock(block);

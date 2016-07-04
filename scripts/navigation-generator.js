@@ -26,7 +26,8 @@ module.exports = function( metalsmith ) {
 			if( file.isLevel3 ) {
 				metadata.nav[ file.level1 ][ file.level2 ][ file.level3 ] = {
 					title: file.level3,
-					path: filePath.replace( 'index.md', '' ).replace( 'index.html', '' ).replace( /\\/g, '/' )
+					path: `${file.level1}/${file.level2}/${file.level3}/${file.level3}.html`,
+					indexPath: `${file.level1}/${file.level2}/${file.level3}/`
 				};
 			}
 
