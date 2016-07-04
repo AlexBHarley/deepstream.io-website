@@ -47,16 +47,6 @@ metalsmith.use(metalsmithHLJS());
 */
 
 /************************************
- * Markdown
- ***********************************/
-var markdown = require('metalsmith-markdown');
-metalsmith.use(markdown({
-  smartypants: true,
-  gfm: true,
-  tables: true
-}));
-
-/************************************
  * HANDLEBARS HELPER
  ***********************************/
 var metalsmithRegisterHelper = require('metalsmith-register-helpers');
@@ -70,6 +60,16 @@ metalsmith.use(metalsmithInPlace({
 	'engine': 'handlebars',
 	'partials': 'partials',
 	'pattern': [ '**/index.md', '**/index.html' ]
+}));
+
+/************************************
+ * Markdown
+ ***********************************/
+var markdown = require('metalsmith-markdown');
+metalsmith.use(markdown({
+  smartypants: false,
+  gfm: true,
+  tables: true
 }));
 
 /************************************

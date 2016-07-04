@@ -18,11 +18,8 @@
   },
   "homepage": "https://github.com/wolframhempel/engel-touren#readme",
   "devDependencies": {
-    "fs-extra": "^0.30.0",
     "handlebars": "^4.0.2",
-    "highlight.js": "^9.5.0",
-    "js-yaml": "^3.6.1",
-    "marked": "^0.3.5",
+    "lodash.merge": "^4.4.0",
     "metalsmith": "^2.0.1",
     "metalsmith-assets": "^0.1.0",
     "metalsmith-clean-css": "^2.0.0",
@@ -34,10 +31,6 @@
     "metalsmith-less": "^2.0.0",
     "metalsmith-markdown": "^0.2.1",
     "metalsmith-register-helpers": "^0.1.2",
-    "metalsmith-watch": "^1.0.1",
-    "moment": "^2.10.6"
-  },
-  "dependencies": {
-    "lodash.merge": "^4.4.0"
+    "metalsmith-watch": "^1.0.1"
   }
 }
