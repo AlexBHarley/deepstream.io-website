@@ -29,23 +29,6 @@ metalsmith.use(browserSync({
 }));
 
 /************************************
- * LESS
- ***********************************/
-var metalsmithLess = require('metalsmith-less');
-metalsmith.use(metalsmithLess({
-	'pattern': '**/*.less'
-}));
-
-/************************************
- * Concat
- ***********************************/
-var concat = require('metalsmith-concat');
-metalsmith.use(concat({
-		files: 'assets/css/*.css',
-		output: 'assets/css/app.css'
-}));
-
-/************************************
  * Generate Missing Pages
  ***********************************/
 const pageGenerator = require( './scripts/page-generator' );
@@ -57,13 +40,7 @@ pageGenerator( metalsmith );
 const navigationGenerator = require( './scripts/navigation-generator' );
 navigationGenerator( metalsmith );
 
-/************************************
- * LESS
- ***********************************/
-var metalsmithLess = require('metalsmith-less');
-metalsmith.use(metalsmithLess({
-	'pattern': '**/*.less'
-}));
+
 
 /************************************
  * CODE HIGHLIGHTING

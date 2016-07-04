@@ -1,0 +1,60 @@
+/*************************
+* FOOTER
+* ***********************/
+footer {
+	position: relative;
+	clear: both;
+}
+footer img {
+	width: 170px;
+	height: 170px;
+	position: relative;
+	top: 10px;
+}
+footer .cols {
+	overflow: hidden;
+	margin: 50px 0 30px;
+}
+footer .col {
+	width: 100%;
+	margin:0 0 2em 5%;
+	padding-left:10%;
+	float: left;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+footer .col-a
+	{display:none}
+
+
+@media screen and (min-width:47em){
+footer .col-a{display:block}
+footer .col{width:45%;padding:0}
+}
+
+@media screen and (min-width:59em){
+footer .col{width:20%}
+}
+
+footer h4 {
+	color: #666;
+	margin-bottom: 20px;
+}
+footer a,
+footer li {
+	display: block;
+	padding: 5px 0;
+}
+footer * {
+	font-size: 12px;
+	font-weight: 300;
+	color: #aaa;
+}
+footer i {
+	display: inline-block;
+	width: 20px;
+}
+footer .copyright {
+	text-align: center;
+	margin-bottom: 30px;
+}
