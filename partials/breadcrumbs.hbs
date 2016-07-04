@@ -1,7 +1,9 @@
 <div class="breadcrumbs">
-	<a href="/{{nav.level1}}">{{nav.level1}}</a>
+	<a href="/{{level1}}">{{level1}}</a>
 	<span class="icon ion-chevron-right"></span>
-	<a href="/{{nav.level1}}/{{nav.level2}}">{{nav.level2}}</a>
+	<a href="/{{level1}}/{{level2}}">{{level2}}</a>
+	{{#if isLevel3}}
 	<span class="icon ion-chevron-right"></span>
-	<span>{{nav.level3}}</span>
+	<span>{{level3}}</span>
+	{{/if}}
 </div>

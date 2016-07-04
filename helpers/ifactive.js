@@ -1,20 +1,20 @@
-module.exports = function( level, className, nav, key ) {
-/*	if( level === 'level1' || level === 'level2' ) {
-		if( nav[ level ] === key ) {
+module.exports = function( level, className, data, key ) {
+	if( level === 'level1' || level === 'level2' ) {
+		if( data[ level ] === key ) {
 			return className;
 		}
 	}
 
 	if( level === 'level3' ) {
-		var parts = key.split( 'yyyy' );
+		var parts = key.split( '/' );
 
-		if( parts[ 0 ] === nav.level1 &&
-			parts[ 1 ] === nav.level2 &&
-			parts[ 2 ] === nav.level3
+		if( parts[ 0 ] === data.level1 &&
+			parts[ 1 ] === data.level2 &&
+			parts[ 2 ] === data.level3
 		){
 			return className;
 		}
-	}*/
+	}
 
 	return '';
 };

@@ -4,12 +4,12 @@
 	<div class="wrapper">
 		<h1>{{level1}}</h1>
 		{{#each data}}
-			<h2><a href="{{@key}}">{{@key}}</a></h2>
+			<h2><a href="/{{@root.level1}}/{{@key}}">{{@key}}</a></h2>
 			<div class="categories {{@key}}">
 			<div class="entries {{@key}}">
 					<h3 class="{{@key}}">{{@key}}</h3>
 			{{#each this}}
-					<a href="{{path}}">{{title}}</a>
+					<a href="{{link path}}">{{title}}</a>
 			{{/each}}
 			</div>
 			</div>

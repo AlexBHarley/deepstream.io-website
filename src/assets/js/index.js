@@ -123,8 +123,9 @@ $(function(){
         $( '.col.right .header h1' ).text( link.text() );
         $.get( pathname, function( result ){
 
+            var content = $( result ).find( '.col.big.right .content' ).html();
             //TODO Error handling
-            $( '.col.big.right .content' ).html( result );
+            $( '.col.big.right .content' ).html( content );
 
             $('.content pre code').each(function(i, block) {
                     hljs.highlightBlock(block);

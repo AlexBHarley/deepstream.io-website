@@ -2,18 +2,18 @@
 
 <div class="two-col docs">
 	<div class="col left small subnav">
-		{{> "treenav"}}
+		{{> "treenav" }}
 	</div>
 	<div class="col big right">
 		<div class="header"
-		{{#if data.image}}
-			style="background-image:url({{data.image}})"
+		{{#if image}}
+			style="background-image:url({{image}})"
 		{{/if}}>
 			{{> "breadcrumbs"}}
-			<h1>{{data.title}}</h1>
+			<h1>{{title}}</h1>
 		</div>
 		<div class="content">
-			{{{data.html}}}
+			{{{contents}}}
 		</div>
 	</div>
 </div>

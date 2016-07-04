@@ -5,6 +5,7 @@ module.exports = function( metalsmith ) {
 	metalsmith.use(function( files, metalsmith, done ) {
 		var metadata = metalsmith.metadata();
 		metadata.nav = {};
+
 		var fileParts;
 		var filePath;
 		var file;
@@ -25,9 +26,11 @@ module.exports = function( metalsmith ) {
 			if( file.isLevel3 ) {
 				metadata.nav[ file.level1 ][ file.level2 ][ file.level3 ] = {
 					title: file.level3,
-					path: filePath.replace( 'index.md', '' ).replace( 'index.html', '' )
+					path: filePath.replace( 'index.md', '' ).replace( 'index.html', '' ).replace( /\\/g, '/' )
 				};
 			}
+
+			file.tree = metadata.nav[ file.level1 ];
 		}
 		return done();
 	});

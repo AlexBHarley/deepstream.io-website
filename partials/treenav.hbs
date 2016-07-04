@@ -1,5 +1,5 @@
 <ul class="tree-nav subsection">
-	{{#each nav.docs}}
+	{{#each tree}}
 		<li class="{{ifactive 'level2' 'open' @root @key}}">
 			<div class="sub-section-toggle">
 				<span cplass="icon ion-chevron-right"></span>
@@ -7,8 +7,8 @@
 			</div>
 			<ul class="entry">
 				{{#each this}}
-					<li class="{{ifactive 'level3' 'active' @root slug}}">
-						<a href="{{path}}">{{title}}</a>
+					<li class="{{ifactive 'level3' 'active' @root path }}">
+						<a href="{{link path}}">{{title}}</a>
 					</li>
 				{{/each}}
 			</ul>

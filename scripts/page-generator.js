@@ -24,12 +24,12 @@ function createMissingFiles( files, path, callback ) {
 	callback();
 }
 
-function createSection( files, name, path ) {
+function createSection( files, data, path ) {
 	createMissingFiles( files, path, function() {
 		files[ path ] = {
 			'filename': path,
-			'contents': new Buffer( `{{> level-section data=nav.${name} }}` ),
-			'level1': name,
+			'contents': new Buffer( `{{> level-section data=nav.${data.level1} }}` ),
+			'level1': data.level1,
 			'isLevel1': true,
 			'isLevel2': false,
 			'isLevel3': false
@@ -37,12 +37,13 @@ function createSection( files, name, path ) {
 	} );
 }
 
-function createSubsection( files, name, path ) {
+function createSubsection( files, data, path ) {
 	createMissingFiles( files, path, function() {
 		files[ path ] = {
 			'filename': path,
-			'contents': new Buffer( `{{> level-subsection data=nav.${name} }}` ),
-			'level2': name,
+			'contents': new Buffer( `{{> level-subsection data=nav.${data.level1}.${data.level2} }}` ),
+			'level1': data.level1,
+			'level2': data.level2,
 			'isLevel1': false,
 			'isLevel2': true,
 			'isLevel3': false
@@ -64,12 +65,12 @@ module.exports = function( metalsmith ) {
 			if( filePath.match( '.*\.md' ) ) {
 
 				if( data.isLevel2 || data.isLevel3 ) {
-					createSection( files, data.level1, path.join( './', data.level1, 'index.html' ) );
+					createSection( files, data, path.join( './', data.level1, 'index.html' ) );
 					//throw new Error( 'Missing section file, would you want it to be generated?' )
 				}
 
 				if( data.isLevel3 ) {
-					createSubsection( files, data.level2, path.join( './', data.level1, data.level2, 'index.html' ) );
+					createSubsection( files, data, path.join( './', data.level1, data.level2, 'index.html' ) );
 				}
 			}
 
