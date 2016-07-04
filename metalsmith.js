@@ -36,6 +36,14 @@ metalsmith.use(metalsmithLess({
 	'pattern': '**/*.less'
 }));
 
+/************************************
+ * Concat
+ ***********************************/
+var concat = require('metalsmith-concat');
+metalsmith.use(concat({
+		files: 'assets/css/*.css',
+		output: 'assets/css/app.css'
+}));
 
 /************************************
  * Generate Missing Pages
