@@ -34,8 +34,10 @@
     {{> "navigation" }}
 
     <div class="site-wrapper">
-        {{#if isLevel3}}
-            {{> level-entry }}
+        {{#if blog}}
+            {{> blog-entry}}
+        {{else if isLevel3}}
+            {{> level-entry}}
         {{else}}
             {{{contents}}}
         {{/if}}

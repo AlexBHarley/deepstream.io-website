@@ -1,4 +1,3 @@
-const path = require( 'path');
 const fs = require( 'fs');
 var merge = require('lodash.merge');
 
@@ -6,7 +5,7 @@ var merge = require('lodash.merge');
  * Navigation Generator
  ***********************************/
 function parseFilePath( filePath ) {
-	var levels = filePath.split( '\\' );
+	var levels = filePath.split( '/' );
 	return {
 		level1: levels[ 0 ], //docs
 		level2: levels[ 1 ], //client
@@ -17,17 +16,17 @@ function parseFilePath( filePath ) {
 	}
 }
 
-function createMissingFiles( files, path, callback ) {
-	if( files[ path ] || files[ path.replace( 'md', 'html' ) ] ) {
+function createMissingFiles( files, filePath, callback ) {
+	if( files[ filePath ] || files[ filePath.replace( 'md', 'html' ) ] ) {
 		return;
 	}
 	callback();
 }
 
-function createSection( files, data, path ) {
-	createMissingFiles( files, path, function() {
-		files[ path ] = {
-			'filename': path,
+function createSection( files, data, filePath ) {
+	createMissingFiles( files, filePath, function() {
+		files[ filePath ] = {
+			'filename': filePath,
 			'contents': new Buffer( `{{> level-section data=nav.${data.level1} }}` ),
 			'level1': data.level1,
 			'isLevel1': true,
@@ -37,10 +36,10 @@ function createSection( files, data, path ) {
 	} );
 }
 
-function createSubsection( files, data, path ) {
-	createMissingFiles( files, path, function() {
-		files[ path ] = {
-			'filename': path,
+function createSubsection( files, data, filePath ) {
+	createMissingFiles( files, filePath, function() {
+		files[ filePath ] = {
+			'filename': filePath,
 			'contents': new Buffer( `{{> level-subsection data=nav.${data.level1}.${data.level2} }}` ),
 			'level1': data.level1,
 			'level2': data.level2,
@@ -65,12 +64,12 @@ module.exports = function( metalsmith ) {
 			if( filePath.match( '.*\.md' ) ) {
 
 				if( data.isLevel2 || data.isLevel3 ) {
-					createSection( files, data, path.join( './', data.level1, 'index.html' ) );
+					createSection( files, data, [ data.level1, 'index.html' ].join( '/' ) );
 					//throw new Error( 'Missing section file, would you want it to be generated?' )
 				}
 
 				if( data.isLevel3 ) {
-					createSubsection( files, data, path.join( './', data.level1, data.level2, 'index.html' ) );
+					createSubsection( files, data, [ data.level1, data.level2, 'index.html' ].join( '/' ) );
 				}
 			}
 
@@ -88,17 +87,19 @@ module.exports = function( metalsmith ) {
 							.replace(/```\s*{{/g, '{{')
 				);
 
-				filePath = filePath.replace( `${fileName}.md`, 'index.md' )
-				filePath = filePath.replace( `${fileName}.html`, 'index.html' )
-				filePath = filePath.replace( `install.html`, 'index.html' ) //TODO
+				if( !file.filename.match( 'index.md|index.html' ) ) {
+					filePath = filePath.replace( `${fileName}.md`, 'index.md' )
+					filePath = filePath.replace( `${fileName}.html`, 'index.html' )
+					filePath = filePath.replace( `install.html`, 'index.html' ) //TODO
 
-				files[ filePath ]	 = {
-					'filename': path,
-					'contents': new Buffer( file.contents )
-				};
+					files[ filePath ]	 = {
+						'filename': filePath,
+						'contents': new Buffer( file.contents )
+					};
+					merge( files[ filePath ], data );
+				}
 
 				// Merge meta data for levels
-				merge( files[ filePath ], data );
 				merge( file, data );
 			}
 		}
