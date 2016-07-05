@@ -3,11 +3,7 @@
 * ***********************/
 nav{
 	background-color: #0FBBEC;
-		position: absolute;
 		z-index: 12;
-		left: 50%;
-		margin-left: -600px;
-		top: 20px;
 }
 
 header.main-header{
