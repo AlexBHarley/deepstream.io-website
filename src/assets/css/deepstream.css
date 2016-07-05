@@ -50,7 +50,13 @@ section{
 .two-col .left,
 .two-col .right {
   float: left;
-  width: 50%;
+  width: 100%;
+}
+@media screen and (min-width:47em){
+	.two-col .left,
+	.two-col .right {
+	  width: 50%;
+	}
 }
 
 a{
@@ -93,7 +99,7 @@ h3.icon-divider span.text {
 * STRUCTURE
 * ***********************/
 .wrapper{
-	width: 1200px;
+	max-width: 1200px;
 	margin: 0 auto;
 }
 
@@ -117,6 +123,10 @@ h3.icon-divider span.text {
     position: absolute;
     margin-left: 299px;
     box-sizing: border-box;
+}
+
+@media screen and (min-width:47em){
+
 }
 
 /*************************
@@ -223,10 +233,10 @@ nav .links a{
 * BUY SUPPORT BAR
 * ***********************/
 #support{
-	width: 100%;
+	width: 96%;
 	text-align: center;
 	background-color: #0EA9D5;
-	padding: 12px 0;
+	padding: 36px 2% 24px;
 }
 
 #support span{
@@ -236,7 +246,9 @@ nav .links a{
 }
 
 #support button{
-	margin-left: 20px;
     border: 1px solid #fff;
     box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+		clear:both;
+		display:block;
+		margin:18px auto
 }

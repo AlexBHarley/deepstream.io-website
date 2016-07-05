@@ -40,8 +40,6 @@ pageGenerator( metalsmith );
 const navigationGenerator = require( './scripts/navigation-generator' );
 navigationGenerator( metalsmith );
 
-
-
 /************************************
  * CODE HIGHLIGHTING
  ***********************************/
