@@ -21,24 +21,22 @@
 				</g>
 			</g>
 			</svg>
-
 			<span>deepstream<em>.io</em></span>
 		</a>
 
-		<div class="links">
-				<a class="start" href="/">start</a>
-				<a {{#if isinstall}}class="active"{{/if}} href="/install/">install</a>
-				<a {{#if istutorials}}class="active"{{/if}} href="/tutorials/">tutorials</a>
-				<a {{#if isdocs}}class="active"{{/if}} href="/docs/">api docs</a>
-				<a {{#if isblog}}class="active"{{/if}} href="/blog/">blog</a>
-				<a {{#if isinfo}}class="active"{{/if}} href="/info/">info</a>
-				{{!--
-				<span class="main-search-container">
-					<input type="text" placeholder="search …" class="main-search">
-				</span>
-				<div class="main-serach-results">
-				--}}
-			</div>
+		<span class="menu-button menu-icon">
+			<i class="ion ion-navicon"></i>
+		</span>
+
+		<div class="nav desktop-nav">
+			{{> nav-menu }}
 		</div>
+
 	</div>
 </nav>
+
+<div class="mobile-menu">
+	<div class="nav mobile-nav">
+		{{> nav-menu }}
+	</div>
+</div>

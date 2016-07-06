@@ -24,14 +24,16 @@
 	<link rel="stylesheet" href="{{asset 'css/footer.css' }}" />
 	<link rel="stylesheet" href="{{asset 'css/ionicons.min.css' }}" />
 	<link rel="stylesheet" href="{{asset 'css/jquery-ui.css' }}" />
+	<link rel="stylesheet" href="{{asset 'css/navigation.css' }}" />
 	<link rel="stylesheet" href='//fonts.googleapis.com/css?family=Roboto:400,300,100,500,700' type='text/css'>
 
-	<script type="text/javascript" src="{{asset "js/jquery.min.js" }}"></script>
-	<script type="text/javascript" src="{{asset "js/history.min.js" }}"></script>
+	<script type="text/javascript" src="{{asset 'js/jquery.min.js' }}"></script>
+	<script type="text/javascript" src="{{asset 'js/history.min.js' }}"></script>
+	<script type="text/javascript" src="{{asset 'js/nav.js' }}"></script>
 </head>
 <body class="{{body_class}} nav-closed">
 
-{{> "navigation" }}
+{{> nav-header }}
 
 	<div class="site-wrapper">
 		{{#if blog}}

@@ -24,7 +24,7 @@ header.main-header .elton img{
 	width: 100%;
 	max-width: 200px;
 	float:right;
-	margin-bottom: 30px;
+	margin-bottom: 15%;
 }
 
 header.main-header .page-title{
@@ -124,7 +124,7 @@ header.main-header .page-description *{
 	header.main-header .elton{
 		bottom: 5%;
 		left: 25%;
-		width: 10%;
+		width: 12.5%;
 	}
 }
 
