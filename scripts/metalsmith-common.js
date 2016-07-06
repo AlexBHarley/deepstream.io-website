@@ -1,5 +1,6 @@
 const colors = require('colors')
 const beep = require('beepbeep')
+const child_process = require('child_process')
 
 module.exports = function( metalsmith ) {
 
@@ -86,6 +87,16 @@ module.exports = function( metalsmith ) {
 
 	metalsmith.use(function(done) {
 		console.log(colors.green('built done') + ' at ' + new Date())
+		if (process.argv[2] === 'trigger-bs-reload') {
+			child_process.exec('npm run reload', function(err, stdout, stderr) {
+				if (err) {
+					console.error(err)
+				}
+				if (stderr) {
+					console.error(stderr)
+				}
+			})
+		}
 		if (process.env.BEEP) {
 			beep()
 		}

@@ -40,30 +40,25 @@ https://github.com/emcrisostomo/fswatch/issues/88
 
 ##### `npm start`
 
-Runs the static site genrator (metalsmith).
+Runs the static site generator (metalsmith).
 
 After generation the process will terminate.
 
 ##### `npm run serve`
 
-Runs metalsmith, serve the files via browser-sync and open your browser.
-
-It might take a while until all pages are generated.
-
-So you see an error in your browser, just wait some seconds and refresh the page.
-
+Runs a webserver via browser-sync, which serves the data in `dist`.
+Afterwards open [localhost:3000](http://localhost:3000) in your browser.
 
 ##### `npm run sync`
 
 Deletes all the synced directories of `ds-docs` in `src` and do a fresh copy from the
-origin repository (checkout out localy).
+origin repository (checkouted out locally).
 
 ##### `npm run watch`
 
-You still need to run `npm run serve` once and keep the process alive.
-The watch command will just execute `npm start` each time some file was changed.
-Unfortunately browser-sync will not refresh your browser automatically, so you need
-to do it by yourself after some seconds, until the `npm start` finished within the watcher.
+You __must__ run `npm run serve` before and keep the process alive.
+Whenever a file was changed and the regeneration is done your browser will
+refresh the page automatically.
 
 ##### BEEP MODE
 
@@ -82,5 +77,5 @@ If you want to keep documents in the ouput which are flagged as a draft.
 KEEP_DRAFTS=1 npm start
 ```
 
-Otherwise they will be deleted in the dist directory.
+Otherwise they will be deleted (not generated) in the dist directory.
 
