@@ -7,48 +7,21 @@
 		the deepstream server comes as standalone executable for Mac and Windows and as package for major Linux distributions.
 		</p>
 		<div class="distro-grid block-link">
-			<a href="/install/osx">
-				<img src="{{asset 'img/install/osx.png'}}" width="100" height="100" />
-				<h3>OS X</h3>
-			</a>
-			<a href="/install/windows">
-				<img src="{{asset 'img/install/windows.png'}}" width="100" height="100" />
-				<h3>Windows</h3>
-			</a>
-			<a href="/install/ubuntu">
-				<img src="{{asset 'img/install/ubuntu.png'}}" width="100" height="100" />
-				<h3>Ubuntu</h3>
-			</a>
-			<a href="/install/centos">
-				<img src="{{asset 'img/install/centos.png'}}" width="100" height="100" />
-				<h3>CentOs</h3>
-			</a>
-			<a href="/install/debian">
-				<img src="{{asset 'img/install/debian.png'}}" width="100" height="100" />
-				<h3>Debian</h3>
-			</a>
-			<a href="/install/aws">
-				<img src="{{asset 'img/install/aws.png'}}" width="100" height="100" />
-				<h3>AWS Linux</h3>
-			</a>
+			{{> install-block type='osx' img='img/install/osx.png' name='OS X' }}
+			{{> install-block type='windows' img='img/install/windows.png' name='Windows' }}
+			{{> install-block type='ubuntu' img='img/install/ubuntu.png' name='Ubuntu' }}
+			{{> install-block type='centos' img='img/install/centos.png' name='CentOs' }}
+			{{> install-block type='debian' img='img/install/debian.png' name='Debian' }}
+			{{> install-block type='aws' img='img/install/aws.png' name='AWS Linux' }}
 		</div>
 
 		<p class="other-server">
 		or use the official docker image or compose file to make using deepstream within your container architecture a breeze. Deepstream also can be installed via NPM and used from NodeJS
 		</p>
 		<div class="other-server-grid block-link">
-			<a href="/install/docker">
-				<img src="{{asset 'img/install/docker.png'}}" width="100" height="100" />
-				<h3>Docker Image</h3>
-			</a>
-			<a href="/install/compose">
-				<img src="{{asset 'img/install/compose.png'}}" width="100" height="100" />
-				<h3>Compose File</h3>
-			</a>
-			<a href="/install/npm">
-				<img src="{{asset 'img/install/npm.png'}}" width="100" height="100" />
-				<h3>Use as NodeJS package</h3>
-			</a>
+			{{> install-block type='docker' img='img/install/docker.png' name='Docker Image' }}
+			{{> install-block type='compose' img='img/install/compose.png' name='Compose File' }}
+			{{> install-block type='npm' img='img/install/npm.png' name='Use as NodeJS package' }}
 		</div>
 	</div>
 </section>
@@ -60,35 +33,12 @@
 		deepstream clients let you connect to the server. The JavaScript client is polished and battletested, other clients are under development. Contributions are welcome, if you'd like to get involved meet us on <a href="https://github.com/deepstreamIO/deepstream.io/issues?q=is%3Aopen+is%3Aissue+label%3Anew-client">Github</a>.
 		</p>
 		<div class="client-grid block-link">
-			<a href="/install/javascript">
-				<img src="{{asset 'img/install/javascript.png'}}" width="100" height="100" />
-				<h3>Browser / Node</h3>
-			</a>
-			<a href="/install/java" class="in-development">
-				<div class="status dev">in development</div>
-				<img src="{{asset 'img/install/java.png'}}" width="100" height="100" />
-				<h3>Java</h3>
-			</a>
-			<a href="/install/android" class="in-development">
-				<div class="status dev">in development</div>
-				<img src="{{asset 'img/install/android.png'}}" width="100" height="100" />
-				<h3>Android</h3>
-			</a>
-			<a href="/install/ios" class="in-development">
-				<div class="status soon">coming soon</div>
-				<img src="{{asset 'img/install/ios.png'}}" width="100" height="100" />
-				<h3>iOS</h3>
-			</a>
-			<a href="/install/python" class="in-development">
-				<div class="status soon">coming soon</div>
-				<img src="{{asset 'img/install/python.png'}}" width="100" height="100" />
-				<h3>Python</h3>
-			</a>
-			<a href="/install/dotnet" class="in-development">
-				<div class="status soon">coming soon</div>
-				<img src="{{asset 'img/install/dotnet.png'}}" width="100" height="100" />
-				<h3>.NET</h3>
-			</a>
+			{{> install-block type='javascript' img='img/install/javascript.png' name='Browser / Node' }}
+			{{> install-block type='java' img='img/install/java.png' name='Java' dev=true }}
+			{{> install-block type='android' img='img/install/android.png' name='Android' dev=true }}
+			{{> install-block type='ios' img='img/install/ios.png' name='iOS' soon=true }}
+			{{> install-block type='python' img='img/install/python.png' name='Python' soon=true }}
+			{{> install-block type='dotnet' img='img/install/dotnet.png' name='.NET' soon=true }}
 		</div>
 	</div>
 </section>
@@ -101,60 +51,24 @@
 		</p>
 		<h3 class="subheading">cache connectors</h3>
 		<div class="connectors-grid block-link">
-			<a href="/install/redis">
-				<img src="{{asset 'img/install/redis.png'}}" width="100" height="100" />
-				<h3>Redis</h3>
-			</a>
-			<a href="/install/hazelcast">
-				<img src="{{asset 'img/install/hazelcast.png'}}" width="100" height="100" />
-				<h3>Hazelcast</h3>
-			</a>
-			<a href="/install/memcached">
-				<img src="{{asset 'img/install/memcached.png'}}" width="100" height="100" />
-				<h3>Memcached</h3>
-			</a>
+			{{> install-block type='redis' img='img/install/redis.png' name='Redis' }}
+			{{> install-block type='hazelcast' img='img/install/hazelcast.png' name='Hazelcast' }}
+			{{> install-block type='memcached' img='img/install/memcached.png' name='Memcached' }}
 		</div>
 		<h3 class="subheading">message connectors</h3>
 		<div class="connectors-grid block-link">
-			<a href="/install/redis">
-				<img src="{{asset 'img/install/redis.png'}}" width="100" height="100" />
-				<h3>Redis</h3>
-			</a>
-			<a href="/install/hazelcast">
-				<img src="{{asset 'img/install/amqp.png'}}" width="100" height="100" />
-				<h3>Amqp</h3>
-			</a>
-			<a href="/install/kafka">
-				<img src="{{asset 'img/install/kafka.png'}}" width="100" height="100" />
-				<h3>Kafka</h3>
-			</a>
+			{{> install-block type='redis' img='img/install/redis.png' name='Redis' }}
+			{{> install-block type='amqp' img='img/install/amqp.png' name='Amqp' }}
+			{{> install-block type='kafka' img='img/install/kafka.png' name='Kafka' }}
 		</div>
 		<h3 class="subheading">database connectors</h3>
 		<div class="connectors-grid block-link">
-			<a href="/install/mongodb">
-				<img src="{{asset 'img/install/mongodb.png'}}" width="100" height="100" />
-				<h3>MongoDB</h3>
-			</a>
-			<a href="/install/elasticsearch">
-				<img src="{{asset 'img/install/elasticsearch.png'}}" width="100" height="100" />
-				<h3>ElasticSearch</h3>
-			</a>
-			<a href="/install/rethinkdb">
-				<img src="{{asset 'img/install/rethinkdb.png'}}" width="100" height="100" />
-				<h3>RethinkDB</h3>
-			</a>
-			<a href="/install/leveldb">
-				<img src="{{asset 'img/install/leveldb.png'}}" width="100" height="100" />
-				<h3>LevelDB</h3>
-			</a>
-			<a href="/install/couchdb">
-				<img src="{{asset 'img/install/couchdb.png'}}" width="100" height="100" />
-				<h3>CouchDB</h3>
-			</a>
-			<a href="/install/dynamodb">
-				<img src="{{asset 'img/install/dynamodb.png'}}" width="100" height="100" />
-				<h3>AWS DynamoDB</h3>
-			</a>
+			{{> install-block type='mongodb' img='img/install/mongodb.png' name='MongoDB' }}
+			{{> install-block type='elasticsearch' img='img/install/elasticsearch.png' name='ElasticSearch' }}
+			{{> install-block type='rethinkdb' img='img/install/rethinkdb.png' name='RethinkDB' }}
+			{{> install-block type='leveldb' img='img/install/leveldb.png' name='LevelDB' }}
+			{{> install-block type='couchdb' img='img/install/couchdb.png' name='CouchDB' }}
+			{{> install-block type='dynamodb' img='img/install/dynamodb.png' name='AWS DynamoDB' }}
 		</div>
 	</div>
 </section>
@@ -166,22 +80,10 @@
 		deepstream comes with a few extra bits that make working with other libraries easier
 		</p>
 		<div class="connectors-grid block-link">
-			<a href="/install/reactjs">
-				<img src="{{asset 'img/install/reactjs.png'}}" width="100" height="100" />
-				<h3>ReactJS</h3>
-			</a>
-			<a href="/install/polymer">
-				<img src="{{asset 'img/install/polymerjs.png'}}" width="100" height="100" />
-				<h3>Polymer</h3>
-			</a>
-			<a href="/install/knockout">
-				<img src="{{asset 'img/install/knockoutjs.png'}}" width="100" height="100" />
-				<h3>KnockoutJS</h3>
-			</a>
-			<a href="/install/rethinkdb-search">
-				<img src="{{asset 'img/install/rethinkdb.png'}}" width="100" height="100" />
-				<h3>RethinkDB Search Provider</h3>
-			</a>
+			{{> install-block type='reactjs' img='img/install/reactjs.png' name='ReactJS' }}
+			{{> install-block type='polymer' img='img/install/polymerjs.png' name='Polymer' }}
+			{{> install-block type='knockout' img='img/install/knockoutjs.png' name='KnockoutJS' }}
+			{{> install-block type='rethinkdb-search' img='img/install/rethinkdb.png' name='RethinkDB Search Provider' }}
 		</div>
 	</div>
 </section>

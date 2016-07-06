@@ -1,0 +1,11 @@
+<a class="install-block" href="/install/{{type}}"
+	{{#if dev}}"in-development"{{/if}}
+	{{#if soon}}"in-development"{{/if}}
+>
+	<div class="install-block-content">
+		{{#if dev}}<div class="status dev">in development</div>{{/if}}
+		{{#if soon}}<div class="status soon">coming soon</div>{{/if}}
+		<img src="{{asset img}}" width="100" height="100" />
+		<h3>{{name}}</h3>
+	</div>
+</a>
