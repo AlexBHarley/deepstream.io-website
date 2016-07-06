@@ -31,19 +31,19 @@
 </head>
 <body class="{{body_class}} nav-closed">
 
-	{{> "navigation" }}
+{{> "navigation" }}
 
 	<div class="site-wrapper">
 		{{#if blog}}
-			{{> blog-entry}}
+{{> blog-entry}}
 		{{else if isLevel3}}
-			{{> level-entry}}
+{{> level-entry}}
 		{{else}}
-			{{{contents}}}
+{{{contents}}}
 		{{/if}}
 	</div>
 
-	{{> "footer" }}
+{{> "footer" }}
 
 	<script src="{{asset "js/jquery-ui.min.js"}}"></script>
 	{{!-- Fitvids makes video embeds responsive and awesome --}}

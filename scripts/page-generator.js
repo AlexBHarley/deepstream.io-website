@@ -1,6 +1,6 @@
 const fs = require( 'fs');
-var merge = require('lodash.merge');
-
+const merge = require('lodash.merge');
+const colors = require('colors');
 /************************************
  * Navigation Generator
  ***********************************/
@@ -56,6 +56,7 @@ module.exports = function( metalsmith ) {
 		var metadata = metalsmith.metadata();
 		metadata.nav = {};
 
+
 		for( filePath in files ) {
 
 			data = parseFilePath( filePath );
@@ -92,18 +93,31 @@ module.exports = function( metalsmith ) {
 					filePath = filePath.replace( `${fileName}.html`, 'index.html' )
 					filePath = filePath.replace( `install.html`, 'index.html' ) //TODO
 
-					files[ filePath ]	 = {
-						'filename': filePath,
-						'contents': new Buffer( file.contents )
-					};
-					merge( files[ filePath ], data );
+					files[ filePath ] = {};
+					merge( files[ filePath ], file, data );
+					files[ filePath ].filename = filePath
+					files[ filePath ].contents = new Buffer( file.contents )
+
+					ensureMandatoryProperties( files[ filePath ] )
 				}
 
 				// Merge meta data for levels
 				merge( file, data );
 			}
 		}
-
 		return done();
 	});
+}
+
+function ensureMandatoryProperties(file) {
+	var message = `file ${file.filename}`
+	if (file.title == null) {
+		message += `\n  has ${colors.yellow('no title')} property`
+	}
+	if (file.description == null) {
+		message += `\n  has ${colors.yellow('no description')} description`
+	}
+	if (message.length !== `file ${file.filename}`.length) {
+		console.log(message)
+	}
 }

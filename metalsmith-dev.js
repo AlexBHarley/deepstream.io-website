@@ -6,19 +6,6 @@ metalsmith.source( './src' );
 metalsmith.destination( './dist' );
 metalsmith.clean( true );
 
-/************************************
- * WATCH
- ***********************************/
-var metalsmithWatch = require('metalsmith-watch');
-metalsmith.use(metalsmithWatch({
-	'paths': {
-		'${source}/**/*': true,
-		'templates/**/*': true,
-		'layouts': true,
-		'partials': true
-	},
-	'livereload': false
-}));
 
 /************************************
  * Browser Sync
