@@ -4,6 +4,7 @@
 	list-style-type: none;
 	font: 12px/16px Roboto, sans-serif;
 	color: #222;
+	box-sizing: border-box;
 }
 
 /*************************
