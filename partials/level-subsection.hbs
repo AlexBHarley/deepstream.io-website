@@ -1,14 +1,19 @@
-<link rel="stylesheet" type="text/css" href="{{asset 'css/overview.css'}}">
+<link rel="stylesheet" type="text/css" href="{{asset 'css/overview-list.css'}}">
 
 <section class="section-overview">
 	<div class="wrapper">
-		<h1><a href="../">{{level1}}</a> / {{level2}}</h1>
-		<div class="categories">
-		<div class="entries {{tree_level_2.name}}">
+		<h1 class="section-overview-navigation">
+			<a href="../">{{level1}}</a> / {{level2}}
+		</h1>
+
+		<ul class="section-overview-category section-{{tree_level_2.name}}">
 		{{#each tree_level_2.children}}
+			<li class="section-overview-entry">
 				<a href="{{link this.indexPath}}">{{this.title}}</a>
+				<p>{{this.description}}</p>
+			</li>
 		{{/each}}
-		</div>
-		</div>
+		</ul>
+
 	</div>
 </section>

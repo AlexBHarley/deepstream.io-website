@@ -1,0 +1,34 @@
+.section-overview-navigation{
+	text-align: center;
+	margin: 30px 0;
+}
+
+.section-overview-navigation a{
+	font: inherit;
+	color: inherit;
+}
+
+.section-overview-entry {
+	border: 1px solid white;
+	display: block;
+	padding: 10px;
+	font-size: 16px;
+	font-weight: 300;
+	color: #647276;
+	max-width: 750px;
+	cursor: pointer;
+	margin: 15px auto;
+}
+
+.section-overview-entry a {
+	font-size: 20px;
+	margin-bottom: 5px;
+}
+
+.section-overview-entry p {
+	font-size: 15px;
+}
+
+.section-overview-entry:hover{
+	border: 1px solid rgba(15, 187, 236,0.1);
+}
