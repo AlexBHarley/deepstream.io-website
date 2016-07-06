@@ -3,65 +3,83 @@
 * ***********************/
 nav{
 	background-color: #0FBBEC;
-		z-index: 12;
+	z-index: 12;
 }
 
 header.main-header{
 	background: #0FBBEC;
-	padding:60px 0 0
 	position: relative;
-	width:100%
+	width:100%;
+	min-height: 400px;
 }
 
 header.main-header .elton{
-		display:none;
-		width: 30%;
-		float:left;
-		background: url(../img/start-header-shadow.png) no-repeat center bottom;
-		background-size: contain;
+	padding-left: 50px;
+	width: 20%;
+	background: url(../img/start-header-shadow.png) no-repeat center bottom;
+	background-size: contain;
+	position:absolute;
+	bottom: 0;
 }
 
 header.main-header .elton img{
-	width: 200px;
+	width: 100%;
+	max-width: 200px;
 	float:right;
 	margin-bottom:70px;
 }
 
+header.main-header .page-title{
+	margin: 10px 0 10px 0;
+	font-size: 5rem;
+	letter-spacing: -1px;
+	font-weight: 700;
+	font-family: "Open Sans", sans-serif;
+	color: #fff;
+	margin: 10px 35px;
+}
+
+header.main-header .main-header-text-wrapper{
+	position:relative;
+	width:100%;
+	margin:0 auto;
+	padding: 20px 0;
+	clear:both;
+}
+
 header.main-header .main-header-text{
 	position:relative;
-	width:80%;
-	margin:0 10%;
-	clear:both
+	margin:0 auto;
 }
 
 header.main-header .main-header-text a{
-		display: block;
-		border: 1px solid rgba( 255, 255, 255, 0.8 );
-		background: rgba( 255, 255, 255, 0.1 );
-		padding: 10px 20px;
-		border-radius: 3px;
-		width:170px;
-		margin: 20px auto;
-		cursor: pointer;
-		transition: all 400ms ease;
+	display: block;
+	border: 1px solid rgba( 255, 255, 255, 0.8 );
+	background: rgba( 255, 255, 255, 0.1 );
+	padding: 10px 20px;
+	border-radius: 3px;
+	width:170px;
+	margin: 20px auto;
+	cursor: pointer;
+	transition: all 400ms ease;
 }
 
 header.main-header .main-header-text a:hover{
 	border: 1px solid rgba( 255, 255, 255, 1 );
-		background: rgba( 255, 255, 255, 0.3 );
+	background: rgba( 255, 255, 255, 0.3 );
 }
 
 header.main-header .main-header-text a span{
 	font-size: 14px;
-		color: #fff;
-		position: relative;
-		top: -2px;
+	color: #fff;
+	position: relative;
+	top: -2px;
 }
 
 header.main-header .main-header-text a i{
 	color: #fff;
-		margin-right: 10px;
-		font-size: 18px;
+	margin-right: 10px;
+	font-size: 18px;
 }
 
 header.main-header .bottom{
@@ -85,20 +103,31 @@ header.main-header .bottom a i{
 }
 
 @media screen and (min-width:47em){
-	header.main-header .elton{display:block}
 	header.main-header .main-header-text{
-	width:50%;
-	float:left;
-	clear:none
+		text-align: center;
+		clear:none;
+		max-width: 50%;
 	}
-	header.main-header .bottom a{width:auto}
+
+	header.main-header .page-title{
+		margin: 10px 0 10px 0;
+	}
+
+	header.main-header .bottom a{
+		width:auto
+	}
+
+	header.main-header .main-header-text-wrapper {
+		padding: 100px 0;
+	}
+
 	#getting-started .main a:first-child {
-	border-right:1px solid #DDD
+		border-right:1px solid #DDD
 	}
 }
 
 header.main-header .page-description{
-	margin: 0;
+	margin: 0 35px;
 }
 
 header.main-header .page-description,
@@ -153,10 +182,7 @@ header.main-header .page-description *{
 	float: left;
 	text-align: center;
 }
-@media screen and (min-width:47em){
-	.use-cases{display:block}
-	.features li{width: 29.333%;margin: 0 2%;}
-}
+
 .features li .icon{
 	border: 1px solid #3A739B;
 	border-radius: 50%;
@@ -184,6 +210,16 @@ header.main-header .page-description *{
 
 .features p{
 	font-size: 16px;
+}
+
+@media screen and (min-width:47em){
+	.use-cases{
+		display:block
+	}
+	.features li{
+		width: 29.333%;
+		margin: 0 2%;
+	}
 }
 
 /*************************
