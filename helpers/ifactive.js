@@ -1,6 +1,6 @@
-module.exports = function( level, className, data, key ) {
+module.exports = function( level, className, root, data, key ) {
 	if( level === 'level1' || level === 'level2' ) {
-		if( data[ level ] === key ) {
+		if( root[ level ] === data[ key ].name ) {
 			return className;
 		}
 	}
@@ -8,9 +8,9 @@ module.exports = function( level, className, data, key ) {
 	if( level === 'level3' ) {
 		var parts = key.split( '/' );
 
-		if( parts[ 0 ] === data.level1 &&
-			parts[ 1 ] === data.level2 &&
-			parts[ 2 ] === data.level3
+		if( parts[ 0 ] === root.level1 &&
+			parts[ 1 ] === root.level2 &&
+			parts[ 2 ] === root.level3
 		){
 			return className;
 		}
