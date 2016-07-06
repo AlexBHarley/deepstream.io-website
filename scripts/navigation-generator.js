@@ -1,6 +1,24 @@
 /************************************
  * Navigation Generator
  ***********************************/
+var sort = function( nav ) {
+	var ordered = [];
+	var order = Object.keys( nav ).sort();
+	for( var i=0; i<order.length;i++) {
+		if( order[ i ] === 'undefined' ) continue;
+
+		if( !nav[ order[ i ] ].title ) {
+			ordered.push( {
+				name: order[ i ],
+				children: sort( nav[ order[ i ] ] )
+			} );
+		} else {
+			ordered.push( nav[ order[ i ] ] );
+		}
+	}
+	return ordered;
+};
+
 module.exports = function( metalsmith ) {
 	metalsmith.use(function( files, metalsmith, done ) {
 		var metadata = metalsmith.metadata();
@@ -30,9 +48,20 @@ module.exports = function( metalsmith ) {
 					indexPath: `${file.level1}/${file.level2}/${file.level3}/`
 				};
 			}
-
-			file.tree = metadata.nav[ file.level1 ];
 		}
+
+		for( var level1 in metadata.nav ) {
+			metadata.nav[ level1 ] = sort( metadata.nav[ level1 ] );
+		}
+
+		for( filePath in files ) {
+			files[ filePath ].tree = metadata.nav[ files[ filePath ].level1 ];
+			files[ filePath ].tree_level_2 = files[ filePath ].tree.find( function( file, element ) {
+				return file.level2 === element.name;
+			}.bind( null, files[ filePath ] ) );
+
+		}
+
 		return done();
 	});
 }

@@ -27,7 +27,7 @@ function createSection( files, data, filePath ) {
 	createMissingFiles( files, filePath, function() {
 		files[ filePath ] = {
 			'filename': filePath,
-			'contents': new Buffer( `{{> level-section data=nav.${data.level1} }}` ),
+			'contents': new Buffer( `{{> level-section }}` ),
 			'level1': data.level1,
 			'isLevel1': true,
 			'isLevel2': false,
@@ -40,7 +40,7 @@ function createSubsection( files, data, filePath ) {
 	createMissingFiles( files, filePath, function() {
 		files[ filePath ] = {
 			'filename': filePath,
-			'contents': new Buffer( `{{> level-subsection data=nav.${data.level1}.${data.level2} }}` ),
+			'contents': new Buffer( `{{> level-subsection }}` ),
 			'level1': data.level1,
 			'level2': data.level2,
 			'isLevel1': false,

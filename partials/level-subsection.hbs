@@ -4,10 +4,10 @@
 	<div class="wrapper">
 		<h1><a href="../">{{level1}}</a> - {{level2}}</h1>
 		<div class="categories">
-		<div class="entries {{@key}}">
-		{{#each data}}
-				<h3 class="@key">{{@key}}</h3>
-				<a href="{{link indexPath}}">{{title}}</a>
+		<div class="entries {{tree_level_2.name}}">
+		{{#each tree_level_2.children}}
+				<h3 class="this.name">{{this.title}}</h3>
+				<a href="{{link this.indexPath}}">{{this.title}}</a>
 		{{/each}}
 		</div>
 		</div>

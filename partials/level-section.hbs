@@ -3,13 +3,13 @@
 <section class="section-overview">
 	<div class="wrapper">
 		<h1>{{level1}}</h1>
-		{{#each data}}
-			<h2><a href="/{{@root.level1}}/{{@key}}">{{@key}}</a></h2>
-			<div class="categories {{@key}}">
-			<div class="entries {{@key}}">
-					<h3 class="{{@key}}">{{@key}}</h3>
-					{{#each this}}
-					<a href="{{link indexPath}}">{{title}}</a>
+		{{#each tree }}
+			<h2><a href="/{{@root.level1}}/{{this.name}}">{{this.name}}</a></h2>
+			<div class="categories {{this.name}}">
+			<div class="entries {{this.name}}">
+					<h3 class="{{this.name}}">{{this.name}}</h3>
+					{{#each this.children}}
+					<a href="{{link this.indexPath}}">{{this.title}}</a>
 					{{/each}}
 			</div>
 			</div>

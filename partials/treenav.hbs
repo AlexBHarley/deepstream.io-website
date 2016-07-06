@@ -1,14 +1,14 @@
 <ul class="tree-nav subsection">
 	{{#each tree}}
-		<li class="{{ifactive 'level2' 'open' @root @key}}">
+		<li class="{{ifactive 'level2' 'open' @root @root.tree @index}}">
 			<div class="sub-section-toggle">
 				<span cplass="icon ion-chevron-right"></span>
-				<span class="title">{{@key}}</span>
+				<span class="title">{{this.name}}</span>
 			</div>
 			<ul class="entry">
-				{{#each this}}
-					<li class="{{ifactive 'level3' 'active' @root path }}">
-						<a href="{{link path}}">{{title}}</a>
+				{{#each this.children}}
+					<li class="{{ifactive 'level3' 'active' @root @root.tree this.indexPath}}">
+						<a href="{{link this.path}}">{{this.title}}</a>
 					</li>
 				{{/each}}
 			</ul>
