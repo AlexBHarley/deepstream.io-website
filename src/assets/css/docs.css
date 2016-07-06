@@ -13,8 +13,10 @@
 
 .col.left{
 	background: #f6f6f6;
-	border-right: 1px solid #ddd;
+	border-right: 1px solid #eee;
 	box-sizing: border-box;
+	position: relative;
+	left: 1px;
 }
 
 .content{
@@ -132,6 +134,12 @@
 	border-top: 1px solid #eee;
 	border-bottom: 1px solid #eee;
 }
+
+@media screen and (min-width:47em){subnav
+	header.main-header{
+		min-height: 400px;
+}
+
 */
 /*************************
 * HEADER
@@ -161,10 +169,11 @@
 	margin-top: 16px;
 }
 
-.content h4{
+.content h4, .content h4 code{
 	font-size: 18px;
 	margin-top: 32px;
 	color: #000;
+	font-weight: bold;
 }
 
 .content p{

@@ -93,8 +93,17 @@ $(function(){
 
     var history = window.History.createHistory();
     var adjustSize = function() {
-        $( '.docs .col.big.right' ).width( $(window).width() -  ( $('.docs .col.left').width() + 2 ) );
-        $( '.docs .col' ).height( $(window).height() - $( 'nav' ).height() );
+        var windowWidth = $(window).width();
+        if( windowWidth > 999 ) {
+            $( '.docs' ).addClass( 'two-col' );
+            $( '.docs .col.left.small' ).toggle( true );
+            $( '.docs .col.big.right' ).width( windowWidth -  ( $('.docs .col.left').width() + 2 ) );
+        } else {
+            $( '.docs' ).removeClass( 'two-col' );
+            $( '.docs .col.left.small' ).toggle( false );
+            $( '.docs .col.big.right' ).width( windowWidth );
+        }
+        // $( '.docs .col' ).height( $(window).height() - $( 'nav' ).height() );
     };
 
     adjustSize();

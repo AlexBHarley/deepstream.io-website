@@ -121,8 +121,6 @@ h3.icon-divider span.text {
 		border-left: 1px solid #eee;
 		border-top: 1px solid #eee;
 		width: 100%;
-		position: absolute;
-		margin-left: 299px;
 		box-sizing: border-box;
 }
 
@@ -235,7 +233,7 @@ nav .links a{
 * BUY SUPPORT BAR
 * ***********************/
 #support{
-	width: 96%;
+	width: 100%;
 	text-align: center;
 	background-color: #0EA9D5;
 	padding: 36px 2% 24px;
