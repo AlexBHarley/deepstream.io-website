@@ -7,7 +7,8 @@
   "scripts": {
     "start": "node metalsmith-prod.js",
     "dev": "node metalsmith-dev.js",
-    "synced": "./copy.sh && npm run dev"
+    "synced": "./copy.sh && npm run dev",
+    "watch": "fswatch -0 src/ | xargs -0 -n 1 -I {} node metalsmith-prod.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
   },
   "homepage": "https://github.com/wolframhempel/engel-touren#readme",
   "devDependencies": {
+    "colors": "^1.1.2",
     "csv-parse": "^1.1.1",
     "gherkin": "^4.0.0",
     "handlebars": "^4.0.2",
@@ -39,7 +41,6 @@
     "metalsmith-layouts": "^1.4.0",
     "metalsmith-markdown": "^0.2.1",
     "metalsmith-register-helpers": "^0.1.2",
-    "metalsmith-watch": "^1.0.1",
     "moment": "^2.14.1",
     "walk": "^2.3.9"
   }
