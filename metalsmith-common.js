@@ -12,6 +12,12 @@ module.exports = function( metalsmith ) {
 	pathNormalise( metalsmith );
 
 	/************************************
+	 * Generate Specs
+	 ***********************************/
+	const specsGenerator = require( './scripts/specs-generator' );
+	specsGenerator( metalsmith );
+
+	/************************************
 	 * Generate Blog
 	 ***********************************/
 	const blogGenerator = require( './scripts/blog-generator' );

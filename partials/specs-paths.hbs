@@ -1,0 +1,12 @@
+<link rel="stylesheet" type="text/css" href="{{asset 'css/info/gherkin-highlight.css'}}" />
+<link rel="stylesheet" type="text/css" href="{{asset 'css/info/messagestructure.css'}}" />
+<script type="text/javascript" src="{{asset 'js/info/messagestructure.js'}}"></script>
+
+{{> specs-indepth}}
+
+{{#each this}}
+	<div class="section">
+		<a name="{{feature.name}}"></a>
+		<pre><code class="language-gherkin">{{content}}</code></pre>
+	</div>
+{{/each}}

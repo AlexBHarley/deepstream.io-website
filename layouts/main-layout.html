@@ -1,59 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-    {{!-- Document Settings --}}
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	{{!-- Document Settings --}}
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    {{!-- Page Meta --}}
-    <title>{{meta_title}}</title>
-    <meta name="description" content="{{meta_description}}" />
+	{{!-- Page Meta --}}
+	<title>{{meta_title}}</title>
+	<meta name="description" content="{{meta_description}}" />
 
-    {{!-- Mobile Meta --}}
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	{{!-- Mobile Meta --}}
+	<meta name="HandheldFriendly" content="True" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    {{!-- Brand icon --}}
-    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+	{{!-- Brand icon --}}
+	<link rel="shortcut icon" href="{{asset "favicon.ico"}}">
 
-    {{!-- Styles'n'Scripts --}}
+	{{!-- Styles'n'Scripts --}}
 
-    <link rel="stylesheet" href="{{asset 'css/screen.css' }}" />
-    <link rel="stylesheet" href="{{asset 'css/hljs-rainbow.css' }}" />
-    <link rel="stylesheet" href="{{asset 'css/deepstream.css' }}" />
-    <link rel="stylesheet" href="{{asset 'css/footer.css' }}" />
-    <link rel="stylesheet" href="{{asset 'css/ionicons.min.css' }}" />
-    <link rel="stylesheet" href="{{asset 'css/jquery-ui.css' }}" />
-    <link rel="stylesheet" href='//fonts.googleapis.com/css?family=Roboto:400,300,100,500,700' type='text/css'>
+	<link rel="stylesheet" href="{{asset 'css/screen.css' }}" />
+	<link rel="stylesheet" href="{{asset 'css/hljs-rainbow.css' }}" />
+	<link rel="stylesheet" href="{{asset 'css/deepstream.css' }}" />
+	<link rel="stylesheet" href="{{asset 'css/footer.css' }}" />
+	<link rel="stylesheet" href="{{asset 'css/ionicons.min.css' }}" />
+	<link rel="stylesheet" href="{{asset 'css/jquery-ui.css' }}" />
+	<link rel="stylesheet" href='//fonts.googleapis.com/css?family=Roboto:400,300,100,500,700' type='text/css'>
 
-    <script type="text/javascript" src="{{asset "js/jquery.min.js" }}"></script>
-    <script type="text/javascript" src="{{asset "js/history.min.js" }}"></script>
+	<script type="text/javascript" src="{{asset "js/jquery.min.js" }}"></script>
+	<script type="text/javascript" src="{{asset "js/history.min.js" }}"></script>
 </head>
 <body class="{{body_class}} nav-closed">
 
-    {{> "navigation" }}
+	{{> "navigation" }}
 
-    <div class="site-wrapper">
-        {{#if blog}}
-            {{> blog-entry}}
-        {{else if isLevel3}}
-            {{> level-entry}}
-        {{else}}
-            {{{contents}}}
-        {{/if}}
-    </div>
+	<div class="site-wrapper">
+		{{#if blog}}
+			{{> blog-entry}}
+		{{else if isLevel3}}
+			{{> level-entry}}
+		{{else}}
+			{{{contents}}}
+		{{/if}}
+	</div>
 
-    {{> "footer" }}
+	{{> "footer" }}
 
-    <script src="{{asset "js/jquery-ui.min.js"}}"></script>
-    {{!-- Fitvids makes video embeds responsive and awesome --}}
-    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
-    <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
-    <script src="{{asset "js/highlight.pack.js"}}"></script>
-    <script>
-      (function() {
-        hljs.initHighlighting()
-      })()
-    </script>
+	<script src="{{asset "js/jquery-ui.min.js"}}"></script>
+	{{!-- Fitvids makes video embeds responsive and awesome --}}
+	<script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
+	<script type="text/javascript" src="{{asset "js/index.js"}}"></script>
+	<script src="{{asset "js/highlight.pack.js"}}"></script>
+	<script>
+	  (function() {
+		hljs.initHighlighting()
+	  })()
+	</script>
 </body>
 </html>
