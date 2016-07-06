@@ -8,66 +8,72 @@ nav{
 
 header.main-header{
 	background: #0FBBEC;
+	padding:60px 0 0
 	position: relative;
-	height: 500px;
+	width:100%
 }
 
 header.main-header .elton{
-		width: 370px;
-		position: absolute;
-		bottom: 10px;
-		padding-bottom: 37px;
-		left: 50%;
-		margin-left: -600px;
+		display:none;
+		width: 30%;
+		float:left;
 		background: url(../img/start-header-shadow.png) no-repeat center bottom;
 		background-size: contain;
 }
 
 header.main-header .elton img{
 	width: 200px;
-	margin: 0 auto;
+	float:right;
+	margin-bottom:70px;
 }
 
-header.main-header .vertical a{
-		display: inline-block;
+header.main-header .main-header-text{
+	position:relative;
+	width:80%;
+	margin:0 10%;
+	clear:both
+}
+
+header.main-header .main-header-text a{
+		display: block;
 		border: 1px solid rgba( 255, 255, 255, 0.8 );
 		background: rgba( 255, 255, 255, 0.1 );
 		padding: 10px 20px;
 		border-radius: 3px;
-		margin-top: 16px;
+		width:170px;
+		margin: 20px auto;
 		cursor: pointer;
 		transition: all 400ms ease;
 }
 
-header.main-header .vertical a:hover{
+header.main-header .main-header-text a:hover{
 	border: 1px solid rgba( 255, 255, 255, 1 );
 		background: rgba( 255, 255, 255, 0.3 );
 }
 
-header.main-header .vertical a span{
+header.main-header .main-header-text a span{
 	font-size: 14px;
 		color: #fff;
 		position: relative;
 		top: -2px;
 }
 
-header.main-header .vertical a i{
+header.main-header .main-header-text a i{
 	color: #fff;
 		margin-right: 10px;
 		font-size: 18px;
 }
 
 header.main-header .bottom{
-	position: absolute;
-	left: 0;
 	width: 100%;
-	bottom: 0;
+	clear:both;
 	z-index: 1;
 	background: rgba( 0, 0, 0, 0.1 );
 	text-align: center;
 }
 
 header.main-header .bottom a{
+	width:100%;
 	display: inline-block;
 	color: #fff;
 	padding: 6px 16px;
@@ -78,8 +84,21 @@ header.main-header .bottom a i{
 	margin-right: 6px;
 }
 
+@media screen and (min-width:47em){
+	header.main-header .elton{display:block}
+	header.main-header .main-header-text{
+	width:50%;
+	float:left;
+	clear:none
+	}
+	header.main-header .bottom a{width:auto}
+	#getting-started .main a:first-child {
+	border-right:1px solid #DDD
+	}
+}
+
 header.main-header .page-description{
-	margin: 0 110px;
+	margin: 0;
 }
 
 header.main-header .page-description,
