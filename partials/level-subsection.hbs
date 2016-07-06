@@ -2,11 +2,10 @@
 
 <section class="section-overview">
 	<div class="wrapper">
-		<h1><a href="../">{{level1}}</a> - {{level2}}</h1>
+		<h1><a href="../">{{level1}}</a> / {{level2}}</h1>
 		<div class="categories">
 		<div class="entries {{tree_level_2.name}}">
 		{{#each tree_level_2.children}}
-				<h3 class="this.name">{{this.title}}</h3>
 				<a href="{{link this.indexPath}}">{{this.title}}</a>
 		{{/each}}
 		</div>

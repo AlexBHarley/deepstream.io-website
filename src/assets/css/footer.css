@@ -1,21 +1,21 @@
 /*************************
 * FOOTER
 * ***********************/
-footer {
+footer#main#main {
 	position: relative;
 	clear: both;
 }
-footer img {
+footer#main img {
 	width: 170px;
 	height: 170px;
 	position: relative;
 	top: 10px;
 }
-footer .cols {
+footer#main .cols {
 	overflow: hidden;
 	margin: 50px 0 30px;
 }
-footer .col {
+footer#main .col {
 	width: 100%;
 	margin:0 0 2em 5%;
 	padding-left:10%;
@@ -23,38 +23,38 @@ footer .col {
 	box-sizing: border-box;
 	overflow: hidden;
 }
-footer .col-a
+footer#main .col-a
 	{display:none}
 
 
 @media screen and (min-width:47em){
-footer .col-a{display:block}
-footer .col{width:45%;padding:0}
+footer#main .col-a{display:block}
+footer#main .col{width:45%;padding:0}
 }
 
 @media screen and (min-width:59em){
-footer .col{width:20%}
+footer#main .col{width:20%}
 }
 
-footer h4 {
+footer#main h4 {
 	color: #666;
 	margin-bottom: 20px;
 }
-footer a,
-footer li {
+footer#main a,
+footer#main li {
 	display: block;
 	padding: 5px 0;
 }
-footer * {
+footer#main * {
 	font-size: 12px;
 	font-weight: 300;
 	color: #aaa;
 }
-footer i {
+footer#main i {
 	display: inline-block;
 	width: 20px;
 }
-footer .copyright {
+footer#main .copyright {
 	text-align: center;
 	margin-bottom: 30px;
 }

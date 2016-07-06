@@ -28,7 +28,7 @@ var addBlogMeta = function( file ) {
 
 var sortBlogs = function( blogPosts ) {
 	blogPosts.sort( function( fileA, fileB ) {
-		return parseInt( fileA.blog.dateISO ) - parseInt( fileB.blog.dateISO );
+		return parseInt( fileB.dateISO ) - parseInt( fileA.dateISO );
 	});
 	for( var i = 0; i < blogPosts.length; i++ ) {
 		blogPosts[ i ].blog.isLatest = i < 4;

@@ -1,0 +1,85 @@
+.share-story {
+	position: relative;
+}
+
+.share-story .share-story-content {
+		position: absolute;
+		top: 0;
+		padding: 0;
+		color: white;
+		margin: 10px;
+		font-family: 'Robot';
+		font-weight: 600;
+		font-size: 15px;
+}
+
+#segment-community .share-story .share-story-content {
+	margin: 20px;
+}
+
+.share-story .comical-warning {
+	margin-top: 5px;
+	font-size: 11px;
+	display: block;
+}
+
+.share-story img{
+	opacity: 0.4;
+}
+.share-story > .share-story-content  {
+	font-family: 'Roboto';
+	text-shadow:1px 1px 1px rgba( 0,0,0,0.8);
+	/*display: none;*/
+}
+
+.share-story:hover  {
+	cursor: pointer;
+}
+
+.share-story:hover .share-story-image {
+	opacity: 0.4;
+}
+
+.share-story:hover .share-story-content {
+		display: block;
+		background: none;
+}
+
+@media( max-width: 599px ) {
+	.share-story .share-story-image {
+		opacity: 0.4;
+	}
+
+	.share-story .share-story-content {
+			display: block;
+			background: none;
+	}
+}
+
+@media( max-width: 999px ) {
+	.share-story .share-story-content {
+		font-size: 21px;
+	}
+
+	.share-story .comical-warning {
+		font-size: 11px;
+	}
+
+	#segment-community .share-story .share-story-content {
+		font-size: 23px;
+	}
+
+	#segment-community .share-story .comical-warning {
+		font-size: 13px;
+	}
+}
+
+@media( min-width: 1000px ) {
+	#segment-community .share-story .share-story-content {
+		margin: 50px;
+		font-size: 27px;
+	}
+	#segment-community .share-story .comical-warning {
+		font-size: 16px;
+	}
+}

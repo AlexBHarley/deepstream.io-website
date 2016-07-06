@@ -43,7 +43,7 @@ module.exports = function( metalsmith ) {
 
 			if( file.isLevel3 ) {
 				metadata.nav[ file.level1 ][ file.level2 ][ file.level3 ] = {
-					title: file.level3,
+					title: file.title || file.level3,
 					path: `${file.level1}/${file.level2}/${file.level3}/${file.level3}.html`,
 					indexPath: `${file.level1}/${file.level2}/${file.level3}/`
 				};
@@ -59,7 +59,6 @@ module.exports = function( metalsmith ) {
 			files[ filePath ].tree_level_2 = files[ filePath ].tree.find( function( file, element ) {
 				return file.level2 === element.name;
 			}.bind( null, files[ filePath ] ) );
-
 		}
 
 		return done();

@@ -1,4 +1,5 @@
 <link rel="stylesheet" type="text/css" href="{{asset 'css/community.css'}}" />
+<link rel="stylesheet" type="text/css" href="{{asset 'css/blog.css'}}" />
 
 <div id="wrapper">
 	<div class="blog-wrapper">
@@ -26,7 +27,7 @@
 
 					<footer class="post-meta">
 						By {{blog.author.name}}
-						<time class="post-date" datetime="{{blog.date}}">{{date}}</time>
+						<time class="post-date" datetime="{{blog.date}}">{{blog.date}}</time>
 					</footer>
 				</div>
 
@@ -34,8 +35,6 @@
 			{{/each}}
 
 		</span>
-
-		{{> blog-latest}}
 
 	</div>
 
