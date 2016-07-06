@@ -8,7 +8,7 @@
 			<ul class="entry">
 				{{#each this.children}}
 					<li class="{{ifactive 'level3' 'active' @root @root.tree this.indexPath}}">
-						<a href="{{link this.path}}">{{this.title}}</a>
+						<a data-fetch="ajax" href="{{link this.path}}">{{this.title}}</a>
 					</li>
 				{{/each}}
 			</ul>

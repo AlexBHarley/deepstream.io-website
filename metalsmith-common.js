@@ -65,4 +65,8 @@ module.exports = function( metalsmith ) {
 		'directory': 'layouts',
 		'pattern': [ '**/index.md', '**/index.html' ]
 	}));
+
+	var linkChecker = require('./scripts/link-checker');
+	linkChecker(metalsmith);
+
 };
