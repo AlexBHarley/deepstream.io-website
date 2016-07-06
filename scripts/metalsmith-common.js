@@ -1,5 +1,19 @@
+const colors = require('colors')
+const beep = require('beepbeep')
+
 module.exports = function( metalsmith ) {
+
 	/************************************
+	 * Remove Drafts
+	 ***********************************/
+	 if (process.env.DRAFT || process.env.DRAFTS) {
+	 	console.log('using metalsmith-drafts plugin')
+		var drafts = require('metalsmith-drafts');
+		metalsmith.use( drafts() );
+	 }
+
+	/************************************
+
 	 * HANDLEBARS HELPER
 	 ***********************************/
 	var metalsmithRegisterHelper = require('metalsmith-register-helpers');
@@ -8,31 +22,31 @@ module.exports = function( metalsmith ) {
 	/************************************
 	 * Normalise Paths
 	 ***********************************/
-	const pathNormalise = require( './scripts/path-normalise' );
+	const pathNormalise = require( './path-normalise' );
 	pathNormalise( metalsmith );
 
 	/************************************
 	 * Generate Specs
 	 ***********************************/
-	const specsGenerator = require( './scripts/specs-generator' );
+	const specsGenerator = require( './specs-generator' );
 	specsGenerator( metalsmith );
 
 	/************************************
 	 * Generate Blog
 	 ***********************************/
-	const blogGenerator = require( './scripts/blog-generator' );
+	const blogGenerator = require( './blog-generator' );
 	blogGenerator( metalsmith );
 
 	/************************************
 	 * Generate Missing Pages
 	 ***********************************/
-	const pageGenerator = require( './scripts/page-generator' );
+	const pageGenerator = require( './page-generator' );
 	pageGenerator( metalsmith );
 
 	/************************************
 	 * Add Navigation
 	 ***********************************/
-	const navigationGenerator = require( './scripts/navigation-generator' );
+	const navigationGenerator = require( './navigation-generator' );
 	navigationGenerator( metalsmith );
 
 	/************************************
@@ -66,7 +80,13 @@ module.exports = function( metalsmith ) {
 		'pattern': [ '**/index.md', '**/index.html' ]
 	}));
 
-	var linkChecker = require('./scripts/link-checker');
+	var linkChecker = require('./link-checker');
 	linkChecker(metalsmith);
 
+	metalsmith.use(function(done) {
+		console.log(colors.green('built done') + ' at ' + new Date())
+		if (process.env.BEEP) {
+			beep()
+		}
+	})
 };

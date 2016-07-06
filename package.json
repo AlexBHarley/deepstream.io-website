@@ -6,21 +6,22 @@
   "main": "metalsmith.js",
   "scripts": {
     "start": "node metalsmith-prod.js",
-    "dev": "node metalsmith-dev.js",
-    "synced": "./copy.sh && npm run dev",
-    "watch": "fswatch -0 src/ | xargs -0 -n 1 -I {} node metalsmith-prod.js"
+    "serve": "node metalsmith-dev.js",
+    "sync": "./copy.sh",
+    "watch": "fswatch -0 src/ layouts/ helpers/ data/ partials/ scripts/ metalsmith-prod.js | xargs -0 -n 1 -I {} node metalsmith-prod.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wolframhempel/engel-touren.git"
+    "url": "git+https://github.com/deepstreamIO/deepstream.io-website-metal.git"
   },
   "author": "",
   "license": "",
   "bugs": {
-    "url": "https://github.com/wolframhempel/engel-touren/issues"
+    "url": "https://github.com/deepstreamIO/deepstream.io-website-metal/issues"
   },
-  "homepage": "https://github.com/wolframhempel/engel-touren#readme",
+  "homepage": "https://github.com/deepstreamIO/deepstream.io-website-metal#readme",
   "devDependencies": {
+    "beepbeep": "^1.2.0",
     "colors": "^1.1.2",
     "csv-parse": "^1.1.1",
     "gherkin": "^4.0.0",

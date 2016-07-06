@@ -1,4 +1,4 @@
-var metalSmithCommon = require( './metalsmith-common' );
+var metalSmithCommon = require( './scripts/metalsmith-common' );
 var MetalSmith = require( 'metalsmith' );
 var metalsmith = new MetalSmith( __dirname );
 
