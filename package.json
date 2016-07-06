@@ -6,7 +6,8 @@
   "main": "metalsmith.js",
   "scripts": {
     "start": "node metalsmith-prod.js",
-    "dev": "node metalsmith-dev.js"
+    "dev": "node metalsmith-dev.js",
+    "synced": "./copy.sh && npm run dev"
   },
   "repository": {
     "type": "git",
