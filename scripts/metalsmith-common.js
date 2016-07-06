@@ -6,10 +6,11 @@ module.exports = function( metalsmith ) {
 	/************************************
 	 * Remove Drafts
 	 ***********************************/
-	 if (process.env.DRAFT || process.env.DRAFTS) {
-	 	console.log('using metalsmith-drafts plugin')
-		var drafts = require('metalsmith-drafts');
+	 if (!process.env.KEEP_DRAFT && !process.env.KEEP_DRAFTS) {
+		var drafts =  require('metalsmith-drafts');
 		metalsmith.use( drafts() );
+	 } else {
+	 	console.log('disable metalsmith-drafts plugin')
 	 }
 
 	/************************************

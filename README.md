@@ -74,12 +74,13 @@ the generation was finished.
 export BEEP=1
 ```
 
-##### DRAFT MODE
+##### NO_DRAFT MODE
 
-Deletes all documents in the ouput which are flagged as a draft.
+If you want to keep documents in the ouput which are flagged as a draft.
 
 ```
-DRAFTS=1 npm start
+KEEP_DRAFTS=1 npm start
 ```
 
+Otherwise they will be deleted in the dist directory.
 
