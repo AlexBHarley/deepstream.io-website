@@ -88,6 +88,13 @@ module.exports = function( metalsmith ) {
 							.replace(/```\s*{{/g, '{{')
 				);
 
+				if( file.filename.match( 'readme.md' ) ) {
+					delete files[ filePath ];
+					filePath = file.filename.replace( 'readme.md', `${fileName}.md` );
+					file.filename = file.filename.replace( 'readme.md', `${fileName}.md` );
+					files[ filePath ] = file;
+				}
+
 				if( !file.filename.match( 'index.md|index.html' ) ) {
 					filePath = filePath.replace( `readme.md`, `${fileName}.md` )
 					filePath = filePath.replace( `${fileName}.md`, 'index.md' )
