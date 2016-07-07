@@ -20,6 +20,7 @@
 }
 
 .content{
+	padding: 0 10px;
 	margin: 20px auto;
 	max-width: 800px;
 }
@@ -199,6 +200,7 @@
 .content img{
 	display: block;
 	margin: 10px auto;
+	max-width: 100%;
 }
 .content li{
 	padding: 5px 20px;
