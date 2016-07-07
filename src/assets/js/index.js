@@ -135,6 +135,7 @@ $(function(){
         $.get( pathname, function( result ){
 
             //TODO Error handling
+            $( '.breadcrumbs span:last-child' ).text( link.text() );
             $( '.col.big.right .content' ).html( result );
 
             $('.content pre code').each(function(i, block) {
