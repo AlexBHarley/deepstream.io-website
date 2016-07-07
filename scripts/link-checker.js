@@ -9,9 +9,12 @@ module.exports = function( metalsmith ) {
 	var file;
 	var results;
 	var html;
-	var regex = /href="([^"]*)"/g
+	// ignore link in the sidebar which trigger an ajax get
+	// of HTML snippet which filename is not index.html
+	var regex = /href="([^"]*)"(?! data-fetch="ajax")/g
 
 	metalsmith.use(function( files, metalsmith, done ) {
+		console.log('starting link-checker'.cyan)
 		var metadata = metalsmith.metadata()
 
 		for( filePath in files ) {
@@ -51,8 +54,21 @@ function printWarning(link, filePath, files) {
 		// fallback check
 		console.log('consider to use a trailing slash'.yellow + ` for '${link}' in ${filePath}`)
 	} else {
-		console.log('broken link'.red + ` '${link}' in ${filePath}`)
+		console.log('file not found'.red + ` '${link}' in ${filePath}`)
 	}
+}
+
+function checkForInvalidExtension(link) {
+	var extname = path.extname(link)
+	if (extname !== ''
+		&& extname !== '.html'
+		&& extname !== '.css'
+		&& extname !== '.js'
+		&& extname !== '.ico') {
+			console.log('direct link to non index.html'.red + ` for '${link}' in ${filePath}`)
+			return true
+	}
+	return false
 }
 
 function checkLink(link, filePath, files) {
@@ -64,13 +80,9 @@ function checkLink(link, filePath, files) {
 	}
 	link = link.replace(/(#.*)/, '')
 
-	var extname = path.extname(link)
-
-	// TODO: WIP solution is here https://regex101.com/r/kO1cO1/7
-	// if (extname !== '.html' || extname !== '') {
-	// 	console.log('direct link to non index.html'.red + ` for '${link}' in ${filePath}`)
-	// 	return
-	// }
+	if (checkForInvalidExtension(link)) {
+		return
+	}
 
 	if (link.indexOf('.') === 0) {
 		const absolutePath = path.join(filePath, link)
