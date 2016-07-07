@@ -39,7 +39,11 @@ module.exports = function( metalsmith ) {
 					// skip
 				} else if (entry === '/') {
 					// skip
-				} else {
+				} else if (entry === 'mailto:info@deepstream.io') {
+					// skip
+				} else if (entry === 'mailto:info@deepstreamhub.com') {
+					// skip
+				}else {
 					checkLink(entry, filePath, files)
 				}
 			}

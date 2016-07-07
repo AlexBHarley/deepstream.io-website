@@ -15,7 +15,6 @@ module.exports = function( metalsmith ) {
 	 }
 
 	/************************************
-
 	 * HANDLEBARS HELPER
 	 ***********************************/
 	var metalsmithRegisterHelper = require('metalsmith-register-helpers');
@@ -82,6 +81,9 @@ module.exports = function( metalsmith ) {
 		'pattern': [ '**/index.md', '**/index.html' ]
 	}));
 
+	/************************************
+	 * Link Validation
+	 ***********************************/
 	var linkChecker = require('./link-checker');
 	linkChecker(metalsmith);
 
