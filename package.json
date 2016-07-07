@@ -8,7 +8,6 @@
     "start": "node metalsmith-prod.js",
     "serve": "browser-sync start --no-ui --port 3000 --serveStatic dist",
     "reload": "browser-sync reload",
-    "sync": "./copy.sh",
     "watch": "fswatch -0 src/ layouts/ helpers/ data/ partials/ scripts/ metalsmith-prod.js | xargs -0 -n 1 -I {} node metalsmith-prod.js trigger-bs-reload"
   },
   "repository": {
