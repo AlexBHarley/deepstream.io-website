@@ -53,4 +53,4 @@ You don't want more than one publisher updating the same record or emitting the 
 
 For example, you could create two identical providers except where one listens to requests to all countries starting with the first half of the alphabet '^weather/[a-k]' and the other to the second half '^weather/[m-z]'. This can be split into as many publishers as you see fit to easily scale your processes.
 
-For more details and code, take a look at our [tutorial](../../tutorials/data-provider.html).
+For more details and code, take a look at our [tutorial](../../tutorials/core/active-data-providers/).

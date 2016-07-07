@@ -1,10 +1,10 @@
 Time to get started with deepstream. This tutorial takes you through the initial steps of starting a server and connecting to it from a simple webpage using the JS Client.
 
-![Getting Started Endresult](./getting-started.gif)
+![Getting Started Endresult](getting-started.gif)
 
 ## Start the server
 
-Let's start by installing the server. If you haven't done that before [here's how](tutorials/core/getting-started-installation). Once the server is installed, you can start it with:
+Let's start by installing the server. If you haven't done that before [here's how](../getting-started-installation/). Once the server is installed, you can start it with:
 
 ```bash
 deepstream start
@@ -44,7 +44,7 @@ This page consists of one text field ready for user input. Inside the `script` t
 ds = deepstream('localhost:6020').login()
 ```
 
-Next up, we request a "record". Records are small bits of data that are synced 
+Next up, we request a "record". Records are small bits of data that are synced
 across all connected client.
 
 ```javascript
@@ -68,4 +68,4 @@ record.subscribe('firstname', value => {
 
 Open the web page in two browser windows and type text into either of the text fields and the other browser window will reflect changes instantly.
 
-And that's it. There's of course a lot more to deepstream than that. If you'd like to learn more about records and what they can be used for, head over to the [record tutorial](TODO). Or start reading about deepstream's [Request/Response](TODO) or [Pub/Sub](TODO) features.
+And that's it. There's of course a lot more to deepstream than that. If you'd like to learn more about records and what they can be used for, head over to the [record tutorial](../datasync-record/). Or start reading about deepstream's [Request/Response](../request-response-rpc) or [Pub/Sub](../pubsub-events) features.

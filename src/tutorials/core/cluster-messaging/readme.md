@@ -1,6 +1,6 @@
 ![Deepstream Internals](./internal-workings.svg)
 
-Deepstream nodes can scale horizontally by syncing their state via a messaging layer. This can be done with almost with any message-broker. Deepstream offers plugins for a number of popular systems and protocols, e.g. [AMQP](../integrations/msg-rabbitmq), [Apache Kafka](../integrations/msg-kafka) or [Redis Pub/Sub](../integrations/redis)
+Deepstream nodes can scale horizontally by syncing their state via a messaging layer. This can be done with almost with any message-broker. Deepstream offers plugins for a number of popular systems and protocols, e.g. [AMQP](../integrations/msg-amqp/), [Apache Kafka](../integrations/msg-kafka/) or [Redis Pub/Sub](../integrations/redis/)
 
 ## Connecting deepstream nodes directly
 For smaller clusters it used to be possible to connect deepstream nodes directly in a full-mesh configuration (everyone-to-everyone). This feature has been deprecated in its current incarnation, but will soon be replaced by a more scalable (and hopefully slightly smarter) direct-message-connector plugin based on the [Small World Network Paradigm](https://en.wikipedia.org/wiki/Small-world_network).

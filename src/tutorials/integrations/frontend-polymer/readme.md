@@ -26,10 +26,10 @@ bower install deepstream.io-tools-polymer
 ```
 or get it directly from [Github](https://github.com/deepstreamIO/deepstream.io-tools-polymer).
 
-Before we begin, let's start a deepstream server. If you haven't done that before, have a look at the [getting started tutorial](../getting-started-quickstart).
+Before we begin, let's start a deepstream server. If you haven't done that before, have a look at the [getting started tutorial](../../core/getting-started-quickstart/).
 
 #### Connectivity
-First, let's connect to deepstream. This can be accomplished by adding a `ds-connection` element. This creates a connection to deepstream based on the `url` attribute you've specified and exposes the [connection state](../docs/common/constants/#connection-state) and deepstream instance.
+First, let's connect to deepstream. This can be accomplished by adding a `ds-connection` element. This creates a connection to deepstream based on the `url` attribute you've specified and exposes the [connection state](/docs/common/constants/#connection-state) and deepstream instance.
 
 ```html
 <ds-connection

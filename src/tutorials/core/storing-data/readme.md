@@ -10,7 +10,7 @@ Similarly, whenever an entry needs to be retrieved, deepstream looks for it in t
 
 Because they complement each other quite well!
 
-- Caches need to make relatively small amounts of data accessible at high speeds. They usually achieve this by storing data in memory, rather than on disk (although some, e.g. Redis, can write to disk as well). This means that all data is lost when the process exists. Caches also usually don't offer support for complex queries (although e.g. [Hazelcast](/tutorials/integrations/cache-hazelcast) has some).
+- Caches need to make relatively small amounts of data accessible at high speeds. They usually achieve this by storing data in memory, rather than on disk (although some, e.g. Redis, can write to disk as well). This means that all data is lost when the process exists. Caches also usually don't offer support for complex queries (although e.g. [Hazelcast](/tutorials/integrations/cache-hazelcast/) has some).
 
 - Databases (storage) are slower to read or write to, but offer efficient long-term storage for larger amounts of data and allow for more elaborate ways of querying (e.g. full-text search, SQL joins etc.)
 
@@ -46,7 +46,7 @@ It can be tempting to use a fully managed cache from an infrastructure-as-a-serv
 Equally, a lot of cache / database protocols are designed for use within a trusted environment and therefor unencrypted. If your database lives outside of your network, make sure to use TLS or choose a service that offers a VPN.
 
 ## Downloading and installing connectors
-Deepstream connectors are available for many popular databases and caches and we're constantly looking to expand the selection. You can find an overview of available connectors on the [download page](/download). Connectors can be installed via deepstream's commandline interface, using the `cache` or `storage` keyword, e.g.
+Deepstream connectors are available for many popular databases and caches and we're constantly looking to expand the selection. You can find an overview of available connectors on the [download page](/install/). Connectors can be installed via deepstream's commandline interface, using the `cache` or `storage` keyword, e.g.
 
 ```bash
 deepstream install cache redis
@@ -67,7 +67,7 @@ Cache connectors are configured in the config's `plugins - cache` section, datab
 If you're using deepstream from Node, it's also possible to download connectors from NPM. All connectors follow the naming convention `deepstream.io-type-name`, e.g. `deepstream.io-storage-rethinkdb`.
 
 ## Writing your own connector
-If you can't find a connector for your system of choice, you can also write your own quite easily in C++ with Node bindings or in NodeJS. If you're happy with the way your connector turned out, please consider contributing it. To do so, have a look at deepstream's [contribution guidelines](/info/community/contribution-guidelines)
+If you can't find a connector for your system of choice, you can also write your own quite easily in C++ with Node bindings or in NodeJS. If you're happy with the way your connector turned out, please consider contributing it. To do so, have a look at deepstream's [contribution guidelines](/info/community/contribution-guidelines/)
 
 To get started, just clone or fork the [cache-and-storage-connector-template](//github.com/deepstreamIO/deepstream.io-cache-and-storage-connector-template) and fill in the blanks. To see if it works, update the `settings` variable on line 7 of the [test file](//github.com/deepstreamIO/deepstream.io-cache-and-storage-connector-template/blob/master/test/cache-connectorSpec.js) and run the tests with `npm test`. Please note: The tests are very high level and only cover basic functionality. It will make sense to add additional tests that are specific to your connector.
 

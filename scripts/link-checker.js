@@ -90,7 +90,8 @@ function checkLink(link, filePath, files) {
 	}
 
 	if (link.indexOf('.') === 0) {
-		const absolutePath = path.join(filePath, link).replace( /\\/g, '/' );
+		const tempPath = filePath.replace( /\/[^\/]*\.html/, '/' );
+		const absolutePath = path.join(tempPath, link).replace( /\\/g, '/' );
 		if (files[absolutePath] == null) {
 			printWarning(absolutePath, filePath, files)
 		}
