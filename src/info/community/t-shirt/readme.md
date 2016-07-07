@@ -1,3 +1,8 @@
+---
+title: The 2016 t-shirt collection
+description: Find out how to apply for an awesome t-shirt, featuring Elton!
+---
+
 Ah, the classic story for t-shirt deal: You tell us what you've build with deepstream and you get your pick from the highly exclusive and coveted deepstream.io 2016 spring collection:
 
 ![deepstream.io 2016 spring collection](tshirt.png)

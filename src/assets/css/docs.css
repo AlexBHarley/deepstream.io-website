@@ -177,10 +177,10 @@
 }
 
 .content h4, .content h4 code{
-	font-size: 18px;
-	margin-top: 32px;
-	color: #000;
-	font-weight: bold;
+	font-size: 15px;
+  margin-top: 32px;
+  color: #000;
+  font-weight: 400;
 }
 
 .content p{

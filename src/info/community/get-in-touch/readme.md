@@ -1,3 +1,8 @@
+---
+title: Getting in touch
+description: Find out how to get in touch with other deepstream aficionados
+---
+
 Need help with a deepstream.io problem, found an issue or want to become a contributer? Join our lovely and helpful community:
 
 ![Some peeps with macbooks](community.png)
