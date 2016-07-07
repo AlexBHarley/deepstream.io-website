@@ -84,6 +84,15 @@ module.exports = function( metalsmith ) {
 {{> specs-paths messageSpecs.features.${specName} }}`)
 				}
 			}
+
+			const specFileName = `info/specs/message-structure/message-structure.html`;
+			files[ specFileName ] = {
+				title: `Message Specs`,
+				description: `Message Specs in deepstream.io`,
+				filename: specFileName,
+				contents: new Buffer( `{{> specs-structure messageSpecs.specs }}`)
+			}
+
 			done();
 		} );
 	});

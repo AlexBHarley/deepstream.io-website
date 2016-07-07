@@ -6,7 +6,7 @@
 		{{#each blogPosts}}
 			{{#if blog.isLatest}}
 			<li class="latest-blog-article">
-				<a href="{{link blogPath}}">
+				<a href="{{link blog.blogPath}}">
 					<span class="date">{{blog.shortDate}}</span>
 					<span class="title">{{title}}</span>
 				</a>

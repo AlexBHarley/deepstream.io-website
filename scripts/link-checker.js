@@ -76,6 +76,7 @@ function checkForInvalidExtension(link) {
 }
 
 function checkLink(link, filePath, files) {
+	link = link.split( '#' )[ 0 ];
 	if (link.substr(0, 1) === '/') {
 		link = link.substr(1)
 	}
@@ -89,7 +90,7 @@ function checkLink(link, filePath, files) {
 	}
 
 	if (link.indexOf('.') === 0) {
-		const absolutePath = path.join(filePath, link)
+		const absolutePath = path.join(filePath, link).replace( /\\/g, '/' );
 		if (files[absolutePath] == null) {
 			printWarning(absolutePath, filePath, files)
 		}
