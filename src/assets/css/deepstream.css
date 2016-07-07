@@ -245,10 +245,12 @@ nav .links a{
 	font-weight: 300;
 }
 
-#support button{
-		border: 1px solid #fff;
-		box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-		clear:both;
-		display:block;
-		margin:18px auto
+#support button, #support a.button {
+	width: 130px;
+    border: 1px solid #fff;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    clear: both;
+    display: block;
+    margin: 18px auto;
+    padding: 10px;
 }

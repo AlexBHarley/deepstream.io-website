@@ -471,7 +471,7 @@ select {
     line-height: 30px;
 }
 
-button {
+button, .button {
     min-height: 35px;
     width: auto;
     display: inline-block;
