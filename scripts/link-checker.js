@@ -11,7 +11,7 @@ module.exports = function( metalsmith ) {
 	var html;
 	// ignore link in the sidebar which trigger an ajax get
 	// of HTML snippet which filename is not index.html
-	var regex = /href="([^"]*)"(?! data-fetch="ajax")/g
+	var regex = /\shref="([^"]*)"(?! data-fetch="ajax")/g
 
 	metalsmith.use(function( files, metalsmith, done ) {
 		console.log('starting link-checker'.cyan)

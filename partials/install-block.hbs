@@ -1,7 +1,4 @@
-<a class="install-block" href="{{url}}"
-	{{#if dev}}"in-development"{{/if}}
-	{{#if soon}}"in-development"{{/if}}
->
+<a class="install-block" href="{{url}}" class="{{#if dev}}"in-development"{{/if}}{{#if soon}}"in-development"{{/if}}>
 	<div class="install-block-content">
 		{{#if dev}}<div class="status dev">in development</div>{{/if}}
 		{{#if soon}}<div class="status soon">coming soon</div>{{/if}}

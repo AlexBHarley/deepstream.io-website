@@ -21,8 +21,8 @@ var addBlogMeta = function( file ) {
 		date: moment( file.dateISO, 'YYYYMMDD' ).format( 'MMMM Do YYYY' ),
 		shortDate: moment( file.dateISO, 'YYYYMMDD' ).format( 'DD/MM/YYYY' ),
 		author:  authors[ file.author],
-		thumbnail: '/' + file.filename.replace( 'index.md', file.thumbnail ),
-		blogPath: '/' + file.filename.replace( 'index.md', '' )
+		thumbnail: '/' + file.filename.replace( 'readme.md', file.thumbnail ),
+		blogPath: '/' + file.filename.replace( 'readme.md', '' )
 	};
 };
 
