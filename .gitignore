@@ -38,8 +38,3 @@ jspm_packages
 
 # Metalsmith
 dist
-
-# Current symlinks
-src/docs
-src/info
-src/tutorials
