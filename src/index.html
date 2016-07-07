@@ -6,10 +6,10 @@
 	<div class="main-header-text-wrapper">
 		<div class="main-header-text">
 			<h1 class="page-title">the open realtime server</h1>
-			<h2 class="page-description">deepstream.io<span> is a new type of server that syncs data and sends events across millions of clients</span></h2>
-			<a href="#">
+			<h2 class="page-description">deepstream<span> is a new type of server that syncs data and sends events across millions of clients</span></h2>
+			<a href="/install">
 				<i class="ion-ios-navigate-outline"></i>
-				<span>install deepstream.io</span>
+				<span>install deepstream</span>
 			</a>
 		</div>
 	</div>
@@ -19,9 +19,15 @@
 	</div>
 
 	<div class="bottom">
-		<a class="github" href="#"><i class="ion-social-octocat"></i>2.3k stars on Github</a>
-		<a class="twitter" href="#"><i class="ion-social-twitter"></i>@deepstream.io on Twitter</a>
-		<a class="twitter" href="#"><i class="ion-social-buffer"></i>Ask on StackOverflow</a>
+		<a class="github" target="_blank" href="https://github.com/deepstreamIO/deepstream.io">
+			<i class="ion-social-octocat"></i>2.3k stars on Github
+		</a>
+		<a class="twitter" target="_blank" href="https://twitter.com/deepstreamIO">
+			<i class="ion-social-twitter"></i>@deepstreamIO on Twitter
+		</a>
+		<a class="twitter" target="_blank" href="http://stackoverflow.com/questions/tagged/deepstream.io">
+			<i class="ion-social-buffer"></i>Ask on StackOverflow
+		</a>
 	</div>
 </header>
 
@@ -91,17 +97,21 @@
 	<div class="wrapper">
 		<h2 class="section-headline">getting started</h2>
 		<div class="main">
-			<a href="#" class="first">
+			<a href="/tutorials/core/getting-started-installation/" class="first">
 				<div class="icon ion-ios-speedometer-outline"></div>
 				<h3>Quickstart</h3>
-				<p>Set 10 aside minutes to get up and running with deepstream.io</p>
+				<p>Set 10 aside minutes to get up and running with deepstream</p>
 			</a>
-
-			<a href="#">
+			<a href="/docs/">
+				<div class="icon ion-ios-book-outline"></div>
+				<h3>Documentation</h3>
+				<p>Learn how to use the API of deepstream with</p>
+			</a>
+<!-- 			<a href="/guides/">
 				<div class="icon ion-ios-book-outline"></div>
 				<h3>The Guide ( Coming soon! )</h3>
 				<p>Learn how to develop, run, test and deploy a realtime todo-list app</p>
-			</a>
+			</a> -->
 		</div>
 	</div>
 </section>
@@ -113,23 +123,23 @@
 			<div class="border"></div>
 		</h3>
 		<div class="grid">
-			<a href="#">
+			<a href="/tutorials/core/auth-file/">
 				<i style="color: #234BEF" class="icon ion-person"></i>
 				<span>Authentication<span>
 			</a>
-			<a href="#">
+			<a href="tutorials/core/permission-conf-simple/">
 				<i style="color: #FF8508" class="icon ion-lock-combination"></i>
 				<span>Permissions<span>
 			</a>
-			<a href="#">
+			<a href="/docs/client/datasync-record/">
 				<i style="color: #FFB508" class="icon ion-document-text"></i>
 				<span>Records<span>
 			</a>
-			<a href="#">
+			<a href="/docs/client/pubsub-client-event/">
 				<i style="color: #B810EE" class="icon ion-chatboxes"></i>
 				<span>Events<span>
 			</a>
-			<a href="#">
+			<a href="/docs/client/reqres-client-rpc/">
 				<i style="color: #027899" class="icon ion-arrow-swap"></i>
 				<span>RPCs<span>
 			</a>
@@ -143,84 +153,84 @@
 				<span>Express<span>
 			</a>
 			--}}
-			<a href="#">
+			<a href="/tutorials/integrations/frontend-react/">
 				<img src="{{asset 'img/logos/react.png'}}" />
 				<span>React<span>
 			</a>
-			<a href="#">
+			<a href="/tutorials/integrations/frontend-polymer/">
 				<img src="{{asset 'img/logos/polymer.png'}}" />
 				<span>Polymer<span>
 			</a>
-			<a href="#">
+			<a href="/tutorials/integrations/frontend-angular/">
 				<img src="{{asset 'img/logos/angular.png'}}" />
 				<span>Angular<span>
 			</a>
-			<a href="#">
+			<a href="/tutorials/integrations/frontend-knockout/">
 				<img src="{{asset 'img/logos/knockout.png'}}" />
 				<span>Knockout<span>
 			</a>
-			<a href="#">
+			<a href="/tutorials/integrations/other-aws/">
 				<img src="{{asset 'img/logos/aws.png'}}" />
 				<span>AWS<span>
 			</a>
-			<a href="#">
+			<a href="/tutorials/integrations/db-couchdb/">
 				<img src="{{asset 'img/logos/couchdb.png'}}" />
 				<span>CouchDB<span>
 			</a>
-			<a href="#">
+			<a href="/tutorials/integrations/db-elasticsearch/">
 				<img src="{{asset 'img/logos/elasticsearch.png'}}" />
-				<span>ElasticSearch<span>
+				<span>Elasticsearch<span>
 			</a>
-			<a href="#">
+			<a href="/tutorials/integrations/msg-kafka/">
 				<img src="{{asset 'img/logos/kafka.png'}}" />
 				<span>Apache Kafka<span>
 			</a>
-			<a href="#">
+			<a href="/tutorials/integrations/cache-memcached/">
 				<img src="{{asset 'img/logos/memcached.png'}}" />
-				<span>Memcached<span>
+				<span>memcached<span>
 			</a>
 			<a href="#">
 				<img src="{{asset 'img/logos/docker.png'}}" />
 				<span>Docker<span>
 			</a>
-			<a href="#">
+			<a href="/tutorials/integrations/other-nginx/">
 				<img src="{{asset 'img/logos/nginx.png'}}" />
-				<span>Nginx<span>
+				<span>nginx<span>
 			</a>
-			<a href="#">
+			<a href="/tutorials/integrations/cache-hazelcast/">
 				<img src="{{asset 'img/logos/hazelcast.png'}}" />
 				<span>Hazelcast<span>
 			</a>
-			<a href="#">
+			<a href="/tutorials/integrations/other-nodejs/">
 				<img src="{{asset 'img/logos/node.png'}}" />
-				<span>NodeJS<span>
+				<span>Node.js<span>
 			</a>
-			<a href="#">
+			<a href="/tutorials/integrations/db-mongodb/">
 				<img src="{{asset 'img/logos/mongodb.png'}}" />
 				<span>MongoDB<span>
 			</a>
-			<a href="#">
+			<a href="/tutorials/integrations/msg-rabbitmq/">
 				<img src="{{asset 'img/logos/rabbitmq.png'}}" />
 				<span>RabbitMQ<span>
 			</a>
-			<a href="#">
+			<a href="/tutorials/integrations/cache-redis/">
 				<img src="{{asset 'img/logos/redis.png'}}" />
 				<span>Redis<span>
 			</a>
-			<a href="#">
+			<a href="/tutorials/integrations/db-rethinkdb/">
 				<img src="{{asset 'img/logos/rethinkdb.png'}}" />
 				<span>RethinkDB<span>
 			</a>
-			<a href="#">
+			<a href="/tutorials/integrations/db-dynamodb/">
 				<img src="{{asset 'img/logos/dynamodb.png'}}" />
 				<span>DynamoDB<span>
 			</a>
-			<a href="#">
+			<a href="/tutorials/integrations/other-sns/">
 				<img src="{{asset 'img/logos/sns.png'}}" />
 				<span>SNS<span>
 			</a>
 			{{!--
-			<a href="#">
+			<a href="/tutorials/integrations/other-arduino/">
 				<img src="{{asset 'img/logos/arduino.png'}}" />
 				<span>Arduinos<span>
 			</a>
@@ -310,7 +320,7 @@
 					<li><img src="{{asset 'img/community/i.png'}}" /></li>
 				</ul>
 				<div class="git-section">
-					<div class="git-text">Raise an issue, request a feature or browse the source on <a href="https://github.com/deepstreamio">GitHub</a>.
+					<div class="git-text">Raise an issue, request a feature or browse the source on <a href="https://github.com/deepstreamIO/deepstream.io">GitHub</a>.
 					</div>
 					<div class="git-btn">
 						<a
@@ -330,19 +340,19 @@
 					<span class="text">get in touch</span>
 				</h3>
 				<div class="links">
-					<a href="#">
+					<a target="_blank" href="https://twitter.com/deepstreamIO">
 						<i class="ion-social-twitter-outline"></i>
 						twitter
 					</a>
-					<a href="#">
+					<a target="_blank" href="https://www.facebook.com/deepstreamIO/">
 						<i class="ion-social-facebook-outline"></i>
 						facebook
 					</a>
-					<a href="#">
+					<a target="_blank" href="https://deepstream-slack.herokuapp.com/">
 						<i class="ion-ios-grid-view-outline"></i>
 						slack
 					</a>
-					<a href="#">
+					<a target="_blank" href="http://stackoverflow.com/questions/tagged/deepstream.io">
 						<i class="ion-social-buffer-outline"></i>
 						stack overflow
 					</a>
@@ -351,5 +361,6 @@
 		</div>
 	</div>
 </section>
+
 
 <script async defer id="github-bjs" src="//buttons.github.io/buttons.js"></script>

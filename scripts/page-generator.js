@@ -89,6 +89,7 @@ module.exports = function( metalsmith ) {
 				);
 
 				if( !file.filename.match( 'index.md|index.html' ) ) {
+					filePath = filePath.replace( `readme.md`, `${fileName}.md` )
 					filePath = filePath.replace( `${fileName}.md`, 'index.md' )
 					filePath = filePath.replace( `${fileName}.html`, 'index.html' )
 					filePath = filePath.replace( `install.html`, 'index.html' ) //TODO

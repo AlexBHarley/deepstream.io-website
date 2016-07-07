@@ -7,21 +7,21 @@
 		the deepstream server comes as standalone executable for Mac and Windows and as package for major Linux distributions.
 		</p>
 		<div class="distro-grid block-link">
-			{{> install-block type='osx' img='img/install/osx.png' name='OS X' }}
-			{{> install-block type='windows' img='img/install/windows.png' name='Windows' }}
-			{{> install-block type='ubuntu' img='img/install/ubuntu.png' name='Ubuntu' }}
-			{{> install-block type='centos' img='img/install/centos.png' name='CentOs' }}
-			{{> install-block type='debian' img='img/install/debian.png' name='Debian' }}
-			{{> install-block type='aws' img='img/install/aws.png' name='AWS Linux' }}
+			{{> install-block url='/install/osx' img='img/install/osx.png' name='OS X' }}
+			{{> install-block url='/install/windows' img='img/install/windows.png' name='Windows' }}
+			{{> install-block url='/install/ubuntu' img='img/install/ubuntu.png' name='Ubuntu' }}
+			{{> install-block url='/install/centos' img='img/install/centos.png' name='CentOs' }}
+			{{> install-block url='/install/debian' img='img/install/debian.png' name='Debian' }}
+			{{> install-block url='/install/amazon-linux-ami' img='img/install/aws.png' name='Amazon Linux AMI' }}
 		</div>
 
 		<p class="other-server">
-		or use the official docker image or compose file to make using deepstream within your container architecture a breeze. Deepstream also can be installed via NPM and used from NodeJS
+		or use the official docker image or compose file to make using deepstream within your container architecture a breeze. Deepstream also can be installed via NPM and used from Node.js
 		</p>
 		<div class="other-server-grid block-link">
-			{{> install-block type='docker' img='img/install/docker.png' name='Docker Image' }}
-			{{> install-block type='compose' img='img/install/compose.png' name='Compose File' }}
-			{{> install-block type='npm' img='img/install/npm.png' name='Use as NodeJS package' }}
+			{{> install-block url='/install/docker-image' img='img/install/docker.png' name='Docker Image' }}
+			{{> install-block url='/install/docker-compose' img='img/install/compose.png' name='Compose File' }}
+			{{> install-block url='/install/npm' img='img/install/npm.png' name='NPM module (Node.js)' }}
 		</div>
 	</div>
 </section>
@@ -33,12 +33,12 @@
 		deepstream clients let you connect to the server. The JavaScript client is polished and battletested, other clients are under development. Contributions are welcome, if you'd like to get involved meet us on <a href="https://github.com/deepstreamIO/deepstream.io/issues?q=is%3Aopen+is%3Aissue+label%3Anew-client">Github</a>.
 		</p>
 		<div class="client-grid block-link">
-			{{> install-block type='javascript' img='img/install/javascript.png' name='Browser / Node' }}
-			{{> install-block type='java' img='img/install/java.png' name='Java' dev=true }}
-			{{> install-block type='android' img='img/install/android.png' name='Android' dev=true }}
-			{{> install-block type='ios' img='img/install/ios.png' name='iOS' soon=true }}
-			{{> install-block type='python' img='img/install/python.png' name='Python' soon=true }}
-			{{> install-block type='dotnet' img='img/install/dotnet.png' name='.NET' soon=true }}
+			{{> install-block url='/tutorials/core/getting-started-quickstart/#getting-the-client' img='img/install/javascript.png' name='Browser / Node' }}
+			{{> install-block url='https://github.com/deepstreamIO/deepstream.io/issues/66' img='img/install/java.png' name='Java' dev=true }}
+			{{> install-block url='https://github.com/deepstreamIO/deepstream.io/issues/67' img='img/install/android.png' name='Android' dev=true }}
+			{{> install-block url='https://github.com/deepstreamIO/deepstream.io/issues/68' img='img/install/ios.png' name='iOS' soon=true }}
+			{{> install-block url='https://github.com/deepstreamIO/deepstream.io/issues/72' img='img/install/python.png' name='Python' soon=true }}
+			{{> install-block url='https://github.com/deepstreamIO/deepstream.io/issues/70' img='img/install/dotnet.png' name='.NET' soon=true }}
 		</div>
 	</div>
 </section>
@@ -51,24 +51,24 @@
 		</p>
 		<h3 class="subheading">cache connectors</h3>
 		<div class="connectors-grid block-link">
-			{{> install-block type='redis' img='img/install/redis.png' name='Redis' }}
-			{{> install-block type='hazelcast' img='img/install/hazelcast.png' name='Hazelcast' }}
-			{{> install-block type='memcached' img='img/install/memcached.png' name='Memcached' }}
+			{{> install-block url='/tutorials/integrations/cache-redis/' img='img/install/redis.png' name='Redis' }}
+			{{> install-block url='/tutorials/integrations/cache-hazelcast/' img='img/install/hazelcast.png' name='Hazelcast' }}
+			{{> install-block url='/tutorials/integrations/cache-memcached/' img='img/install/memcached.png' name='memcached' }}
 		</div>
 		<h3 class="subheading">message connectors</h3>
 		<div class="connectors-grid block-link">
-			{{> install-block type='redis' img='img/install/redis.png' name='Redis' }}
-			{{> install-block type='amqp' img='img/install/amqp.png' name='Amqp' }}
-			{{> install-block type='kafka' img='img/install/kafka.png' name='Kafka' }}
+			{{> install-block url='/tutorials/integrations/msg-redis/' img='img/install/redis.png' name='Redis' }}
+			{{> install-block url='/tutorials/integrations/msg-amqp/' img='img/install/amqp.png' name='AMQP' }}
+			{{> install-block url='/tutorials/integrations/msg-kafka/' img='img/install/kafka.png' name='Kafka' }}
 		</div>
 		<h3 class="subheading">database connectors</h3>
 		<div class="connectors-grid block-link">
-			{{> install-block type='mongodb' img='img/install/mongodb.png' name='MongoDB' }}
-			{{> install-block type='elasticsearch' img='img/install/elasticsearch.png' name='ElasticSearch' }}
-			{{> install-block type='rethinkdb' img='img/install/rethinkdb.png' name='RethinkDB' }}
-			{{> install-block type='leveldb' img='img/install/leveldb.png' name='LevelDB' }}
-			{{> install-block type='couchdb' img='img/install/couchdb.png' name='CouchDB' }}
-			{{> install-block type='dynamodb' img='img/install/dynamodb.png' name='AWS DynamoDB' }}
+			{{> install-block url='/tutorials/integrations/db-mongodb/' img='img/install/mongodb.png' name='MongoDB' }}
+			{{> install-block url='/tutorials/integrations/db-elasticsearch/' img='img/install/elasticsearch.png' name='ElasticSearch' }}
+			{{> install-block url='/tutorials/integrations/db-rethinkdb/' img='img/install/rethinkdb.png' name='RethinkDB' }}
+			{{> install-block url='/tutorials/integrations/db-leveldb/' img='img/install/leveldb.png' name='LevelDB' }}
+			{{> install-block url='/tutorials/integrations/db-couchdb/' img='img/install/couchdb.png' name='CouchDB' }}
+			{{> install-block url='/tutorials/integrations/db-dynamodb/' img='img/install/dynamodb.png' name='Amazon DynamoDB' }}
 		</div>
 	</div>
 </section>
@@ -80,10 +80,10 @@
 		deepstream comes with a few extra bits that make working with other libraries easier
 		</p>
 		<div class="connectors-grid block-link">
-			{{> install-block type='reactjs' img='img/install/reactjs.png' name='ReactJS' }}
-			{{> install-block type='polymer' img='img/install/polymerjs.png' name='Polymer' }}
-			{{> install-block type='knockout' img='img/install/knockoutjs.png' name='KnockoutJS' }}
-			{{> install-block type='rethinkdb-search' img='img/install/rethinkdb.png' name='RethinkDB Search Provider' }}
+			{{> install-block url='/tutorials/integrations/frontend-react/' img='img/install/reactjs.png' name='React' }}
+			{{> install-block url='/tutorials/integrations/frontend-polymer/' img='img/install/polymerjs.png' name='Polymer' }}
+			{{> install-block url='/tutorials/integrations/frontend-knockout/' img='img/install/knockoutjs.png' name='Knockout.js' }}
+			{{> install-block url='/tutorials/integrations/search-rethinkdb/' img='img/install/rethinkdb.png' name='RethinkDB Search Provider' }}
 		</div>
 	</div>
 </section>
