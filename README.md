@@ -3,8 +3,7 @@
 ## Setup
 
 - Clone this repo
-- Clone also the `ds-docs` repository into the same parent directory
-- Clone also the `deepstream.io-client-specs` repository into the same parent directory
+- Clone also the `deepstream.io-client-specs` repository into the same parent directory (OPTIONAL)
 
 To get this hierarchy:
 
@@ -14,8 +13,6 @@ To get this hierarchy:
 ├── deepstream.io-client-specs
 ├── ...
 ├── deepstream.io-website-metal
-├── ...
-├── ds-docs
 └── ...
 ```
 
@@ -48,11 +45,6 @@ After generation the process will terminate.
 
 Runs a webserver via browser-sync, which serves the data in `dist`.
 Afterwards open [localhost:3000](http://localhost:3000) in your browser.
-
-##### `npm run sync`
-
-Deletes all the synced directories of `ds-docs` in `src` and do a fresh copy from the
-origin repository (checkouted out locally).
 
 ##### `npm run watch`
 
