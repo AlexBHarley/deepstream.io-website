@@ -85,7 +85,7 @@ module.exports = function( metalsmith ) {
 				}
 			}
 
-			const specFileName = `info/specs/message-structure/message-structure.html`;
+			const specFileName = `info/protocol/all-messages/index.html`;
 			files[ specFileName ] = {
 				title: `Message Specs`,
 				description: `Message Specs in deepstream.io`,

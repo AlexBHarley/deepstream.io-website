@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+
+var program = require('commander');
+
+program
+	.option('-d, --drafts', 'Disable draft disabling')
+	.option('-q, --quick', 'Disable all checks')
+	.option('-b, --beep', 'Emit a beep')
+	.parse(process.argv);
+
+global.cli = program;
+
+require( '../scripts/metalsmith' );

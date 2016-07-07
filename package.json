@@ -8,7 +8,7 @@
     "start": "node metalsmith-prod.js",
     "serve": "browser-sync start --no-ui --port 3000 --serveStatic dist",
     "reload": "browser-sync reload",
-    "watch": "npm run start && fswatch -0 src/ layouts/ helpers/ data/ partials/ scripts/ metalsmith-prod.js | xargs -0 -n 1 -I {} node metalsmith-prod.js trigger-bs-reload"
+    "watch": "npm run start && fswatch -0 src/ layouts/ helpers/ data/ partials/ scripts/ ./bin/website | xargs -0 -n 1 -I {} node metalsmith-prod.js trigger-bs-reload"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
     "beepbeep": "^1.2.0",
     "browser-sync": "^2.13.0",
     "colors": "^1.1.2",
+    "commander": "^2.9.0",
     "csv-parse": "^1.1.1",
     "gherkin": "^4.0.0",
     "handlebars": "^4.0.2",

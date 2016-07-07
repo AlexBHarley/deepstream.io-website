@@ -1,6 +1,8 @@
 const fs = require( 'fs');
 const merge = require('lodash.merge');
 const colors = require('colors');
+const cli = global.cli || {};
+
 /************************************
  * Navigation Generator
  ***********************************/
@@ -88,7 +90,9 @@ module.exports = function( metalsmith ) {
 							.replace(/```\s*{{/g, '{{')
 				);
 
-				ensureMandatoryProperties( files[ filePath ] )
+				if(!cli.quick) {
+					ensureMandatoryProperties( files[ filePath ] )
+				}
 
 				if( file.filename.match( 'readme.md' ) ) {
 					delete files[ filePath ];
