@@ -80,10 +80,8 @@ module.exports = function( metalsmith ) {
 					title: `${title} Features`,
 					description: `Cucumber features for ${title} in deepstream.io`,
 					filename: fileName,
-					contents: new Buffer( `
-						<h1>${specName}</h1>
-						{{> specs-paths messageSpecs.features.${specName} }}
-					`)
+					contents: new Buffer( `<h1>${specName}</h1>
+{{> specs-paths messageSpecs.features.${specName} }}`)
 				}
 			}
 			done();
