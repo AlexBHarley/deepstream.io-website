@@ -1,4 +1,5 @@
 ---
+lunr: true
 title: Valve Permissions
 description: The API for Valve, deepstream's powerful permissioning mechanism
 ---

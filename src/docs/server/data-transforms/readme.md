@@ -1,4 +1,5 @@
 ---
+lunr: true
 title: Transforming outgoing data
 description: Learn how to use transform functions to manipulate data before it leaves the server
 ---

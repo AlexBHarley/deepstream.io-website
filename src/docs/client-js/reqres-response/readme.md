@@ -1,4 +1,5 @@
 ---
+lunr: true
 title: RPC Response
 description: The API docs for deepstream's RPC response object
 ---

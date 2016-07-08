@@ -1,4 +1,5 @@
 ---
+lunr: true
 title: RPC
 description: The API docs for remote procedure calls, deepstream's request-response mechanism
 ---

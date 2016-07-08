@@ -14,6 +14,11 @@
 .desktop-nav li:hover {
 	opacity: 0.2;
 }
+
+.desktop-nav li.search:hover {
+	opacity: 1;
+}
+
 /****************************
 * MOBILE NAVIGATION
 ****************************/

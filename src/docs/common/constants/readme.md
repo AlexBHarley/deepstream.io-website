@@ -1,4 +1,5 @@
 ---
+lunr: true
 title: Constants
 description: A list of all constants deepstream uses
 ---

@@ -1,4 +1,5 @@
 ---
+lunr: true
 title: Options
 description: The options that the deepstream javascript client can be initialized with
 ---

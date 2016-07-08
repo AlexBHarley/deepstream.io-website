@@ -60,29 +60,42 @@
 
 // for docs pages
 function searchAutocomplete() {
-    $(".main-search").autocomplete({
-        appendTo: '.main-serach-results',
-        source: "/search",
-        minLength: 3,
-        focus: function( event, ui ) {
-            return false;
-        },
-        select: function( event, ui ) {
-            window.location = '/' + ui.item.slug;
-            return false;
-        }
-    }).autocomplete( "instance" )._renderItem = function( ul, item ) {
-      var otherOccurrences = item.occurrences.length > 2 ? ' other occurrences' : ' other occurrence'
-      return $( "<li>" )
-        .append( "<a target='_blank' href='/" + item.slug + "' title='" + item.slug + "'>" +
-            '<strong>' + item.title + "</strong><br>" + '<em>' + (item.occurrences[0] || '') + '</em>' +
-            ((item.occurrences.length > 1) ? (' and ' + (item.occurrences.length - 1) + otherOccurrences) : '')
-            + "</a>"
-        )
-        .appendTo( ul );
-    };
-    $("input.main-search").on('focus', function() {
-        $("ul.ui-autocomplete").show()
+    $.get('/searchIndex.json').success(function(data) {
+        window.lunr_search_idx = data;
+        var idx = lunr.Index.load(data);
+        window.lunr_idx = idx;
+
+        $(".main-search").autocomplete({
+            appendTo: '.main-serach-results',
+            source: function(request, response) {
+                var results = idx.search(request.term).filter(function(item) {
+                    if (item.ref.indexOf('index.md') !== -1) {
+                        return false;
+                    }
+                    return true;
+                })
+                return response(results);
+            },
+            minLength: 3,
+            focus: function( event, ui ) {
+                return false;
+            },
+            select: function( event, ui ) {
+                window.location = '/' + ui.item.slug;
+                return false;
+            }
+        }).autocomplete( "instance" )._renderItem = function( ul, item ) {
+            var link = item.ref.split('__')[0].split('/');
+            link.pop();
+            link = link.join('/') + '/';
+            var title = item.ref.split('__')[1];
+          return $( "<li>" )
+            .append( "<a href='/" + link + "'><br>" + title + "</a>")
+            .appendTo( ul );
+        };
+        $("input.main-search").on('focus', function() {
+            $("ul.ui-autocomplete").show()
+        })
     })
 }
 

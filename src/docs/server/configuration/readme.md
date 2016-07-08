@@ -1,4 +1,5 @@
 ---
+lunr: true
 title: Configuration
 description: The available configuration options to customise deepstream
 ---

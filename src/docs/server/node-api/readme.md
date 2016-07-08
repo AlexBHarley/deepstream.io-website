@@ -1,4 +1,5 @@
 ---
+lunr: true
 title: Node API
 description: API docs for using deepstream within your own node application
 ---

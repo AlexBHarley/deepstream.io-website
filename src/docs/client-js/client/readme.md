@@ -1,4 +1,5 @@
 ---
+lunr: true
 title: Javascript Client
 description: The entry point API documentation for the deepstream.io js client
 ---

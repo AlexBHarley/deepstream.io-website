@@ -1,4 +1,5 @@
 ---
+lunr: true
 title: Event Emitter
 description: API docs for deepstream's event emitter
 ---

@@ -1,4 +1,5 @@
 ---
+lunr: true
 title: Event
 description: API docs for deepstream's events, the many to many broadcasting mechanism
 ---

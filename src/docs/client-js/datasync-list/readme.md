@@ -1,4 +1,5 @@
 ---
+lunr: true
 title: List
 description: API docs for deepstream's list object, a manageable collection of record names
 ---

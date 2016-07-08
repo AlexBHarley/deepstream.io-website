@@ -1,4 +1,5 @@
 ---
+lunr: true
 title: Command Line Interface
 description: The options that can be passed to the deepstream server via the command line
 ---

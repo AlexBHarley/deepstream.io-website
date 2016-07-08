@@ -68,6 +68,34 @@ const pageGenerator = require( './page-generator' );
 metalsmith.use( pageGenerator() );
 
 /************************************
+* LUNR Serach
+***********************************/
+
+metalsmith.use(function(files, metalsmith, done) {
+	for (file in files){
+		files[file].lunrRef = file + '__' + files[file].title
+	}
+	done()
+})
+
+
+const lunr = require('metalsmith-lunr');
+const lunr_ = require('lunr');
+metalsmith.use(lunr({
+	ref: 'lunrRef',
+	fields: {
+		contents: 1,
+		description: 4,
+		tags: 10
+	},
+	pipelineFunctions: [
+		lunr_.trimmer,
+		lunr_.stopWordFilter,
+		lunr_.stemmer
+	],
+}))
+
+/************************************
 * Add Navigation
 ***********************************/
 const navigationGenerator = require( './navigation-generator' );

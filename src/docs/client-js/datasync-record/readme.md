@@ -1,4 +1,5 @@
 ---
+lunr: true
 title: Record
 description: The API docs for deepstream records
 ---

@@ -62,17 +62,6 @@
 	position: relative;
 }
 
-.search input{
-	font-size: 12px;
-	padding: 2px 5px;
-	background-color: #fff;
-	border: 1px solid #ccc;
-	border-radius: 0;
-	display: block;
-	width: 86%;
-	margin: 10px 20px;
-}
-
 .search .icon{
     position: absolute;
     right: 28px;
@@ -80,6 +69,10 @@
     pointer-events: none;
     color: #ccc;
     font-size: 14px;
+}
+
+.ui-menu .ui-state-focus {
+	margin: 0;
 }
 
 /*************************

@@ -1,4 +1,5 @@
 ---
+lunr: true
 title: Record Factory
 description: This class gives you access to all methods related to data-sync
 ---

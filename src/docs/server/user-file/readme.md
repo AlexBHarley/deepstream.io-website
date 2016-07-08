@@ -1,4 +1,5 @@
 ---
+lunr: true
 title: User File
 description: The API on how you can configure and use file based authentication
 ---
