@@ -31,6 +31,14 @@ module.exports = function( metalsmith ) {
 
 			file = files[ filePath ];
 
+			file.type = {
+				install : file.level1 === 'install',
+				tutorials : file.level1 === 'tutorials',
+				docs : file.level1 === 'docs',
+				blog : file.level1 === 'blog',
+				info : file.level1 === 'info'
+			}
+
 			if( !metadata.nav[ file.level1 ] ) {
 				metadata.nav[ file.level1 ] = {};
 			}
