@@ -30,13 +30,13 @@ Let's take a look at how the three different parts are implemented.
 
 #### PassportJS
 
-PassportJS needs to be initialised and the desired strategies added.
+PassportJS needs to be initialized and the desired strategies added.
 
 ```javascript
 var passport = require( 'passport' );
 var passportFacebook = require( 'passport-facebook' );
 
-var initialisedPassport = passport.initialize();
+var initializedPassport = passport.initialize();
 var passportSession = passport.session();
 
 passport.serializeUser( function( user, cb ) {
@@ -79,7 +79,7 @@ var session = expressSession({
 
 app.use( express.static( '../client' ) );
 app.use( session );
-app.use( initialisedPassport );
+app.use( initializedPassport );
 app.use( passportSession );
 
 app.get( '/login/facebook', passport.authenticate('facebook') );
@@ -96,7 +96,7 @@ app.get( '/login/facebook/return',
 Deepstream can use the same middleware intialised previously to check whether or not the client attempting to login has a session, and allow or deny access accordingly.
 
 ```javascript
-var middleware = [ session, initialisedPassport, passportSession ];
+var middleware = [ session, initializedPassport, passportSession ];
 var Deepstream = require( 'deepstream.io' );
 var useExpressMiddleware = require( 'use-express-middleware' );
 var PermissionHandler = require( './permission-handler' );

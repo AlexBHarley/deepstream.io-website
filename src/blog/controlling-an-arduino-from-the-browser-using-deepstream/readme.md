@@ -67,7 +67,7 @@ if (client.connect( deepstreamHost, deepstreamPort )) {
 }
 ```
 
-Note: I initialised [the connection state](/docs/common/constants/#connection-state) with AWAITING_AUTHENTICATION. This can also be initialised with CLOSE and then changed to AWAITING_AUTHENTICATION once a connection is successfully opened.
+Note: I initialized [the connection state](/docs/common/constants/#connection-state) with AWAITING_AUTHENTICATION. This can also be initialized with CLOSE and then changed to AWAITING_AUTHENTICATION once a connection is successfully opened.
 
 # Constructing Messages
 

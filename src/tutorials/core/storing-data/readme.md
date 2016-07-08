@@ -28,7 +28,7 @@ It can be used as a blazingly fast standalone server without any data-layer, but
 
 Finally, we've taken the lessons learned from fixed stack frameworks like [Meteor](https://www.meteor.com/) to heart. Deepstream is a fast and versatile realtime server - but it doesn't try to be anything more than that.
 
-We believe that web technology is moving away from the monolithic enterprise stacks of the past towards a vibrant ecosystem of highly specialised microservices - and our goal is to make deepstream thrive within this ecosystem by making it usable with as many programming languages, frontend frameworks, databases, caches, message-busses, loggers, identity management systems or deployment environments possible.
+We believe that web technology is moving away from the monolithic enterprise stacks of the past towards a vibrant ecosystem of highly specialized microservices - and our goal is to make deepstream thrive within this ecosystem by making it usable with as many programming languages, frontend frameworks, databases, caches, message-busses, loggers, identity management systems or deployment environments possible.
 
 ## Connecting to a cache or database
 deepstream uses different types of "connectors" - plugins that enable it to interface with other systems.
@@ -44,7 +44,7 @@ When it comes to choosing a database and cache, there are a few things to take i
 
 - **Choose systems that complement each other** Some caches like Redis store data to disk and can be used without a database. Some systems like Hazelcast or Redis offer both caching and pub/sub messaging, eliminating the need for a separate message-bus. Some in-memory only caches like Memcached are extremely fast, but need to be backed by a database for persistent storage. Some databases offer very fast read performance and a build-in caching layer, so could be used by themselves (make sure to register them as a cache though since otherwise deepstream might fall back to its internal cache and use the potentially stale data within).
 
-- **Object/Document/NoSQL databases make more sense than relational ones** deepstream's data-structures are small, independent chunks of JSON, identified by a unique key that can be organised in collections. This makes them a natural fit for object or document oriented databases like Mongo, Rethink or Couch. Deepstream also works with relational databases like MySQL, PostGre or Oracle, but doesn't take advantage of their data-modelling capabilities.
+- **Object/Document/NoSQL databases make more sense than relational ones** deepstream's data-structures are small, independent chunks of JSON, identified by a unique key that can be organized in collections. This makes them a natural fit for object or document oriented databases like Mongo, Rethink or Couch. Deepstream also works with relational databases like MySQL, PostGre or Oracle, but doesn't take advantage of their data-modelling capabilities.
 
 - **Be careful when using external x-as-a-service providers**
 It can be tempting to use a fully managed cache from an infrastructure-as-a-service provider, but be aware if its hosted outside of your datacenter: deepstream constantly interacts with its cache and every millisecond in network latency will slow down your application considerably.

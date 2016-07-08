@@ -4,7 +4,7 @@ description: Learn how to use Hazelcast with deepstream
 ---
 
 #### What is Hazelcast?
-Hazelcast is a distributed caching layer, organised as a grid of independent nodes that sync their state. On top of that, Hazelcast allows to perform computations based on the stored data and even supports basic server side messaging.
+Hazelcast is a distributed caching layer, organized as a grid of independent nodes that sync their state. On top of that, Hazelcast allows to perform computations based on the stored data and even supports basic server side messaging.
 
 #### Why use Hazelcast with deepstream?
 Hazelcast can be a good choice as a fast and scalable caching layer for deepstream. It can outperform other caches like Redis in cluster-mode, but is a bit trickier to set up.

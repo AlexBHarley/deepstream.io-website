@@ -1,6 +1,6 @@
 ---
 title: RPC
-description: The API docs for Remote Procedure Calls, deepstream's request-response mechanism
+description: The API docs for remote procedure calls, deepstream's request-response mechanism
 ---
 
 RPCs (Remote Procedure Calls, sometimes also referred to as Remote Method Invocation) is deepstream's implementation of request-response workflows.

@@ -1,6 +1,6 @@
 ---
 title: Message Structure Overview
-description: An overview over deepstreams internal message structure
+description: An overview over deepstream's internal message structure
 ---
 
 Deepstream messages are transmitted using a proprietary, minimal, string-based protocol. Every message follows the same structure:

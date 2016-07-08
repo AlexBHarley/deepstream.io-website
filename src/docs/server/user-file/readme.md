@@ -1,6 +1,6 @@
 ---
 title: User File
-description: The API to how you can configure and use file based authentication
+description: The API on how you can configure and use file based authentication
 ---
 
 This file is used in conjunction with [file-based authentication](../../tutorial/core/auth-file/). It is structured as a map of usernames and their associated passwords and optional auth data.

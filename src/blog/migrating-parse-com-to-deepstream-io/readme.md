@@ -41,7 +41,7 @@ gameScore = ds.record.getRecord( 'gamescore/yankees-vs-mets-2015' );
 gameScore = ds.record.getRecord( 'gamescore/' + ds.getUid() ); // or just generate a Unique ID
 ```
 
-This highlights an important difference between Parse and deepstream. Following Backbone.js principles, Parse automatically organises objects in collections. When you specify a class of type `GameScore`, Parse saves every new instance automatically to the GameScore collection. 
+This highlights an important difference between Parse and deepstream. Following Backbone.js principles, Parse automatically organizes objects in collections. When you specify a class of type `GameScore`, Parse saves every new instance automatically to the GameScore collection. 
 [Deepstream also offers a concept of collections, called `Lists`](//deepstream.io/tutorials/lists.html), but records have to be explicitly added to them.
 
 #### Getting values

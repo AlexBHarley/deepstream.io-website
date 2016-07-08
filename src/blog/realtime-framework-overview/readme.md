@@ -145,7 +145,7 @@ It’s probably fair to say that Meteor is one of the most polarizing entries in
 Its critics frequently mention Meteor’s inflexibility, its inability to swap critical components (e.g. to use it with a database other than MongoDB), slow speed and lack of transparency of what happens behind the scenes.
 With over 30M in Venture Funding and extensive Facebook campaigns, Meteor is also one of the few commercial offerings in this space.
 
-At the bottom line, Meteor comes down to the usual trade-off presented by full stack frameworks: If your use case is a good fit for Meteor, it will save you an awful lot of development time and headaches. If you seek flexibility, you're most likely better of with a combination of smaller, more specialised components
+At the bottom line, Meteor comes down to the usual trade-off presented by full stack frameworks: If your use case is a good fit for Meteor, it will save you an awful lot of development time and headaches. If you seek flexibility, you're most likely better of with a combination of smaller, more specialized components
 
 #### [Kuzzle.io](http://kuzzle.io/)
 A new entry to this list and still in beta, Kuzzle is an interesting new contender for the Meteor crown. It's a Node.js server that connects to ElasticSearch and Redis and offers data-sync, pub-sub and realtime querying via a number of protocols such as WebSocket, REST, AMQP, MQTT and STOMP.

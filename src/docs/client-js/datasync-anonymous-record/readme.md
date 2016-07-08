@@ -1,5 +1,5 @@
 ---
-title: AnonymousRecord
+title: Anonymous Record
 description: Learn how to use anonymous records to switch context without having to renew bindings
 ---
 

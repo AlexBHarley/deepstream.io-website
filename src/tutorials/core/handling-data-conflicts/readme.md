@@ -19,7 +19,7 @@ deepstream assumes a write conflict. It will keep the current version and send a
 If versions have gotten out of sync, the server will attempt a reconciliation. Currently only simple resets are supported, but the feature is being actively improved and extended.
 
 ## Handling merge conflicts
-Merge conflicts are handled by `MERGE_STRATEGY` functions. These are exposed by the `deepstream` object and can be set globally when the client is initialised or on a per record basis.
+Merge conflicts are handled by `MERGE_STRATEGY` functions. These are exposed by the `deepstream` object and can be set globally when the client is initialized or on a per record basis.
 
 ```javascript
 // Set merge strategy globally when initialising the client
