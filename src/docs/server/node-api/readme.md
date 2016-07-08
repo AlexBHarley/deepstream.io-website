@@ -49,7 +49,7 @@ Stops the server.
 This method allows you to overwrite particular configuration options which were built via the
 configuration initialization step.
 
-💡 **NOTE:** If deepstream is initialized with a configuration object, `set()` will override tje emtries in your initial configuration. This is useful for passing in objects which are shared between deepstream and the rest of your application, such as a HTTPServer or cache connector. You can override any of the options using the same name within your [configuration](/docs/server/configuration), except for the notable difference(s) below.
+💡 **NOTE:** If deepstream is initialized with a configuration object, `set()` will override the keys in your initial configuration. This is useful for passing in objects which are shared between deepstream and the rest of your application, such as a HTTPServer or cache connector. You can override any of the options using the same name within your [configuration](/docs/server/configuration), except for the notable difference(s) below.
 
 ```
 {{#table mode="api"}}

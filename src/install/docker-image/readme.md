@@ -18,7 +18,7 @@ Docker provides a lightweight solution to spin up fully functioning deepstream e
 ### How to use Docker with deepstream?
 In this tutorial we'll install a standalone Docker image and create a container. The image contains deepstream's source code as well as everything else necessary to run deepstream from source.
 
-If you'd like a bit more than just a single deepstream node, head over to the [Docker Compose tutorial](../other-docker-compose/), describing how to set up multiple connected database, cache and search containers that act as the message and storage layer for deepstream.
+If you'd like a bit more than just a single deepstream node, head over to the [Docker Compose tutorial](../docker-compose/), describing how to set up multiple connected database, cache and search containers that act as the message and storage layer for deepstream.
 
 Let's start by installing the image from the DockerHub registry by running this command:
 
