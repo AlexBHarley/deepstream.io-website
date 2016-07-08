@@ -1,0 +1,9 @@
+.site-wrapper {
+	min-height: 0%;
+}
+
+h1 {
+  text-align: center;
+  font-size: 40px;
+  margin: 250px 0;
+}

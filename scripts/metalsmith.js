@@ -85,7 +85,7 @@ metalsmith.use(metalsmithLayouts({
 	'engine': 'handlebars',
 	'default': 'main-layout.html',
 	'directory': '../layouts',
-	'pattern': [ '**/index.md', '**/index.html' ]
+	'pattern': [ '404.html', '**/index.md', '**/index.html' ]
 }));
 
 /************************************

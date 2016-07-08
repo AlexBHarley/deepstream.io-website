@@ -5,7 +5,7 @@ description: The API docs for deepstream's runtime errors
 
 Errors are used throughout deepstream. They can be accessed via the module.
 
-```
+```javascript
 const deepstream = require('deepstream.io-client-js')
 deepstream.CONSTANTS.EVENTS
 ```

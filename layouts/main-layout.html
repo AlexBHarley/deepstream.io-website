@@ -19,7 +19,7 @@
 	{{!-- Styles'n'Scripts --}}
 
 	<link rel="stylesheet" href="{{asset 'css/screen.css' }}" />
-	<link rel="stylesheet" href="{{asset 'css/hljs-rainbow.css' }}" />
+	<link rel="stylesheet" href="{{asset 'css/prism.css' }}" />
 	<link rel="stylesheet" href="{{asset 'css/deepstream.css' }}" />
 	<link rel="stylesheet" href="{{asset 'css/footer.css' }}" />
 	<link rel="stylesheet" href="{{asset 'css/ionicons.min.css' }}" />
@@ -57,12 +57,7 @@
 	{{!-- Fitvids makes video embeds responsive and awesome --}}
 	<script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
 	<script type="text/javascript" src="{{asset "js/index.js"}}"></script>
-	<script src="{{asset "js/highlight.pack.js"}}"></script>
-	<script>
-	  (function() {
-		hljs.initHighlighting()
-	  })()
-	</script>
+	<script type="text/javascript" src="{{asset 'js/prism.js' }}"></script>
 	<script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'share.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}id=id+'_';})()
 	</script>
 </body>

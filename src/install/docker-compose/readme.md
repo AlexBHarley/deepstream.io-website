@@ -97,7 +97,7 @@ plugins:
 
 Now you can run all containers with just one command:
 
-```
+```bash
 docker-compose up
 ```
 

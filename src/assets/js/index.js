@@ -139,7 +139,7 @@ $(function(){
             $( '.col.big.right .content' ).html( result );
 
             $('.content pre code').each(function(i, block) {
-                    hljs.highlightBlock(block);
+                Prism.highlightElement( block );
             });
         });
     };

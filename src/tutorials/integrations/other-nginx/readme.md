@@ -50,7 +50,7 @@ sudo make install
 ## Configuring nginx as a stream proxy / load balancer
 The following configuration shows how to use nginx as a load balancer, SSL termination point and reverse proxy for HTTP, WS and TCP connections. If you only want to use parts of this functionality, remove the unneeded bits.
 
-```bash
+```nginx
 worker_processes  1;
 
 error_log /usr/local/nginx/logs/error.log info;

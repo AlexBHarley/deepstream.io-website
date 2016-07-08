@@ -91,7 +91,7 @@ client.login({username: 'peter', password: 'sesame'}, (success, data) => {
 Closes the connection to the server.
 
 ```javascript
-client.on('connectionStateChanged', connectionState => {
+client.on('connectionStateChanged', connectionState) => {
   // will be called with 'CLOSED' once the connection is successfully closed.
 })
 

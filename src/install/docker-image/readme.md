@@ -22,13 +22,13 @@ If you'd like a bit more than just a single deepstream node, head over to the [D
 
 Let's start by installing the image from the DockerHub registry by running this command:
 
-```
+```bash
 docker pull deepstreamio/deepstream.io
 ```
 
 Now create a container from this image and assign the container's name to `deepstream.io`:
 
-```
+```bash
 docker create -t -p 6020:6020 -p 6021:6021 \
   --name deepstream.io \
   -v $(pwd)/conf:/usr/local/deepstream/conf \
@@ -38,14 +38,14 @@ docker create -t -p 6020:6020 -p 6021:6021 \
 
 Now you can start the container via
 
-```
+```bash
 docker start -ia deepstream.io
 ```
 
 This will start the container in the foreground. You can press <kbd>Ctrl</kbd>+<kbd>c</kbd> but
 the container will still be alive. To stop the container you need to run
 
-```
+```bash
 docker stop deepstream.io
 ```
 
@@ -53,7 +53,7 @@ In case you want to start it in the background just omit the `-ia` option.
 
 You can show the logs with this command:
 
-```
+```bash
 docker logs -f deepstream.io
 ```
 
