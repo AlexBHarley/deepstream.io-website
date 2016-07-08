@@ -132,8 +132,6 @@ h3.icon-divider span.text {
 * ***********************/
 nav{
 	background-color: #0FBBEC;
-	position: relative;
-	z-index: 12;
 }
 
 nav .wrapper{
@@ -153,17 +151,16 @@ nav .links a{
 	cursor: pointer;
 }
 
-#logo{
-	display: inline-block;
-}
+/****************************
+* Logo
+****************************/
 
-#logo svg{
+.header-logo svg{
 	width: 50px;
-	display: inline-block;
 	margin: 10px 0 6px;
 }
 
-#logo span{
+.header-logo span{
 		display: inline-block;
 		vertical-align: top;
 		padding-top: 27px;
@@ -173,11 +170,57 @@ nav .links a{
 		font-size: 20px;
 }
 
-#logo span em{
+.header-logo span em{
 	font-size: 21px;
 	font-weight: 400;
-		color: #C2EEFA;
+	color: #C2EEFA;
 }
+
+/****************************
+* HIRING LINK
+****************************/
+.header-logo {
+	display: inline-block;
+}
+
+.header-logo .header-hiring-link, .header-logo .header-hiring-link:hover {
+	text-decoration: initial;
+}
+
+.header-logo .header-hiring-text {
+		font-family: 'Roboto';
+		left: 10px;
+		font-size: 12px;
+		border: 1px solid white;
+		border-radius: 2px;
+		padding: 1px 5px;
+		background-color: white;
+		color: #145068;
+		font-weight: 500;
+		position: relative;
+		top: 25px;
+}
+
+.header-logo .header-hiring-text:after  {
+		content: '';
+		position: absolute;
+		border-width: 4px 6px 4px 0;
+		border-style: solid;
+		border-color: transparent #FFFFFF;
+		left: -6px;
+		top: 5px;
+}
+
+.header-logo .header-hiring-text:hover  {
+		color: #1c99bd;
+}
+
+@media( max-width: 360px ) {
+	.header-logo .header-hiring-link {
+		display: none;
+	}
+}
+
 
 /*************************
 * MAIN SEARCH
@@ -246,10 +289,10 @@ nav .links a{
 
 #support button, #support a.button {
 	width: 130px;
-    border: 1px solid #fff;
-    box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-    clear: both;
-    display: block;
-    margin: 18px auto;
-    padding: 10px;
+		border: 1px solid #fff;
+		box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+		clear: both;
+		display: block;
+		margin: 18px auto;
+		padding: 10px;
 }

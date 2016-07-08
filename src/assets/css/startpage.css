@@ -1,11 +1,6 @@
 /*************************
 * Header
 * ***********************/
-nav{
-	background-color: #0FBBEC;
-	z-index: 12;
-}
-
 header.main-header{
 	background: #0FBBEC;
 	position: relative;
