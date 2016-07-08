@@ -19,8 +19,8 @@ var sort = function( nav ) {
 	return ordered;
 };
 
-module.exports = function( metalsmith ) {
-	metalsmith.use(function( files, metalsmith, done ) {
+module.exports = function() {
+	return function( files, metalsmith, done ) {
 		var metadata = metalsmith.metadata();
 		metadata.nav = {};
 
@@ -70,6 +70,6 @@ module.exports = function( metalsmith ) {
 			}.bind( null, files[ filePath ] ) );
 		}
 
-		return done();
-	});
+		done();
+	}
 }

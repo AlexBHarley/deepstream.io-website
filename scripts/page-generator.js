@@ -54,7 +54,7 @@ function createSubsection( files, data, filePath ) {
 
 module.exports = function( metalsmith ) {
 	var data;
-	metalsmith.use(function( files, metalsmith, done ) {
+	return function( files, metalsmith, done ) {
 		var metadata = metalsmith.metadata();
 		metadata.nav = {};
 
@@ -117,8 +117,8 @@ module.exports = function( metalsmith ) {
 				merge( file, data );
 			}
 		}
-		return done();
-	});
+		done();
+	}
 }
 
 function ensureMandatoryProperties(file) {

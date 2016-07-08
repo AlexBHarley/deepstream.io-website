@@ -5,7 +5,7 @@
 const path = require('path')
 const colors = require('colors')
 
-module.exports = function( metalsmith ) {
+module.exports = function() {
 	var file;
 	var results;
 	var html;
@@ -13,7 +13,7 @@ module.exports = function( metalsmith ) {
 	// of HTML snippet which filename is not index.html
 	var regex = /\shref="([^"]*)"(?! data-fetch="ajax")/g
 
-	metalsmith.use(function( files, metalsmith, done ) {
+	return function( files, metalsmith, done ) {
 		console.log('starting link-checker'.cyan)
 		var metadata = metalsmith.metadata()
 
@@ -49,8 +49,8 @@ module.exports = function( metalsmith ) {
 			}
 		}
 
-		return done();
-	})
+		done();
+	}
 }
 
 function printWarning(link, filePath, files) {

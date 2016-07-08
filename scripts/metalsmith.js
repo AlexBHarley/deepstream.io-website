@@ -31,31 +31,31 @@ metalsmith.use(metalsmithRegisterHelper( {
 * Normalise Paths
 ***********************************/
 const pathNormalise = require( './path-normalise' );
-pathNormalise( metalsmith );
+metalsmith.use( pathNormalise() );
 
 /************************************
 * Generate Specs
 ***********************************/
 const specsGenerator = require( './specs-generator' );
-specsGenerator( metalsmith );
+metalsmith.use( specsGenerator() );
 
 /************************************
 * Generate Blog
 ***********************************/
 const blogGenerator = require( './blog-generator' );
-blogGenerator( metalsmith );
+metalsmith.use( blogGenerator() );
 
 /************************************
 * Generate Missing Pages
 ***********************************/
 const pageGenerator = require( './page-generator' );
-pageGenerator( metalsmith );
+metalsmith.use( pageGenerator() );
 
 /************************************
 * Add Navigation
 ***********************************/
 const navigationGenerator = require( './navigation-generator' );
-navigationGenerator( metalsmith );
+metalsmith.use( navigationGenerator() );
 
 /************************************
 * IN PLACE
@@ -93,7 +93,19 @@ metalsmith.use(metalsmithLayouts({
 ***********************************/
 if (cli.brokenLinks || cli.production) {
 	var linkChecker = require('./link-checker');
-	linkChecker(metalsmith);
+	metalsmith.use(linkChecker());
+}
+
+/************************************
+* S3 Deployment
+***********************************/
+if (cli.deploy) {
+	var s3 = require('metalsmith-s3');
+	metalsmith.use(s3({
+		action: 'write',
+		bucket: 'deepstream.io-metal',
+		region: 'eu-central-1'
+	}));
 }
 
 metalsmith.use(function(done) {

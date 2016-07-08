@@ -1,8 +1,8 @@
 /************************************
  * Normalise Paths between os systems
  ***********************************/
-module.exports = function( metalsmith ) {
-	metalsmith.use(function( files, metalsmith, done ) {
+module.exports = function() {
+	return function( files, metalsmith, done ) {
 		var metadata = metalsmith.metadata();
 
 		var fileParts;
@@ -18,6 +18,6 @@ module.exports = function( metalsmith ) {
 			files[ filePath ] = file;
 		}
 
-		return done();
-	});
+		done();
+	}
 }

@@ -36,8 +36,9 @@ var sortBlogs = function( blogPosts ) {
 	}
 };
 
-module.exports = function( metalsmith ) {
-	metalsmith.use(function( files, metalsmith, done ) {
+module.exports = function() {
+
+	return function( files, metalsmith, done ) {
 		var metadata = metalsmith.metadata();
 		metadata.blogPosts = [];
 
@@ -54,6 +55,6 @@ module.exports = function( metalsmith ) {
 		}
 		sortBlogs( metadata.blogPosts );
 
-		return done();
-	});
+		done();
+	}
 }

@@ -3,6 +3,7 @@
 var program = require('commander');
 
 program
+	.option('--deploy', 'Deploy to S3')
 	.option('-d, --drafts', 'Disable draft mode')
 	.option('-m, --missing-meta', 'Show missing meta')
 	.option('-l, --broken-links', 'Show broken links')
