@@ -47,15 +47,13 @@ Start the Deepstream server and you should see the authentication type confirmed
 In your application code you can now connect to the Deepstream server and try to login a user.
 
 ```javascript
-var deepstream = require( 'deepstream.io-client-js' );
-var ds = deepstream( 'localhost:6021' );
+const deepstream = require('deepstream.io-client-js')
+const client = deepstream('localhost:6021')
 
-ds.login({
-    username: 'chris',
-    password: 'password' // NEEDS TO BE REAL
-}, function( success, errorCode, data ){
-  ...
-});
+client.login({
+  username: 'chris',
+  password: 'password' // NEEDS TO BE REAL
+})
 ```
 
 If a success, the Deepstream console will show:
@@ -69,15 +67,15 @@ And if a failure:
 You can then handle the outcome of the login request in your JavaScript code, for example:
 
 ```javascript
-ds.login({
-    username: 'chris',
-    password: 'password' // NEEDS TO BE REAL
-}, function( success, data ){
-    if (success === true) {
-      // Handle a successful login
-    } else {
-      // Handle an incorrect login, the errorCode is available
-      console.log(errorCode)
-    }
-});
+client.login({
+  username: 'chris',
+  password: 'password' // NEEDS TO BE REAL
+}, (success, data) => {
+  if (success === true) {
+    // Handle a successful login
+  } else {
+    // Handle an incorrect login, the errorCode is available
+    console.log(errorCode)
+  }
+})
 ```

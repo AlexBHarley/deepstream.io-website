@@ -24,7 +24,7 @@ The Deepstream startup log should confirm that authentication is disabled.
 **Please note** Even with authentication type `none`, users can still provide an (unverified) username by sending `{username: 'johndoe'}` at login.
 
 ```javascript
-ds = deepstream( 'localhost:6020' ).login({ username: 'johndoe' });
+client = deepstream('localhost:6020').login({username: 'johndoe'})
 ```
 
 If no username is provided, deepstream will default to `OPEN`.

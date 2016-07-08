@@ -7,7 +7,7 @@ Events are deepstream's implementation of the publish/subscribe pattern. You can
 
 ## Methods
 
-### ds.event.subscribe( event, callback )
+### client.event.subscribe( event, callback )
 {{#table mode="api"}}
 -
   arg: event
@@ -25,7 +25,7 @@ Subscribes to an event. Callback will receive the data passed to `emit()`
 
 ```javascript
 // client a
-ds.event.subscribe( 'news/sports', function( news ){
+client.event.subscribe( 'news/sports', function( news ){
   // show news
 });
 
@@ -36,7 +36,7 @@ client.event.emit( 'news/sports', {
 });
 ```
 
-### ds.event.unsubscribe( event, callback )
+### client.event.unsubscribe( event, callback )
 {{#table mode="api"}}
 -
   arg: event
@@ -56,7 +56,7 @@ Unsubscribes from an event that was previously registered with `subscribe()`. Th
   client.event.unsubscribe( 'news/politics', callback );
 ```
 
-### ds.event.emit( event, data )
+### client.event.emit( event, data )
 {{#table mode="api"}}
 -
   arg: event
@@ -77,7 +77,7 @@ Sends the event to all subscribed clients
 ```
 
 
-### ds.event.listen( pattern, callback )
+### client.event.listen( pattern, callback )
 {{#table mode="api"}}
 -
   arg: pattern
@@ -103,7 +103,7 @@ The callback is invoked with two arguments:
   });
 ```
 
-### ds.event.unlisten( pattern )
+### client.event.unlisten( pattern )
 {{#table mode="api"}}
 -
   arg: pattern

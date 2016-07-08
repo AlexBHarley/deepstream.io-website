@@ -10,7 +10,7 @@ deepstream and react share the same belief: apps are best composed from reusable
 To make this easier, we've developed **deepstream-react** - a mixin that let's you add realtime sync to any component with just a single line of code.
 
 ```javascript
-mixins: [ DeepstreamReact ],
+mixins: [DeepstreamReact]
 ```
 
 ## How to use deepstream-react
@@ -33,38 +33,38 @@ npm install deepstream.io-client-js deepstream.io-tools-react --save
 Next: connect to the server, log in and register the client instance with deepstream-react. Sounds tougher than it is:
 
 ```javascript
-var deepstreamClient = require( 'deepstream.io-client-js' );
-var DeepstreamMixin = require( 'deepstream.io-tools-react' );
+const deepstream = require('deepstream.io-client-js')
+const DeepstreamMixin = require('deepstream.io-tools-react')
 
-ds = deepstreamClient( 'localhost:6020' ).login({}, function(){
-    //ReactDOM.render call will go in here
-});
-DeepstreamMixin.setDeepstreamClient( ds );
+const client = deepstream('localhost:6020').login({}, () => {
+  //ReactDOM.render call will go in here
+})
+DeepstreamMixin.setDeepstreamClient(client)
 ```
 
 Every deepstream record is identified by a unique name. To tell your component which record it should use, you need to specify a `dsRecord` property.
 
-```javascript
+```jsx
 ReactDOM.render(
-    <SyncedInput dsRecord="some-input" />,
-    document.getElementById( 'example' )
-);
+  <SyncedInput dsRecord="some-input" />,
+  document.getElementById('example')
+)
 ```
 
 And that's it. Just write your react-components as usual, all changes will be persisted and synced via deepstream.
 
 ```jsx
-var SyncedInput = React.createClass({
-    mixins: [ DeepstreamMixin ],
-    setValue: function( e ) {
-        this.setState({ value: e.target.value });
-    },
-    render: function() {
-        return (
-            <input value={this.state.value} onChange={this.setValue} />
-        )
-    }
-});
+const SyncedInput = React.createClass({
+  mixins: [DeepstreamMixin],
+  setValue: function(e) {
+    this.setState({value: e.target.value})
+  },
+  render: function() {
+    return (
+      <input value={this.state.value} onChange={this.setValue} />
+    )
+  }
+})
 ```
 
 You can find also the code for this example on [Github](https://github.com/deepstreamIO/ds-tutorial-react/tree/master/synced-input)

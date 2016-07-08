@@ -3,7 +3,7 @@ title: Record Factory
 description: This class gives you access to all methods related to data-sync
 ---
 
-`ds.record` gives you access to all methods related to data-sync.
+`client.record` gives you access to all methods related to data-sync.
 
 ## Prerequisite
 

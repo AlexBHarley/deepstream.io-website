@@ -127,8 +127,8 @@ Adds a new record name to the list.
 
 ```javascript
 function addCar( number ) {
-  var id = 'car/' + ds.getUid();
-  ds.record.getRecord( id ).set( 'number', number );
+  var id = 'car/' + client.getUid();
+  client.record.getRecord( id ).set( 'number', number );
   list.addEntry( id );
 }
 ```

@@ -46,7 +46,7 @@ It's what we chose for browser communication in deepstream.io after extensive te
 A solid, barebone WebSocket server for node. Used by engine.io
 
 #### [SockJS](https://github.com/sockjs/sockjs-client)
-A fast JavaScript / NodeJS abstraction layer for websockets, supporting a number of fallback techniques
+A fast JavaScript / Node.js abstraction layer for websockets, supporting a number of fallback techniques
 
 #### [Primus](https://github.com/primus/primus)
 If commitment is not for you, Primus is. Its not a connectivity library in itself, but an abstraction layer that allows you to switch your connectivity library once the initial romance has worn off.
@@ -85,10 +85,10 @@ WebSocket abstraction for Ruby
 Pub/Sub is a simple, widely adopted pattern for realtime messaging. If you've ever used an event-emitter, you already know the concept. Many clients subscribe to a topic (sometimes also called an event, namespace or channel) and other clients publish messages on that topic. This is a simple and scalable pattern for many-to-many communication.
 
 #### [socket.io](http://socket.io/)
-Definitely the most popular entry in this list. Socket.io is a NodeJS library that comes with clients in many languages. It offers direct messaging and pub-sub based on rooms (think chat-rooms) with the ability to distribute load across multiple nodes using a Redis server in the background.
+Definitely the most popular entry in this list. Socket.io is a Node.js library that comes with clients in many languages. It offers direct messaging and pub-sub based on rooms (think chat-rooms) with the ability to distribute load across multiple nodes using a Redis server in the background.
 
 #### [socket cluster](http://socketcluster.io/)
-A pub-sub framework built in NodeJS that focuses on load-balancing connections across a larger cluster of processes.
+A pub-sub framework built in Node.js that focuses on load-balancing connections across a larger cluster of processes.
 
 #### [Faye](http://faye.jcoglan.com/)
 One of the first pub/sub systems around. Faye offers servers in both Ruby and Node and implements the Bayeux Protocol, designed 2007 by the Dojo foundation. Similar to socket.io, Faye relies on Redis pub/sub to scale across multiple nodes. It does however lack support for Redis clusters which limits its scalability to a single Redis instance.
@@ -114,7 +114,7 @@ Data-sync models your data as observable objects or tree-structures that can be 
 This significantly reduces request-overhead, makes applications faster and development simpler.
 
 #### [Horizon](https://horizon.io/)
-The youngest, but certainly one of the most promising entries in this list is RethinkDB’s Horizon - a NodeJS server and associated JavaScript client library that sits on top of RethinkDB and exposes its database and realtime querying capabilities to browser apps.
+The youngest, but certainly one of the most promising entries in this list is RethinkDB’s Horizon - a Node.js server and associated JavaScript client library that sits on top of RethinkDB and exposes its database and realtime querying capabilities to browser apps.
 
 Horizon supports authentication via openAuth and JSON webtoken and access control via TOML configured permissions for user groups
 
@@ -148,7 +148,7 @@ With over 30M in Venture Funding and extensive Facebook campaigns, Meteor is als
 At the bottom line, Meteor comes down to the usual trade-off presented by full stack frameworks: If your use case is a good fit for Meteor, it will save you an awful lot of development time and headaches. If you seek flexibility, you're most likely better of with a combination of smaller, more specialised components
 
 #### [Kuzzle.io](http://kuzzle.io/)
-A new entry to this list and still in beta, Kuzzle is an interesting new contender for the Meteor crown. It's a NodeJS server that connects to ElasticSearch and Redis and offers data-sync, pub-sub and realtime querying via a number of protocols such as WebSocket, REST, AMQP, MQTT and STOMP.
+A new entry to this list and still in beta, Kuzzle is an interesting new contender for the Meteor crown. It's a Node.js server that connects to ElasticSearch and Redis and offers data-sync, pub-sub and realtime querying via a number of protocols such as WebSocket, REST, AMQP, MQTT and STOMP.
 
 #### [Autobahn](http://autobahn.ws/)
 Autobahn offers Pub/Sub and RPC. It's a server implementing the WAMP (Web Application Messaging Protocol) spec and offers a selection of clients for JS, Python, Android and C++.

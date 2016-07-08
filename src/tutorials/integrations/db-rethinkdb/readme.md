@@ -16,7 +16,7 @@ RethinkDB’s realtime search makes it a great fit as a datastore within a deeps
 Not really. We’ve used RethinkDB extensively within internal architectures and can very much recommend it. As database lifecycles go, it’s still very young and unestablished, but seeing increasing adoption. At the moment, the realtime querying capabilities aren’t compatible with all query types (e.g. aggregate queries like averages etc. aren’t supported), sharding is limited to 64 nodes and load balancing / shard accessing can require connection redirects.
 
 #### What about Horizon.io?
-RethinkDB offers a NodeJS module called [horizon](https://horizon.io/). If you’re looking to access RethinkDB’s querying capabilities via ReQL directly from the browser, this will be a better choice.
+RethinkDB offers a Node.js module called [horizon](https://horizon.io/). If you’re looking to access RethinkDB’s querying capabilities via ReQL directly from the browser, this will be a better choice.
 Deepstream in comparison is a full, data-base agnostic realtime server. It provides higher level structures like data-sync, pub/sub and request/response, making it more flexible. Deepstream is horizontally scalable via clustering and is highly tuned for performance and speed, using an intermediate caching layer for faster data-access.
 
 #### How to use RethinkDB with deepstream.io
@@ -38,7 +38,7 @@ deepstream.exe install storage rethinkdb
 resulting in
 ![deepstream RethinkDB connector install command line output](rethinkdb-deepstream-install-console-output.png)
 
-If you're using deepstream's NodeJS interface, you can also install it as an [NPM module](https://www.npmjs.com/package/deepstream.io-storage-rethinkdb)
+If you're using deepstream's Node.js interface, you can also install it as an [NPM module](https://www.npmjs.com/package/deepstream.io-storage-rethinkdb)
 
 **Configuring the RethinkDB storage connector**
 You can configure the storage connector plugin in deepstream with the following options:
@@ -84,29 +84,29 @@ The RethinkDB search provider is an independent process that sits between deepst
 Here's an example: Say you're storing a number of books as records.
 
 ```javascript
-ds.record.getRecord( 'book/i95ny80q-2bph9txxqxg' ).set({
-    'title': 'Harry Potter and the goblet of fire',
-    'price': 9.99
-});
+client.record.getRecord( 'book/i95ny80q-2bph9txxqxg' ).set({
+  'title': 'Harry Potter and the goblet of fire',
+  'price': 9.99
+})
 ```
 
 and use deepstream.io's RethinkDB storage connector with
 
 ```javascript
-{ splitChar: '/' }
+{splitChar: '/'}
 ```
 
 you can now search for Harry Potter books that cost less than 15.30 like this
 
 ```javascript
 var queryString = JSON.stringify({
-    table: 'book',
-    query: [
-        [ 'title', 'match', '^Harry Potter.*' ],
-        [ 'price', 'lt', 15.30 ]
-    ]
-});
-ds.record.getList( 'search?' + queryString );
+  table: 'book',
+  query: [
+    ['title', 'match', '^Harry Potter.*'],
+    ['price', 'lt', 15.30]
+  ]
+})
+client.record.getList('search?' + queryString)
 ```
 
 and the best thing is: it's in realtime. Whenever a record that matches the search criteria is added or removed, the list will be updated accordingly.

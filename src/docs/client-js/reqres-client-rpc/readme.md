@@ -7,7 +7,7 @@ RPCs (Remote Procedure Calls, sometimes also referred to as Remote Method Invoca
 
 ## Methods
 
-### ds.rpc.provide( name, callback )
+### client.rpc.provide( name, callback )
 ```
 {{#table mode="api"}}
 -
@@ -23,10 +23,10 @@ RPCs (Remote Procedure Calls, sometimes also referred to as Remote Method Invoca
 {{/table}}
 ```
 
-Registers the client as a provider for incoming RPCs of a specific name. The callback will be invoked when another client `ds.rpc.make()`.
+Registers the client as a provider for incoming RPCs of a specific name. The callback will be invoked when another client `client.rpc.make()`.
 
 ```javascript
-ds.rpc.provide( 'add-two-numbers', function( data, response ){
+client.rpc.provide( 'add-two-numbers', function( data, response ){
     response.send( data.numA + data.numB );
 });
 ```
@@ -37,7 +37,7 @@ ds.rpc.provide( 'add-two-numbers', function( data, response ){
 * Documentation for the `response` object can be found [here](../reqres-response)
 </div>
 
-### ds.rpc.unprovide( name )
+### client.rpc.unprovide( name )
 ```
 {{#table mode="api"}}
 -
@@ -51,10 +51,10 @@ ds.rpc.provide( 'add-two-numbers', function( data, response ){
 Removes the client as a provider previously registered using `provide()`.
 
 ```javascript
-ds.rpc.unprovide( 'add-two-numbers' );
+client.rpc.unprovide( 'add-two-numbers' );
 ```
 
-### ds.rpc.make( name, data, callback )
+### client.rpc.make( name, data, callback )
 ```
 {{#table mode="api"}}
 -

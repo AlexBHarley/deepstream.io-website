@@ -38,7 +38,7 @@ server {
 Especially for larger deployments it can make perfect sense to keep your server logic in deepstream and serve assets via a static file host, fronted by a Content Delivery Network (CDN). Similar to the section above, all that's necessary here is to exclude the `/deepstream` path from the CDN. Depending on your CDN of choice, this can be a bit tricky though. [AWS Cloudfront](https://aws.amazon.com/cloudfront/) for instance only allows proxying of HTTP traffic, so deepstream traffic needs to be re-routed on an [Elastic Load Balancer](https://aws.amazon.com/elasticloadbalancing/) level, [more about this here](https://forums.aws.amazon.com/thread.jspa?messageID=589328). Other CDNs like [CloudFlare](https://www.cloudflare.com/) support socket traffic directly, [more about this here](https://blog.cloudflare.com/cloudflare-now-supports-websockets/).
 
 ## Using deepstream in Node with ExpressJS, Koa or Hapi
-If you're using deepstream in NodeJS, it can share a HTTP server with frameworks such as [Express](//expressjs.com/), [Koa](//koajs.com/) or [Hapi](//hapijs.com/).
+If you're using deepstream in Node.js, it can share a HTTP server with frameworks such as [Express](//expressjs.com/), [Koa](//koajs.com/) or [Hapi](//hapijs.com/).
 
 For ExpressJS for instance, you'd create your server as follows
 

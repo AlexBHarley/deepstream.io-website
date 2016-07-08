@@ -14,23 +14,23 @@ Larger realtime applications can easily get complex. Changes occur at any time a
 To illustrate what I mean, here's what it takes to keep an input field in sync with a record's value using jQuery.
 
 ```javascript
-ds.record.getRecord('book/moby-dick').whenReady(( record ) => {
-    var input = $('#book-title');
+client.record.getRecord('book/moby-dick').whenReady(record => {
+  const input = $('#book-title')
 
-    record.subscribe( 'title', ( title ) => {
-        input.val( title );
-    }, true );
+  record.subscribe('title', title => {
+    input.val(title)
+  }, true)
 
-    input.change(() => {
-        record.set( 'title', input.val() );
-    });
-});
+  input.change(() => {
+    record.set('title', input.val())
+  })
+})
 ```
 
 Now that's not exactly the end of the world, but with Knockout and deepstream's [KoTools](https://github.com/deepstreamIO/deepstream.io-tools-ko) this can be reduced to
 
 ```javascript
-    this.title = koTools.getObservable( record, 'title' );
+this.title = koTools.getObservable(record, 'title')
 ```
 
 ## Functional-Reactive Programming (hurray!)
@@ -43,18 +43,18 @@ Knockout has observable properties and observable arrays. Deepstream has observa
 ```javascript
 // Create a list that's two-way bound to a ko.observableArray
 AppViewModel = function() {
-    var userList = ds.record.getList( 'users' );
-    this.users = koTools.getViewList(  UserViewModel, userList );
-};
+  const userList = client.record.getList('users')
+  this.users = koTools.getViewList(UserViewModel, userList)
+}
 
 // Create a record and create two-way bound ko.observables
-UserViewModel = function( userRecordName, viewList ) {
-    this.record = ds.record.getRecord( userRecordName );
-    this.viewList = viewList;
-    this.firstname = koTools.getObservable( this.record, 'firstname' );
-    this.lastname = koTools.getObservable( this.record, 'lastname' );
-    this.isActive = ko.observable( false );
-};
+UserViewModel = function(userRecordName, viewList) {
+  this.record = client.record.getRecord(userRecordName)
+  this.viewList = viewList;
+  this.firstname = koTools.getObservable(this.record, 'firstname')
+  this.lastname = koTools.getObservable(this.record, 'lastname')
+  this.isActive = ko.observable(false)
+}
 ```
 
 ## Example App

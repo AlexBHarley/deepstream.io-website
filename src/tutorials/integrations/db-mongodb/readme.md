@@ -5,7 +5,7 @@ description: Learn how to use MongoDB with deepstream
 
 #### What is MongoDB?
 MongoDB is one of the most widely adopted NoSQL databases. It stores documents in a binary version of JSON, scales via clustering and boosts a lot of features designed for speed, such as a low-level TCP API and a built-in, intermediate caching layer.
- MongoDB is free and open-source under GNU GPL and Apache License, and hosts a variety of features that gears itself towards good consistency and partition tolerance. 
+ MongoDB is free and open-source under GNU GPL and Apache License, and hosts a variety of features that gears itself towards good consistency and partition tolerance.
 
 #### Why use MongoDB with deepstream
 MongoDB can be used with deepstream as a storage solution for record data. Since deepstream is designed to structure data in JSON blobs, identified by a primary key, a NoSQL database like MongoDB is more suitable compared to relational databases like MySQL. MongoDB excels at performance and is appropriate for dynamic queries and data that changes on a frequent basis.
@@ -31,7 +31,7 @@ deepstream.exe install storage mongodb
 
 resulting in deepstream MongoDB connector install command line output.
 
-If you're using deepstream's NodeJS interface, you can also install it as an [NPM module](https://www.npmjs.com/package/deepstream.io-storage-mongodb)
+If you're using deepstream's Node.js interface, you can also install it as an [NPM module](https://www.npmjs.com/package/deepstream.io-storage-mongodb)
 
 **Configuring the MongoDB storage connector**
 You can configure the storage connector plugin in deepstream with the following options:

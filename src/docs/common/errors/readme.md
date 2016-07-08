@@ -64,13 +64,13 @@ list:
 
 -
   name: LISTENER_EXISTS
-  description: Emitted when <code>ds.record.listen( pattern, callback )</code> is called more than once for the same pattern.
+  description: Emitted when <code>client.record.listen( pattern, callback )</code> is called more than once for the same pattern.
   server: ''
   client: ✔
 
 -
   name: NOT_LISTENING
-  description: Emitted when <code>ds.record.unlisten( pattern )</code> is called for a pattern that no listener exists for.
+  description: Emitted when <code>client.record.unlisten( pattern )</code> is called for a pattern that no listener exists for.
   server: ''
   client: ✔
 

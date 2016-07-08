@@ -43,7 +43,7 @@ How you construct the service behind the url endpoint is up to you and your appl
 }
 ```
 
-The content of `clientData` and `serverData` are up to you, but useful for sending data back to deepstream, with `clientData` available in the `ds.login()` callback and `serverData` sent to the permissions handler.
+The content of `clientData` and `serverData` are up to you, but useful for sending data back to deepstream, with `clientData` available in the `client.login()` callback and `serverData` sent to the permissions handler.
 
 Start the deepstream server and you should see the authentication type confirmed.
 
@@ -52,41 +52,41 @@ Start the deepstream server and you should see the authentication type confirmed
 This simple node server returns an http code of '200' when a certain username is passed, and '404' if it's any other username:
 
 ```javascript
-var express = require('express');
-var bodyParser = require('body-parser');
-var app = express();
+const express = require('express')
+const bodyParser = require('body-parser')
+const app = express()
 
-app.use(bodyParser.json());
+app.use(bodyParser.json())
 
-app.post('/auth-user', function (req, res) {
-  if( req.body.authData.username === 'chris' ) {
+app.post('/auth-user', (req, res) => {
+  if (req.body.authData.username === 'chris') {
     res.json({
       username: 'chris',
       clientData: { themeColor: 'pink' },
       serverData: { role: 'admin' }
-    });
+    })
   } else {
-    res.status( 403 ).send( 'Invalid Credentials' );
+    res.status(403).send('Invalid Credentials')
   }
-});
+})
 
-app.listen(3000);
+app.listen(3000)
 ```
 
 In your application code you can now connect to the deepstream server and try to login a user. Try changing the value of username to something aside from 'chris' to see what happens.
 
 ```javascript
-// from NodeJS
-var deepstream = require( 'deepstream.io-client-js' );
-var ds = deepstream( 'localhost:6021' ); //Change port to 6020 for browsers
+// from Node.js
+const deepstream = require('deepstream.io-client-js')
+const client = deepstream('localhost:6021'); //Change port to 6020 for browsers
 
-ds.login({
-    username: 'chris',
-    password: 'password' // NEEDS TO BE REAL
-}, function( success, data ){
+client.login({
+  username: 'chris',
+  password: 'password' // NEEDS TO BE REAL
+}, function(success, data) {
   //success == true
   //data == { themeColor: 'pink' }
-});
+})
 ```
 
 If a success, the deepstream console will show:

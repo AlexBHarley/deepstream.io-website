@@ -3,7 +3,7 @@ title: RPC Response
 description: The API docs for deepstream's RPC response object
 ---
 
-The RPC response object is passed to the callback registered with `ds.rpc.provide()`. It allows RPC providers to decide how to react to an incoming request.
+The RPC response object is passed to the callback registered with `client.rpc.provide()`. It allows RPC providers to decide how to react to an incoming request.
 
 ## Methods
 
@@ -48,7 +48,7 @@ client.rpc.provide( 'add-two-numbers', ( data, response ) => {
   des: A string that will be passed as error to the RPC requestor
 {{/table}}
 
-Send an error to the client. `errorMsg` will be received as the first argument to the callback registered with `ds.rpc.make()`. This will complete the RPC.
+Send an error to the client. `errorMsg` will be received as the first argument to the callback registered with `client.rpc.make()`. This will complete the RPC.
 
 ```javascript
 client.rpc.provide( 'count-vote', ( data, response ) => {

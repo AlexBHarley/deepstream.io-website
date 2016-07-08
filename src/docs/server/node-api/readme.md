@@ -3,7 +3,7 @@ title: Node API
 description: API docs for using deepstream within your own node application
 ---
 
-API when using deepstream as a NodeJS package via NPM.
+API when using deepstream as a Node.js package via NPM.
 
 ### `constructor(options)`
 Instantiate a new deepstream server instance. You can pass an optional object

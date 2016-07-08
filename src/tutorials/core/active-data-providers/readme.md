@@ -21,11 +21,11 @@ Even worse: Most updates might be for stocks that no client is subscribed to and
 Only write to records / send events that clients are actually interested in. Deepstream supports a feature called `listening` that lets clients listen for event or record subscriptions made by other clients. First, the listener registers for a pattern, e.g. `nasdaq/.*`. From thereon, it will be notified whenever a subscription is made or removed that matches said pattern.
 
 ```javascript
-ds.record.listen( 'nasdaq/.*', ( match, isSubscribed ) => {
-    /*
-         match = 'nasdaq/msft'
-         isSubscribed = true
-     */
+client.record.listen('nasdaq/.*', (match, isSubscribed) => {
+  /*
+    match = 'nasdaq/msft'
+    isSubscribed = true
+  */
 });
 ```
 

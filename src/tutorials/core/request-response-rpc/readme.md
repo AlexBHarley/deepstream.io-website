@@ -18,18 +18,18 @@ RPCs are helpful on their own as a substitute for classic HTTP workflows, but ar
 ## Using RPCs
 Let's look at an example: adding two numbers (granted, not something you would strictly need to do on the backend, but lets keep things simple).
 
-Every RPC is identified by a unique name. For our example, we'll choose `'add-two-numbers'`. First, a process needs to register as a "provider" - something that's capable of fulfilling a request. This is done using `ds.rpc.provide()`
+Every RPC is identified by a unique name. For our example, we'll choose `'add-two-numbers'`. First, a process needs to register as a "provider" - something that's capable of fulfilling a request. This is done using `client.rpc.provide()`
 
 ```javascript
-ds.rpc.provide( 'add-two-numbers', ( data, response ) => {
+client.rpc.provide( 'add-two-numbers', ( data, response ) => {
     response.send( data.numA + data.numB );
 });
 ```
 
-Now any client can invoke the remote method. This is done using `ds.rpc.make()`.
+Now any client can invoke the remote method. This is done using `client.rpc.make()`.
 
 ```javascript
-ds.rpc.make( 'add-two-numbers', { numA: 7, numB: 13 }, ( err, result ) => {
+client.rpc.make( 'add-two-numbers', { numA: 7, numB: 13 }, ( err, result ) => {
     // result == 20;
 });
 ```
@@ -44,7 +44,7 @@ Providers themselves are also able to reject requests (e.g. because they're unde
 ```javascript
 //Limiting to 50 simultanious image resize tasks at a time
 var inProgress = 0;
-ds.rpc.provide( 'resize-image', ( url, response ) => {
+client.rpc.provide( 'resize-image', ( url, response ) => {
     inProgress++;
 
     if( inProgress > 50 ) {

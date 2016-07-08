@@ -40,7 +40,7 @@ server.start();
 ## Transforming record data
 
 Transforming outgoing record data can be a bit complex, due to the different ways that updates are sent out.
-* When a client calls `ds.record.getRecord( recordName )` the server responds with a READ action.
+* When a client calls `client.record.getRecord( recordName )` the server responds with a READ action.
 * When a record is completely updated, using `record.set({})` with a single argument, an UPDATE action is sent out.
 * In case of partial updates, using `record.set(path, value)`, a PATCH message is sent out, containing the path and only the updated value.
 

@@ -3,7 +3,7 @@ title: Event Emitter
 description: API docs for deepstream's event emitter
 ---
 
-deepstream uses a `component-emitter` as an event emitter to implement a subset of the NodeJS EventEmitter API.
+deepstream uses a `component-emitter` as an event emitter to implement a subset of the Node.js EventEmitter API.
 
 ## Methods
 

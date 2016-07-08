@@ -22,7 +22,7 @@ Having said that, pub/sub vs data-sync doesn't need to be an either/or decision.
 
 ## How to use events
 
-Subscription to events can be established with `ds.event.subscribe` and removed with `ds.event.unsubscribe`.
+Subscription to events can be established with `client.event.subscribe` and removed with `client.event.unsubscribe`.
 
 ```javascript
 function eventCallback( data ) {
@@ -30,19 +30,19 @@ function eventCallback( data ) {
 }
 
 //Subscribing to an event
-ds.event.subscribe( 'news/sports', eventCallback );
+client.event.subscribe( 'news/sports', eventCallback );
 
 //Removing specific callback to the event
-ds.event.unsubscribe( 'news/sports', eventCallback );
+client.event.unsubscribe( 'news/sports', eventCallback );
 
 //Removing all subscriptions to the event
-ds.event.unsubscribe( 'news/sports' );
+client.event.unsubscribe( 'news/sports' );
 ```
 
-Events can be published using `ds.event.emit`. It's possible to send any kind of serializable data along with the event, e.g. Strings, JSON objects, Numbers, Booleans etc.
+Events can be published using `client.event.emit`. It's possible to send any kind of serializable data along with the event, e.g. Strings, JSON objects, Numbers, Booleans etc.
 
 ```javascript
-ds.event.emit( 'news/sports', 'football is happening' );
+client.event.emit( 'news/sports', 'football is happening' );
 ```
 
 ## How to listen for event subscriptions
@@ -51,7 +51,7 @@ deepstream allows clients to "listen" for other clients' event subscriptions. Th
 Listeners can register for a pattern described by a regular expression, e.g. `'^news/.*'`.
 
 ```javascript
-ds.event.listen( '^news/.*', ( match, subscribed ) => {
+client.event.listen( '^news/.*', ( match, subscribed ) => {
     //match = 'news/sports'
     //subscribed = true
 })

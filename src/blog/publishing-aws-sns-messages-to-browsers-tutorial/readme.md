@@ -78,7 +78,7 @@ function createHttpServer() {
 Oh, and before I forget: Your http server needs to be accessible from the internet. If you're running it locally, you might want to use a tool like [ngrok](//ngrok.com/) to make this possible.
 
 ### Subscribing to a topic
-Using the [AWS-SDK for NodeJS](//aws.amazon.com/sdk-for-node-js/), subscribing to a topic is as easy as
+Using the [AWS-SDK for Node.js](//aws.amazon.com/sdk-for-node-js/), subscribing to a topic is as easy as
 
 ```javascript
 var AWS = require('aws-sdk');

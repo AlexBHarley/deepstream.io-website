@@ -30,7 +30,7 @@ Here, each of the Simpsons is a record. The names of all three are stored in a l
 Now, whenever the user selects one of the Simpsons, the anonymous record's `setName( id )` method is called with the `recordId` of that Simpson. It internally removes all subscriptions to the old record, switches to the new one, re-subscribes, all change-listener fire and the UI is up to date.
 
 ## How do I create an anonymous record?
-By calling `ds.record.getAnonymousRecord()`. The method doesn't take any arguments.
+By calling `client.record.getAnonymousRecord()`. The method doesn't take any arguments.
 
 A few more things worth mentioning:
 

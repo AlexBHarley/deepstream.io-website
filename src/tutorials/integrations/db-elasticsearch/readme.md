@@ -29,49 +29,49 @@ ElasticSearch can also be accessed from within deepstream through a remote proce
 ![deepstream elasticsearch provider diagram](deepstream-elasticsearch-provider-diagram.png)
 
 Say we create a (admittably nonsensical) set of records like
+
 ```javascript
-ds.record.getRecord( 'cars/ferrari' ).set({
-    brand: 'Ferrari',
-    color: 'Red'
-});
+client.record.getRecord('cars/ferrari').set({
+  brand: 'Ferrari',
+  color: 'Red'
+})
 ```
 
 and our greatest desire in life would be to execute a RPC that searches for a brand and returns its signature color
 
 ```javascript
-ds.rpc.make( 'search-color-for-brand', 'Ferrari', ( err, color ) => {
-    //color === red
+client.rpc.make('search-color-for-brand', 'Ferrari', (err, color) => {
+  //color === red
 });
 ```
 
 our search provider would look as follows:
 
 ```javascript
-var elasticsearch = require('elasticsearch');
-var deepstream = require( './ds-client' );
+const elasticsearch = require('elasticsearch')
+const deepstream = require( './ds-client' )
 
 // Create ElasticSearch Client
-var es = new elasticsearch.Client({
+const es = new elasticsearch.Client({
   host: 'elasticsearch-host',
   log: 'trace'
 });
 
 // Create Deepstream Client
-var ds = deepstream( 'deepstream-host' ).login();
+const client = deepstream('deepstream-host').login()
 
 // Register as provider for search-color-for-brand
-ds.rpc.provide( 'search-color-for-brand', ( brand, response ) => {
-
-    // Query ElasticSearch
-    es.search({
-        index: 'deepstream',
-        q: 'brand=' + brand
-    }).then((body) => {
-        // Return result
-        response.send( body.hits.hits.color );
-    }, (error) => {
-        //Return Error
-        response.error( error.toString() );
-    });
-});
+client.rpc.provide('search-color-for-brand', (brand, response) => {
+  // Query ElasticSearch
+  es.search({
+    index: 'deepstream',
+    q: 'brand=' + brand
+  }).then((body) => {
+    // Return result
+    response.send( body.hits.hits.color )
+  }, (error) => {
+    //Return Error
+    response.error(error.toString())
+  })
+})
 ```

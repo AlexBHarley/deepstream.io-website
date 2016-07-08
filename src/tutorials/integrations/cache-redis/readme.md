@@ -18,7 +18,7 @@ Redis is a great fit for use with deepstream. It can be used as a cache, persist
 #### How to use Redis with deepstream?
 deepstream offers two separate plugins for Redis: a cache connector and a message connector. Both can connect to the same Redis endpoint and both offer support for standalone Redis deployments and clusters.
 
-Install via commandline or if you're using deepstream in NodeJS via NPM ([Cache](https://www.npmjs.com/package/deepstream.io-cache-redis), [Message](https://www.npmjs.com/package/deepstream.io-msg-redis))
+Install via commandline or if you're using deepstream in Node.js via NPM ([Cache](https://www.npmjs.com/package/deepstream.io-cache-redis), [Message](https://www.npmjs.com/package/deepstream.io-msg-redis))
 
 ```bash
     deepstream install msg redis

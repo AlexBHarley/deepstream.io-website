@@ -60,7 +60,7 @@ Message connectors are configured in the config's `plugins - message` section.
 If you're using deepstream from Node, it's also possible to download connectors from NPM. All connectors follow the naming convention `deepstream.io-type-name`, e.g. `deepstream.io-msg-redis`.
 
 ## Writing your own connector
-If you can't find a connector for your system of choice, you can also write your own quite easily in C++ with Node bindings or in NodeJS. If you're happy with the way your connector turned out, please consider contributing it. To do so, have a look at deepstream's [contribution guidelines](/info/community/contribution-guidelines)
+If you can't find a connector for your system of choice, you can also write your own quite easily in C++ with Node bindings or in Node.js. If you're happy with the way your connector turned out, please consider contributing it. To do so, have a look at deepstream's [contribution guidelines](/info/community/contribution-guidelines)
 
 To get started, just clone or fork the [msg-connector-template](//github.com/deepstreamIO/deepstream.io-msg-connector-template) and fill in the blanks. To see if it works, update the `settings` variable on line 9 of the [test file](https://github.com/deepstreamIO/deepstream.io-msg-connector-template/blob/master/test/message-connector-messagingSpec.js) and run the tests with `npm test`. Please note: The tests are very high level and only cover basic functionality. It will make sense to add additional tests that are specific to your connector.
 

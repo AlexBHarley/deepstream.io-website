@@ -3,7 +3,7 @@ title: Javascript Client
 description: The entry point API documentation for the deepstream.io js client
 ---
 
-The deepstream JavaScript client can be used by both browsers and NodeJS. You can get it via NPM or Bower as `deepstream.io-client-js` or browse the source on [Github](https://github.com/deepstreamIO/deepstream.io-client-js)
+The deepstream JavaScript client can be used by both browsers and Node.js. You can get it via NPM or Bower as `deepstream.io-client-js` or browse the source on [Github](https://github.com/deepstreamIO/deepstream.io-client-js)
 
 ### deepstream(url, options)
 
@@ -23,8 +23,8 @@ The deepstream JavaScript client can be used by both browsers and NodeJS. You ca
 Creates a client instance and initialises the connection to the deepstream server. The connection will be kept in a quarantine state and won't be fully usable until `login()` is called.
 
 ```javascript
-var deepstream = require( 'deepstream.io-client-js' );
-var ds = deepstream( 'localhost:6020' ).login();
+var deepstream = require('deepstream.io-client-js')
+const client = deepstream('localhost:6020').login()
 ```
 
 ## Constants
@@ -64,40 +64,38 @@ Authenticates the client against the server. To learn more about how authenticat
 Callback will be called with: success (Boolean), data (Object).
 
 ```javascript
-var deepstream = require('deepstream.io-client-js')
+const deepstream = require('deepstream.io-client-js')
+const client = deepstream('localhost:6020')
+// client.getConnectionState() will now return 'AWAITING_AUTHENTICATION'
 
-ds = deepstream('localhost:6020')
-
-// ds.getConnectionState() will now return 'AWAITING_AUTHENTICATION'
-
-ds.login({username: 'peter', password: 'sesame'}, function(success, data) {
-  if( success ) {
+client.login({username: 'peter', password: 'sesame'}, (success, data) => {
+  if (success) {
     // start application
-    // ds.getConnectionState() will now return 'OPEN'
+    // client.getConnectionState() will now return 'OPEN'
   } else {
     // extra data can be optionaly sent from deepstream for
     // both successful and unsuccesful logins
-    alert( data );
+    alert(data)
 
-    // ds.getConnectionState() will now return
+    // client.getConnectionState() will now return
     // 'AWAITING_AUTHENTICATION' or 'CLOSED'
     // if the maximum number of authentication
     // attempts has been exceeded.
   }
 })
 
-// ds.getConnectionState() will now return 'AUTHENTICATING'
+// client.getConnectionState() will now return 'AUTHENTICATING'
 ```
 
 ### close()
 Closes the connection to the server.
 
 ```javascript
-ds.on('connectionStateChanged', function(connectionState) {
+client.on('connectionStateChanged', connectionState => {
   // will be called with 'CLOSED' once the connection is successfully closed.
 })
 
-ds.close();
+client.close()
 ```
 
 ### getConnectionState()
@@ -107,5 +105,5 @@ Returns the current connectionState. Please find a list of available connectionS
 Returnes a unique id. The uid starts with a Base64 encoded timestamp to allow for semi-sequentual ordering and ends with a random string.
 
 ```javascript
-ds.getUid() // 'i9i6db5q-1xak1s2sfzk'
+client.getUid() // 'i9i6db5q-1xak1s2sfzk'
 ```
