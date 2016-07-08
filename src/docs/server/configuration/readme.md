@@ -3,7 +3,7 @@ title: Configuration
 description: The available configuration options to customise deepstream
 ---
 
-You can make any configuration changes you need for your Deepstream setup in the _config.yml_ file. You can find this in the _/etc/deepstream/conf/_ directory on Linux and in _${Deepstream_dir}/conf/_ on Mac and Windows.
+You can make any configuration changes you need for your Deepstream setup in the *config.yml* file. You can find this in the */etc/deepstream/conf/* directory on Linux and in *${DEEPSTREAM_DIR}/conf/* on Mac and Windows.
 
 ## General Configuration
 

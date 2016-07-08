@@ -21,6 +21,8 @@ deepstream start
 
 ![Starting deepstream on linux](../linux-start.png)
 
+Learn more about the [command line interface](/docs/server/command-line-interface/).
+
 ### Configuring deepstream
 You can either change deepstream's [configuration file](../../docs/server/configuration) directly in `/etc/deepstream` or create a copy and run deepstream with the `-c` flag. (Important, make sure to update all relative paths within the configuration after copying it).
 

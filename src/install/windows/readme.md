@@ -12,5 +12,5 @@ description: Find out how to get deepstream running on Windows
 deepstream.exe start
 ```
 
-### Configuring deepstream
-You can either change deepstream's [configuration file](/docs/server/configuration) directly in the `conf` directory.
+Learn more about the [command line interface](/docs/server/command-line-interface/)
+and the [configuration file](/docs/server/configuration).
