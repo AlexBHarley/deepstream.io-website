@@ -1,41 +1,10 @@
 /*************************
 * FOOTER
 * ***********************/
-footer#main#main {
+footer#main {
 	position: relative;
 	clear: both;
 }
-footer#main img {
-	width: 170px;
-	height: 170px;
-	position: relative;
-	top: 10px;
-}
-footer#main .cols {
-	overflow: hidden;
-	margin: 50px 0 30px;
-}
-footer#main .col {
-	width: 100%;
-	margin:0 0 2em 5%;
-	padding-left:10%;
-	float: left;
-	box-sizing: border-box;
-	overflow: hidden;
-}
-footer#main .col-a
-	{display:none}
-
-
-@media screen and (min-width:47em){
-footer#main .col-a{display:block}
-footer#main .col{width:45%;padding:0}
-}
-
-@media screen and (min-width:59em){
-footer#main .col{width:20%}
-}
-
 footer#main h4 {
 	color: #666;
 	margin-bottom: 20px;
@@ -57,4 +26,44 @@ footer#main i {
 footer#main .copyright {
 	text-align: center;
 	margin-bottom: 30px;
+}
+footer#main img {
+	width: 170px;
+	height: 170px;
+}
+footer#main .cols {
+	overflow: hidden;
+	margin: 50px auto 0 auto;
+	max-width: 150px;
+}
+footer#main .col {
+	width: 100%;
+	margin:0 0 2em 5%;
+	float: left;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+footer#main .col-a{
+	display:none
+}
+
+
+@media screen and (min-width:47em){
+	footer#main .cols{
+		margin: 50px 0 30px;
+		max-width: 100%;
+	}
+
+	footer#main .col{
+		width:30%;
+	}
+}
+
+@media screen and (min-width:70em){
+	footer#main .col-a{
+		display:block;
+	}
+	footer#main .col{
+		width:20%;
+	}
 }

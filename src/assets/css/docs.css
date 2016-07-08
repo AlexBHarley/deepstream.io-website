@@ -14,7 +14,6 @@
 .col.left{
 	background: #f6f6f6;
 	border-right: 1px solid #eee;
-	box-sizing: border-box;
 	position: relative;
 	left: 1px;
 }
@@ -71,7 +70,6 @@
 	border-radius: 0;
 	display: block;
 	width: 86%;
-	box-sizing: border-box;
 	margin: 10px 20px;
 }
 
@@ -133,7 +131,6 @@
 	display: block;
 	padding: 5px 0 5px 45px;
 	cursor: pointer;
-	box-sizing: border-box;
 }
 
 /*
