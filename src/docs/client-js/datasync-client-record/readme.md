@@ -184,4 +184,4 @@ client.record.listen('raceHorse/.*', (match, isSubscribed) => {
 client.record.unlisten('raceHorse/.*')
 ```
 
-Removes a listener that was previously registered using [listen()](/docs/client/datasync-record/).
+Removes a listener that was previously registered using [listen()](../datasync-record/).

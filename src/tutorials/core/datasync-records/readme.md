@@ -73,11 +73,11 @@ Absolutely, any string can be used as a record name. But you need to be certain 
 
 #### Making the username part of the record name
 Many permissioning strategies in deepstream are based on record, event or rpc-names and the data they contain.
-To make sure that only `johndoe` can change his settings, you would call your record `settings/johndoe` and specify an associated [valve-rule](./permission-conf-simple):
+To make sure that only `johndoe` can change his settings, you would call your record `settings/johndoe` and specify an associated [valve-rule](../permission-conf-simple/):
 
 ```yaml
-record: 
-    settings/$username: 
+record:
+    settings/$username:
       write: "$username === user.id"
 ```
 
