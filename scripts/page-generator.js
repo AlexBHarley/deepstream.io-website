@@ -94,6 +94,9 @@ module.exports = function( metalsmith ) {
 					ensureMandatoryProperties( files[ filePath ] )
 				}
 
+				var originFilePath = file.filename;
+				files[ filePath ].relativePath = file.filename;
+
 				if( file.filename.match( 'readme.md' ) ) {
 					delete files[ filePath ];
 					filePath = file.filename.replace( 'readme.md', `${fileName}.md` );
@@ -111,6 +114,7 @@ module.exports = function( metalsmith ) {
 					merge( files[ filePath ], file, data );
 					files[ filePath ].filename = filePath
 					files[ filePath ].contents = new Buffer( file.contents )
+
 				}
 
 				// Merge meta data for levels

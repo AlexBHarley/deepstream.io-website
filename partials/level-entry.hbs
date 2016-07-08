@@ -6,10 +6,11 @@
 	</div>
 	<div class="col big right clearfix">
 		<div class="header"
-		{{#if image}}
-			style="background-image:url({{image}})"
-		{{/if}}>
-		{{> "breadcrumbs"}}
+			{{#if image}}
+				style="background-image:url({{image}})"
+			{{/if}}>
+			{{> "edit-button"}}
+			{{> "breadcrumbs"}}
 		</div>
 		<div class="content">
 {{{contents}}}
