@@ -3,45 +3,39 @@
 
 {{> specs-indepth}}
 
-{{#each structures}}
-	<div class="section">
-		<h2>
-			<a name="{{id}}">{{action}}</a>
-		</h2>
-		<div class="action-content">
-			<p class="description">
-				{{description}}
-			</p>
-			<table>
-				<tbody>
-					<tr>
-						<td>
-							Direction
-						</td>
-						<td>
-							{{direction}}
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Message
-						</td>
-						<td>
-							<span class="message-format">{{message}}</span>
-						</td>
-					</tr>
-					{{#if ack}}
-					<tr>
-						<td>
-							Ack
-						</td>
-						<td class="message-format">
-							<span class="message-format">{{ack}}</span>
-						</td>
-					</tr>
-					{{/if}}
-				</tbody>
-			</table>
-		</div>
+{{#each messageSpecs.specs}}
+{{#each this.structures}}
+<div class="section">
+	<h2>
+		<a name="{{this.id}}">{{this.action}}</a>
+	</h2>
+	<div class="action-content">
+		<p class="description">
+			{{this.description}}
+		</p>
+		<table>
+			<tbody>
+				<tr>
+					<td>Direction</td>
+					<td>{{this.direction}}</td>
+				</tr>
+				<tr>
+					<td>Message</td>
+					<td>
+						<span class="message-format">{{this.message}}</span>
+					</td>
+				</tr>
+				{{#if this.ack}}
+				<tr>
+					<td>Ack</td>
+					<td class="message-format">
+						<span class="message-format">{{this.ack}}</span>
+					</td>
+				</tr>
+				{{/if}}
+			</tbody>
+		</table>
 	</div>
+</div>
+{{/each}}
 {{/each}}

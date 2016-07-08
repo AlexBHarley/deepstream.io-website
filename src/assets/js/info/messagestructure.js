@@ -76,7 +76,7 @@
 
 	$( document ).ready(function() {
 
-		$( '#content' ).on( 'mouseenter', '.message-format', function( e ) {
+		$( '.content' ).on( 'mouseenter', '.message-format', function( e ) {
 			var destination = $( e.target ).offset();
 			var message = parseMessageSpec( $( e.target).text() );
 
@@ -92,7 +92,7 @@
 				.show();
 		} );
 
-		$( '#content' ).on( 'mouseleave', '.message-format', function( e ) {
+		$( '.content' ).on( 'mouseleave', '.message-format', function( e ) {
 			$( '.message-in-depth' )
 				.hide();
 		} );

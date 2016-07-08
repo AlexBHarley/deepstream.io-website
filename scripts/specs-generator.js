@@ -75,7 +75,7 @@ module.exports = function( metalsmith ) {
 
 			for( var specName in messageSpecs.features ) {
 				title = capitalizeFirstLetter(specName);
-				fileName = `info/specs/${specName}/${specName}.html`;
+				fileName = `info/specs/${specName}/${specName}.md`;
 				files[ fileName ] = {
 					title: `${title} Features`,
 					description: `Cucumber features for ${title} in deepstream.io`,
@@ -85,12 +85,12 @@ module.exports = function( metalsmith ) {
 				}
 			}
 
-			const specFileName = `info/protocol/all-messages/index.html`;
+			const specFileName = 'info/protocol/all-messages/all-messages.md';
 			files[ specFileName ] = {
-				title: `Message Specs`,
+				title: `All Message Specs`,
 				description: `Message Specs in deepstream.io`,
 				filename: specFileName,
-				contents: new Buffer( `{{> specs-structure messageSpecs.specs }}`)
+				contents: new Buffer( '{{> specs-structure}}')
 			}
 
 			done();

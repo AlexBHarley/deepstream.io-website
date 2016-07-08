@@ -29,6 +29,8 @@ module.exports = function( metalsmith ) {
 		var file;
 		for( filePath in files ) {
 
+
+			filePath.match( 'info' ) && console.log( filePath )
 			file = files[ filePath ];
 
 			file.type = {
