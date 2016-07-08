@@ -444,6 +444,7 @@ header.main-header .page-description *{
 
 #community .events {
 	overflow: hidden;
+	height: 255px;
 }
 
 #community .events a {

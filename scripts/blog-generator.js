@@ -31,7 +31,7 @@ var addBlogMeta = function( file ) {
 		date: moment( file.dateISO, 'YYYYMMDD' ).format( 'MMMM Do YYYY' ),
 		shortDate: moment( file.dateISO, 'YYYYMMDD' ).format( 'DD/MM/YYYY' ),
 		author:  authors[ file.author],
-		thumbnail: file.filename.replace( 'readme.md', file.thumbnail ),
+		thumbnail: '/' + file.filename.replace( 'readme.md', file.thumbnail ),
 		blogPath: file.filename.replace( 'readme.md', '' )
 	};
 };
