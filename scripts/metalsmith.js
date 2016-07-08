@@ -98,7 +98,7 @@ if (cli.brokenLinks || cli.production) {
 
 metalsmith.use(function(done) {
 	console.log(colors.green('built done') + ' at ' + new Date())
-	if (process.argv[2] === 'trigger-bs-reload') {
+	if (process.argv.indexOf('trigger-bs-reload') !== -1) {
 		child_process.exec('npm run reload', function(err, stdout, stderr) {
 			if (err) {
 				console.error(err)
