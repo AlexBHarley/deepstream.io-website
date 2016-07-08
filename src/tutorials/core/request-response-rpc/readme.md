@@ -1,3 +1,8 @@
+---
+title: Remote Procedure Calls
+description: Learn how you can RPCs for your request/response requirements
+---
+
 Remote Procedure Calls (RPC) are deepstream's mechanism for request/response communication (think Ajax Request, but with added load balancing and rerouting etc).
 
 RPCs are helpful on their own as a substitute for classic HTTP workflows, but are particularly useful when combined with other deepstream concepts like pub/sub or data-sync.

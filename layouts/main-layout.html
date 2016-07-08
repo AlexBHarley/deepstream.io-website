@@ -40,6 +40,12 @@
 {{> blog-entry}}
 		{{else if isLevel3}}
 {{> level-entry}}
+		{{else if type.install}}
+		{{#if isLevel2}}
+{{> page-install}}
+		{{else}}
+{{{contents}}}
+		{{/if}}
 		{{else}}
 {{{contents}}}
 		{{/if}}

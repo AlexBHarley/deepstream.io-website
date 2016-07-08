@@ -1,3 +1,8 @@
+---
+title: KnockoutJs
+description: Learn how to use KnockoutJs with deepstream
+---
+
 ## What's KnockoutJs?
 You've probably heard of Angular, React and EmberJS, maybe even Vue or Polymer. But [KnockoutJS](http://knockoutjs.com/)? No? That's a shame...
 Knockout is a clever library with only one concept: An "observable" - something with a value that tells you when that value changes.

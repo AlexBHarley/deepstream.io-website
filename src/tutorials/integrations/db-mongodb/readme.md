@@ -1,3 +1,8 @@
+---
+title: MongoDB DataBase Connector
+description: Learn how to use MongoDB with deepstream
+---
+
 #### What is MongoDB?
 MongoDB is one of the most widely adopted NoSQL databases. It stores documents in a binary version of JSON, scales via clustering and boosts a lot of features designed for speed, such as a low-level TCP API and a built-in, intermediate caching layer.
  MongoDB is free and open-source under GNU GPL and Apache License, and hosts a variety of features that gears itself towards good consistency and partition tolerance. 

@@ -1,3 +1,8 @@
+---
+title: caching Redis Connector
+description: Learn how to use Redis with deepstream
+---
+
 #### What is Redis?
 A lot of things. In fact, so many that its often referred to as the "Swiss Army Knife of the web". Redis is first and foremost a cache. It's fast, simple, single threaded with non-blocking I/O and scales well in distributed deployments (should sound familiar to deepstream fans).
 

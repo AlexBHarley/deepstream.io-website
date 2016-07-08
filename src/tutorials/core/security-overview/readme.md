@@ -1,3 +1,8 @@
+---
+title: Searching Overview
+description: Find out how deepstream keeps your data safe and secure
+---
+
 Security in deepstream is based on three interrelated concepts:
 
     - encrypted connections

@@ -1,3 +1,8 @@
+---
+title: Single Node vs Three Instance Cluster
+description: Performance results from a single and cluster deepstream setup
+---
+
 This test aims to verify horizontal scalability by establishing message latency and cpu consumption under high traffic for a single deepstream node in comparison to a cluster of three nodes.
 
 ### Test Setup

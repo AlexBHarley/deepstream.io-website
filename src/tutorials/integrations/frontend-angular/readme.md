@@ -1,3 +1,8 @@
+---
+title: AngularJS
+description: Learn how to use AngularJS with deepstream
+---
+
 Angular 2 / .io is out and has been for a while, but for native JavaScript aficionados, Angular 1 is still the tool of choice.
 
 ## Is Angular a good choice with deepstream?

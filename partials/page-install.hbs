@@ -1,0 +1,20 @@
+<link rel="stylesheet" type="text/css" href="{{asset 'css/docs.css'}}" />
+
+<div class="two-col docs">
+	<div class="col left small subnav clearfix">
+		<ul class="tree-nav subsection">
+			<li></li>
+		</ul>
+	</div>
+	<div class="col big right clearfix">
+		<div class="header"
+		{{#if image}}
+			style="background-image:url({{image}})"
+		{{/if}}>
+		{{> "breadcrumbs"}}
+		</div>
+		<div class="content">
+{{{contents}}}
+		</div>
+	</div>
+</div>

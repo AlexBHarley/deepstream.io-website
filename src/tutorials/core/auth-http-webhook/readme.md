@@ -1,3 +1,8 @@
+---
+title: HTTP Authentication
+description: How to register your own HTTP server as a Webhook for user authentication
+---
+
 Http authentication lets you register your own HTTP server's URL as a Webhook. Every time a user tries to login, deepstream will send their credentials via POST request to your server. Depending on your server's response, the user's login will be denied or granted.
 
 ![Webhook Authentication Flow](webhook-flow.png)

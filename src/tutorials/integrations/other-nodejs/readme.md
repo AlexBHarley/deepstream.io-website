@@ -1,4 +1,7 @@
-#### Using the deepstream server in NodeJS
+---
+title: NodeJS
+description: Using the deepstream server in NodeJS
+---
 
 ![NodeJS](nodejs.png)
 

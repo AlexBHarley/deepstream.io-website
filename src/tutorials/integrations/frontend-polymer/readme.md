@@ -1,3 +1,8 @@
+---
+title: Polymer
+description: Learn how to use Polymer with deepstream
+---
+
 ![deepstream-polymer](deepstream-polymer.png)
 
 Polymer brings WebComponents to all browsers, allowing for the creation of web apps using DOM elements as the primary building blocks.

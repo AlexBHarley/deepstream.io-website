@@ -4,7 +4,8 @@ var program = require('commander');
 
 program
 	.option('-d, --drafts', 'Disable draft disabling')
-	.option('-q, --quick', 'Disable all checks')
+	.option('-m, --missing-meta', 'Show missing meta')
+	.option('-l, --broken-links', 'Show broken links')
 	.option('-b, --beep', 'Emit a beep')
 	.parse(process.argv);
 

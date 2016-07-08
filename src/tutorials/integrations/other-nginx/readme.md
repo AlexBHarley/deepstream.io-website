@@ -1,3 +1,8 @@
+---
+title: Nginx
+description: How to use Nginx as a web-facing reverse proxy and load balancer in front of deepstream servers.
+---
+
 ## What is nginx?
 [Nginx](https://nginx.org/) (pronounced engine-x) is a multi purpose webserver. It's one of the most widely used HTTP servers and powers sites such as GitHub or reddit. Aside from serving static files via HTTP, it can be used as a reverse proxy, multi protocol load balancer or container for fast CGI scripts
 

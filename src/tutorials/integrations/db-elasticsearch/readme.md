@@ -1,3 +1,8 @@
+---
+title: ElasticSearch DataBase Connector
+description: Learn how to use ElasticSearch with deepstream
+---
+
 #### What is ElasticSearch
 [ElasticSearch](https://www.elastic.co/products/elasticsearch) is a standalone search engine that let's you add powerful full-text search capabilities to your application. You might be thinking right now: __what's wrong with a bit of MySQL and `WHERE content like %word%`?__...well, ElasticSearch is an entirely different league. It offers word stemming (search "fisher" also searches fish, fishing etc.), synonyms and related words ( "UK" also searches for United Kingdom, Great Britain etc.) and a number of other crucial concepts for proper search capabilities.
 You can run ElasticSearch yourself as a single server or a cluster or use it as a service, e.g. via [AWS ElasticSearch](https://aws.amazon.com/elasticsearch-service/).

@@ -1,3 +1,8 @@
+---
+title: React
+description: Learn how to use React with deepstream
+---
+
 ![deepstream-react](deepstream-react.png)
 
 deepstream and react share the same belief: apps are best composed from reusable components, driven by state. What deepstream brings to react is the ability to store this state and sync it across connected clients.

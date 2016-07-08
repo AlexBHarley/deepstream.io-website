@@ -1,3 +1,8 @@
+---
+title: Lists
+description: Learn how you can use lists to create collections out of records with things in common
+---
+
 Lists are observable arrays of recordnames (not their data!).
 
 Lists and recordnames have what a computer science teacher would call an n:m-relationship - a list can contain many recordnames and a recordname can be part of many lists.

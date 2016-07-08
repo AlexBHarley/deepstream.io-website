@@ -1,3 +1,8 @@
+---
+title: Performance Overview
+description: An overview on deepstream performance and running your tests
+---
+
 Realtime web applications have a wide range of performance requirements. Apps with a focus on collaboration need to be able to sync changes between large numbers of clients, financial platforms must fan out prices with ultra-low latency and apps with a focus on communication require comparable up- and down-stream times.
 
 To ensure deepstream can cater for all these use cases, we are regularly conducting performance tests and benchmarks.

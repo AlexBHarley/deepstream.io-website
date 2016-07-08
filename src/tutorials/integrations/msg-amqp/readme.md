@@ -1,6 +1,9 @@
 ---
+title: AMQP Message Connector
+description: Learn how to use AMQP with deepstream
 draft: true
 ---
+
 
 #### What is AMQP?
 

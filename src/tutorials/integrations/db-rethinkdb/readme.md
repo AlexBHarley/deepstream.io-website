@@ -1,3 +1,8 @@
+---
+title: RethinkDB DataBase Connector
+description: Learn how to use RethinkDB with deepstream
+---
+
 #### What is RethinkDB?
 RethinkDB is a distributed, document-oriented database. It implements a proprietary, function based query language, called ReQL to interact with its schemaless JSON data collections.
 

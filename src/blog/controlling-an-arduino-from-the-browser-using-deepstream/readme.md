@@ -213,7 +213,7 @@ If you run the `index.html` page in your browser you can now switch the LED on o
 
 And that's it! Everything needed to get an Arduino connected to deepstream!
 
-This tutorial is meant to walk you through the basic authentication and event messages so you get a feel for how the client and server interacts. There is a wealth of different options within the deepstream spec that can enhance this example, please look at the [documentation](/info/protocol/writing-a-client/) for an in-depth guide.
+This tutorial is meant to walk you through the basic authentication and event messages so you get a feel for how the client and server interacts. There is a wealth of different options within the deepstream spec that can enhance this example, please look at the [documentation](/tutorials/core/writing-a-client/) for an in-depth guide.
 
 A couple of examples how the Ardruino client can be enhanced:
 

@@ -45,6 +45,6 @@ Which will print out something similar to this:
 We're always looking to improve documentation, weed out those typos that sneak past us and add tutorials on the plethora of things we can integrate. If you feel anything needs to be clarified, would like to write/see a guide on how to use it with your favourite framework or anything else just raise an issue [here](//github.com/deepstreamIO/deepstream.io-website)
 
 #### Clients
-Deepstream uses a [minimal text based protocol](../../protocol/message-structure-overview/), and as such can work with any language on an internet enabled device. Want to support your language of choice? Checkout the conversations [on github](//github.com/deepstreamIO/deepstream.io/issues?q=is%3Aopen+is%3Aissue+label%3Anew-client). There are quite a few being built by the community and I'm sure they would love more collaborators!
+Deepstream uses a [minimal text based protocol](../../protocol/message-structure-overview/), and as such can work with any language on an internet enabled device. Want to support your language of choice? Join the conversations [on github](//github.com/deepstreamIO/deepstream.io/issues?q=is%3Aopen+is%3Aissue+label%3Anew-client) or [write your own](/tutorials/core/writing-a-client/). There are quite a few being built by the community and I'm sure they would love more collaborators!
 
 Feel free to [contact us](../get-in-touch/) if you have any questions.

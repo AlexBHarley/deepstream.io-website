@@ -1,14 +1,19 @@
+---
+title: Node API
+description: API docs for using deepstream within your own node application
+---
+
 API when using deepstream as a NodeJS package via NPM.
 
 ### `constructor(options)`
-Instantiate a new deepstream server instance. You can pass an optional object 
+Instantiate a new deepstream server instance. You can pass an optional object
 which contains the configuration or a filePath to the configuration file. Missing options will be merged with default values.
 
 If you omit the argument, deepstream will use default values. Read more about
 the [configuration and default values](/docs/server/configuration).
 
 {{#table mode="api"}}
-- 
+-
   arg: options
   typ: Object | String
   opt: true
@@ -41,7 +46,7 @@ Starts the server.
 Stops the server.
 
 ### `set(key, value)`
-This method allows you to overwrite particular configuration options which were built via the 
+This method allows you to overwrite particular configuration options which were built via the
 configuration initialization step.
 
 💡 **NOTE:** If deepstream is initialised with a configuration object, `set()` will override tje emtries in your initial configuration. This is useful for passing in objects which are shared between deepstream and the rest of your application, such as a HTTPServer or cache connector. You can override any of the options using the same name within your [configuration](/docs/server/configuration), except for the notable difference(s) below.
@@ -53,7 +58,7 @@ configuration initialization step.
   typ: String
   opt: false
   des: The configuration option that should be set
-- 
+-
   arg: value
   typ: various
   opt: false

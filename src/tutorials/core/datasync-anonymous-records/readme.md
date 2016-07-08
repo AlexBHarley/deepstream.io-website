@@ -1,3 +1,8 @@
+---
+title: Anonymous Records
+description: Learn how to use anonymous records to simplify working with dynamic selections
+---
+
 If you've read about [records](./datasync-records), you know that they are small data objects that can be observed and manipulated. A record lets you store values using `.set();`, retrieve them via `.get()` and listen for changes with `subscribe()`.
 
 Anonymous records do exactly the same.

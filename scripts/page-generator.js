@@ -90,7 +90,7 @@ module.exports = function( metalsmith ) {
 							.replace(/```\s*{{/g, '{{')
 				);
 
-				if(!cli.quick) {
+				if(cli.production || cli.missingMeta) {
 					ensureMandatoryProperties( files[ filePath ] )
 				}
 

@@ -1,52 +1,15 @@
-.nav ul {
-	display: inline-block;
-	z-index: 1;
-}
-.nav li {
-	opacity: 1;
-	background-size: 4px;
-	transition: opacity 300ms ease;
-	text-align: center;
-}
-.nav a {
-	display: block;
-	font-size: 14px;
-	font-family: 'Quicksand', sans-serif;
-	font-weight: 500;
-	text-decoration: none;
-}
-
 /****************************
 * DESKTOP NAVIGATION
 ****************************/
 .desktop-nav {
-	position: relative;
-	height: 60px;
-	text-align: center;
-	z-index: 1;
-	overflow: hidden;
 	float: right;
 }
-.compact-header .desktop-nav {
-	height: 40px;
-	padding: 0px 200px 0px 0px;
-}
-
 .desktop-nav li {
 	margin: 0px 10px 0px 10px;
 	float: left;
 }
-
-.desktop-nav a {
-	padding: 18px 20px 10px 10px;
-	color: #fff;
-}
 .desktop-nav li.active a {
 	color: #00CCFE;
-	border-style: solid;
-	padding: 14px;
-	border-width: 4px 0px 0px;
-	border-color: #00CCFE;
 }
 .desktop-nav li:hover {
 	opacity: 0.2;
@@ -114,23 +77,6 @@
 	color: white;
 }
 
-#footer #subnav {
-	display: none;
-}
-
-@media( max-width: 1080px) {
-	.desktop-nav a {
-		padding: 18px 0 10px 0;
-	}
-}
-@media( max-width: 1080px) and (min-width: 799px) {
-	.small-logo.micro {
-		display: none;
-	}
-	.compact-header .desktop-nav  {
-		padding: 0px;
-	}
-}
 @media( max-width: 799px) {
 	body.nav-opened {
 		overflow: hidden;
@@ -144,10 +90,21 @@
 	.menu-icon {
 		display: block;
 	}
-	#outer-wrapper #header {
-		height: 42px;
-		position: fixed;
-		top: 0;
-		width: 100%;
+	.nav ul {
+		display: inline-block;
+		z-index: 1;
+	}
+	.nav li {
+		opacity: 1;
+		background-size: 4px;
+		transition: opacity 300ms ease;
+		text-align: center;
+	}
+	.nav a {
+		display: block;
+		font-size: 14px;
+		font-family: 'Quicksand', sans-serif;
+		font-weight: 500;
+		text-decoration: none;
 	}
 }

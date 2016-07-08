@@ -1,3 +1,8 @@
+---
+title: Valve Permissioning Advanced
+description: Learn how to unlock the full potential of Valve
+---
+
 Ok, time for some advanced valve rules. To get up to speed with the basics, head over to the [simple permission rules example](TODO).
 
 ## Variables

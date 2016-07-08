@@ -1,3 +1,8 @@
+---
+title: Active Data Providers
+description: How to boost your application performance by supplying ondemand data
+---
+
 What are Data Providers?
 
 Data Providers are processes that feed data into deepstream. Technically, they are just normal deepstream clients that run on the backend and write to records, send events or provide RPCs.

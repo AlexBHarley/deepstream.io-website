@@ -1,3 +1,8 @@
+---
+title: Valve Permissioning Simple
+description: Learn the basics of Valve and permissioning in deepstream
+---
+
 Permissions give you granular control over which records, events or RPCs can be used in which way by which user.
 
 ## What can be permissioned?

@@ -1,3 +1,8 @@
+---
+title: Storing Data
+description: Find out how deepstream uses cache and storage systems to store your data
+---
+
 ## How deepstream stores data
 As a standalone server, deepstream keeps all its data in internal memory. In a production cluster however, deepstream servers won't hold any data themselves. Instead, data is stored in a combination of storage and cache layers that are accessible to all deepstream nodes within the cluster. This allows the individual servers to remain stateless and go down / fail over without causing any data-loss, but it also allows for the data to be distributed across multiple nodes.
 

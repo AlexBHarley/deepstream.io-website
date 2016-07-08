@@ -14,7 +14,7 @@ metalsmith.clean( true );
 /************************************
 * Remove Drafts
 ***********************************/
-if (!cli.drafts) {
+if (!cli.drafts || cli.production) {
 	var drafts =  require('metalsmith-drafts');
 	metalsmith.use( drafts() );
 }
@@ -91,7 +91,7 @@ metalsmith.use(metalsmithLayouts({
 /************************************
 * Link Validation
 ***********************************/
-if (!cli.quick) {
+if (cli.brokenLinks || cli.production) {
 	var linkChecker = require('./link-checker');
 	linkChecker(metalsmith);
 }

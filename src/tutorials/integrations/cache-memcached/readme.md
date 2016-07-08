@@ -1,3 +1,8 @@
+---
+title: Memcached Cache Connector
+description: Learn how to use Memcached with deepstream
+---
+
 #### What is Memcached?
 [Memcached](https://memcached.org/) is a distributed caching system. All its data is purely kept in memory which means two things:
 

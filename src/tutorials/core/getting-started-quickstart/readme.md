@@ -1,3 +1,8 @@
+---
+title: Getting started quickstart
+description: The initial steps of starting a server and connecting to it from a simple webpage using the JS Client
+---
+
 Time to get started with deepstream. This tutorial takes you through the initial steps of starting a server and connecting to it from a simple webpage using the JS Client.
 
 ![Getting Started Endresult](getting-started.gif)

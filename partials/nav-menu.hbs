@@ -1,21 +1,21 @@
 <ul class="links">
-	<li {{#if isinstall}}class="active"{{/if}}>
+	<li {{#if type.install}}class="active"{{/if}}>
 		<a href="{{link 'install/'}}">install</a>
 	</li>
 
-	<li {{#if istutorials}}class="active"{{/if}}>
+	<li {{#if type.tutorials}}class="active"{{/if}}>
 		<a href="{{link 'tutorials/'}}">tutorials</a>
 	</li>
 
-	<li {{#if isdocs}}class="active"{{/if}}>
+	<li {{#if type.docs}}class="active"{{/if}}>
 		<a href="{{link 'docs/'}}">docs</a>
 	</li>
 
-	<li {{#if isblog}}class="active"{{/if}}>
+	<li {{#if type.blog}}class="active"{{/if}}>
 		<a href="{{link 'blog/'}}">blog</a>
 	</li>
 
-	<li {{#if isinfo}}class="active"{{/if}}>
+	<li {{#if type.info}}class="active"{{/if}}>
 		<a href="{{link 'info/'}}">info</a>
 	</li>
 

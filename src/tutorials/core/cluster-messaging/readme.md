@@ -1,3 +1,8 @@
+---
+title: Cluster Messaging
+description: Learn how to connect multiple deepstream instances in a cluster to scale with your needs
+---
+
 ![Deepstream Internals](./internal-workings.svg)
 
 Deepstream nodes can scale horizontally by syncing their state via a messaging layer. This can be done with almost with any message-broker. Deepstream offers plugins for a number of popular systems and protocols, e.g. [AMQP](../integrations/msg-amqp/), [Apache Kafka](../integrations/msg-kafka/) or [Redis Pub/Sub](../integrations/redis/)

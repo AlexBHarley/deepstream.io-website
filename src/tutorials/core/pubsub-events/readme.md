@@ -1,3 +1,7 @@
+---
+title: Events
+description: Learn how you can use events to implement  publish/subscribe and decouple your logic
+---
 
 Events are deepstream's implementation of the "publish/subscribe" or "observer" pattern. If you're familiar with e.g. JavaScript event-emitters or Java events, you know how they work. Zero or more interested clients subscribe to an event (sometimes also called a "topic", "channel" or "namespace") and zero or more other clients publish to it.
 
