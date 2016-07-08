@@ -1,6 +1,6 @@
 ---
 title: Records
-description: Learn how you can use Records and access the powerful benefits of datasync
+description: Learn how you can use records and access the powerful benefits of datasync
 ---
 
 Records are the main building blocks of deepstream's data-sync capabilities. They are atomic bits of JSON data that can be manipulated and observed. Any change to a record is instantly synced across all connected clients.

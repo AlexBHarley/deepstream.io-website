@@ -1,5 +1,5 @@
 ---
-title: caching Redis Connector
+title: Redis Cache/Message Connector
 description: Learn how to use Redis with deepstream
 ---
 

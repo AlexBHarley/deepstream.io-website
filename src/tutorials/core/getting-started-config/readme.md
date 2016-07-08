@@ -1,5 +1,5 @@
 ---
-title: Getting started
+title: Starting the server
 description: Find out how to start your own deepstream server
 ---
 

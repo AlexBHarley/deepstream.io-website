@@ -1,6 +1,6 @@
 ---
 title: Lists
-description: Learn how you can use lists to create collections out of records with things in common
+description: Learn how you can use lists to create collections out of records with attributes in common
 ---
 
 Lists are observable arrays of recordnames (not their data!).
