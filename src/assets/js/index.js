@@ -72,7 +72,7 @@ function searchAutocomplete() {
             return false;
         }
     }).autocomplete( "instance" )._renderItem = function( ul, item ) {
-      const otherOccurrences = item.occurrences.length > 2 ? ' other occurrences' : ' other occurrence'
+      var otherOccurrences = item.occurrences.length > 2 ? ' other occurrences' : ' other occurrence'
       return $( "<li>" )
         .append( "<a target='_blank' href='/" + item.slug + "' title='" + item.slug + "'>" +
             '<strong>' + item.title + "</strong><br>" + '<em>' + (item.occurrences[0] || '') + '</em>' +
@@ -117,12 +117,30 @@ $(function(){
         e.preventDefault();
         var pathname = $(this).attr( 'href' );
         history.push( {
-            pathname: pathname.replace( /\/[^/]*\.html/, '/' )
+            pathname: pathname.replace( /\/[^/]*\.html/, '/' ),
+            state: {
+                realPathname: pathname
+            }
         } );
+    });
+
+    var unlisten = history.listen(location => {
+        var pathname = (location.state || {}).realPathname
+        if (pathname == null) {
+            // the first page visit didn't set the state
+            // so recover the ajax page from its basename
+            var splitted = location.pathname.split('/')
+            if (splitted[splitted.length - 1] === '') {
+                pathname = splitted[splitted.length - 2]
+            } else {
+                pathname = splitted[splitted.length - 1]
+            }
+            pathname = location.pathname + pathname + '.html'
+        }
         changeEntryPage( {
             pathname: pathname
         } );
-    });
+    })
 
     function changeEntryPage( location ) {
         var pathname = location.pathname;
