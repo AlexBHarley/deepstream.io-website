@@ -9,6 +9,7 @@
 }
 
 .section-overview-entry {
+	text-transform: lowercase;
 	border: 1px solid white;
 	display: block;
 	padding: 10px;
