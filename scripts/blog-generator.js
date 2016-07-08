@@ -3,6 +3,7 @@
  ***********************************/
 const moment = require( 'moment' );
 const hbs = require( 'handlebars' );
+const marked = require( 'marked' )
 const authors = require( '../data/authors.json' );
 
 var checkMeta = function( file ) {
@@ -16,7 +17,7 @@ var checkMeta = function( file ) {
 };
 
 var addBlogMeta = function( file ) {
-	file.description = file.contents.toString().match( '^[\r\n\S]*([^\n\r]*)')[ 1 ]
+	file.excerpt = marked(file.contents.toString().match( '^[\r\n\S]*([^\n\r]*)')[ 1 ])
 	file.blog = {
 		date: moment( file.dateISO, 'YYYYMMDD' ).format( 'MMMM Do YYYY' ),
 		shortDate: moment( file.dateISO, 'YYYYMMDD' ).format( 'DD/MM/YYYY' ),
