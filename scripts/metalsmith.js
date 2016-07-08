@@ -1,5 +1,7 @@
 const colors = require('colors')
 const beep = require('beepbeep')
+const yaml = require('js-yaml');
+const fs   = require('fs');
 const child_process = require('child_process')
 
 const cli = global.cli || {};
@@ -38,6 +40,20 @@ metalsmith.use( pathNormalise() );
 ***********************************/
 const specsGenerator = require( './specs-generator' );
 metalsmith.use( specsGenerator() );
+
+/************************************
+* Add community Events
+***********************************/
+metalsmith.use( ( files, metalsmith, done ) => {
+	const metadata = metalsmith.metadata();
+	try {
+		metadata.communityEvents = yaml.safeLoad( fs.readFileSync( 'data/events.yml' ) );
+	} catch (e) {
+		console.error( 'Events data missing or invalid', e );
+		process.exit( 1 );
+	}
+	done();
+} );
 
 /************************************
 * Generate Blog

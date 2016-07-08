@@ -1,0 +1,48 @@
+-
+  eventName: "RealTime Web Lightning Talks #1 featuring Meteor, rethinkDB and two other talks"
+  date: March 17th 2016
+  eventImage: realtime-web-lightning-talks.jpg
+  link: //www.meetup.com/Berlin-Realtime-Web-Meetup/events/228632661/
+  locationName: TBA
+-
+  eventName: "Using rethinkdb and deepstream.io to create a smarter home"
+  date: February 25th 2016
+  eventImage: rethinkdb-meetup.jpeg
+  link: //www.meetup.com/RethinkDB-Berlin/events/228202026/
+  locationName: Wichertstraße 16, 10439
+-
+  eventName: "realtime apps and microservices with deepstream.io"
+  date: February 11th 2016
+  eventImage: fullstack-js.jpeg
+  link: //www.meetup.com/fullstack-berlin/events/228373010/
+  locationName: Adalbertstraße 8, Berlin
+-
+  eventName: "Workshop: Tanks! Creating a multiplayer realtime tank game in the browser"
+  date: January 21st 2016
+  eventImage: deepsteam-game-workshop.png
+  link: //www.meetup.com/Berlin-Realtime-Web-Meetup/events/227433107/
+  locationName: Amazon Berlin, Krausenstra&szlig;e 38, 10117 Berlin
+-
+  eventName: "Scalable realtime apps using rethinkdb and deepstream.io"
+  date: December 1st 2015
+  eventImage: node-js-logo.png
+  link: //www.meetup.com/Node-js-Meetup-Berlin/events/225798605/
+  locationName: Wikimedia, Tempelhofer Ufer 23-24, Berlin
+-
+  eventName: "Workshop: Live stock prices with RethinkDb and Deepstream.io"
+  date: November 19th 2015
+  eventImage: meetup-logo.png
+  link: //www.meetup.com/Berlin-Realtime-Web-Meetup/events/226120639/
+  locationName: Amazon Berlin, Krausenstra&szlig;e 38, 10117 Berlin
+-
+  eventName: "Talk: Making a collaborative whiteboard using deepstream.io"
+  date: October 19th 2015
+  locationName: Co.up, Adalbertstra&szlig;e 7-8 in Berlin-Kreuzberg
+  link: //berlinjs.org/
+  eventImage: berlinjs-logo.png
+-
+  eventName: "RethinkDB and an intro to Deepstream.io"
+  date: September 19th 2015
+  eventImage: rethinkdb-deepstream-logo.png
+  link: //www.meetup.com/RethinkDB-Utah/events/223349697/
+  locationName: 10235 S Jordan Gtwy, South Jordan, UT, USA

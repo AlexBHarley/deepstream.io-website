@@ -3,8 +3,17 @@
  ***********************************/
 const moment = require( 'moment' );
 const hbs = require( 'handlebars' );
-const marked = require( 'marked' )
-const authors = require( '../data/authors.json' );
+const marked = require( 'marked' );
+
+const yaml = require('js-yaml');
+const fs   = require('fs');
+
+try {
+  const authors = yaml.safeLoad( fs.readFileSync( 'data/authors.yml' ) );
+} catch (e) {
+  console.error( 'Author data missing or invalid', e );
+  process.exit( 1 );
+}
 
 var checkMeta = function( file ) {
 	if( !file.title || !file.dateISO || !file.author || !file.thumbnail ) {
@@ -22,8 +31,8 @@ var addBlogMeta = function( file ) {
 		date: moment( file.dateISO, 'YYYYMMDD' ).format( 'MMMM Do YYYY' ),
 		shortDate: moment( file.dateISO, 'YYYYMMDD' ).format( 'DD/MM/YYYY' ),
 		author:  authors[ file.author],
-		thumbnail: '/' + file.filename.replace( 'readme.md', file.thumbnail ),
-		blogPath: '/' + file.filename.replace( 'readme.md', '' )
+		thumbnail: file.filename.replace( 'readme.md', file.thumbnail ),
+		blogPath: file.filename.replace( 'readme.md', '' )
 	};
 };
 
@@ -39,7 +48,7 @@ var sortBlogs = function( blogPosts ) {
 module.exports = function() {
 
 	return function( files, metalsmith, done ) {
-		var metadata = metalsmith.metadata();
+		const metadata = metalsmith.metadata();
 		metadata.blogPosts = [];
 
 		var fileParts;

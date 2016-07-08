@@ -1,17 +1,10 @@
-<div class="latest-blogs">
-	<h4 class="latest-blogs-header">
-		Latest Blog Articles
-	</h4>
-	<ul class="latest-blogs-content">
-		{{#each blogPosts}}
-			{{#if blog.isLatest}}
-			<li class="latest-blog-article">
-				<a href="{{link blog.blogPath}}">
-					<span class="date">{{blog.shortDate}}</span>
-					<span class="title">{{title}}</span>
-				</a>
-			</li>
-			{{/if}}
-		{{/each}}
-	</ul>
+<div class="blogposts">
+	{{#each blogPosts}}
+		{{#if blog.isLatest}}
+		<a href="{{link blog.blogPath}}">
+			<i class="ion-ios-arrow-right"></i>
+			{{title}}
+		</a>
+		{{/if}}
+	{{/each}}
 </div>

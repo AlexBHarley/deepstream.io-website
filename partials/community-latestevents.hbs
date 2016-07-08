@@ -1,0 +1,64 @@
+<div class="events-wrapper">
+<div class="events">
+	<div class="inner">
+	{{#each communityEvents}}
+		<a class="community-event" href="{{ this.link }}">
+			<img src="/assets/img/events/{{ eventImage }}" alt="{{ eventImage }}" />
+			<div class="event-details">
+				<time datetime="{{{ date }}}">{{{ date }}}</time> |
+				<address>{{{ locationName }}}</address>
+				<summary>{{{ eventName }}}</summary>
+			</div>
+		</a>
+		{{/each}}
+	</div>
+</div>
+	<ul class="pagination">
+		<li class="ion-ios-arrow-left"></li>
+		<li class="ion-ios-arrow-right"></li>
+	</ul>
+</div>
+<script type="text/javascript">
+$(window).load(function(){
+	var eventsPerPage = 3;
+	var currentPage = 1;
+	var eventsHeight = $( '.community-event:first' ).outerHeight();
+	var pages = $( '.community-event' ).length / eventsPerPage;
+	var li, i;
+
+	$( '.events' ).css( 'height', eventsPerPage * eventsHeight );
+
+	for( i = 0; i < pages; i++ ) {
+		li = $( '<li>' + ( i + 1 ) + '</li>' );
+		li.click( setCurrentPage.bind( this, i + 1 ) );
+		$( '.pagination .ion-ios-arrow-right' ).before( li );
+	}
+
+	$( '.pagination .ion-ios-arrow-right' ).click(function(){
+		if( $( this ).hasClass( 'active' ) ) {
+			setCurrentPage( currentPage + 1 );
+		}
+	});
+
+	$( '.pagination .ion-ios-arrow-left' ).click(function(){
+		if( $( this ).hasClass( 'active' ) ) {
+			setCurrentPage( currentPage - 1 );
+		}
+	});
+
+	function setCurrentPage( page ) {
+		currentPage = page;
+		setPage();
+	}
+
+	function setPage() {
+		$( '.pagination li.active' ).removeClass( 'active' );
+		$( '.pagination li:nth-child(' + ( currentPage + 1 ) + ')' ).addClass( 'active' );
+		$( '.events .inner' ).css( 'top', eventsHeight * eventsPerPage * ( currentPage - 1 ) * -1 );
+		$( '.pagination .ion-ios-arrow-left' )[ currentPage <= 1 ? 'removeClass' : 'addClass' ]( 'active' );
+		$( '.pagination .ion-ios-arrow-right' )[ currentPage >= pages ? 'removeClass' : 'addClass' ]( 'active' );
+	}
+
+	setPage();
+});
+</script>

@@ -442,6 +442,10 @@ header.main-header .page-description *{
 	float: left;
 }
 
+#community .events {
+	overflow: hidden;
+}
+
 #community .events a {
 	display: block;
 	position: relative;
@@ -453,6 +457,14 @@ header.main-header .page-description *{
 	width: 24%;
 	display: block;
 	float: left;
+}
+
+#community .events .inner {
+	overflow: hidden;
+}
+
+#community .events .community-event {
+	height: 85px;
 }
 
 #community .events a .event-details {
@@ -471,7 +483,7 @@ header.main-header .page-description *{
 
 #community .events a .event-details time,
 #community .events a .event-details address {
-	font-size: 12px;
+	font-size: 10px;
 	display: inline-block;
 	font-style: normal;
 	color: #666;
@@ -484,7 +496,7 @@ header.main-header .page-description *{
 
 #community .pagination {
 	text-align: center;
-	margin: 5px 0 50px;
+	margin: 5px 0 30px;
 }
 
 #community .pagination li {

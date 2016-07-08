@@ -1,5 +1,5 @@
 // # Link helper
-// Usage: `{{list "css/screen.css"}}`
+// Usage: `{{link "css/screen.css"}}`
 //
 // Returns the relative path to an asset
 
