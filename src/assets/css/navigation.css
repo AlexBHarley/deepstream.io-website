@@ -8,11 +8,9 @@
 	margin: 0px 10px 0px 10px;
 	float: left;
 }
+.desktop-nav li:hover a,
 .desktop-nav li.active a {
-	color: #00CCFE;
-}
-.desktop-nav li:hover {
-	opacity: 0.2;
+	color: #0f4d75;
 }
 /****************************
 * MOBILE NAVIGATION

@@ -1,35 +1,77 @@
-.section-overview-navigation{
+.section-overview h1{
 	text-align: center;
-	margin: 30px 0;
 }
 
-.section-overview-navigation a{
-	font: inherit;
-	color: inherit;
+.section-overview h2{
+	margin-top: 40px;
+	font-size: 20px;
+	 border-bottom: 1px solid #ddd;
+	 font-weight: 300;
 }
 
-.section-overview-entry {
-	text-transform: lowercase;
-	border: 1px solid white;
-	display: block;
-	padding: 10px;
+.section-overview h2 a{
 	font-size: 16px;
 	font-weight: 300;
+	color: #aaa;
+}
+
+.section-overview h3{
+	font-size: 14px;
+	font-weight: 300;
+}
+
+.section-overview h4{
+	font-size: 14px;
+	font-weight: 300;
+    line-height: normal;
+    color: #474b4c;
+    margin: 0;
+}
+
+.section-overview p{
+	font-size: 14px;
 	color: #647276;
-	max-width: 750px;
+}
+
+.section-overview .entries{
+	overflow: hidden;
+}
+
+.section-overview .entries > *{
+	float: left;
+	box-sizing: border-box;
+}
+
+.section-overview .one-col > *{
+	width: 100%;
+}
+
+.section-overview .two-col > *{
+	width: 50%;
+}
+
+.section-overview .three-col > *{
+	width: 33.3333333%;
+}
+
+.section-overview a.entry,
+.section-overview a.entry *{
+	transition: all 400ms ease;
+}
+
+.section-overview a.entry{
+	display: block;
+	box-sizing: border-box;
+	padding: 10px 0 0 20px;
+	border-right: 10px solid #fff;
+	margin-bottom: 10px;
 	cursor: pointer;
-	margin: 15px auto;
 }
 
-.section-overview-entry a {
-	font-size: 20px;
-	margin-bottom: 5px;
+.section-overview a.entry:hover{
+	background-color: #0FBBEC;
 }
 
-.section-overview-entry p {
-	font-size: 15px;
-}
-
-.section-overview-entry:hover{
-	border: 1px solid rgba(15, 187, 236,0.1);
+.section-overview a.entry:hover *{
+	color: #fff!important;
 }
