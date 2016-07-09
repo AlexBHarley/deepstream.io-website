@@ -1,6 +1,6 @@
 ---
 title: Nginx
-description: How to use Nginx as a web-facing reverse proxy and load balancer in front of deepstream servers
+description: Using Nginx as a reverse proxy and load balancer for HTTP, Websocket & TCP traffic
 ---
 
 ## What is nginx?
