@@ -1,6 +1,6 @@
 ---
 title: Starting the server
-description: Find out how to start your own deepstream server
+description: Find out how to start the deepstream server
 ---
 
 Deepstream comes with a configuration file found at _conf/config.yml_ on windows/mac or in '/etc/deepstream/config.yml on Linux'. You can either edit it directly or create a copy and pass it to deepstream using the `-c` flag, e.g.
