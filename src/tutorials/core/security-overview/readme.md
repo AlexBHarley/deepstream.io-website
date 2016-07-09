@@ -1,6 +1,6 @@
 ---
-title: Searching Overview
-description: Find out how deepstream keeps your data safe and secure
+title: Security Overview
+description: How encryption, authentication and permissioning work together
 ---
 
 Security in deepstream is based on three interrelated concepts:
