@@ -33,7 +33,7 @@ const record = client.record.getRecord(recordName)
   typ: Boolean
   desc: True once the record has received its current data and emitted the `'ready'` event
 -
-  arg: isReady
+  arg: isDestroyed
   typ: Boolean
   desc: True once the record has been discarded or deleted. The record would need to be retrieved again via `client.record.getRecord( name )
 {{/table}}
