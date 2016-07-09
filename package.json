@@ -1,8 +1,8 @@
 {
-  "name": "javascript-kurse-berlin",
+  "name": "deepstream.io-website-metal",
   "version": "0.0.0",
   "private": true,
-  "description": "javascript-kurse-berlin",
+  "description": "deepstream.io website post 1.0 release",
   "main": "metalsmith.js",
   "scripts": {
     "start": "bin/website",
