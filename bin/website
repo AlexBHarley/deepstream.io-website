@@ -8,6 +8,7 @@ program
 	.option('-m, --missing-meta', 'Show missing meta')
 	.option('-l, --broken-links', 'Show broken links')
 	.option('-b, --beep', 'Emit a beep')
+	.option('-w, --watch', 'Watches for file changes')
 	.parse(process.argv);
 
 global.cli = program;

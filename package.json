@@ -8,7 +8,8 @@
     "start": "bin/website",
     "serve": "browser-sync start --no-ui --port 3000 --serveStatic dist",
     "reload": "browser-sync reload",
-    "watch": "npm run start && fswatch -0 src/ layouts/ helpers/ data/ partials/ scripts/ ./bin/website | xargs -0 -n 1 -I {} bin/website --drafts trigger-bs-reload"
+    "watch-win": "node bin/website --watch",
+    "watch": "npm run start && fswatch -0 src/ layouts/ helpers/ data/ partials/ scripts/ ./bin/website | xargs -0 -n 1 -I {} ./bin/website --drafts trigger-bs-reload"
   },
   "repository": {
     "type": "git",
@@ -38,6 +39,7 @@
     "metalsmith-markdown": "^0.2.1",
     "metalsmith-register-helpers": "^0.1.2",
     "metalsmith-s3": "0.0.2",
+    "metalsmith-watch": "^1.0.3",
     "moment": "^2.14.1",
     "walk": "^2.3.9"
   }

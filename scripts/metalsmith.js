@@ -113,6 +113,22 @@ if (cli.brokenLinks || cli.production) {
 }
 
 /************************************
+* Watch
+***********************************/
+if (cli.watch) {
+	var watch = require('metalsmith-watch');
+	metalsmith.use(
+		watch({
+			paths: {
+				"../src/**/*": true,
+				"../layouts/**/*": true,
+			},
+			livereload: true,
+		})
+	).build();
+}
+
+/************************************
 * S3 Deployment
 ***********************************/
 if (cli.deploy) {
