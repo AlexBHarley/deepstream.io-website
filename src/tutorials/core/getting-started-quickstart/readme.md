@@ -1,6 +1,6 @@
 ---
 title: Getting started
-description: The initial steps for starting a server and connecting to it from a simple webpage using the JS Client
+description: Learn how to start a server and connect a simple client
 ---
 
 Time to get started with deepstream. This tutorial takes you through the initial steps of starting a server and connecting to it from a simple webpage using the JS Client.
@@ -14,8 +14,6 @@ Let's start by installing the server. If you haven't done that before [here's ho
 ```bash
 deepstream start
 ```
-
-![deepstream starts](ds-quickstart-start.png)
 
 ## Getting the client
 
