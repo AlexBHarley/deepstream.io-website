@@ -17,7 +17,7 @@ The deepstream JavaScript client can be used by both browsers and Node.js. You c
   arg: options
   typ: Object
   opt: true
-  des: A map of options. Please find a list of available options [here](../../options)
+  des: A map of options. Please find a list of available options [here](/docs/client-js/options/)
 {{/table}}
 
 Creates a client instance and initialises the connection to the deepstream server. The connection will be kept in a quarantine state and won't be fully usable until `login()` is called.
