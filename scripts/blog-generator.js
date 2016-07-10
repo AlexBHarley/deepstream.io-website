@@ -1,6 +1,7 @@
 /************************************
  * Blog Generator
  ***********************************/
+'use strict';
 const moment = require( 'moment' );
 const hbs = require( 'handlebars' );
 const marked = require( 'marked' );

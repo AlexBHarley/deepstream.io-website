@@ -24,7 +24,6 @@ Instead of nginx you could also use e.g. [HA Proxy](http://www.haproxy.org/) or 
 
 #### What about AWS Elastic Load Balancer?
 If you're deploying deepstream on AWS, you'd probably want to use Amazon's well integrated load balancing service ELB. At the time of writing (June 2016) ELB however lacks support for "sticky sessions during a protocol switch", a crucial feature that's required for deepstream (and libraries that help with bi-directional browser-connectivity, e.g. socket.io).
-To learn more about this and how to deploy and load-balance a deepstream cluster on AWS, head over to the [AWS tutorial](../other-aws/)
 
 ## Installing nginx for use with deepstream
 By default, Nginx comes with everything you need to use it as an HTTP server. To use it as a stream/TCP server though, you need to build it with its stream module enabled (`--with-stream`). On CentOS/AWS Linux this works as follows, for other Linux distributions, have a [look here](https://www.nginx.com/resources/admin-guide/installing-nginx-open-source/).

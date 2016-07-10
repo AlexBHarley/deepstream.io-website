@@ -28,17 +28,17 @@ const client = deepstream('localhost:6020').login()
 ```
 
 ## Constants
-* `deepstream.CONSTANTS` grants access to constants. See [constants](../../common/constants/) for a full list
+* `deepstream.CONSTANTS` grants access to constants. See [constants](/docs/common/constants/) for a full list
 * `deepstream.MERGE_STRATEGIES` grants access to the default merge strategies used globally as `mergeStrategy` client option or per record with `record.mergeStrategy()`
 
 ## Events
 
 ### connectionStateChanged
-Emitted every time the connectionstate changes. The connectionState is passed to the callback and can also be retrieved using <a href="#getConnectionState()">getConnectionState()</a>. A list of possible connection states is available [here](../../common/constants/#connection-states)
+Emitted every time the connectionstate changes. The connectionState is passed to the callback and can also be retrieved using <a href="#getConnectionState()">getConnectionState()</a>. A list of possible connection states is available [here](/docs/common/constants/#connection-states)
 
 ### error
 Aggregates all errors that are encountered. Some errors like `CONNECTION_ERROR` or `MESSAGE_PARSE_ERROR` are exlusively emitted by the client.
-Others like `ACK_TIMEOUT` or `VERSION_EXISTS` that relate to a specific Record, Event or RPC are emitted first by the object they relate to and are then forwarded to the client. You can find a list of all errors [here](../../common/error).
+Others like `ACK_TIMEOUT` or `VERSION_EXISTS` that relate to a specific Record, Event or RPC are emitted first by the object they relate to and are then forwarded to the client. You can find a list of all errors [here](/docs/common/errors/).
 
 ## Methods
 
@@ -59,7 +59,7 @@ Others like `ACK_TIMEOUT` or `VERSION_EXISTS` that relate to a specific Record, 
 {{/table}}
 ```
 
-Authenticates the client against the server. To learn more about how authentication works, please have a look at the [Security Overview](../../tutorials/security-overview), [Authentication](../../tutorials/authentication.html) and [Permissioning](../../tutorials/permissioning.html) tutorials.
+Authenticates the client against the server. To learn more about how authentication works, please have a look at the [Security Overview](/tutorials/core/security-overview/).
 
 Callback will be called with: success (Boolean), data (Object).
 
@@ -99,7 +99,7 @@ client.close()
 ```
 
 ### getConnectionState()
-Returns the current connectionState. Please find a list of available connectionStates [here](other-connection-states).
+Returns the current connectionState. Please find a list of available connectionStates [here](/docs/common/constants/#connection-state).
 
 ### getUid()
 Returnes a unique id. The uid starts with a Base64 encoded timestamp to allow for semi-sequentual ordering and ends with a random string.

@@ -3,7 +3,7 @@ title: Event
 description: API docs for deepstream's events, the many to many broadcasting mechanism
 ---
 
-Events are deepstream's implementation of the publish/subscribe pattern. You can find more about how they are used in the [events tutorial](../../tutorials/core/pubsub-events)
+Events are deepstream's implementation of the publish/subscribe pattern. You can find more about how they are used in the [events tutorial](/tutorials/core/pubsub-events/)
 
 ## Methods
 
@@ -91,7 +91,7 @@ Sends the event to all subscribed clients
   des: A function that will be called whenever an event has been initially subscribed to or is no longer subscribed.
 {{/table}}
 
-Registers the client as a listener for event subscriptions made by other clients. This is useful to create "active" data providers - processes that only send events if clients are actually interested in them. You can find more about listening in the [events tutorial](../../tutorials/core/pubsub-events)
+Registers the client as a listener for event subscriptions made by other clients. This is useful to create "active" data providers - processes that only send events if clients are actually interested in them. You can find more about listening in the [events tutorial](/tutorials/core/pubsub-events/#how-to-listen-for-event-subscriptions)
 
 The callback is invoked with two arguments:
 - **eventName**: The name of the event that has been matched against the provided pattern

@@ -55,7 +55,7 @@ Yes. The same user can connect multiple times from separate browser windows or d
 
 ## Permissioning
 Permissioning is the act of deciding whether a specific action, e.g. writing to a record or subscribing to an event is allowed.
-To help with this, deepstream uses an expressive, JSON-based permissioning language called Valve. There's a lot to say about Valve. Here's a small Valve File that should give you a first impression, to learn more though head over to the [Valve Permissions Tutorial](TODO)
+To help with this, deepstream uses an expressive, JSON-based permissioning language called Valve. There's a lot to say about Valve. Here's a small Valve File that should give you a first impression, to learn more though head over to the [Valve Permissions Tutorial](/tutorials/core/permission-conf-simple/)
 
 ```yaml
 record:

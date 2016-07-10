@@ -21,7 +21,7 @@ You can finely tune deepstream to meet your specific requirements, including rec
 ## General Configuration
 
 ### mergeStrategy
-A global merge strategy that is applied whenever two clients write to the same record at the same time. Can be overwritten on a per record level. Default merge strategies are exposed by the client constructor. It's also possible to write custom merge strategies as functions. You can find more on handling data conflicts [here](../../tutorials/core/handling-data-conflicts)<br>
+A global merge strategy that is applied whenever two clients write to the same record at the same time. Can be overwritten on a per record level. Default merge strategies are exposed by the client constructor. It's also possible to write custom merge strategies as functions. You can find more on handling data conflicts [here](/tutorials/core/handling-data-conflicts/)<br>
 _Type_: Function<br>
 _Default_: `MERGE_STRATEGIES.REMOTE_WINS`
 

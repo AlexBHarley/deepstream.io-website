@@ -20,7 +20,7 @@ RethinkDB offers a Node.js module called [horizon](https://horizon.io/). If youâ
 Deepstream in comparison is a full, data-base agnostic realtime server. It provides higher level structures like data-sync, pub/sub and request/response, making it more flexible. Deepstream is horizontally scalable via clustering and is highly tuned for performance and speed, using an intermediate caching layer for faster data-access.
 
 #### How to use RethinkDB with deepstream.io
-Deepstream offers a database connector plugin for RethinkDB and optionally also a search provider that creates realtime queries based on dynamic list names. RethinkDB and the search provider are also part of the [extended Docker-image](TODO).
+Deepstream offers a database connector plugin for RethinkDB and optionally also a search provider that creates realtime queries based on dynamic list names. RethinkDB and the search provider are also part of the [Compose file for Docker](/install/docker-compose/).
 
 **Installing the RethinkDB storage connector**
 

@@ -71,7 +71,7 @@ Note: I initialized [the connection state](/docs/common/constants/#connection-st
 
 # Constructing Messages
 
-I wrote a bunch of generic utility methods to make it easier for me to create deepstream messages for this example. Take a look at [how](/info/protocol/message-structure/) messages are [structured](/info/specs/message-structure/) for more details.
+I wrote a bunch of generic utility methods to make it easier for me to create deepstream messages for this example. Take a look at [how messages are structured](/info/protocol/message-structure-overview/) for more details.
 
 ```clike
 String part = String( char( 31 ));
@@ -96,7 +96,7 @@ As you can see all the utility methods do are take parameters and concatenate th
 
 Now that we have a connected client and a bunch of utility methods, lets start looking into getting logged in!
 
-The first thing we need to do is to send our credentials. Once we are in the  AWAITING_AUTHENTICATING state we are ready to send the login details. We will login using the Arduino ID to ensure it has permissions to actually trigger and subscribe to events. All that's needed is to pass in the ID via the [login message](/info/specs/message-structure/#auth-login).
+The first thing we need to do is to send our credentials. Once we are in the  AWAITING_AUTHENTICATING state we are ready to send the login details. We will login using the Arduino ID to ensure it has permissions to actually trigger and subscribe to events. All that's needed is to pass in the ID via the [login message](/info/protocol/all-messages/#auth-login).
 
 ```clike
 if( state == "AWAITING_AUTHENTICATION" ) {
@@ -105,7 +105,7 @@ if( state == "AWAITING_AUTHENTICATION" ) {
  }
 ```
 
-And now the client has to wait until it recieves a [successful response](/info/specs/message-structure/#auth-loginsuccess).
+And now the client has to wait until it recieves a [successful response](/info/protocol/all-messages/#auth-loginsuccess).
 
 ```clike
 if( state == "AUTHENTICATING" && message == createMessage( "A", "A" ) ) {
@@ -120,7 +120,7 @@ message = "";
 
 # Subscribing and Recieving Data
 
-Now that you're logged in you'll want to [subscribe](/info/specs/message-structure/#event-subscribe) to events. In order to create an event subscription you'll have to create a message with an event topic, subscribe action and the event you're interested in.
+Now that you're logged in you'll want to [subscribe](/info/protocol/all-messages/#event-subscribe) to events. In order to create an event subscription you'll have to create a message with an event topic, subscribe action and the event you're interested in.
 
 ```clike
 log( "Subscribing to event led-red" );
@@ -133,7 +133,7 @@ But you're now getting an unknown message back
 E|A|S|led-red+
 ```
 
-Looks like the server responded with a [subscribe ack](/info/specs/message-structure/#event-subscribe). Awesome, means your connection is working! You don't actually need to do anything with the ack, we're just logging it for assurance.
+Looks like the server responded with a [subscribe ack](/info/protocol/all-messages/#event-subscribe). Awesome, means your connection is working! You don't actually need to do anything with the ack, we're just logging it for assurance.
 
 ```clike
 if( state == "OPEN" && message == createMessage( "E", "A", "S", "led-red" ) ) {
@@ -141,7 +141,7 @@ if( state == "OPEN" && message == createMessage( "E", "A", "S", "led-red" ) ) {
 }
 ```
 
-And now we can start listening to [incoming events](/info/specs/message-structure/#event-publish)! Since this is just a basic LED the only options we have are switching it on or off, which are just true or false [types](/docs/common/constants/#data-types) that deepstream minimizes to a single T or F character.
+And now we can start listening to [incoming events](/info/protocol/all-messages/#event-publish)! Since this is just a basic LED the only options we have are switching it on or off, which are just true or false [types](/docs/common/constants/#data-types) that deepstream minimizes to a single T or F character.
 
 ```clike
 if( state == "OPEN" && message == createMessage( "E", "EVT", "led-red", "T" ) ) {
@@ -153,7 +153,7 @@ if( state == "OPEN" && message == createMessage( "E", "EVT", "led-red", "T" ) ) 
 }
 ```
 
-And now we can switch on our LED from any client by just emiting the led-red [event](/info/specs/message-structure/#event-publish).
+And now we can switch on our LED from any client by just emiting the led-red [event](/info/protocol/all-messages/#event-publish).
 
 ```javascript
 ds.event.emit( 'led-red', true );
@@ -165,14 +165,14 @@ So that's over half the work done. But IoT devices are also often used for provi
 
 Hold on! Before we start just sending data into the world, it would be good to know whether or not something is interested in the event. Especially with devices where power consumption is important it's good to only send things when you know someone is cares.
 
-In this case, we only want to emit temperature changes when a client [listening](/info/specs/message-structure/#event-listen) to an event named 'temperature'.
+In this case, we only want to emit temperature changes when a client [listening](/info/protocol/all-messages/#event-listen) to an event named 'temperature'.
 
 ```clike
 log( "Lisening to event temperature" );
 client.print( createMessage( "E", "L", "/^temperature$/" ) );
 ```
 
-As with 'subscribes', the server will respond with an [ack](/info/specs/message-structure/#event-listen) to confirm it recieved the message.
+As with 'subscribes', the server will respond with an [ack](/info/protocol/all-messages/#event-listen) to confirm it recieved the message.
 
 ```clike
 if( state == "OPEN" && message == createMessage( "E", "A", "L", "/^temperature$/" ) ) {
@@ -180,7 +180,7 @@ if( state == "OPEN" && message == createMessage( "E", "A", "L", "/^temperature$/
 }
 ```
 
-And we should now be notified whenever there's at least one client [listening](/info/specs/message-structure/#event-listenmatch) or when all clients [stop](/info/specs/message-structure/#event-listenunmatch).
+And we should now be notified whenever there's at least one client [listening](/info/protocol/all-messages/#event-listenmatch) or when all clients [stop](/info/protocol/all-messages/#event-listenunmatch).
 
 ```clike
 boolean publishingTemperature = false;
