@@ -182,3 +182,9 @@ $(function(){
         });
     });
 });
+
+$(function(){
+    setTimeout(function(){
+        $('.deepstream-star').removeClass('start');
+    }, 16000 );
+});

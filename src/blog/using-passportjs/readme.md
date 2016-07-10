@@ -9,16 +9,13 @@ Let's face it, we each have multiple user profiles and maintaining all those dif
 
 In this blog we'll be looking at using the power of [express](//expressjs.com/), [PassportJS](//PassportJS.org/) and a nifty [plugin](//github.com/demux/use-express-middleware) by [@arnary](//twitter.com/arnary) to allow us to automatically login to deepstream using Facebook or Twitter.
 
-# What is PassportJS?
-
+### What is PassportJS?
 Before we get started it's certainly worth looking at [PassportJS](//PassportJS.org/). It's an authentication middleware for Node.js that currently supports over 300 login-strategies, including Facebook, Twitter and Github.
 
-# Why use it with deepstream?
-
+### Why use it with deepstream?
 deepstream has a powerful permission-handler which can allow you to implement any type of user validation. By combining it with PassportJS we can authenticate users by checking if their session token is valid and determine if they can login accordingly.
 
-# How can it be done?
-
+### How can it be done?
 I would recommend looking at the express/PassportJS Facebook [example](//github.com/passport/express-4.x-facebook-example/blob/master/server.js) to get a feel for how it works, but the basic idea is pretty simple. Let's take Facebook as an example:
 
 1. Load your application
@@ -28,8 +25,7 @@ I would recommend looking at the express/PassportJS Facebook [example](//github.
 
 Let's take a look at how the three different parts are implemented.
 
-#### PassportJS
-
+### PassportJS
 PassportJS needs to be initialized and the desired strategies added.
 
 ```javascript
@@ -59,8 +55,7 @@ passport.use( new passportFacebook( {
 }));
 ```
 
-#### Express
-
+### Express
 Express is required by PassportJS to handle the authentication callbacks we expect from oAuth providers as well as to forward us to the correct authentication provider if we don't already have a session.
 
 ```javascript
@@ -91,8 +86,7 @@ app.get( '/login/facebook/return',
 } );
 ```
 
-#### Deepstream
-
+### Deepstream
 Deepstream can use the same middleware intialised previously to check whether or not the client attempting to login has a session, and allow or deny access accordingly.
 
 ```javascript
