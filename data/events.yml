@@ -1,13 +1,25 @@
 -
-  eventName: "RealTime Web Lightning Talks #1 featuring Meteor, rethinkDB and two other talks"
+  eventName: "CodeMotion Talk: Reactive Realtime for Fun and Profit"
+  date: October 24th 2016
+  eventImage: codemotion.png
+  link: //berlin2016.codemotionworld.com/
+  locationName: Berlin
+-
+  eventName: "Open Air Data - Tech Open Air Berlin"
+  date: July 10th 2016
+  eventImage: toa16.png
+  link: //medium.com/@BlueYard/open-air-data-join-us-for-a-conversation-at-tech-open-air-e321f604fd71#.c2kdpz4bb
+  locationName: Berlin
+-
+  eventName: "RealTime Web Lightning Talks #1"
   date: March 17th 2016
   eventImage: realtime-web-lightning-talks.jpg
   link: //www.meetup.com/Berlin-Realtime-Web-Meetup/events/228632661/
-  locationName: TBA
+  locationName: Roof Up, Akazienstraße 3, 10823 Berlin
 -
   eventName: "Using rethinkdb and deepstream.io to create a smarter home"
   date: February 25th 2016
-  eventImage: rethinkdb-meetup.jpeg
+  eventImage: rethinkdb-deepstream-logo.png
   link: //www.meetup.com/RethinkDB-Berlin/events/228202026/
   locationName: Wichertstraße 16, 10439
 -

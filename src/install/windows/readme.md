@@ -3,14 +3,17 @@ title: Installing on Windows
 description: Find out how to get deepstream running on Windows
 ---
 
-[Download](#) the zip file, unzip and start the server by _double clicking_ the executable file or running `deepstream.exe start` in `CMD`:
+<a class="install-link" data-os="windows"></a>
+
+Download the server from the link above and unzip it.
 
 ![Windows Executable](windows_install.png)
 
 ## Starting deepstream
+You can start the server by _double clicking_ the executable file or via `CMD`
+
 ```bash
 deepstream.exe start
 ```
 
-Learn more about the [command line interface](/docs/server/command-line-interface/)
-and the [configuration file](/docs/server/configuration).
+Learn more about deepstream's [command line interface](/docs/server/command-line-interface/) and its [configuration file](/docs/server/configuration).

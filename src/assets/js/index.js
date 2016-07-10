@@ -162,3 +162,21 @@ $(function(){
         });
     };
 });
+
+$(function(){
+    console.log( $('a.install-link') );
+    $('a.install-link').each(function(){
+        var url = 'https' + '://api.github.com/repos/deepstreamio/deepstream.io/releases/latest';
+        var anchor = $(this);
+
+         $.getJSON( url, function( data ){
+            var i, asset = data.assets.filter(function( asset ){
+                return asset.name.toLowerCase().indexOf( anchor.data( 'os' ) ) !== -1;
+            })[ 0 ];
+
+            anchor
+                .text( 'download ' + asset.name )
+                .attr( 'href', asset.browser_download_url );
+        });
+    });
+});
