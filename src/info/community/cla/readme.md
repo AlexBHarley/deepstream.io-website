@@ -5,7 +5,7 @@ description: The Contributor License Agreement
 
 ## deepstreamHub GmbH - CONTRIBUTOR LICENSING
 
-Thank you for your interest in deepstream.io ("deepstream.io"). In order to clarify the intellectual property license granted with Contributions from any person or entity, deepstream.io must have a Contributor License Agreement (CLA) on file that has been signed by each Contributor, indicating agreement to the license terms below. This license is for your protection as a Contributor as well as the protection of deepstream.io and its users; it does not change your rights to use your own Contributions for any other purpose.
+Thank you for your interest in the deepstream.io open source server ("deepstream.io"). In order to clarify the intellectual property license granted with Contributions from any person or entity, deepstream.io must have a Contributor License Agreement (CLA) on file that has been signed by each Contributor, indicating agreement to the license terms below. This license is for your protection as a Contributor as well as the protection of deepstream.io and its users; it does not change your rights to use your own Contributions for any other purpose.
 
 You can readup on the importance of CLAs from some great articles on [Wikipedia](//en.wikipedia.org/wiki/Contributor_License_Agreement) and [Django](//www.djangoproject.com/foundation/cla/faq/).
 
@@ -76,5 +76,4 @@ This Agreement and all disputes, claims, actions, suits or other proceedings ari
 
 This Agreement sets out the entire agreement between You and deepstream.io for Your Contributions to deepstream.io and overrides all other agreements or understandings. In any action or proceeding to enforce rights under this agreement, the prevailing party will be entitled to recover costs and attorney's fees.
 
-[Agreement Form](TODO)
 

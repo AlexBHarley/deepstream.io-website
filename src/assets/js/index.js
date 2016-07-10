@@ -164,7 +164,6 @@ $(function(){
 });
 
 $(function(){
-    console.log( $('a.install-link') );
     $('a.install-link').each(function(){
         var url = 'https' + '://api.github.com/repos/deepstreamio/deepstream.io/releases/latest';
         var anchor = $(this);

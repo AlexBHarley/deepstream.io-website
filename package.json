@@ -8,6 +8,7 @@
     "start": "bin/website",
     "serve": "browser-sync start --no-ui --port 3000 --serveStatic dist",
     "reload": "browser-sync reload",
+    "deploy": "aws s3 sync dist s3://deepstream.io-metal",
     "watch-win": "node bin/website --watch",
     "watch": "npm run start && fswatch -0 src/ layouts/ helpers/ data/ partials/ scripts/ ./bin/website | xargs -0 -n 1 -I {} ./bin/website --drafts trigger-bs-reload"
   },

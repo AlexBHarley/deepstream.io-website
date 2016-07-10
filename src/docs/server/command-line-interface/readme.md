@@ -5,10 +5,10 @@ description: The options that can be passed to the deepstream server via the com
 
 deepstream comes with a comprehensive command line interface (CLI) that lets you start or stop the server, install connectors or override configuration options.
 
-Many of these options can also be set via the configuration file, read [config file documentation](../configuration). for a detailed list.
+Many of these options can also be set via the configuration file, read [config file documentation](/docs/server/configuration/). for a detailed list.
 
 ## Usage
-If you've [installed](TODO) deepstream on linux via a package manager, the `deepstream` command is already on your path. On Mac and Windows, you can access it through the executable, e.g. `./deepstream` or `deepstream.exe`
+If you've [installed](/install) deepstream on linux via a package manager, the `deepstream` command is already on your path. On Mac and Windows, you can access it through the executable, e.g. `./deepstream` or `deepstream.exe`
 
 For the brave souls who've got deepstream via [Github](https://github.com/deepstreamIO/deepstream.io) or [NPM](https://www.npmjs.com/package/deepstream.io) instead, you can find the executable in `bin/deepstream`
 

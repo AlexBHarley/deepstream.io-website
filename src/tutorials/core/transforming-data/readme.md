@@ -97,6 +97,6 @@ server.set( 'dataTransforms', [{
 	fanned out to all subscribed clients. If a transform function is registered however, messages are constructed
 	for every receiver specifically which can add considerable overhead.<br>
 	So: Use with caution and do as little as possible in your transform function.<br>
-	Also, structure your data in a way that data is seperated by concern. For example, if you have a user with admin and readonly data, have two seperate records called `user-admin/&lt;id&gt;` and `user/&lt;id&gt;` which you can then permission using [Value](../value-permissions) instead.
+	Also, structure your data in a way that is seperated by concern. For example, if you have a user with admin and readonly data, have two seperate records called `user-admin/&lt;id&gt;` and `user/&lt;id&gt;` which you can then permission using [Valve Permissions](/tutorials/core/permission-conf-simple/) instead.
 	</p>
 </div>

@@ -10,7 +10,7 @@ Http authentication lets you register your own HTTP server's URL as a Webhook. E
 Http authentication is the most flexible authentication type as it's completely up to your server to implement an authentication mechanism. You can query a database, contact an oAuth provider, validate a WebToken or whatever else your heart desires.
 
 ## Using HTTP Authentication
-To enable HTTP authentication, set the `type` to `http` in the `auth` section of the server's [configuration file](../../docs/server/configuration).
+To enable HTTP authentication, set the `type` to `http` in the `auth` section of the server's [configuration file](/docs/server/configuration/).
 
 ```yaml
 type: http

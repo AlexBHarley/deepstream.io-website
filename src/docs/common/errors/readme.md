@@ -46,7 +46,7 @@ list:
 
 -
   name: VERSION_EXISTS
-  description: The client has tried to update a record to a version that the server already has. This might happen if multiple clients try to update the same record at the same time. This error will also be emitted by the affected Record. To mitigate this error, configure a [merge strategy](../../tutorials/core/handling-data-conflicts)
+  description: The client has tried to update a record to a version that the server already has. This might happen if multiple clients try to update the same record at the same time. This error will also be emitted by the affected Record. To mitigate this error, configure a [merge strategy](/tutorials/core/handling-data-conflicts/)
   server: ✔
   client: ✔
 

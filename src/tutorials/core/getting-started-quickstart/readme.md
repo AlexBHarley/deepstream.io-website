@@ -9,7 +9,7 @@ Time to get started with deepstream. This tutorial takes you through the initial
 
 ## Start the server
 
-Let's start by installing the server. If you haven't done that before [here's how](../getting-started-installation/). Once the server is installed, you can start it with:
+Let's start by installing the server. Just pick the [right version for your operating system](/install/) and follow its steps. Once the server is installed, you can start it with:
 
 ```bash
 deepstream start
@@ -71,4 +71,4 @@ record.subscribe('firstname', value => {
 
 Open the web page in two browser windows and type text into either of the text fields and the other browser window will reflect changes instantly.
 
-And that's it. There's of course a lot more to deepstream than that. If you'd like to learn more about records and what they can be used for, head over to the [record tutorial](../datasync-record/). Or start reading about deepstream's [Request/Response](../request-response-rpc) or [Pub/Sub](../pubsub-events) features.
+And that's it. There's of course a lot more to deepstream than that. If you'd like to learn more about records and what they can be used for, head over to the [record tutorial](./datasync-records/). Or start reading about deepstream's [Request/Response](./request-response-rpc) or [Pub/Sub](./pubsub-events) features.

@@ -135,7 +135,7 @@ _Default_: `none`
 
 In this section you can configure the location of the permissions file that sets levels of access users and actions have to the server.
 
-At the moment, you can [create your own custom permission handler](/tutorials/permissions-conf-advanced/), or use a configuration file with the `config` option.
+At the moment, you can create your own custom permission handler, or use a configuration file with the `config` option.
 If you use the `config` option, then use the `options` sub key to configure it.
 
 ### path

@@ -5,7 +5,7 @@ description: The API docs for deepstream records
 
 Records are one of deepstream's core features. A Record is an arbitrary JSON data structure that can be created, retrieved, updated, deleted and listened to. Records are created and retrieved using `client.record.getRecord('name')`
 
-To learn more about how they are used, have a look at the [Record Tutorial](../../tutorials/core/datasync-records).
+To learn more about how they are used, have a look at the [Record Tutorial](/tutorials/core/datasync-records/).
 
 ## Creating records
 

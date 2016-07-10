@@ -5,7 +5,7 @@ description: Learn how to connect multiple deepstream instances in a cluster to 
 
 ![Deepstream Internals](./internal-workings.svg)
 
-Deepstream nodes can scale horizontally by syncing their state via a messaging layer. This can be done with almost with any message-broker. Deepstream offers plugins for a number of popular systems and protocols, e.g. [AMQP](../integrations/msg-amqp/), [Apache Kafka](../integrations/msg-kafka/) or [Redis Pub/Sub](../integrations/redis/)
+Deepstream nodes can scale horizontally by syncing their state via a messaging layer. This can be done with almost with any message-broker. Deepstream offers plugins for a number of popular systems and protocols, e.g. [AMQP](/tutorials/integrations/msg-amqp/), [Apache Kafka](/tutorials/integrations/msg-kafka/) or [Redis Pub/Sub](/tutorials/integrations/cache-redis/)
 
 ## Connecting deepstream nodes directly
 For smaller clusters it used to be possible to connect deepstream nodes directly in a full-mesh configuration (everyone-to-everyone). This feature has been deprecated in its current incarnation, but will soon be replaced by a more scalable (and hopefully slightly smarter) direct-message-connector plugin based on the [Small World Network Paradigm](https://en.wikipedia.org/wiki/Small-world_network).
@@ -40,7 +40,7 @@ __Microsoft Azure__ offers an AMQP based service bus, but it's quite slow and ta
 There is also a large offering of messaging-as-a-service offerings. [CloudAMQP](https://www.cloudamqp.com/), [CloudKafka](http://www.cloudkafka.com/), [StormMQ](http://stormmq.com/) or [RedisLabs](https://redislabs.com/) to name just a few. Whilst they offer great peace of mind through their managed services and high uptime guarantees, we strongly recommend to go with a message-broker running within your own data-center instead. Deepstream uses its message-bus extensively and every millisecond network latency between it and your cluster will make your application notably slower.
 
 ## Connecting to a message broker
-Deepstream connectors are available for a number of message brokers and we're constantly looking to expand this selection. You can find an overview of available connectors on the [download page](/download). Connectors can be installed via deepstream's commandline interface, using the `msg` keyword, e.g.
+Deepstream connectors are available for a number of message brokers and we're constantly looking to expand this selection. You can find an overview of available connectors on the [install page](/install). Connectors can be installed via deepstream's commandline interface, using the `msg` keyword, e.g.
 
 ```bash
 deepstream install msg redis

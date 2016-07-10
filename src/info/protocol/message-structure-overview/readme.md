@@ -36,7 +36,7 @@ would result in this outgoing message
 
 ![Message Structure Path](message-structure-record-patch.png)
 
-Please note the additional S before `Owen`. This indicates that the remaining part of the message should be treated as a string. Please find a list of available types [here](/docs/commmon/#data-types).
+Please note the additional S before `Owen`. This indicates that the remaining part of the message should be treated as a string. Please find a list of available types [here](/docs/common/#data-types).
 
 Both client and server use a message-parser to validate these messages and to convert them into objects looking like this:
 

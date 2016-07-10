@@ -38,7 +38,7 @@ Please note: The following tests are non-conclusive and will be improved and ext
 
 Deepstream is designed as a distributed system. Individual nodes can multiplex updates amongst each other. This means that it’s possible to keep message latency and throughput rates steady whilst catering for an ever increasing number of simultaneously connected clients – simply by spinning up additional deepstream nodes as needed.
 
-To put this statement into numbers, please see the performance test results for [a single node in comparison to a three instance cluster](../performance-single-node-vs-cluster/).
+To put this statement into numbers, please see the performance test results for [a single node in comparison to a three instance cluster](../single-node-vs-cluster/).
 
 ## How to run the tests yourself
 

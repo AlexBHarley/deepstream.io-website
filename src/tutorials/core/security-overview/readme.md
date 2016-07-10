@@ -20,7 +20,7 @@ sslCert: ./my-cert.crt
 sslCa: ./my-ca.crt
 ```
 
-Often it's easier and more performant though to leave SSL termination to a load balancer (e.g. Nginx or HA Proxy). To learn more about this, head over to the [encrypted connections in deepstream tutorial](TODO).
+Often it's easier and more performant though to leave SSL termination to a load balancer (e.g. Nginx or HA Proxy). To learn more about this, head over to the [Nginx Tutorial](/tutorials/integrations/other-nginx/).
 
 ## Authentication
 Every incoming connection needs to pass an authentication step. This happens when the client calls `login( data, callback )`.

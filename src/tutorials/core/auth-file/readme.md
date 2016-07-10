@@ -26,7 +26,7 @@ The `path` key contains a path to the file relative to the config file, that def
 
 In the `hash` key add the hashing algorithm to hash the passwords, for example, using `md5` (or any other algorithm supported by your operating system). The `iterations` key sets how many times the algorithm should was applied to the user's password, and `keyLength` the length of the key generated. These should match how you hashed the passwords.
 
-In the _users_ file, create a list of your users, their hashed passwords (you can create hashes with your setting using deepstreams [hash command](TODO)), and any other user data that you would like to pass to permissioning about that user.
+In the _users_ file, create a list of your users, their hashed passwords (you can create hashes with your setting using deepstreams [hash command](/docs/server/command-line-interface/#deepstream-hash)), and any other user data that you would like to pass to permissioning about that user.
 
 ```yaml
 chris:

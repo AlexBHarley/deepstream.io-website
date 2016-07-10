@@ -24,35 +24,35 @@ Deepstream is an open platform that uses a minimal, text-based protocol to commu
 < E|EVT|someEvent|Smore details+
 ```
 
-Deepstream communicates via [engine.io](//github.com/socketio/engine.io) with browsers and via TCP for all other programming languages. Using a low level protocol like TCP means that pretty much everything, from basic Arduinos to enterprise Java servers can communicate with deepstream.
+Deepstream communicates via [engine.io](https://github.com/socketio/engine.io) with browsers and via TCP for all other programming languages. Using a low level protocol like TCP means that pretty much everything, from basic Arduinos to enterprise Java servers can communicate with deepstream.
 
-If you'd like to write a client for your language of choice, have a look if there's [already an issue for it](//github.com/deepstreamIO/deepstream.io/labels/new-client) and get in touch! We'd be more than happy to help.
+If you'd like to write a client for your language of choice, have a look if there's [already an issue for it](https://github.com/deepstreamIO/deepstream.io/labels/new-client) and get in touch! We'd be more than happy to help.
 
 # Where to start?
 Here's how to tackle writing a deepstream client:
-- Have a look at the [page on message structure](../message-structure)
+- Have a look at the [page on message structure](/info/protocol/message-structure-overview/)
 - Establish a TCP connection to a deepstream server
-- Send an [auth message and parse the response](../../specs/connectivity/)
-- Start by implementing [events](../../specs/events/) as they are the simplest feature
+- Send an [auth message and parse the response](/info/specs/connectivity/)
+- Start by implementing [events](/info/specs/events/) as they are the simplest feature
 - Add Records, RPCs
 
 Here are some more ressources and considerations that will prove useful in writing new clients.
 
 ## Message Specifications
 
-You can now view all the different message structures [here](../all-messages/) as a reference for all the different messages on the system. If your not sure what a message you recieved means, want to find out if it has an associated ack or want a quick introduction into the low level protocol it's the perfect place to bookmark.
+You can now view all the different message structures [here](/info/protocol/all-messages/) as a reference for all the different messages on the system. If your not sure what a message you recieved means, want to find out if it has an associated ack or want a quick introduction into the low level protocol it's the perfect place to bookmark.
 
 ## Features
 
-Making sure your client works in the exact way the server expects it to can be quite challenging when running against a real server. Because of this, we covered all the features offered using [cucumber](//cucumber.io/), a format that is supported by most of the popular programming languages.
+Making sure your client works in the exact way the server expects it to can be quite challenging when running against a real server. Because of this, we covered all the features offered using [cucumber](https://cucumber.io/), a format that is supported by most of the popular programming languages.
 
 What this means is you can test your client continuously while developing it using prewritten integration tests. These tests are continuously run against current clients and when you get them all passing provides the guarantee you're using the procotol correctly.
 
-Before reading on, take a quick peek at [the connectivity feature](../../specs/connectivity/) to see how they look like.
+Before reading on, take a quick peek at [the connectivity feature](/info/specs/connectivity/) to see how they look like.
 
 <div class="hint">
     <h3>Hint</h3>
-<ul>
+    <ul>
         <li>
             You can hover over messages in features and spec pages to get a breakdown of what they get parsed into.
         </li>

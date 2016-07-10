@@ -77,6 +77,6 @@ service( 'twoWayBind', function(){
 ```
 
 ### Putting it all together
-To see all this in context, have a look at deepstream's [Angular 1 example app](https//github.com/deepstreamIO/ds-demo-simple-app-ng)
+To see all this in context, have a look at deepstream's [Angular 1 example app](https://github.com/deepstreamIO/ds-demo-simple-app-ng)
 
 ![Simple App using deepstream and Angular](simple-app.png)

@@ -78,7 +78,7 @@ rpc:
 ```
 
 ### action
-the original action that triggered this rule (e.g. UPDATE / PATCH / LISTEN ) etc. Useful for more finegrained/low-level permissions. You can find a list of all available actions [here](/docs/server/constants/)
+the original action that triggered this rule (e.g. UPDATE / PATCH / LISTEN ) etc. Useful for more finegrained/low-level permissions. You can find a list of all available actions [here](/docs/common/constants/)
 
 ### $variableName
 Variables that are extruded from the record / event / rpc name. Names can contain multiple variables. Variable names start with a dollar and are only allowed to contain uppercase letters, lowercase letters and numbers.
