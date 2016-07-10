@@ -2,8 +2,20 @@
 
 <div class="two-col docs">
 	<div class="col left small subnav clearfix">
-		<ul class="tree-nav subsection">
-			<li></li>
+		<ul class="tree-nav entry subsection">
+		<li class="open">
+			<div class="sub-section-toggle">
+				<span class="icon ion-chevron-right"></span>
+				<span class="title">install</span>
+			</div>
+			<ul class="entry">
+				{{#each tree}}
+					<li class="{{ifactive-install 'level2' 'active' @root @root.tree this.indexPath}}">
+						<a href="{{link this.path}}" data-fetch="ajax">{{this.title}}</a>
+					</li>
+				{{/each}}
+			</ul>
+		</li>
 		</ul>
 	</div>
 	<div class="col big right clearfix">

@@ -43,7 +43,17 @@ module.exports = function() {
 				metadata.nav[ file.level1 ] = {};
 			}
 
-			if( file.isLevel2 || file.isLevel3 ) {
+			if( file.isLevel2 && !file.isLevel3 ) {
+				if( file.type.install || file.type.blog ) {
+					metadata.nav[ file.level1 ][ file.level2 ] = {
+						title: file.title || file.level2,
+						description: file.description || 'TODO: Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..',
+						path: `${file.level1}/${file.level2}/${file.level2}.html`,
+						indexPath: `${file.level1}/${file.level2}/`
+					};
+				}
+			}
+			else if( file.isLevel2 || file.isLevel3 ) {
 				if( !metadata.nav[ file.level1 ][ file.level2 ] ) {
 					metadata.nav[ file.level1 ][ file.level2 ] = {};
 				}
