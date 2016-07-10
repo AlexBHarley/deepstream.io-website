@@ -149,6 +149,9 @@ $(function(){
 
         link.parent().addClass( 'active' );
 
+        // ensure that the subsection is open when navigating via browser history
+        link.parents('.sub-section-container').addClass('open')
+
         $( '.col.right .header h1' ).text( link.text() );
         $.get( pathname, function( result ){
 
