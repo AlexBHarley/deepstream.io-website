@@ -1,0 +1,39 @@
+<link rel="stylesheet" type="text/css" href="{{asset 'css/overview-list.css'}}">
+
+<section class="section-overview">
+	<div class="wrapper">
+		<h1 class="section-overview-navigation">
+			API Documentation
+		</h1>
+
+		<h2>Server</h2>
+		<div class="entries two-col">
+			{{entry tree "/server/command-line-interface/"}}
+			{{entry tree "/server/configuration/"}}
+			{{entry tree "/server/valve-permissions/"}}
+			{{entry tree "/server/node-api/"}}
+			{{entry tree "/server/user-file/"}}
+			{{entry tree "/server/data-transforms/"}}
+		</div>
+
+		<h2>Shared between Server and Clients</h2>
+		<div class="entries two-col">
+			{{entry tree "/common/constants/"}}
+			{{entry tree "/common/errors/"}}
+		</div>
+
+		<h2>JavaScript Client for Browsers &amp; NodeJS</h2>
+		<div class="entries two-col">
+			{{entry tree "/client-js/client/"}}
+			{{entry tree "/client-js/datasync-anonymous-record/"}}
+			{{entry tree "/client-js/datasync-client-record/"}}
+			{{entry tree "/client-js/datasync-list/"}}
+			{{entry tree "/client-js/datasync-record/"}}
+			{{entry tree "/client-js/options/"}}
+			{{entry tree "/client-js/other-eventemitter/"}}
+			{{entry tree "/client-js/pubsub-client-event/"}}
+			{{entry tree "/client-js/reqres-client-rpc/"}}
+			{{entry tree "/client-js/reqres-response/"}}
+		</div>
+	</div>
+</section>

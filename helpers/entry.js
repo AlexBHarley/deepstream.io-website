@@ -23,6 +23,7 @@ function entry( tree, path ) {
 	}
 
 	var html = `<a class="entry" href="/${entry.indexPath}">
+		<div class="bg"></div>
 		<h4>${entry.title}</h4>
 		<p>${entry.description}</p>
 	</a>`;
