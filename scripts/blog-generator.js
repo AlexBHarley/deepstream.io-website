@@ -7,9 +7,9 @@ const marked = require( 'marked' );
 
 const yaml = require('js-yaml');
 const fs   = require('fs');
-
+let authors
 try {
-  const authors = yaml.safeLoad( fs.readFileSync( 'data/authors.yml' ) );
+  authors = yaml.safeLoad( fs.readFileSync( 'data/authors.yml' ) );
 } catch (e) {
   console.error( 'Author data missing or invalid', e );
   process.exit( 1 );
