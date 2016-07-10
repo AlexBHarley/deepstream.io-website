@@ -4,6 +4,7 @@
 .site-wrapper{
 	overflow: hidden;
 	min-height: 0 !important;
+	background-color: #fafafa;
 }
 
 .col{
@@ -12,10 +13,14 @@
 }
 
 .col.left{
-	background: #f6f6f6;
+	background: #fafafa;
 	border-right: 1px solid #eee;
 	position: relative;
 	left: 1px;
+}
+
+.col.right{
+	background: #fff;
 }
 
 .content{
