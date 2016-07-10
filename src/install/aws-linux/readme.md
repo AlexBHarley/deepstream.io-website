@@ -2,7 +2,7 @@
 title: Deploying on AWS
 description: Learn how to deploy deepstream on AWS Linux AMI
 ---
-Amazon offers its own flavour of Linux on its EC2 machines. You can install deepstream on AWS Linux using the YUM package manager. Just copy and past the following script into your terminal.
+Amazon offers its own flavour of Linux on its EC2 machines. You can install deepstream on AWS Linux using the YUM package manager. Just copy and paste the following script into your terminal.
 
 ```bash
 sudo wget https://bintray.com/deepstreamio/rpm/rpm -O /etc/yum.repos.d/bintray-deepstreamio-rpm.repo

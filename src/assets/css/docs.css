@@ -176,7 +176,7 @@
 	font-size: 20px;
 	border-bottom: 1px solid #ddd;
 	padding-bottom: 4px;
-	margin-top: 16px;
+	margin-top: 40px;
 }
 
 .content h4, .content h4 code{
@@ -207,6 +207,22 @@
 }
 .content li{
 	padding: 5px 20px;
+	position: relative;
+	line-height: 30px;
+}
+
+.content strong{
+	font-weight: 400;
+	color: #111;
+}
+
+.content li:before{
+    content: "-";
+    position: absolute;
+    left: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #aaa;
 }
 
 .content pre{
