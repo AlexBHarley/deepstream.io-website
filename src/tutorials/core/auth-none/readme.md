@@ -3,7 +3,7 @@ title: Auth None
 description: How to disable user authentication for simple applications and development
 ---
 
-To disable authentication against a deepstream server altogether, either set the `auth` type to `none` in the server's [configuration file](../../docs/server/configuration).
+To disable authentication against a deepstream server altogether, either set the `auth` type to `none` in the server's [configuration file](../../../docs/server/configuration/).
 
 ```yaml
 #Authentication

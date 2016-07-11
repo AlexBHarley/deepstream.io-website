@@ -9,7 +9,7 @@ const types = {
 
 module.exports = function( type, header, options ) {
 	if( !types[ type ] ) {
-		throw new Error( `Unknown infobox ${type}` );
+		throw new Error( `Unknown infobox ${type}, currently only supporting ${Object.keys(types)}` );
 	}
 
 	if( typeof header !== 'string' ) {

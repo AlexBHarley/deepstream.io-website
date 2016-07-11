@@ -49,7 +49,7 @@ const record = client.record.getRecord('user/johndoe')
 {{/table}}
 ```
 
-Retrieves or creates a [List](datasync-client-record.html) with the given name. Lists are arrays of recordNames that clients can manipulate and observe. You can learn more about them in the [list tutorial](/tutorials/core/datasync-lists/).
+Retrieves or creates a [List](../datasync-list/) with the given name. Lists are arrays of recordNames that clients can manipulate and observe. You can learn more about them in the [list tutorial](/tutorials/core/datasync-lists/).
 
 {{#infobox "info"}}
 The list will be loaded asynchronously. To ensure the list is loaded put your
@@ -71,7 +71,7 @@ beatlesAlbums.whenReady(() => console.log(beatlesAlbums.getEntries()))
 
 ### client.record.getAnonymousRecord()
 
-Returns an [AnonymousRecord](anonymous_record.html).
+Returns an [AnonymousRecord](../datasync-anonymous-record/).
 
 An AnonymousRecord is a record that can change its name. It
 acts as a wrapper around an actual record that can

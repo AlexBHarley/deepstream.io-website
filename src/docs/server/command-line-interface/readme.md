@@ -8,7 +8,7 @@ deepstream comes with a comprehensive command line interface (CLI) that lets you
 Many of these options can also be set via the configuration file, read [config file documentation](/docs/server/configuration/). for a detailed list.
 
 ## Usage
-If you've [installed](/install) deepstream on linux via a package manager, the `deepstream` command is already on your path. On Mac and Windows, you can access it through the executable, e.g. `./deepstream` or `deepstream.exe`
+If you've [installed](/install/) deepstream on linux via a package manager, the `deepstream` command is already on your path. On Mac and Windows, you can access it through the executable, e.g. `./deepstream` or `deepstream.exe`
 
 For the brave souls who've got deepstream via [Github](https://github.com/deepstreamIO/deepstream.io) or [NPM](https://www.npmjs.com/package/deepstream.io) instead, you can find the executable in `bin/deepstream`
 
@@ -76,7 +76,7 @@ will print all the options you can specify for the deepstream server:
 
 You can either use the shorthand syntax with one hyphen or the long syntax with two hyphens.
 
-All the options starting from `--server-name` and below will overwrite the values within your config file if. If you want to specify more options, or see the default values provided please look at the [config file documentation](../configuration).
+All the options starting from `--server-name` and below will overwrite the values within your config file if. If you want to specify more options, or see the default values provided please look at the [config file documentation](../configuration/).
 
 #### --config
 

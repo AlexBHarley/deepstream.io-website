@@ -12,7 +12,7 @@ So: Use with caution and do as little as possible in your transform function.
 
 Also, structure your data in a way that data is seperated by concern.
 
-For example, if you have a user with admin and readonly data, have two seperate records called `user-admin/<id>` and `user/<id>` which you can then easily permission using [Valve](../valve-permissions) instead.
+For example, if you have a user with admin and readonly data, have two seperate records called `user-admin/<id>` and `user/<id>` which you can then easily permission using [Valve](../valve-permissions/) instead.
 {{/infobox}}
 
 ### RPC

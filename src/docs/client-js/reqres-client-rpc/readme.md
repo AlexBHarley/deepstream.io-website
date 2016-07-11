@@ -19,7 +19,7 @@ RPCs (Remote Procedure Calls, sometimes also referred to as Remote Method Invoca
   arg: callback
   typ: Function
   opt: false
-  des: A function that handles incoming RPCs. Will be called with data and an [RPC response object](../reqres-response).
+  des: A function that handles incoming RPCs. Will be called with data and an [RPC response object](../reqres-response/).
 {{/table}}
 ```
 
@@ -34,7 +34,7 @@ client.rpc.provide( 'add-two-numbers', function( data, response ){
 {{#infobox "info"}}
 * Only one callback per client can be registered for the same RPC.
 * Data can be any serializable object
-* Documentation for the `response` object can be found [here](../reqres-response)
+* Documentation for the `response` object can be found [here](../reqres-response/)
 {{/infobox}}
 
 ### client.rpc.unprovide( name )
