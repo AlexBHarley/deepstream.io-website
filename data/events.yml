@@ -1,5 +1,5 @@
 -
-  eventName: "CodeMotion Talk: Reactive Realtime for Fun and Profit"
+  eventName: "Reactive Realtime for Fun and Profit"
   date: October 24th 2016
   eventImage: codemotion.png
   link: //berlin2016.codemotionworld.com/
@@ -15,7 +15,7 @@
   date: March 17th 2016
   eventImage: realtime-web-lightning-talks.jpg
   link: //www.meetup.com/Berlin-Realtime-Web-Meetup/events/228632661/
-  locationName: Roof Up, Akazienstraße 3, 10823 Berlin
+  locationName: Roof Up, Berlin
 -
   eventName: "Using rethinkdb and deepstream.io to create a smarter home"
   date: February 25th 2016
@@ -29,7 +29,7 @@
   link: //www.meetup.com/fullstack-berlin/events/228373010/
   locationName: Adalbertstraße 8, Berlin
 -
-  eventName: "Workshop: Tanks! Creating a multiplayer realtime tank game in the browser"
+  eventName: "Workshop: Tanks! Creating a multiplayer game"
   date: January 21st 2016
   eventImage: deepsteam-game-workshop.png
   link: //www.meetup.com/Berlin-Realtime-Web-Meetup/events/227433107/
@@ -41,7 +41,7 @@
   link: //www.meetup.com/Node-js-Meetup-Berlin/events/225798605/
   locationName: Wikimedia, Tempelhofer Ufer 23-24, Berlin
 -
-  eventName: "Workshop: Live stock prices with RethinkDb and Deepstream.io"
+  eventName: "Workshop: Stock prices with RethinkDb and Deepstream.io"
   date: November 19th 2015
   eventImage: meetup-logo.png
   link: //www.meetup.com/Berlin-Realtime-Web-Meetup/events/226120639/

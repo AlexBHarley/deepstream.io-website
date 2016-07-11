@@ -569,14 +569,16 @@ header.main-header .page-description *{
 }
 
 #community .blogposts a {
-	font-size: 14px;
-	font-weight: 300;
-	display: block;
-	margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 300;
+    display: block;
+    margin-bottom: 5px;
+    padding-left: 20px;
+    position: relative;
 }
 
 #community .blogposts i {
-	display: inline-block;
-	margin-right: 20px;
 	color: #999;
+    position: absolute;
+    left: 0px;
 }
