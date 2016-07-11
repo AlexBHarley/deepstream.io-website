@@ -130,6 +130,6 @@ ds.login({
 There is a lot to be said about permissioning. To gain a good understanding, have a look at the [authentication](/tutorials/core/security-overview/#authentication) and [permissioning](/tutorials/core/permission-conf-simple/) tutorials.
 
 #### Where to go from here
-To get a feel for how deepstream.io works and if it might be a good fit for your application's realtime backend, head over to the [getting started tutorial](/tutorials/core/getting-started/).
+To get a feel for how deepstream.io works and if it might be a good fit for your application's realtime backend, head over to the [getting started tutorial](/tutorials/core/getting-started-quickstart/).
 
 If you have any questions, just raise them on [StackOverflow](//stackoverflow.com/questions/tagged/deepstream.io), join our [Slack Channel](//deepstream-slack.herokuapp.com/) or get in touch via Twitter ([@deepstreamIO](//twitter.com/deepstreamIO)).
