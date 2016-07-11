@@ -31,11 +31,11 @@ client.rpc.provide( 'add-two-numbers', function( data, response ){
 });
 ```
 
-<div class="info">
+{{#infobox "info"}}
 * Only one callback per client can be registered for the same RPC.
 * Data can be any serializable object
 * Documentation for the `response` object can be found [here](../reqres-response)
-</div>
+{{/infobox}}
 
 ### client.rpc.unprovide( name )
 ```

@@ -98,5 +98,8 @@ This is useful to create "active" data providers - backend processes that only s
 
 **Important:** At the moment, listening is limited to subscriptions made on the same deepstream server. Subscriptions made on other servers within a cluster are not propagated. This is something that will be added in the future.
 
-**Important:** The listen callback with `isSubscribed=false` is only triggered once the last subscriber has disconnected or discarded the record. If your active data provider is subscribed to the record as well in order to write to it, it counts as a subscriber and the callback won't be invoked.
+{{#infobox "important"}}
+The listen callback with `isSubscribed=false` is only triggered once the last subscriber has disconnected or discarded the record. If your active data provider is subscribed to the record as well in order to write to it, it counts as a subscriber and the callback won't be invoked.
+
 This is a known limitation and will be addressed in future releases that will also introduce load-balancing for listeners, only-one rules etc. To create a high availability cluster of active data providers straight away, we recommend building a listener-orchestration server that tackles these tasks for now.
+{{/infobox}}

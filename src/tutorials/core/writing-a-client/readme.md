@@ -28,7 +28,7 @@ Deepstream communicates via [engine.io](https://github.com/socketio/engine.io) w
 
 If you'd like to write a client for your language of choice, have a look if there's [already an issue for it](https://github.com/deepstreamIO/deepstream.io/labels/new-client) and get in touch! We'd be more than happy to help.
 
-# Where to start?
+## Where to start?
 Here's how to tackle writing a deepstream client:
 - Have a look at the [page on message structure](/info/protocol/message-structure-overview/)
 - Establish a TCP connection to a deepstream server
@@ -50,27 +50,17 @@ What this means is you can test your client continuously while developing it usi
 
 Before reading on, take a quick peek at [the connectivity feature](/info/specs/connectivity/) to see how they look like.
 
-<div class="hint">
-    <h3>Hint</h3>
-    <ul>
-        <li>
-            You can hover over messages in features and spec pages to get a breakdown of what they get parsed into.
-        </li>
-    </ul>
-</div>
+{{#infobox "hint"}}
+You can hover over messages in features and spec pages to get a breakdown of what they get parsed into.
+{{/infobox}}
 
 Since the tests will be run in the language the client is being written in you would also need to setup a very simple TCP server.
 
 The best place to start would be looking at the [server step definitions](//raw.githubusercontent.com/deepstreamIO/deepstream.io-client-specs/master/step-definitions-server/step-definition-server.js) and its [TCP server](//raw.githubusercontent.com/deepstreamIO/deepstream.io-client-specs/master/step-definitions-server/tcp-server.js) and applying the same logic in your language of choice.
 
-<div class="hint">
-    <h3>Remember to catch errors</h3>
-    <ul>
-        <li>
-            In order to guarantee no errors are being ignored you can add a [cucumber hook](//github.com/cucumber/cucumber/wiki/Hooks) to run after each feature and ensure no unexpected errors were thrown.
-        </li>
-    </ul>
-</div>
+{{#infobox "hint" "Remember to catch errors"}}
+In order to guarantee no errors are being ignored you can add a [cucumber hook](//github.com/cucumber/cucumber/wiki/Hooks) to run after each feature and ensure no unexpected errors were thrown.
+{{/infobox}}
 
 # Connection States
 
@@ -126,14 +116,9 @@ Ack timeouts are the clients responsibility to keep track of. When a message tha
 
 Messages recieved that are unexpected should throw an UNSOLICITATED_MESSAGE error. If it occurs often it's usually a useful indication something might be leaking or not have unsubscribed properly.
 
-<div class="hint">
-    <h3>Edge Case</h3>
-    <ul>
-        <li>
-            In the case of race conditions this could occur if the server sends a message to the client the exact same time it unsubscribed from the message. This can't be avoided, but should only happen very rarely.
-        </li>
-    </ul>
-</div>
+{{#infobox "hint" "Edge Case"}}
+In the case of race conditions this could occur if the server sends a message to the client the exact same time it unsubscribed from the message. This can't be avoided, but should only happen very rarely.
+{{/infobox}}
 
 ## Errors
 

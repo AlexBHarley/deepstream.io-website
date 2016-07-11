@@ -62,9 +62,9 @@ If you've configured a hashing algorithm, use hashes as password:
 
 ```
 
-<div class="hint">
+{{#infobox "hint"}}
 You can create hashes from passwords with the currently specified settings using deepstream's command line interface
-</div>
+{{/infobox}}
 
 ```bash
 deepstream hash <password>

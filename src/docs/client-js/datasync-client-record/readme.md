@@ -30,9 +30,9 @@ client.login()
 
 Retrieves or creates a [Record](/docs/client-js/datasync-record/) with the given name. Records are persistent data structures that are synced between clients. To learn more about what they are used for and how they work, head over to the [record tutorial](/tutorials/core/datasync-records/).
 
-<div class="note">
+{{#infobox "info"}}
 The record will be loaded asynchronously. To ensure the record is loaded put your logic into the [whenReady](/tutorials/core/datasync-records/) callback.
-</div>
+{{/infobox}}
 
 ```javascript
 const record = client.record.getRecord('user/johndoe')
@@ -51,9 +51,10 @@ const record = client.record.getRecord('user/johndoe')
 
 Retrieves or creates a [List](datasync-client-record.html) with the given name. Lists are arrays of recordNames that clients can manipulate and observe. You can learn more about them in the [list tutorial](/tutorials/core/datasync-lists/).
 
-<div class="note">The list will be loaded asynchronously. To ensure the list is loaded put your
+{{#infobox "info"}}
+The list will be loaded asynchronously. To ensure the list is loaded put your
 logic into the [whenReady](/tutorials/core/datasync-records/) callback.
-</div>
+{{/infobox}}
 
 ```javascript
 const beatlesAlbums = client.record.getList('albums')
@@ -149,13 +150,13 @@ client.record.snapshot('user/johndoe', (error, data) => {
 
 Allows to listen for record subscriptions made by other clients. This is useful to create "active" data providers, e.g. providers that only provide data for records that users are actually interested in. You can find more about listening in the [record tutorial](/tutorials/core/datasync-records/).
 
-<div class="info">
+{{#infobox "info"}}
 The listen callback will only be called once with `subscribed = true` for the first time a matching subscription is made and once with `subscribed = false` once all clients have unsubscribed from the record.
-</div>
+{{/infobox}}
 
-<div class="info">
+{{#infobox "info"}}
 The callback will be called for all matching subscriptions that already exist at the time its registered.
-</div>
+{{/infobox}}
 
 ```javascript
 client.record.listen('raceHorse/.*', (match, isSubscribed) => {

@@ -206,9 +206,9 @@ Removes all change listeners and notifies the server that the client is no longe
 list.discard();
 ```
 
-<div class="info">
+{{#infobox "info"}}
 It is important to make sure that `discard()` is called for any list that's no longer needed. If you only remove the listeners using `unsubscribe()` the server won't be notified and will continue to send updates to the client.
-</div>
+{{/infobox}}
 
 ### delete()
 Deletes the list on the server. This action deletes the list for all users from both cache and storage and is irreversible.

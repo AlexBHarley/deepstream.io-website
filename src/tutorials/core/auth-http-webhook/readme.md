@@ -22,7 +22,9 @@ options:
 
 In the `options` key, set an `endpointUrl` for an authentication service that deepstream will send a `POST` request to, `permittedStatusCodes` to the list of accepted http codes for successful authentication, and `requestTimeout`is the timeout value (in milliseconds).
 
-**Note**: Unless your deepstream and authentication servers are within the same private network, you should use a secure connection (https).
+{{#infobox "important"}}
+Unless your deepstream and authentication servers are within the same private network, you should use a secure connection (https).
+{{/infobox}}
 
 The following payload is sent with the `POST` request for your authentication service to work with.
 
