@@ -13,5 +13,5 @@ Download the archive using the link above, extract it and open the extracted dir
 ./deepstream start
 ```
 
-Learn more about deepstream's [command line interface](/docs/server/command-line-interface/) its [configuration file](/docs/server/configuration).
+Learn more about deepstream's [command line interface](/docs/server/command-line-interface/) its [configuration file](/docs/server/configuration/).
 

@@ -61,4 +61,6 @@ The listen-callback is called with `subscribed=true` once a matching event is su
 
 Listening also keeps state. Registering as a listener for a pattern that already has matching subscriptions will call the callback multiple times straight away, once for every matching subscription.
 
-**Important:** At the moment, listening is limited to subscriptions made on the same deepstream server. Subscriptions made on other servers within a cluster are not propagated. This is something that will be added in the future.
+{{#infobox "important"}}
+At the moment, listening is limited to subscriptions made on the same deepstream server. Subscriptions made on other servers within a cluster are not propagated. This is something that will be added in the future.
+{{/infobox}}

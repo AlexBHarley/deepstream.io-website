@@ -3,7 +3,7 @@ title: List
 description: API docs for deepstream's list object, a manageable collection of record names
 ---
 
-Lists are collections of record names. To learn more about how they are used, have a look at the [List Tutorial](../../tutorials/core/datasync-list).
+Lists are collections of record names. To learn more about how they are used, have a look at the [List Tutorial](../../../tutorials/core/datasync-lists/).
 
 Lists and record names have an `n:m` relationship. A record name can be part of many lists and a list can contain many record names. A list can also contain the same record name multiple times.
 
@@ -206,9 +206,9 @@ Removes all change listeners and notifies the server that the client is no longe
 list.discard();
 ```
 
-<div class="info">
+{{#infobox "info"}}
 It is important to make sure that `discard()` is called for any list that's no longer needed. If you only remove the listeners using `unsubscribe()` the server won't be notified and will continue to send updates to the client.
-</div>
+{{/infobox}}
 
 ### delete()
 Deletes the list on the server. This action deletes the list for all users from both cache and storage and is irreversible.

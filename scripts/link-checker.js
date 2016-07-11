@@ -22,6 +22,10 @@ module.exports = function() {
 			file = files[ filePath ]
 			html = file.contents.toString()
 
+			if( filePath.indexOf( 'index.html' ) === -1 ) {
+				continue;
+			}
+
 			var matches, results = [];
 			while (matches = regex.exec(html)) {
 			   results.push(matches[1]);
@@ -41,7 +45,9 @@ module.exports = function() {
 					// skip
 				} else if (entry === 'mailto:info@deepstream.io') {
 					// skip
-				} else if (entry === 'mailto:info@deepstreamhub.com') {
+				} else if (entry.toLowerCase() === 'mailto:info@deepstreamhub.com') {
+					// skip
+				} else if (entry.toLowerCase() === 'mailto:admin@deepstreamhub.com') {
 					// skip
 				}else {
 					checkLink(entry, filePath, files)

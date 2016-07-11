@@ -10,7 +10,7 @@ Filebased authentication is a good choice for scenarios with smaller amounts of 
 
 ## Using file based authentication
 
-To enable authentication to a Deepstream server with user credentials stored in a local file, set the `type` key to `file` in the `auth` section of the server's [configuration file](/docs/server/configuration).
+To enable authentication to a Deepstream server with user credentials stored in a local file, set the `type` key to `file` in the `auth` section of the server's [configuration file](/docs/server/configuration/).
 
 ```yaml
 auth:

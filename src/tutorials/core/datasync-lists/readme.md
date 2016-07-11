@@ -9,7 +9,7 @@ Lists and recordnames have what a computer science teacher would call an n:m-rel
 
 To make life easier, lists come with all sorts of convenience methods. You can add an entry at a specific index using `addEntry( recordName, index )`, remove entries from anywhere within the list using `removeEntry( recordName )`, set or get all entries or check if the list `isEmpty()`.
 
-Apart from that, lists are quite similar to [records](./datasync-records). They notify you `whenReady()`, can be `subscribe()` to and need to be `discard()` after usage.
+Apart from that, lists are quite similar to [records](../datasync-records/). They notify you `whenReady()`, can be `subscribe()` to and need to be `discard()` after usage.
 
 ## What are lists useful for?
 Lists are used whenever records need to be combined into collections. Let's take the infamous [TodoMVC](http://todomvc.com/) for example. When built with deepstream, each task would be a record, containing the `title` and a `completed` flag.
@@ -44,7 +44,7 @@ deepstream is all about combining simple building blocks into powerful apps - an
 ![List - Record Tree Structure](tree-structure.png)
 
 ## Using lists with anonymous records
-Lists are often used to power selection panels for [anonymous records](./datasync-anonymous-record).
+Lists are often used to power selection panels for [anonymous records](../datasync-anonymous-records/).
 
 ![simple app with anonymous record](simple-app-structure.png)
 

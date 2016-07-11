@@ -5,16 +5,15 @@ description: Learn how to use transform functions to manipulate data before it l
 
 Transform-functions are registered using `server.set('dataTransforms', [...])`, for more details see the [Node.js api](../node-api/)
 
-<div class="hint">
-	<h3>BUT ☝</h3>
-	<p>Transforming data slows deepstream down quite a bit. Usually, messages are constructed once and
-	fanned out to all subscribed clients. If a transform function is registered however, messages are constructed
-	for every receiver specifically which can add considerable overhead.<br>
-	So: Use with caution and do as little as possible in your transform function.<br>
-	Also, structure your data in a way that data is seperated by concern.<br>For example, if you have a user with admin and readonly data, have two seperate records called `user-admin/<id>` and `user/<id>` which you can then easily permission using [Valve](../valve-permissions) instead.
-	</p>
-</div>
+{{#infobox "important" "BUT ☝"}}
+Transforming data slows deepstream down quite a bit. Usually, messages are constructed once and fanned out to all subscribed clients. If a transform function is registered however, messages are constructed for every receiver specifically which can add considerable overhead.
 
+So: Use with caution and do as little as possible in your transform function.
+
+Also, structure your data in a way that data is seperated by concern.
+
+For example, if you have a user with admin and readonly data, have two seperate records called `user-admin/<id>` and `user/<id>` which you can then easily permission using [Valve](../valve-permissions/) instead.
+{{/infobox}}
 
 ### RPC
 
@@ -99,12 +98,10 @@ server.set('dataTransforms', [{
   }
 }])
 ```
-<div class="hint">
-	<h3>Important!</h3>
-	<p>
-		Note how read and update both have the same code path. This is because in both cases the entire data is sent, it is only very rarely that you would need different content between both actions.
-	</p>
-</div>
+
+{{#infobox "important" "Important!"}}
+Note how read and update both have the same code path. This is because in both cases the entire data is sent, it is only very rarely that you would need different content between both actions.
+{{/infobox}}
 
 #### UPDATE
 Full record update, result of `client.record.set(data)`

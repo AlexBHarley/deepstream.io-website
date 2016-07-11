@@ -91,12 +91,10 @@ server.set( 'dataTransforms', [{
 }]);
 ```
 
-<div class="hint">
-	<h3>BUT!!!</h3>
-	<p>Transforming data slows deepstream down quite a bit. Usually, messages are constructed once and
-	fanned out to all subscribed clients. If a transform function is registered however, messages are constructed
-	for every receiver specifically which can add considerable overhead.<br>
-	So: Use with caution and do as little as possible in your transform function.<br>
-	Also, structure your data in a way that is seperated by concern. For example, if you have a user with admin and readonly data, have two seperate records called `user-admin/&lt;id&gt;` and `user/&lt;id&gt;` which you can then permission using [Valve Permissions](/tutorials/core/permission-conf-simple/) instead.
-	</p>
-</div>
+{{#infobox "important" "BUT!!!"}}
+Transforming data slows deepstream down quite a bit. Usually, messages are constructed once and fanned out to all subscribed clients. If a transform function is registered however, messages are constructed for every receiver specifically which can add considerable overhead.
+
+So: Use with caution and do as little as possible in your transform function.
+
+Also, structure your data in a way that is seperated by concern. For example, if you have a user with admin and readonly data, have two seperate records called `user-admin/<id>` and `user/<id>` which you can then permission using [Valve Permissions](/tutorials/core/permission-conf-simple/) instead.
+{{/infobox}}

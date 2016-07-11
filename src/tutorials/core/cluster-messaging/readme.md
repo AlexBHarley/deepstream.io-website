@@ -40,7 +40,7 @@ __Microsoft Azure__ offers an AMQP based service bus, but it's quite slow and ta
 There is also a large offering of messaging-as-a-service offerings. [CloudAMQP](https://www.cloudamqp.com/), [CloudKafka](http://www.cloudkafka.com/), [StormMQ](http://stormmq.com/) or [RedisLabs](https://redislabs.com/) to name just a few. Whilst they offer great peace of mind through their managed services and high uptime guarantees, we strongly recommend to go with a message-broker running within your own data-center instead. Deepstream uses its message-bus extensively and every millisecond network latency between it and your cluster will make your application notably slower.
 
 ## Connecting to a message broker
-Deepstream connectors are available for a number of message brokers and we're constantly looking to expand this selection. You can find an overview of available connectors on the [install page](/install). Connectors can be installed via deepstream's commandline interface, using the `msg` keyword, e.g.
+Deepstream connectors are available for a number of message brokers and we're constantly looking to expand this selection. You can find an overview of available connectors on the [install page](/install/). Connectors can be installed via deepstream's commandline interface, using the `msg` keyword, e.g.
 
 ```bash
 deepstream install msg redis
@@ -60,7 +60,7 @@ Message connectors are configured in the config's `plugins - message` section.
 If you're using deepstream from Node, it's also possible to download connectors from NPM. All connectors follow the naming convention `deepstream.io-type-name`, e.g. `deepstream.io-msg-redis`.
 
 ## Writing your own connector
-If you can't find a connector for your system of choice, you can also write your own quite easily in C++ with Node bindings or in Node.js. If you're happy with the way your connector turned out, please consider contributing it. To do so, have a look at deepstream's [contribution guidelines](/info/community/contribution-guidelines)
+If you can't find a connector for your system of choice, you can also write your own quite easily in C++ with Node bindings or in Node.js. If you're happy with the way your connector turned out, please consider contributing it. To do so, have a look at deepstream's [contribution guidelines](/info/community/contribution-guidelines/)
 
 To get started, just clone or fork the [msg-connector-template](//github.com/deepstreamIO/deepstream.io-msg-connector-template) and fill in the blanks. To see if it works, update the `settings` variable on line 9 of the [test file](https://github.com/deepstreamIO/deepstream.io-msg-connector-template/blob/master/test/message-connector-messagingSpec.js) and run the tests with `npm test`. Please note: The tests are very high level and only cover basic functionality. It will make sense to add additional tests that are specific to your connector.
 

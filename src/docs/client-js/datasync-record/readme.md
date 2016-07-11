@@ -1,6 +1,6 @@
 ---
 title: Record
-description: The API docs for deepstream records 
+description: The API docs for deepstream records
 ---
 
 Records are one of deepstream's core features. A Record is an arbitrary JSON data structure that can be created, retrieved, updated, deleted and listened to. Records are created and retrieved using `client.record.getRecord('name')`
@@ -211,9 +211,9 @@ user.unsubscribe()
 ### discard()
 Removes all change listerners and notifies the server that client no longer wants updates for this record.
 
-<div class="info">
+{{#infobox "info"}}
 It is important to use this operation for records that are no longer needed. `unsubscribe()` only removes listeners and does not notify the server; in this case, the server will continue to send updates to the client.
-</div>
+{{/infobox}}
 
 ```javascript
 user.discard()
