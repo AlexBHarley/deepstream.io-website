@@ -135,7 +135,7 @@ if (cli.deploy) {
 	var s3 = require('metalsmith-s3');
 	metalsmith.use(s3({
 		action: 'write',
-		bucket: 'deepstream.io-metal',
+		bucket: 'deepstream.io',
 		region: 'eu-central-1'
 	}));
 }
