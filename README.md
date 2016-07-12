@@ -1,4 +1,4 @@
-# deepstream.io-website-metal
+# deepstream.io-website
 
 ## Setup
 
@@ -12,7 +12,7 @@ To get this hierarchy:
 ├── ...
 ├── deepstream.io-client-specs
 ├── ...
-├── deepstream.io-website-metal
+├── deepstream.io-website
 └── ...
 ```
 

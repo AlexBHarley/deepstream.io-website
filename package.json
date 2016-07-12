@@ -1,27 +1,26 @@
 {
-  "name": "deepstream.io-website-metal",
-  "version": "0.0.0",
-  "private": true,
-  "description": "deepstream.io website post 1.0 release",
+  "name": "deepstream.io-website",
+  "version": "1.0.0",
+  "description": "deepstream.io website",
   "main": "metalsmith.js",
   "scripts": {
     "start": "bin/website",
     "serve": "browser-sync start --no-ui --port 3000 --serveStatic dist",
     "reload": "browser-sync reload",
-    "deploy": "aws s3 sync dist s3://deepstream.io-metal",
+    "deploy": "aws s3 sync dist s3://deepstream.io",
     "watch-win": "node bin/website --watch",
     "watch": "npm run start && fswatch -0 src/ layouts/ helpers/ data/ partials/ scripts/ ./bin/website | xargs -0 -n 1 -I {} ./bin/website --drafts trigger-bs-reload"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepstreamIO/deepstream.io-website-metal.git"
+    "url": "git+https://github.com/deepstreamIO/deepstream.io-website.git"
   },
   "author": "",
   "license": "",
   "bugs": {
-    "url": "https://github.com/deepstreamIO/deepstream.io-website-metal/issues"
+    "url": "https://github.com/deepstreamIO/deepstream.io-website/issues"
   },
-  "homepage": "https://github.com/deepstreamIO/deepstream.io-website-metal#readme",
+  "homepage": "https://github.com/deepstreamIO/deepstream.io-website#readme",
   "devDependencies": {
     "beepbeep": "^1.2.0",
     "browser-sync": "^2.13.0",
