@@ -29,9 +29,11 @@ program.on('--help', function() {
 
 program
   .option('-b, --bulk <bulk-file>', 'Do a bulk request, use a binary data file')
-  .option('-p, --put <url>', 'Do a single PUT request, using the given url path and the json file as body')
-  .option('-p, --file <json-file>', 'usage with --put')
-  .option('-s, --show-opts', 'Show HTTP options after signing with AWS credentials')
+  .option('-P, --put <url>', 'Do a single PUT request, using the given url path and the json file as body')
+  .option('-p, --post <url>', 'Do a single POST request, using the given url path and the json file as body')
+  .option('-g, --get <url>', 'Do a single GET request, using the given url path and an optional json file as body (querystring)')
+  .option('-f, --file <json-file>', 'usage with --put, --post, --get')
+  .option('-v, --verbose', 'Show HTTP options after signing with AWS credentials')
   .option('-d, --dry', 'Dry mode, show only HTTP options but do not do the request')
   .parse(process.argv)
 
@@ -49,21 +51,35 @@ if (program.bulk) {
 }
 
 if (program.put && program.file) {
-  return singlePutRequest(program.put, program.file)
+  return singlePutRequest('PUT', program.put, program.file)
+}
+
+if (program.post && program.file) {
+  return singlePutRequest('POST', program.post, program.file)
+}
+
+if (program.get) {
+  return singlePutRequest('GET', program.get, program.file)
 }
 
 program.help()
 
-function singlePutRequest(path, jsonFile) {
-    const fileContent = fs.readFileSync(path.join(process.cwd(), jsonFile), 'utf8')
+function singlePutRequest(method, urlPath, jsonFile) {
+    var fileContent
+    if (jsonFile) {
+      fileContent = fs.readFileSync(path.join(process.cwd(), jsonFile), 'utf8')
+    }
+    if (method === 'GET' && fileContent) {
+      fileContent = fileContent.replace(/\n/g, ' ').replace(/\t/g, ' ') + '\n'
+    }
     const opts = {
         host: process.env.ELASTICSEARCH_HOST_WEBSITE,
         headers: {
             'Content-Type': 'application/json'
         },
-        path: path,
-        method: 'POST',
-        body: fileContent
+        path: urlPath,
+        method: method,
+        body: jsonFile ? fileContent : undefined
     }
     doRequest(opts)
 }
@@ -82,13 +98,15 @@ function bulkRequest(bulkFile) {
 }
 
 function doRequest(opts) {
-    aws4.sign(opts)
+    if (opts.method !== 'GET') {
+      aws4.sign(opts)
+    }
 
     if (program.dry) {
       return console.log(opts)
     }
 
-    if (program.showOpts) {
+    if (program.verbose) {
       console.log(opts)
     }
     const req = https.request(opts, res => {
