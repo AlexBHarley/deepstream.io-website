@@ -91,6 +91,10 @@ div.two-col .right.big {
     font-size: 14px;
 }
 
+.ui-menu .ui-state-focus {
+	margin: 0;
+}
+
 /*************************
 * SUBSECTION NAVIGATION
 * ***********************/
