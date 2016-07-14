@@ -58,31 +58,70 @@
 
 })(jQuery);
 
+
 // for docs pages
+var SEARCH_BASE = 'https://search-deepstream-website-fozmccbxnnchstaflr5wmac3l4.eu-central-1.es.amazonaws.com';
 function searchAutocomplete() {
-    $(".main-search").autocomplete({
+    $('.main-search').autocomplete({
         appendTo: '.main-serach-results',
-        source: "/search",
+        source: function(request, response) {
+            const requestData = {
+              query: {
+                bool: {
+                  should: [
+                    {
+                      match: {
+                        title: {
+                          query: request.term,
+                          boost: 1000
+                        }
+                      }
+                    },
+                    {
+                      match: {
+                        content: request.term
+                      }
+                    }
+                  ]
+                }
+              }
+            };
+            $.ajax({
+              url: SEARCH_BASE + '/pages/_search',
+              data: requestData,
+              crossDomain: true,
+              dataType: 'json',
+              success: function(data, status) {
+                if (status === 'success') {
+                    console.log(data)
+                    var hits = data.hits.hits;
+                    return response(hits.map(function(item) {
+                        return {
+                            title: item._source.title,
+                            link: item._source.filePath.replace('readme.md', ''),
+                            type: item._type
+                        }
+                    }));
+                }
+                return response([]);
+              }
+            })
+        },
         minLength: 3,
-        focus: function( event, ui ) {
+        focus: function(event, ui) {
             return false;
         },
-        select: function( event, ui ) {
+        select: function(event, ui) {
             window.location = '/' + ui.item.slug;
             return false;
         }
-    }).autocomplete( "instance" )._renderItem = function( ul, item ) {
-      var otherOccurrences = item.occurrences.length > 2 ? ' other occurrences' : ' other occurrence'
-      return $( "<li>" )
-        .append( "<a target='_blank' href='/" + item.slug + "' title='" + item.slug + "'>" +
-            '<strong>' + item.title + "</strong><br>" + '<em>' + (item.occurrences[0] || '') + '</em>' +
-            ((item.occurrences.length > 1) ? (' and ' + (item.occurrences.length - 1) + otherOccurrences) : '')
-            + "</a>"
-        )
-        .appendTo( ul );
+    }).autocomplete('instance')._renderItem = function(ul, item) {
+      return $('<li>')
+        .append("<a href='/" + item.link + "'><br>" + item.title + "</a>")
+        .appendTo(ul);
     };
-    $("input.main-search").on('focus', function() {
-        $("ul.ui-autocomplete").show()
+    $('input.main-search').on('focus', function() {
+        $('ul.ui-autocomplete').show()
     })
 }
 

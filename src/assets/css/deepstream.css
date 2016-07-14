@@ -250,8 +250,16 @@ nav .links a{
 	transition: width .25s ease, margin .25s ease;
 }
 
+.main-search-container {
+	display: inline-block;
+	padding-top: 25px;
+	font-size: 15px;
+	color: #fff;
+	cursor: pointer;
+}
+
 .main-search:focus {
-		cursor: auto;
+	cursor: auto;
 	width:180px;
 	text-indent: 0;
 }
