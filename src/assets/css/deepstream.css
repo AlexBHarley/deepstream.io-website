@@ -36,6 +36,10 @@ p{
 		font-weight: 300;
 }
 
+em {
+	font-style: italic;
+}
+
 section{
 	display: block;
 	clear: both;

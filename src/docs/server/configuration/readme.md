@@ -72,7 +72,7 @@ You can extend Deepstream with plugins for connectors to other services, these a
 To enable a plugin, uncomment the relevant category key underneath the `plugins` key. Each plugin type has a path or name, and a set of options.
 
 ### path
-Set a path to a JavaScript file, node module or a folder with an _index.js_ file.
+Set a path to a JavaScript file, node module or a folder with an _index.js_ file which exports a constructor.
 
 ### name
 If you are using any of the official Deepstream connectors, add the name of what the plugin connects to here, for example `redis`.
@@ -82,10 +82,20 @@ If you are using any of the official Deepstream connectors, add the name of what
 ### options
 Under this key, add sub key/value pairs to set the configuration options that are passed to the plugin. Each plugin should mention what configuration options you can set.
 
-## Logger Specific Options
+## Logger
+
+Deepstream uses by default a logger which prints out to _stdout_ (errors and warnings to _stderr_). You can set these options for the default logger by using the same configuration style for the plugins:
+
+```yaml
+logger:
+  name: default
+  options:
+    colors: true
+    logLevel: INFO
+```
 
 ### colors
-Sets whether the server's logs should output in color. This will look great in a console, but will leave color markers in log files.<br>
+Sets whether the server's logs should output in color. This will look great in a console, but will leave color markers in log files if you redirect the output into a file.<br>
 _Default_: `true`
 
 ### logLevel
