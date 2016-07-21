@@ -1,9 +1,10 @@
 ---
-title: deepstream pong
+title: deepstream multiplayer pong
 ---
 
-This tutorial will explain how to turn an existing client browser game into a
-realtime multiplayer game using deepstream.io.
+This tutorial will explain how you can simply turn an existing client browser game
+into a realtime multiplayer game in x lines using deepstream.io, and turn your phone
+into a WII like remote in the process.
 
 ## Choosing a game
 
@@ -15,7 +16,7 @@ The multiplayer mode is limited to the a shared keyboard.
 
 Let's improve the game with these features:
 
-1. allow peple to join the game with their own device
+1. allow people to play the game using their mobile device
 2. allow to control (start and stop) the game from the device
 3. allow to play on touch devices
 
@@ -26,8 +27,7 @@ This tutorial is based on that fork: [gburnett/javascript-pong](https://github.c
 
 ## Game architecture
 
-To keep it simple we will keep all game logic in the main page (_index.html_).
-This means that this page needs to be opened in a browser and only once! It acts as a monitor and a game server but as a client for data syncing to the deepstream server.
+By keep all the original logic in the browser, we can reuse it as our game server, allowing it to keep track of the score and game status.
 
 A player needs to open another page which contains only some controller for its pong paddle. This page acts
 like a gamepad.
@@ -36,7 +36,9 @@ The players data (control input and status) is synced in realtime between the pa
 
 ## Main page
 
-To allow the players to join the game with their own device it's a common practise to let them join via a QR code. The QR code will contain an URL to a special page which contains just the controls for the game. Let's also add an indicator if the player is online to start the game below the QR code. This way you can get rid of the controls description on canvas.
+To allow the players to join the game with their own device it's a common practise to let them
+join via a QR code. The QR code will contain a URL to a seperate page containing each paddles
+controller, and beneath it we'll place the players status.
 
 So let's adapt the sidebar and duplicate it for both players:
 
@@ -45,21 +47,21 @@ __index.html__
 ```html
 <div class="sidebar sidebar-right">
   <h2>Player 2</h2>
-  <a target="_blanK" href="/controls#2">
+  <a target="_blank" href="/controls#2">
     <div class="qrcode" id="qrcode2"></div>
   </a>
   <div class="online online-2">online</div>
 </div>
 <div class="sidebar">
   <h2>Player 1</h2>
-  <a target="_blanK" href="/controls#1">
+  <a target="_blank" href="/controls#1">
     <div class="qrcode" id="qrcode1"></div>
   </a>
   <div class="online online-1">online</div>
 </div>
 ```
 
-To create the QR code we use the npm module `qrcodejs2` which can generate the code
+To create the QR code we'll use the npm module `qrcodejs2` which can generate the code
 in the browser.
 
 __src/bootstrap.js__
@@ -83,38 +85,7 @@ new QRCode(document.getElementById("qrcode2"), Object.assign({
 ![Pong](./pong-multiplayer.png)
 
 
-## Browser bundling
-
-The main page and controller page needs different JavaScript code. To avoid setting up another bundle file, which isn't so easy in combination with _budo_, we'll use just one bundle file.
-
-To map the JavaScript code to each page at runtime we can change the entrypoint from _bootstrap.js_ to _index.js_ and add this check:
-
-__src/index.js__
-
-```javascript
-if (window.location.pathname.indexOf('controls') !== -1) {
-  require('./controls')
-} else {
-  require('./bootstrap')
-}
-```
-
-## npm start script
-
-A short explanation what the existing _npm start_ script is doing:
-
-```
-budo src/index.js --live --serve dist/bundle.js -- -t babelify | opnr | garnish
-```
-
-_budo_ is a combination of browserify and a HTTP server which provides incremental reloading with
-LiveReload. You can still pass browserify arguments like _babelify_ for transpiling ES6 code.
-_opnr_ opens the served content of budo in your default browser and _garnish_ is kind of a beautifier
-for the console messages.
-
 ## Controller page
-
-![Pong](./controller-simple.png)
 
 __controls.html__
 
@@ -132,19 +103,22 @@ __controls.html__
       <button class="gamepad gamepad-down">↓</button>
       <button class="gamepad gamepad-up">↑</button>
     </div>
-    <script src="dist/bundle.js" type="text/javascript"></script>
+    <script src="node_modules/deepstream.io-client-js/dist/deepstream.js"></script>
+    <script src="src/controls/index.js" type="text/javascript"></script>
   </body>
 </html>
 ```
 
-If the controller page is loaded the browser connects to the deepstream server and initialize
-a player (record)[https://deepstream.io/docs/client-js/datasync-record/]. The record contains the player name (either 1 or 2 in our case) and a property
-which indicates if the player is pressing a button (`'up'` or `'down'`) or if the button is not pressed (`null`).
+When the controller page is loaded the browser connects to the deepstream server and initializes
+a player (record)[https://deepstream.io/docs/client-js/datasync-record/]. The record contains
+the player name (for simplicity they are just named to `1` and `2`) and a property
+which indicates if the player is pressing a button (`'up'` or `'down'`) or if the button is
+not pressed (`null`).
 
 __src/controller/index.js__
 
 ```javascript
-const deepstream = require('deepstream.io-client-js')
+const deepstream = window.deepstream
 const player = window.location.hash.substr(1) || 1
 
 // ignore authentication in this tutorial
@@ -173,9 +147,9 @@ class Gamepad {
   }
 
   addEventListener(element, types, handler) {
+    element.addEventListener(type, handler.bind(this))
     for (let i=0; i<types.length; i++) {
-      const type = types[i]
-      element.addEventListener(type, handler.bind(this))
+      element.addEventListener(types[i], handler.bind(this))
     }
   }
 
@@ -213,6 +187,8 @@ class Gamepad {
 }
 ```
 
+![Pong](./controller-simple.png)
+
 ## Subscribe to record changes
 
 Let's add some code to subscribe to the records changes on the main
@@ -240,10 +216,10 @@ addEvents: function() {
   const player1 = dsClient.record.getRecord('player/1')
   const player2 = dsClient.record.getRecord('player/2')
   player1.subscribe(data => {
-    this.game.updatePlayer(1, data.direction)
+    this.game.updatePlayer(1, data)
   })
   player2.subscribe(data => {
-    this.game.updatePlayer(2, data.direction)
+    this.game.updatePlayer(2, data)
   })
 },
 ```
@@ -253,15 +229,16 @@ Then add these two functions to the `Pong` object:
 __src/pong.js__
 
 ```javascript
-  updatePlayer: function(player, direction) {
+  updatePlayer: function(player, data) {
     if (player == 1) {
-      this.updatePaddle(this.leftPaddle, direction)
+      this.updatePaddle(this.leftPaddle, data)
     } else if (player == 2) {
-      this.updatePaddle(this.rightPaddle, direction)
+      this.updatePaddle(this.rightPaddle, data)
     }
   },
 
-  updatePaddle: function(paddle, direction) {
+  updatePaddle: function(paddle, data) {
+  	const direction = data.direction
     if (!paddle.auto) {
       if (direction === 'up') {
         paddle.moveUp();
@@ -279,26 +256,15 @@ That's it! Now we converted the game into a realtime multiplayer game.
 
 ## Wait, how can I play it?
 
-[![asciicast](https://asciinema.org/a/chefx8d9q1ncqy931uzt0q9dv.png)](https://asciinema.org/a/chefx8d9q1ncqy931uzt0q9dv)
+You need to [install deepstream](https://deepstream.io/install/) and run the server.
+For this tutorial you don't need any special configuration, so just start the server.
 
-In order to play it now we just need a deepstream server which we can
-install by `npm i deepstream.io --save`.
+To bundle the JavaScript and run a HTTP server you can use the npm start script:
 
-To run the server we can add a npm script which uses the default config file:
-
-__package.json__
-
-```javascript
-//...
-"scripts": {
-  "deepstream": "deepstream start -c node_modules/deepstream.io/conf/config.yml",
-  //...
-},
-//...
+```shell
+# ensure that deepstream server is running
+npm start
 ```
-
-Now we can start deepstream.io via `npm run deepstream`. Just note that you need
-another terminal for `npm start` because both processes are keep running until you termine them via `CTRL + C`.
 
 ## How can I join the game from another device?
 
@@ -306,37 +272,21 @@ Since we used `localhost` to connect to the deepstream server the game would
 only work on the same machine, in other words: We can open the controls page in
 another browser but not on the smartphone or another computer.
 
-Let's provide an environment variable to allow to set the IP.
 
-We need to change the deepstream host in _src/controls/index.js_ and _src/game.js_.
-to this:
+We need to change the deepstream host in _src/controls/index.js_ to this:
 
 ```javascript
-const DEEPSTREAM_HOST = process.env.DEEPSTREAM_HOST || 'localhost:6020'
-const dsClient = deepstream(DEEPSTREAM_HOST).login({});
+const DEEPSTREAM_HOST = window.location.hostname + ':6020'
+const ds = deepstream(DEEPSTREAM_HOST).login({}, function(success) {
+  //...
+})
 ```
 
-To set the environment values during browserify bundling step we need to add a
-browserify transformer: `envify` and just append a `-t envify` to both npm scripts.
+If you want to play in your WiFi network you need to find out your WiFi IP address
+and replace `localhost` with your IP in the browser of the main page to something like this:
 
-To let the browser open the main page with the proper IP (in order to generate the correct QR codes) we can add anoter environment variable with a default value. We need to pass it as an argument to budo: `--host ${SERVER_IP:-0.0.0.0}`
-
-At the end the scripts should look like this:
-
-```javascript
-//..
-"scripts": {
-  "deepstream": "deepstream start -c node_modules/deepstream.io/conf/config.yml",
-  "start": "budo src/index.js --live --host ${SERVER_IP:-0.0.0.0} --serve dist/bundle.js -- -t babelify -t envify | opnr | garnish",
-  "build": "browserify src/bootstrap.js -t babelify -t envify | uglifyjs > dist/bundle.js"
-},
-//..
 ```
-
-If you want to play in your WiFi network you need to find out your WiFi IP address and run this command:
-
-```shell
-SERVER_IP=192.168.1.10 DEEPSTREAM_HOST=192.168.1.10:6020 npm start
+http://192.168.1.10:9966
 ```
 
 ## Starting and stopping the game
@@ -472,5 +422,79 @@ statusRecord.subscribe(`player${player}-goals`, data => {
 ```
 
 ## Use accelerometer to control the paddle
-WIP (last step of the tutorial)
 
+![Pong](./pong-accelerometer.png)
+
+Using the buttons on a touch device feels some kind of sluggish. So let's improve it by using the
+accelerometer instead. To simplify the code we replace all the code for the buttons in the controller.
+
+We replace the buttons with an accelerometer indicator:
+
+__controls.html__
+
+```html
+<div class="accelerometer-indicator"></div>
+```
+
+In the _Gamepad_ class we attach a handler for the [DeviceMotionEvent](https://developer.mozilla.org/en/docs/Web/API/DeviceMotionEvent) event. This event provides several properties, but we need just the
+`accelerationIncludingGravity.y` value. The value range is from `-10` — `+10`.
+To get a percentage value the value is divided by 10, shifted by 1 and diveded by 2.
+The value is inverted by subtracting 1 from it to get a feeling that the device acts like a remote control.
+
+__src/controls/index.js__
+
+```javascript
+  constructor() {
+    //...
+    this.indicator = document.querySelector('.accelerometer-indicator')
+    if (window.DeviceMotionEvent != null) {
+      window.addEventListener('devicemotion', this.listenOnMotion.bind(this))
+    }
+  }
+
+  listenOnMotion(e) {
+    const value = e.accelerationIncludingGravity.y
+    const percentage = 1 - ((value / 10) + 1) / 2;
+    const margin = Math.round(percentage * window.innerHeight - this.indicator.style.height)
+    this.indicator.style['margin-top'] = margin + 'px'
+    this.record.set('position', percentage);
+  }
+```
+
+For the main page we need to adjust the condtion within the `Pong.updatePaddle` function:
+
+__src/pong.js__
+
+```javascript
+if (data.position != null) {
+  this.setPaddlePosition(paddle, data.position)
+} //...
+```
+
+and add the `setPaddlePosition` to the Pong object:
+
+__src/pong.js__
+
+```javascript
+setPaddlePosition: function(paddle, percentage) {
+  const height = defaults.height - defaults.paddleHeight - defaults.wallWidth
+  const absolute = Math.round(percentage * height)
+  paddle.setpos(paddle.x, absolute)
+},
+```
+
+Finished!
+Now we implemented all three features which are mentioned in the beginning of this tutorial.
+
+## Footnotes
+
+The tutorial is done but maybe you noticed that the game has some issues:
+
+- CSS: where are the styles? - checkout the repo (see the link below)
+- UX: it's hard to get the paddle to the borders with the accelerometer
+- UX: the controls page should provide both accelerometer and buttons depending on the device
+- Permissions: a player can cheat by modifying the other players paddle state (permissions)
+- Bug: the game breaks if you open the main page in different browsers at the same time
+- Deployment: you can't set the deepstream host as an enivornment variable
+
+All these issues are solved in this GitHub repo: [github.com/deepstreamIO/ds-demo-pong](https://github.com/deepstreamIO/ds-demo-pong)
