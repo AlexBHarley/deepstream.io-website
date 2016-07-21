@@ -258,8 +258,6 @@ __src/pong.js__
       this.updatePaddle(this.leftPaddle, direction)
     } else if (player == 2) {
       this.updatePaddle(this.rightPaddle, direction)
-    } else {
-      console.error('player ' + player + ' is invalid')
     }
   },
 
