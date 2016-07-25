@@ -230,7 +230,7 @@ INFO | cache ready
 INFO | storage ready
 ```
 
-## package.json
+## Resources
 
 Here is the final _package.json_ in case you could not or don't want to use npm
 on your local machine:
@@ -256,3 +256,5 @@ on your local machine:
   }
 }
 ```
+
+You can also checkout the final source code on GitHub: https://github.com/deepstreamIO/ds-demo-heroku
