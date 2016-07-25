@@ -10,7 +10,7 @@ into a WII like remote in the process.
 
 There is a nice pong implementation for the browser on [https://github.com/jakesgordon/javascript-pong](https://github.com/jakesgordon/javascript-pong).
 It's implemented as a tutorial with 5 parts.
-The multiplayer mode is limited to the a shared keyboard.
+The multiplayer mode is limited to a shared keyboard.
 
 ![Pong](./pong-original.png)
 
@@ -27,18 +27,18 @@ This tutorial is based on that fork: [gburnett/javascript-pong](https://github.c
 
 ## Game architecture
 
-By keep all the original logic in the browser, we can reuse it as our game server, allowing it to keep track of the score and game status.
+By keeping all the original logic in the browser, we can reuse it as our game server, allowing it to keep track of the score and game status.
 
-A player needs to open another page which contains only some controller for its pong paddle. This page acts
+A player needs to open another page which contains only some control for its pong paddle. This page acts
 like a gamepad.
 
-The players data (control input and status) is synced in realtime between the pages via deepstream.
+The players' data (control input and status) is synced in realtime between the pages via deepstream.
 
 ## Main page
 
-To allow the players to join the game with their own device it's a common practise to let them
+To allow the players to join the game with their own device it's a common practice to let them
 join via a QR code. The QR code will contain a URL to a seperate page containing each paddles
-controller, and beneath it we'll place the players status.
+controller, and beneath it we'll place the player's status.
 
 So let's adapt the sidebar and duplicate it for both players:
 
@@ -129,7 +129,7 @@ const ds = deepstream('localhost:6020').login({}, function() {
 })
 ```
 
-The _Gamepad_ class register event listener for both touch devices and mouse devices.
+The _Gamepad_ class registers event listener for both touch devices and mouse devices.
 
 __src/controller/index.js__
 
@@ -194,7 +194,7 @@ class Gamepad {
 Let's add some code to subscribe to the records changes on the main
 page in order to update the paddle.
 
-First we need to connect to the deepstream server like we did in on
+First we need to connect to the deepstream server like we did on
 the controller page:
 
 __src/game.js__
@@ -294,7 +294,7 @@ http://192.168.1.10:9966
 ![Pong](./controller-leave.png)
 
 To improve the UX we add another record which contains the current status
-of the game, like if there is a winner and which players currently online.
+of the game, like if there is a winner and which players are currently online.
 
 With that information the players can start and stop the game.
 
@@ -376,7 +376,7 @@ updateGameStatus: function(player1, player2) {
 
 ## Send feedback to the player
 
-Let's give the user some feedback if you did a goal and if he win a match.
+Let's give the user some feedback if you did a goal and if he wins a match.
 The status record can be reused with another property: `player1-goals` and `player2-goals`.
 We can trigger a function from the `Pong.goal` function:
 
@@ -425,7 +425,7 @@ statusRecord.subscribe(`player${player}-goals`, data => {
 
 ![Pong](./pong-accelerometer.png)
 
-Using the buttons on a touch device feels some kind of sluggish. So let's improve it by using the
+Using the buttons on a touch device feels some of sluggish. So let's improve it by using the
 accelerometer instead. To simplify the code we replace all the code for the buttons in the controller.
 
 We replace the buttons with an accelerometer indicator:
@@ -438,8 +438,11 @@ __controls.html__
 
 In the _Gamepad_ class we attach a handler for the [DeviceMotionEvent](https://developer.mozilla.org/en/docs/Web/API/DeviceMotionEvent) event. This event provides several properties, but we need just the
 `accelerationIncludingGravity.y` value. The value range is from `-10` — `+10`.
-To get a percentage value the value is divided by 10, shifted by 1 and diveded by 2.
-The value is inverted by subtracting 1 from it to get a feeling that the device acts like a remote control.
+To get a percentage we can use this formula:
+
+```
+vPercent = 1 - (vAbs/20) + (1/2)
+```
 
 __src/controls/index.js__
 
@@ -461,7 +464,7 @@ __src/controls/index.js__
   }
 ```
 
-For the main page we need to adjust the condtion within the `Pong.updatePaddle` function:
+For the main page we need to adjust the condition within the `Pong.updatePaddle` function:
 
 __src/pong.js__
 
@@ -490,11 +493,12 @@ Now we implemented all three features which are mentioned in the beginning of th
 
 The tutorial is done but maybe you noticed that the game has some issues:
 
-- CSS: where are the styles? - checkout the repo (see the link below)
-- UX: it's hard to get the paddle to the borders with the accelerometer
-- UX: the controls page should provide both accelerometer and buttons depending on the device
-- Permissions: a player can cheat by modifying the other players paddle state (permissions)
-- Bug: the game breaks if you open the main page in different browsers at the same time
-- Deployment: you can't set the deepstream host as an enivornment variable
+- **CSS**: where are the style sheets? - checkout the repo (see the link below)
+- **UX**: it's hard to get the paddle to the borders with the accelerometer
+- **UX**: the controls page should provide both accelerometer and buttons depending on the device
+- **UX**: the paddle wobbles when using the accelerometer
+- **Permissions**: a player can cheat by modifying the other players' paddle state (permissions)
+- **Scalability**: the main page can only host one game at the same time
+- **Deployment**: you can't set the deepstream host as an enivornment variable
 
 All these issues are solved in this GitHub repo: [github.com/deepstreamIO/ds-demo-pong](https://github.com/deepstreamIO/ds-demo-pong)
