@@ -173,15 +173,9 @@ source /etc/lsb-release && echo "deb http://dl.bintray.com/deepstreamio/deb ${DI
 apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 379CE192D401AB61
 apt-get update
 apt-get install -y deepstream.io
-mkdir -p /var/lib/deepstream
-cd /var/lib/deepstream
-mkdir -p deepstream.io-storage-mongodb deepstream.io-cache-redis deepstream.io-msg-redis
-curl -L -O https://github.com/deepstreamIO/deepstream.io-storage-mongodb/releases/download/v1.0.0/deepstream.io-storage-mongodb-linux.tar.gz && tar -xf deepstream.io-storage-mongodb-linux.tar.gz -C deepstream.io-storage-mongodb
-curl -L -O https://github.com/deepstreamIO/deepstream.io-cache-redis/releases/download/v1.0.0/deepstream.io-cache-redis-linux.tar.gz && tar -xf deepstream.io-cache-redis-linux.tar.gz -C deepstream.io-cache-redis
-curl -L -O https://github.com/deepstreamIO/deepstream.io-msg-redis/releases/download/v1.0.0/deepstream.io-msg-redis-linux.tar.gz && tar -xf deepstream.io-msg-redis-linux.tar.gz -C deepstream.io-msg-redis
-#deepstream install storage mongodb
-#deepstream install cache redis
-#deepstream install message redis
+deepstream install storage mongodb
+deepstream install cache redis
+deepstream install message redis
 cd /etc/deepstream/ && curl -O https://raw.githubusercontent.com/deepstreamIO/ds-demo-digital-ocean/master/config.yml -O https://raw.githubusercontent.com/deepstreamIO/ds-demo-digital-ocean/master/permissions.yml -O https://raw.githubusercontent.com/deepstreamIO/ds-demo-digital-ocean/master/users.yml
 deepstream start &
 ```
