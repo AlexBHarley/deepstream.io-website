@@ -36,7 +36,7 @@ The trouble is: Both HTTP and WebSocket requests need to be routed to the same b
 Loadbalancing Websockets is a tough problem, but not an unsolvable one. Various solutions exist. They can broadly be categorized as: DNS, Hardware Layer 3 and Software Layer 3 or Layer 7. Phew, sounds tricky... let's look at them one by one:
 
 ### DNS Loadbalancing
-The Domain Name System is a decentralized network of nodes that sit between you and the server you want to reach. It translates domains (example.com) into IPs and... let me stop here, I'm sure you know all this already.
+The Domain Name System is a decentralized network of nodes that sits between you and the server you want to reach. It translates domains (example.com) into IPs and... let me stop here, I'm sure you know all this already.
 What's important in our context is that DNS has a many-to-many relationship between domains and IPs. A single A-Record (domain) or C-NAME (subdomain) can resolve to multiple IPs and the DNS will route requests in a round robin fashion.
 
 **The upsides** are that DNS is incredibly resilient and scalable. Should it ever be unavailable, your problem is most likely more of an apocalyptic nature than a technical one. DNS also isn't something you'd need to maintain, so you pretty much get your load balancing for free.
