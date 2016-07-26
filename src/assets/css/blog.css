@@ -167,7 +167,9 @@ h1.post-title {
 }
 
 .post-content img {
-		width: 100%;
+    margin: 20px auto;
+    display: block;
+    max-width: 100%;
 }
 
 .read-more {

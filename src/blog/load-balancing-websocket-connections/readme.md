@@ -47,7 +47,9 @@ What's important in our context is that DNS has a many-to-many relationship betw
 Ok, what's with these layers? The notion of layers stems from the [Open Systems Interconnection model](https://en.wikipedia.org/wiki/OSI_model), an attempt of categorizing network interaction in an abstract, technology independent way. Highly simplified:
 
 - **Layer 3** is the abstract networking layer - this is where the internet protocol (IP) lives and raw packets are sent.
+
 - **Layer 4** is the transport layer that has concepts of acknowledgments, resends etc. It's the realm of the Transmission Control Protocol (TCP).
+
 - Moving a few layers up, the final bit that's important for load balancing is **layer 7**, the application layer. This is where complex, content aware and feature rich HTTP messages are sent.
 
 The fastest and most powerful loadbalancing mechanism after DNS are hardware level 3 switches. They usually come in the shape of "blades" that can be slotted into a blade server rack.
