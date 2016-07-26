@@ -1,4 +1,4 @@
-# How To setup a realtime server with deepstream.io, Redis and MongoDB on Ubuntu 16.04
+# How to setup a realtime server with deepstream.io, Redis and MongoDB on Ubuntu 16.04
 
 ### Introduction
 
@@ -34,8 +34,8 @@ __depstream.io__:
 
 ## Step 1 — Configure MongoDB
 
-MongoDB has no authentifaction by defaut. This is okay since it only listen to connections for localhost.
-To allow deepstream to connect to the database we can change the IP address the the private network IP of the droplet:
+MongoDB has no authentication by defaut. This is okay since it only listens to connections for localhost.
+To allow deepstream to connect to the database we can change the IP address to the private network IP of the droplet:
 
 
 ```shell
@@ -66,7 +66,7 @@ ssh root@redis_server_ip
 nano /etc/redis/redis.conf
 ```
 
-And replace the IP after `bind`:
+And replace the IP after `bind` to this:
 
 ```
 # JUST COMMENT THE FOLLOWING LINE.
@@ -97,10 +97,10 @@ deepstream install storage mongodb
 deepstream install cache redis
 ```
 
-Each command will print out a example configuration snippet.
-These snippets needs to be added to the `/etc/deepstream/config.yml`
+Each command will print out an example of a configuration snippet.
+These snippets need to be added to the `/etc/deepstream/config.yml`
 
-So the plugins section should looks like this at the end:
+So the plugins section should look like this at the end:
 
 ```yaml
 plugins:
@@ -126,7 +126,7 @@ To start the deepstream server we use this CLI command:
 deepstream start
 ```
 
-The output should contain these lines which indicates that the connection to the cache and storage layer were successfull
+The output should contain these lines which indicate that the connection to the cache and storage layer were successful
 
 ```
 INFO | cache ready
@@ -154,16 +154,14 @@ plugins:
 and install a connector to use redis for the message layer via
 
 ```shell
-eepstream install message redis
+deepstream install message redis
 ```
 
-Now you can spin up multiple droplets with deepstream. To avoid to ssh into each of those we can use [cloud-init](https://www.digitalocean.com/community/tutorials/an-introduction-to-cloud-config-scripting).
+Now you can spin up multiple droplets with deepstream. To avoid to ssh into each droplet we can use [cloud-init](https://www.digitalocean.com/community/tutorials/an-introduction-to-cloud-config-scripting).
 This can be choosen by checking __User Data__ when you create a droplet within the __Select additional options__.
 
-By enabling this checkbox we can list commands which are executed during droplet creation.
-Since we want to avoid to SSH into the droplets at all we move the configuration files into a public
-GitHub repository and download it via curl.
-
+By enabling this checkbox we can provide a shell script which is executed during droplet creation.
+We move the configuration files into a public GitHub repository and download it via curl so we are more flexible to update the shell script in future.
 
 __User Data__
 
