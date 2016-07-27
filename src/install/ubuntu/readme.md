@@ -11,7 +11,7 @@ To install, paste the following script into your terminal
 # the source command makes the distro_name available as a variable
 # the echo command creates a source list entry string for the deepstream repo
 # the tee command appends it to APT's list of package sources
-source /etc/lsb-release && echo "deb http://dl.bintray.com/deepstreamio/deb {{distro_name}} main" | sudo tee -a /etc/apt/sources.list
+source /etc/lsb-release && echo "deb http://dl.bintray.com/deepstreamio/deb ${DISTRIB_CODENAME} main" | sudo tee -a /etc/apt/sources.list
 
 # downloads the key the distribution is signed with
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 379CE192D401AB61
