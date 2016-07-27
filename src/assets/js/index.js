@@ -124,7 +124,7 @@ $(function(){
         } );
     });
 
-    var unlisten = history.listen(location => {
+    var unlisten = history.listen(function(location) {
         var pathname = (location.state || {}).realPathname
         if (pathname == null) {
             // the first page visit didn't set the state
