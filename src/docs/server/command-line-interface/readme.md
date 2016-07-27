@@ -60,7 +60,6 @@ will print all the options you can specify for the deepstream server:
     -h, --help                         output usage information
     -c, --config [file]                configuration file, parent directory will be used as prefix for other config files
     -l, --lib-dir [directory]          path where to lookup for plugins like connectors and logger
-    -d, --detach                       detach the deepstream server process
     --server-name <name>               Each server within a cluster needs a unique name
     --web-server-enabled [true|false]  Accept/Decline incoming HTTP connections
     --tcp-server-enabled [true|false]  Accept/Decline incoming TCP connections
@@ -87,12 +86,6 @@ Otherwise the paths are relative to your current working directory.
 
 If you installed it via a linux package manager it will default to _/var/lib/deepstream_.
 Otherwise the paths are relative to your current working directory.
-
-#### --detach
-
-This options will start deepstream as a background process. To check if deepstream is running and stopping use `deepstream status` and `deepstream stop`.
-
-Please note: Detached mode is not yet fully supported across all operating systems.
 
 ### deepstream stop
 
