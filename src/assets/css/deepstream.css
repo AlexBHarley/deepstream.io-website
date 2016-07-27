@@ -267,11 +267,17 @@ nav .links a{
 .main-serach-results ul {
 	background: #0FBBEC;
 	height: 408px;
-		overflow-x: hidden;
+	top: 70px !important;
+	overflow-x: hidden;
 }
 
-.main-serach-results .ui-menu-item em {
-	background: rgba(0,0,0,0.1);
+.main-serach-results .ui-menu .ui-menu-item {
+	width: 100%;
+	padding: 3px 1em 3px 1em;
+}
+
+.main-serach-results .ui-menu .ui-state-focus {
+	margin: 0;
 }
 
 .main-serach-results .ui-menu-item.ui-state-focus {

@@ -1,7 +1,6 @@
 /**
  * Main JS file for Casper behaviours
  */
-
 /* globals jQuery, document */
 (function ($, undefined) {
     "use strict";
@@ -53,7 +52,6 @@
         });
 
     };
-
     searchAutocomplete();
 
 })(jQuery);
@@ -73,57 +71,24 @@ function searchAutocomplete() {
                     }
                 }
             };
-            var request = new XMLHttpRequest();
-            request.open('GET', SEARCH_BASE + '/pages/_search', true);
-            request.setRequestHeader("Content-type", "application/json; charset=utf-8");
-            request.onload = function() {
-              if (request.status >= 200 && request.status < 400) {
-                // Success!
-                console.log(request.responseText)
-                var data = JSON.parse(request.responseText);
-                var hits = data.hits.hits;
-                return response(hits.map(function(item) {
-                    return {
-                        title: item._source.title,
-                        link: item._source.filePath.replace('readme.md', ''),
-                        type: item._type
-                    }
-                }))
-              } else {
-                // We reached our target server, but it returned an error
-                console.error('Could not fetch data from search endpoint')
+            $.ajax({
+              url: SEARCH_BASE + '/pages/_search',
+              data: JSON.stringify(requestData),
+              method: 'POST',
+              success: function(data, status) {
+                if (status === 'success') {
+                    var hits = data.hits.hits;
+                    return response(hits.map(function(item) {
+                        return {
+                            title: item._source.title,
+                            link: item._source.filePath.replace('readme.md', ''),
+                            type: item._type
+                        }
+                    }));
+                }
+                return response([]);
               }
-            };
-
-            request.onerror = function() {
-              // There was a connection error of some sort
-              console.error('Could connect to search endpoint')
-            };
-            var bodyAsString = JSON.stringify(requestData);
-            console.log('sending body', bodyAsString);
-            request.send(bodyAsString);
-
-            // $.ajax({
-            //   url: ,
-            //   data: JSON.stringify(requestData),
-            //   dataType: 'text', // not JSON!
-            //   traditional: true,
-            //   crossDomain: true,
-            //   success: function(data, status) {
-            //     if (status === 'success') {
-            //         console.log(data)
-            //         var hits = data.hits.hits;
-            //         return response(hits.map(function(item) {
-            //             return {
-            //                 title: item._source.title,
-            //                 link: item._source.filePath.replace('readme.md', ''),
-            //                 type: item._type
-            //             }
-            //         }));
-            //     }
-            //     return response([]);
-            //   }
-            // })
+            })
         },
         minLength: 3,
         focus: function(event, ui) {
