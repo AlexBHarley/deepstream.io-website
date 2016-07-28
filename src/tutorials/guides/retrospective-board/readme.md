@@ -1,25 +1,26 @@
-With more and more teams working remote, with members being spread across multiple continents, tools have started emerging to make processes online. But the fun part behind behind retrospectives, planning poker and other methods was always the interactivity, seeing cards move around and barely readable scribbles.
+With more and more teams working remote,, tools have started emerging to move processes online. But the fun part behind behind retrospectives, planning poker and other methods was always the interactivity, seeing cards move around and barely readable scribbles.
 
-Let's take a look at how we can use data-sync to create a realtime retrospective board that supports both destops and mobile phones.
+As such, let's take a look at how we can use data-sync to create a realtime retrospective board that supports both destops and mobile phones.
 
-TODO: Image
+![deepstream retrospective board](retrospective-board.gif)
 
 In the spirit of agile approaches, let us break down our requirements!
 
-* add, edit and move around cards
-* allow everyone with a link to the same board to see updates live
-* have a mobile friendly interface
+- add, edit and move around cards
+- allow everyone with access to the board to see live updates
+- have a mobile friendly interface
 
 And to add a little bit of security incase you decide to make the application public, let's throw in a few security requirements:
 
-* only let people access the board with a username and password
-* only let cards be edited by their creator
+- only let people access the board with a username and password
+- only let cards be edited by their creator
 
-To do this we'll be using good old jQuery on the frontend, and deepstream.io as our server
+To do this we'll be using good old jQuery on the frontend, and deepstream.io for data-sync
 
 ### Setting up a server
 
-Installing deepstream is as simple as downloading the [latest version](https://github.com/deepstreamIO/deepstream.io/releases/latest) from github or installing it on linux via [apt](https://deepstream.io/install/ubuntu/) or [yum](https://deepstream.io/install/centos/).
+Installing deepstream is as simple as downloading the [latest version](https://github.com/deepstreamIO/deepstream.io/releases/latest) from github or installing it on linux via [apt](https://deepstream.io/inst
+all/ubuntu/) or [yum](https://deepstream.io/install/centos/).
 
 We also want to allow users to have a username and password to login, in order to get that we'll have to slightly modify the server configuration to authenticate users. Replace `auth: none` within your config file in place of `type: none`. This allows you to load your users from a username/password file.
 
@@ -38,11 +39,11 @@ also any user specific meta-data, in this case we'll define their roles
 
 ```json
 john:
-  password: "tsA+yfWGoEk9uEU/GX1JokkzteayLj6YFTwmraQrO7k=75KQ2Mzm"
+  password: "qQoEMakcnxfq6AQhQl2N9XiIke/JjTqDh+x7OMd5XQE=gEwXQZOWaHilsZ0fpllcOA=="
   data:
     role: developer
 bob:
-  password: "tsA+yfWGoEk9uEU/GX1JokkzteayLj6YFTwmraQrO7k=75KQ2Mzm"
+  password: "qQoEMakcnxfq6AQhQl2N9XiIke/JjTqDh+x7OMd5XQE=gEwXQZOWaHilsZ0fpllcOA=="
   data:
     role: scrum-master
 ```
@@ -54,7 +55,6 @@ deepstream hash cleartext-password
 ```
 
 And finally just start the server via:
-
 
 ```bash
 deepstream start
@@ -69,10 +69,13 @@ Great, so now we have a server running lets look at setting up the board!
 The first thing we'll need to do is let users login. To do this we'll need to get the deepstream client. You have a few different flavours of installation, either using [npm](), [bower]() or having it come as part of your [react]() or [polymer]() plugins. For this example we're going to go with the simplest approach of just fetching it directly from github.
 
 ```html
-  <script type="text/javascript" src="https://rawgit.com/deepstreamIO/deepstream.io-client-js/master/dist/deepstream.min.js"></script>
+  <script
+    type="text/javascript"
+    src="https://rawgit.com/deepstreamIO/deepstream.io-client-js/master/dist/deepstream.min.js">
+  </script>
 ```
 
-Now that we have the deepstream library included we need to connect to tell it to connect to the server.
+Now that we have the deepstream library included we'll need to get it connect to the server.
 
 ```javascript
 const client = deepstream( 'localhost:6020' );
@@ -185,22 +188,21 @@ this.cardList.whenReady( ( this ) => {
 } );
 
 // Listening to card being added on the board.
-this.cardList.on( 'entry-added', onCardAdded.bind( this ) );
-```
+Card```
 
-That covers most of the creating part of the board, the demo code on [github]() fills in all the part I glossed over, such as removing cards and different ways you can add cards on mobile devices via click and dropping on the desktop.
+That covers most of the creating part of the board, the demo code on [github]() fills in all the part I glossed over, such as removing cards and different ways you can add cards depending on your input devices.
 
-The final is dragging a card around and seeing it update on all other browsers. You can see this being done here:
+The final requirement is dragging a card around and seeing it update on all other browsers. You can see this being done here:
 
 ```javascript
-this.cardElement
+this.element
   .css( 'position', 'absolute' )
   .draggable( {
-    handle: ".postit-header",
+    handle: ".card-header",
     zIndex: 999,
-    // Prevent jQuery draggable from updating the DOM's position and
-    // leave it to the record instead.
-    helper: function(){ return $( '' ); },
+    // Prevent jQuery draggable from updating the DOM's
+    // position and leave it to the record instead.
+    helper: function(){ return $( '<i></i>' ); },
     drag: ( event, ui ) => {
       this.record.set( 'position', {
         top: ui.position.top,
@@ -219,15 +221,15 @@ this.record.subscribe( 'position', ( position ) => {
 }, true );
 ```
 
-Note how we prevent jQuery to update the dom directly. This is because we are using using the record our single source of truth. By doing so our code will process things the same way regardless of it the action happened remotely or locally.
+Note how we prevent jQuery to update the dom directly. This is because we are using using the record our single source of truth. By doing so our code will process things the same way regardless of whether the action happened remotely or locally. This is always a great way to consume changes, otherwise your code will become cluttered with unwanted conditions.
 
-Great, so we now have a board! Let's look at adding a tiny bit of permissions now were are familiar with the record json structure.
+Great, so we now have a board! Let's look at adding a tiny bit of permissions now were are familiar with the cards json structure.
 
 ###### Permissions
 
-Deepstream comes with a powerful permissioning language called **Valve**, which can be used to create rules to allow/deny all client actions.
+Deepstream comes with a powerful permissioning language called **Valve**, which can be used to create rules to allow/deny all possible client actions.
 
-Going back to our last requirement, we want to only allow the creator to update their own cards. Let's take a look at how we can implement that in our `pemission` config file.
+Going back to our last requirement, we want to only allow the creator to update their own cards. Let's take a look at how we can implement that in our `pemission.yml` config file.
 
 ```yaml
 record:
@@ -246,4 +248,4 @@ record:
     delete: "user.id === 'scrum-master'"
 ```
 
-And done! We now have ( the brains and guts ) of a realtime, authenticated and permissioned retrospective board! For a complete example, which mainly focuses on cleaner seperation and mobile support, see the [github repo]()
+And done! We now have the brains and guts of a realtime, authenticated and permissioned retrospective board! For a complete example, which mainly focuses on cleaner seperation and mobile support, see the [github repo]()
