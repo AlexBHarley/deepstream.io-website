@@ -113,13 +113,26 @@ $(function(){
         $(this).parent().toggleClass( 'open' );
     });
 
+    function getBaseName(basename) {
+        return basename.split( '/' ).filter( function( item ) {
+            return item !== '';
+        } ).reverse()[ 0 ];
+    }
+
+    function getDirname(basename) {
+        var array = basename.split( '/' );
+        array.pop();
+        return array.join('/') + '/'
+    }
+
     $( '.tree-nav .entry a' ).click(function( e ){
         e.preventDefault();
         var pathname = $(this).attr( 'href' );
+        var basename = getBaseName( pathname );
         history.push( {
-            pathname: pathname.replace( /\/[^/]*\.html/, '/' ),
+            pathname: pathname,
             state: {
-                realPathname: pathname
+                realPathname: pathname + basename + '.html',
             }
         } );
     });
@@ -129,13 +142,7 @@ $(function(){
         if (pathname == null) {
             // the first page visit didn't set the state
             // so recover the ajax page from its basename
-            var splitted = location.pathname.split('/')
-            if (splitted[splitted.length - 1] === '') {
-                pathname = splitted[splitted.length - 2]
-            } else {
-                pathname = splitted[splitted.length - 1]
-            }
-            pathname = location.pathname + pathname + '.html'
+            pathname = location.pathname + getBaseName(location.pathname) + '.html'
         }
         changeEntryPage( {
             pathname: pathname
@@ -143,8 +150,8 @@ $(function(){
     })
 
     function changeEntryPage( location ) {
-        var pathname = location.pathname;
-        var link = $( '[href="' + pathname + '"]' )
+        var dirname = getDirname(location.pathname);
+        var link = $( '[href="' + dirname + '"]' )
         $( '.entry .active' ).removeClass( 'active' );
 
         link.parent().addClass( 'active' );
@@ -153,7 +160,7 @@ $(function(){
         link.parents('.sub-section-container').addClass('open')
 
         $( '.col.right .header h1' ).text( link.text() );
-        $.get( pathname, function( result ){
+        $.get( location.pathname, function( result ){
 
             //TODO Error handling
             $( '.breadcrumbs span:last-child' ).text( link.text() );

@@ -19,8 +19,12 @@
 	left: 1px;
 }
 
-.col.right{
+.right {
 	background: #fff;
+}
+
+div.two-col .right.big {
+	width: auto; /* otherwise its broken without JavaScript */
 }
 
 .content{
