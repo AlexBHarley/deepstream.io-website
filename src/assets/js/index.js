@@ -2,6 +2,9 @@
  * Main JS file for Casper behaviours
  */
 /* globals jQuery, document */
+
+window._history = window.History.createHistory();
+
 (function ($, undefined) {
     "use strict";
 
@@ -60,6 +63,10 @@
 // for docs pages
 var SEARCH_BASE = 'https://search-deepstream-website-fozmccbxnnchstaflr5wmac3l4.eu-central-1.es.amazonaws.com';
 function searchAutocomplete() {
+    $('.main-serach-results').on('click', 'ul li a', function(e) {
+        // should be handled by the select handler
+        e.preventDefault();
+    })
     $('.main-search').autocomplete({
         appendTo: '.main-serach-results',
         source: function(request, response) {
@@ -95,7 +102,19 @@ function searchAutocomplete() {
             return false;
         },
         select: function(event, ui) {
-            window.location = '/' + ui.item.slug;
+            var section = window.location.pathname.split('/').filter(function(i) {return i !== ''})[0];
+            var subsection = window.location.pathname.split('/').filter(function(i) {return i !== ''})[1];
+            var pathname = '/' + ui.item.link;
+            if ((ui.item.type === 'docs' || ui.item.type === 'tutorials') && subsection != null && section === ui.item.type) {
+                window._history.push( {
+                    pathname: pathname,
+                    state: {
+                        realPathname: pathname + getBaseName(pathname) + '.html'
+                    }
+                } );
+            } else {
+                window.location = pathname;
+            }
             return false;
         }
     }).autocomplete('instance')._renderItem = function(ul, item) {
@@ -108,12 +127,24 @@ function searchAutocomplete() {
     })
 }
 
+function getBaseName(basename) {
+    return basename.split( '/' ).filter( function( item ) {
+        return item !== '';
+    } ).reverse()[ 0 ];
+}
+
+function getDirname(basename) {
+    var array = basename.split( '/' );
+    array.pop();
+    return array.join('/') + '/';
+}
+
 $(function(){
     if ( $( '.docs .col' ).length === 0 ) {
         return;
     }
 
-    var history = window.History.createHistory();
+
     var adjustSize = function() {
         var windowWidth = $(window).width();
         if( windowWidth > 999 ) {
@@ -135,31 +166,18 @@ $(function(){
         $(this).parent().toggleClass( 'open' );
     });
 
-    function getBaseName(basename) {
-        return basename.split( '/' ).filter( function( item ) {
-            return item !== '';
-        } ).reverse()[ 0 ];
-    }
-
-    function getDirname(basename) {
-        var array = basename.split( '/' );
-        array.pop();
-        return array.join('/') + '/'
-    }
-
     $( '.tree-nav .entry a' ).click(function( e ){
         e.preventDefault();
         var pathname = $(this).attr( 'href' );
-        var basename = getBaseName( pathname );
-        history.push( {
+        window._history.push( {
             pathname: pathname,
             state: {
-                realPathname: pathname + basename + '.html',
+                realPathname: pathname + getBaseName( pathname ) + '.html',
             }
         } );
     });
 
-    var unlisten = history.listen(function(location) {
+    var unlisten = window._history.listen(function(location) {
         var pathname = (location.state || {}).realPathname
         if (pathname == null) {
             // the first page visit didn't set the state
