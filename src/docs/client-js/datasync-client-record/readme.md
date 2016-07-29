@@ -100,7 +100,7 @@ record.setName('user/maxpower')
 {{/table}}
 ```
 
-The callback contains an error argument and a boolean to indicate whether or not the record exists in deepstream. This is useful to avoid creating a record via `getRecord( name )` if you only want to edit the contents.
+The callback contains an error argument and a boolean to indicate whether or not the record exists in deepstream. This is useful to avoid creating a record via `getRecord( name )` if you only want to edit the contents. The callback is invoked immediately if the record exists on the client.
 
 ```javascript
 var user = client.record.has('user/johndoe', (error, hasRecord) => {
@@ -124,7 +124,7 @@ var user = client.record.has('user/johndoe', (error, hasRecord) => {
 {{/table}}
 ```
 
-The callback contains the record's content without subscribing to updates. This can be used to avoid scenarios where you would request the record and discard it immediately afterwards.
+The callback contains the record's content without subscribing to updates. This can be used to avoid scenarios where you would request the record and discard it immediately afterwards. The callback is invoked immediately if the record data is already loaded and ready.
 
 ```javascript
 client.record.snapshot('user/johndoe', (error, data) => {
@@ -150,14 +150,6 @@ client.record.snapshot('user/johndoe', (error, data) => {
 
 Allows to listen for record subscriptions made by other clients. This is useful to create "active" data providers, e.g. providers that only provide data for records that users are actually interested in. You can find more about listening in the [record tutorial](/tutorials/core/datasync-records/).
 
-{{#infobox "info"}}
-The listen callback will only be called once with `subscribed = true` for the first time a matching subscription is made and once with `subscribed = false` once all clients have unsubscribed from the record.
-{{/infobox}}
-
-{{#infobox "info"}}
-The callback will be called for all matching subscriptions that already exist at the time its registered.
-{{/infobox}}
-
 ```javascript
 client.record.listen('raceHorse/.*', (match, isSubscribed) => {
   console.log(match) // 'raceHorse/fast-betty'
@@ -168,6 +160,12 @@ client.record.listen('raceHorse/.*', (match, isSubscribed) => {
   }
 })
 ```
+
+<br/>
+{{#infobox "info"}}
+<br/>The listen callback will only be called once with `subscribed = true` for the first time a matching subscription is made and once with `subscribed = false` once all clients have unsubscribed from the record.
+<br/>The callback will be called for all matching subscriptions that already exist at the time its registered.
+{{/infobox}}
 
 ### client.record.unlisten(pattern)
 ```

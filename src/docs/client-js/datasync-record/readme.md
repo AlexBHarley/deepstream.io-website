@@ -186,7 +186,9 @@ user.subscribe('status', statusChanged, true)
 ```
 Removes a subscription previous made using `record.subscribe()`. Defining a path with `unsubscribe` removes that specific path, or with a callback, can remove it from generic subscriptions.
 
-Note: `unsubscribe` is entirely a client-side operation. To notify the server that the app would no longer interested in the record, use `discard()` instead.
+{{#infobox "info"}}
+`unsubscribe` is entirely a client-side operation. To notify the server that the app would no longer interested in the record, use `discard()` instead.
+{{/infobox}}
 
 Unsubscribe all callbacks registered with the path `status`
 ```javascript
@@ -207,17 +209,24 @@ Unsubscribe all callbacks not associated with a path
 ```javascript
 user.unsubscribe()
 ```
+<br/>
+{{#infobox "info"}}
+It is important to unsubscribe all callbacks that are registered when discarding a record. Just calling discard does **not** guarantee that callbacks will not be called.
+{{/infobox}}
 
 ### discard()
-Removes all change listerners and notifies the server that client no longer wants updates for this record.
-
-{{#infobox "info"}}
-It is important to use this operation for records that are no longer needed. `unsubscribe()` only removes listeners and does not notify the server; in this case, the server will continue to send updates to the client.
-{{/infobox}}
+Removes all change listerners and notifies the server that client no longer wants updates for this record if your application
+no longer requires the record.
 
 ```javascript
 user.discard()
 ```
+
+<br/>
+{{#infobox "info"}}
+<br/>It is important to use this operation for records that are no longer needed. `unsubscribe()` only removes listeners and does not notify the server; in this case, the server will continue to send updates to the client.
+<br/>Records are only discarded when you have no record subscriptions left.
+{{/infobox}}
 
 ### delete()
 This permanently deletes the record on the server for all users.
@@ -225,3 +234,9 @@ This permanently deletes the record on the server for all users.
 ```javascript
 user.delete()
 ```
+
+<br/>
+{{#infobox "info"}}
+<br/>Since deleting a record means that it no longer exists, the resulting action will be a forced discard to all clients with that record.
+<br/>Creating a record directly after deleting it without waiting for the `delete` event can end up in a race condition. Try to ensure the record has been deleted succesfully to avoid edge cases.
+{{/infobox}}

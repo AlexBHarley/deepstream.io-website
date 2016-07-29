@@ -40,6 +40,12 @@ Emitted every time the connectionstate changes. The connectionState is passed to
 Aggregates all errors that are encountered. Some errors like `CONNECTION_ERROR` or `MESSAGE_PARSE_ERROR` are exlusively emitted by the client.
 Others like `ACK_TIMEOUT` or `VERSION_EXISTS` that relate to a specific Record, Event or RPC are emitted first by the object they relate to and are then forwarded to the client. You can find a list of all errors [here](/docs/common/errors/).
 
+```javascript
+client.on('error', ( error, event, topic ) =>
+  console.log(error, event, topic);
+)
+```
+
 ## Methods
 
 ### login(authParams, callback)
