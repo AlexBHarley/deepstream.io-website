@@ -205,7 +205,7 @@ Removes all change listeners and notifies the server that the client is no longe
 ```javascript
 list.discard();
 ```
-
+<br/>
 {{#infobox "info"}}
 It is important to make sure that `discard()` is called for any list that's no longer needed. If you only remove the listeners using `unsubscribe()` the server won't be notified and will continue to send updates to the client.
 {{/infobox}}

@@ -98,7 +98,7 @@ server.set('dataTransforms', [{
   }
 }])
 ```
-
+<br/>
 {{#infobox "important" "Important!"}}
 Note how read and update both have the same code path. This is because in both cases the entire data is sent, it is only very rarely that you would need different content between both actions.
 {{/infobox}}

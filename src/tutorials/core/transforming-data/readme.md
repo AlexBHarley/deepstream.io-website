@@ -90,6 +90,7 @@ server.set( 'dataTransforms', [{
 	}
 }]);
 ```
+<br/>
 
 {{#infobox "important" "BUT!!!"}}
 Transforming data slows deepstream down quite a bit. Usually, messages are constructed once and fanned out to all subscribed clients. If a transform function is registered however, messages are constructed for every receiver specifically which can add considerable overhead.
