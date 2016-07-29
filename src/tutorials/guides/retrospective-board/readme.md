@@ -161,7 +161,6 @@ record.subscribe( 'position', ( newPosition ) = {
 
 You also got a list, which is a useful way to maintain a set of records that have things in common. You can `addEntry( removeName )`, `removeEntry( recordName )` and listen to `entry-added` and `entry-removed` events.
 
-
 Let's take a look at how we can put these things together to make a board. We'll need a list to contain the set of all the records on the board, and whenever a card is created add it into the dom. Since the list is the entry point to all our records we need to use a non-random name.
 
 ```javascript
@@ -245,7 +244,7 @@ Let's introduce a tiny bit of scope creep, and allow the `scrum-master` to edit 
 record:
   "postits/.*":
     write: "data.owner === user.id || user.id === 'scrum-master'"
-    delete: "user.id === 'scrum-master'"
+    delete: "user.data.role === 'scrum-master'"
 ```
 
-And done! We now have the brains and guts of a realtime, authenticated and permissioned retrospective board! For a complete example, which mainly focuses on cleaner seperation and mobile support, see the [github repo]()
+And done! We now have the brains and guts of a realtime, authenticated and permissioned retrospective board! For a complete example, which mainly focuses on cleaner seperation and mobile support, see the [github repo](https://github.com/deepstreamIO/ds-demo-retrospective-board)
