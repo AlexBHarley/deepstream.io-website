@@ -272,6 +272,7 @@ nav .links a{
 	background: #0FBBEC;
 	height: 408px;
 	top: 70px !important;
+	left: 0 !important;
 	overflow-x: hidden;
 }
 

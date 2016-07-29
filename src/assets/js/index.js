@@ -74,6 +74,7 @@ function searchAutocomplete() {
                 query: {
                     multi_match : {
                         query : request.term,
+                        type: 'phrase_prefix',
                         fields : [ 'title^3', 'content' ]
                     }
                 }
@@ -119,7 +120,7 @@ function searchAutocomplete() {
         }
     }).autocomplete('instance')._renderItem = function(ul, item) {
       return $('<li>')
-        .append("<a href='/" + item.link + "'><br>" + item.title + "</a>")
+        .append("<strong>" + item.type + ":</strong> <a href='/" + item.link + "'><br>" + item.title + "</a>")
         .appendTo(ul);
     };
     $('input.main-search').on('focus', function() {
