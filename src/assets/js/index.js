@@ -108,6 +108,9 @@ $(function(){
 
     adjustSize();
     $(window).resize( adjustSize );
+    window.setTimeout( function() {
+        $(window).resize( adjustSize );
+    }, 250 );
 
     $( '.sub-section-toggle' ).click(function(){
         $(this).parent().toggleClass( 'open' );
@@ -151,7 +154,7 @@ $(function(){
 
     function changeEntryPage( location ) {
         var dirname = getDirname(location.pathname);
-        var link = $( '[href="' + dirname + '"]' )
+        var link = $( '.tree-nav [href="' + dirname + '"]' )
         $( '.entry .active' ).removeClass( 'active' );
 
         link.parent().addClass( 'active' );
@@ -169,11 +172,13 @@ $(function(){
             $('.content pre code').each(function(i, block) {
                 Prism.highlightElement( block );
             });
+
+            updateDownloadLinks();
         });
     };
 });
 
-$(function(){
+function updateDownloadLinks() {
     $('a.install-link').each(function(){
         var url = 'https' + '://api.github.com/repos/deepstreamio/deepstream.io/releases/latest';
         var anchor = $(this);
@@ -188,7 +193,8 @@ $(function(){
                 .attr( 'href', asset.browser_download_url );
         });
     });
-});
+}
+updateDownloadLinks();
 
 $(function(){
     setTimeout(function(){

@@ -11,7 +11,7 @@
 			<ul class="entry">
 				{{#each tree}}
 					<li class="{{ifactive-install 'level2' 'active' @root @root.tree this.indexPath}}">
-						<a href="{{link this.path}}" data-fetch="ajax">{{this.title}}</a>
+						<a href="{{link this.indexPath}}" data-fetch="ajax">{{this.title}}</a>
 					</li>
 				{{/each}}
 			</ul>
