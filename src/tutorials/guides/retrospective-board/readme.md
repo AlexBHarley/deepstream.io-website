@@ -166,7 +166,7 @@ Let's take a look at how we can put these things together to make a board. We'll
 ```javascript
 // Creating a card
 function createCard() {
-  const cardId = 'postits/' + this.ds.getUid();
+  const cardId = 'cards/' + this.ds.getUid();
   const card = this.ds.record.getRecord( cardId );
   card.whenReady( ( record ) => {
     record.set( properties );
@@ -232,19 +232,18 @@ Going back to our last requirement, we want to only allow the creator to update 
 
 ```yaml
 record:
-  "postits/.*":
+  "cards/.*":
     write: "data.owner === user.id"
 ```
 
 And that's it, the only user who can edit their cards has to be the same as the cards creator.
 
-Let's introduce a tiny bit of scope creep, and allow the `scrum-master` to edit any card, and be the only one who can delete cards. Luckily we added this earlier on in the user config so we have access to user roles.
+Let's introduce a tiny bit of scope creep, and allow the `scrum-master` to edit any card. Luckily we added this earlier on in the user config so we have access to user roles.
 
 ```yaml
 record:
-  "postits/.*":
-    write: "data.owner === user.id || user.id === 'scrum-master'"
-    delete: "user.data.role === 'scrum-master'"
+  "cards/.*":
+    write: "data.owner === user.id || user.serverData.role === 'scrum-master'""
 ```
 
 And done! We now have the brains and guts of a realtime, authenticated and permissioned retrospective board! For a complete example, which mainly focuses on cleaner seperation and mobile support, see the [github repo](https://github.com/deepstreamIO/ds-demo-retrospective-board)
