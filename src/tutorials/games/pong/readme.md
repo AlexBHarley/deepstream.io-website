@@ -47,14 +47,14 @@ __index.html__
 ```html
 <div class="sidebar sidebar-right">
   <h2>Player 2</h2>
-  <a target="_blank" href="/controls#2">
+  <a target="_blank" href="/controls.html#2">
     <div class="qrcode" id="qrcode2"></div>
   </a>
   <div class="online online-2">online</div>
 </div>
 <div class="sidebar">
   <h2>Player 1</h2>
-  <a target="_blank" href="/controls#1">
+  <a target="_blank" href="/controls.html#1">
     <div class="qrcode" id="qrcode1"></div>
   </a>
   <div class="online online-1">online</div>
@@ -75,10 +75,10 @@ const options = {
   correctLevel : QRCode.CorrectLevel.H
 }
 new QRCode(document.getElementById("qrcode1"), Object.assign({
-  text: window.location.origin + '/controls#1'
+  text: window.location.origin + '/controls.html#1'
 }, options))
 new QRCode(document.getElementById("qrcode2"), Object.assign({
-  text: window.location.origin + '/controls#2'
+  text: window.location.origin + '/controls.html#2'
 }, options))
 ```
 
@@ -441,7 +441,7 @@ In the _Gamepad_ class we attach a handler for the [DeviceMotionEvent](https://d
 To get a percentage we can use this formula:
 
 ```
-vPercent = 1 - (vAbs/20) + (1/2)
+vPercent = 1 - (vAbs/20) - (1/2)
 ```
 
 __src/controls/index.js__
@@ -457,10 +457,10 @@ __src/controls/index.js__
 
   listenOnMotion(e) {
     const value = e.accelerationIncludingGravity.y
-    const percentage = 1 - ((value / 10) + 1) / 2;
+    const percentage = 1 - (value/20) - (1/2)
     const margin = Math.round(percentage * window.innerHeight - this.indicator.style.height)
     this.indicator.style['margin-top'] = margin + 'px'
-    this.record.set('position', percentage);
+    this.record.set('position', percentage)
   }
 ```
 
