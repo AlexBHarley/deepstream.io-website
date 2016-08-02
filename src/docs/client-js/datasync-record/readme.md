@@ -98,7 +98,7 @@ record.set({
     firstname: 'Homer',
     lastname: 'Simpson',
     status: 'married'
-  }
+  },
   children: ['Bart', 'Maggie', 'Lisa']
 });
 
