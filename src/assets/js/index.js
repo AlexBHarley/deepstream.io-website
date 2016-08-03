@@ -63,12 +63,12 @@ window._history = window.History.createHistory();
 // for docs pages
 var SEARCH_BASE = 'https://search-deepstream-website-fozmccbxnnchstaflr5wmac3l4.eu-central-1.es.amazonaws.com';
 function searchAutocomplete() {
-    $('.main-serach-results').on('click', 'ul li a', function(e) {
+    $('.main-search-results').on('click', 'ul li a', function(e) {
         // should be handled by the select handler
         e.preventDefault();
     })
     $('.main-search').autocomplete({
-        appendTo: '.main-serach-results',
+        appendTo: '.main-search-results',
         source: function(request, response) {
             const requestData = {
                 query: {
@@ -120,7 +120,7 @@ function searchAutocomplete() {
         }
     }).autocomplete('instance')._renderItem = function(ul, item) {
       return $('<li>')
-        .append("<strong>" + item.type + ":</strong> <a href='/" + item.link + "'><br>" + item.title + "</a>")
+        .append("<strong>" + item.type + ":</strong> <a href='/" + item.link + "'>" + item.title + "</a>")
         .appendTo(ul);
     };
     $('input.main-search').on('focus', function() {
