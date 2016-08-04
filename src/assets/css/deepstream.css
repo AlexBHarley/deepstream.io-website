@@ -247,7 +247,8 @@ nav .links a{
 	height: 16px;
 	margin-right:0;
     padding: 10px 5px;
-    font-weight: bold;
+    font-weight: 300;
+    font-family: Roboto;
     border: none;
     position: relative;
     border-radius: 3px;
