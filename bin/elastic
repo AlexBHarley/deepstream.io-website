@@ -1,0 +1,121 @@
+#!/usr/bin/env node
+
+const fs  = require('fs')
+const path = require('path')
+const https  = require('https')
+const program = require('commander')
+const aws4 = require('aws4')
+/*
+Need to export these variables
+
+export AWS_SECRET_ACCESS_KEY="<your-secret-access-key>"
+export AWS_ACCESS_KEY_ID="<your-access-key-id>"
+export ELASTICSEARCH_HOST_WEBSITE=your-host.es.amazonaws.com
+*/
+
+program.on('--help', function() {
+  console.log('  NOTE:')
+  console.log('')
+  console.log('  You need to export these environment variables:')
+  console.log('    AWS_SECRET_ACCESS_KEY')
+  console.log('    AWS_ACCESS_KEY_ID')
+  console.log('    ELASTICSEARCH_HOST_WEBSITE ')
+  console.log('')
+  console.log('  Example:')
+  console.log('')
+  console.log('    $ bin/elastic -b elasticsearch-bulk')
+  console.log('')
+})
+
+program
+  .option('-b, --bulk <bulk-file>', 'Do a bulk request, use a binary data file')
+  .option('-P, --put <url>', 'Do a single PUT request, using the given url path and the json file as body')
+  .option('-p, --post <url>', 'Do a single POST request, using the given url path and the json file as body')
+  .option('-g, --get <url>', 'Do a single GET request, using the given url path and an optional json file as body (querystring)')
+  .option('-f, --file <json-file>', 'usage with --put, --post, --get')
+  .option('-v, --verbose', 'Show HTTP options after signing with AWS credentials')
+  .option('-d, --dry', 'Dry mode, show only HTTP options but do not do the request')
+  .parse(process.argv)
+
+if (
+  process.env.AWS_SECRET_ACCESS_KEY == null ||
+  process.env.AWS_ACCESS_KEY_ID == null ||
+  process.env.ELASTICSEARCH_HOST_WEBSITE == null
+  ) {
+  console.log('Missing environment variables')
+  program.help()
+}
+
+if (program.bulk) {
+  return bulkRequest(program.bulk)
+}
+
+if (program.put && program.file) {
+  return singlePutRequest('PUT', program.put, program.file)
+}
+
+if (program.post && program.file) {
+  return singlePutRequest('POST', program.post, program.file)
+}
+
+if (program.get) {
+  return singlePutRequest('GET', program.get, program.file)
+}
+
+program.help()
+
+function singlePutRequest(method, urlPath, jsonFile) {
+    var fileContent
+    if (jsonFile) {
+      fileContent = fs.readFileSync(path.join(process.cwd(), jsonFile), 'utf8')
+    }
+    if (method === 'GET' && fileContent) {
+      fileContent = fileContent.replace(/\n/g, ' ').replace(/\t/g, ' ') + '\n'
+    }
+    const opts = {
+        host: process.env.ELASTICSEARCH_HOST_WEBSITE,
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        path: urlPath,
+        method: method,
+        body: jsonFile ? fileContent : undefined
+    }
+    doRequest(opts)
+}
+
+function bulkRequest(bulkFile) {
+    const opts = {
+        host: process.env.ELASTICSEARCH_HOST_WEBSITE,
+        headers: {
+            // 'Content-Type': 'application/json'
+        },
+        path: '/_bulk',
+        method: 'POST',
+        body: fs.readFileSync(path.join(process.cwd(), bulkFile), 'utf8')
+    }
+    doRequest(opts)
+}
+
+function doRequest(opts) {
+    if (opts.method !== 'GET') {
+      aws4.sign(opts)
+    }
+
+    if (program.dry) {
+      return console.log(opts)
+    }
+
+    if (program.verbose) {
+      console.log(opts)
+    }
+    const req = https.request(opts, res => {
+        res.setEncoding('utf8')
+        res.on('data', chunk => console.log(chunk))
+    })
+    if (opts.body) {
+        req.write(opts.body)
+    }
+    req.end()
+}
+

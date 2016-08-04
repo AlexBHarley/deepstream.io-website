@@ -12,6 +12,11 @@
 .desktop-nav li.active a {
 	color: #0f4d75;
 }
+
+.desktop-nav li.search:hover {
+	opacity: 1;
+}
+
 /****************************
 * MOBILE NAVIGATION
 ****************************/
