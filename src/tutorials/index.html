@@ -1,27 +1,53 @@
 <link rel="stylesheet" type="text/css" href="{{asset 'css/overview-list.css'}}">
+<div class="overview-header">
+	<img class="elton-tutorial elton-overview" src="/assets/img/eltons/elton-tutorials.svg" />
+	<h1>Tutorials</h1>
+	<div class="tags">
+		<a href="#getting-started">Getting Started</a>
+		<a href="#data-sync">Data-Sync</a>
+		<a href="#events-rpc">Pub-Sub</a>
+		<a href="#events-rpc">Request-Response</a>
+		<a href="#authentication">Authentication</a>
+		<a href="#permissioning">Permissioning</a>
+		<a href="#working-with-deepstream">Working with deepstream</a>
+		<a href="#usage-with-other-servers">Usage with other Servers</a>
+		<a href="#browser-frameworks">React</a>
+		<a href="#browser-frameworks">Angular</a>
+		<a href="#browser-frameworks">Knockout</a>
+		<a href="#browser-frameworks">Polymer</a>
+		<a href="#using-connectors">Using Connectors</a>
+		<a href="#database-connectors">Database Connectors</a>
+		<a href="#cache-connectors">Cache Connectors</a>
+		<a href="#message-connectors">Message Connectors</a>
+	</div>
+</div>
 
 <section class="section-overview">
-	<div class="wrapper">
-		<h1 class="section-overview-navigation">
-			Tutorials
-		</h1>
 
-		<h2>Getting Started</h2>
+	<div class="wrapper">
+		<h2><a name="getting-started">Getting Started</a></h2>
 		<div class="entries two-col">
 			{{entry tree "/core/getting-started-config/"}}
 			{{entry tree "/core/getting-started-quickstart/"}}
 		</div>
 
+		{{!--
+			auth ion-person
+			perm ion-lock-combination
+			record ion-document-text
+			rpc ion-arrow-swap
+			event ion-chatboxes
+		--}}
 		<h2>Core Concepts</h2>
 		<div class="entries two-col">
 			<div>
-				<h3>Data-Sync</h3>
+				<h3><a name="data-sync">Data-Sync</a></h3>
 				{{entry tree "/core/datasync-records/"}}
 				{{entry tree "/core/datasync-lists/"}}
 				{{entry tree "/core/datasync-anonymous-records/"}}
 			</div>
 			<div>
-				<h3>Events &amp; RPCs</h3>
+				<h3><a name="events-rpc">Events &amp; RPCs</a></h3>
 				{{entry tree "/core/pubsub-events/"}}
 				{{entry tree "/core/request-response-rpc/"}}
 			</div>
@@ -31,19 +57,19 @@
 
 		<div class="entries two-col">
 			<div>
-				<h3>Authentication</h3>
+				<h3><a name="authentication">Authentication</a></h3>
 				{{entry tree "/core/auth-http-webhook/"}}
 				{{entry tree "/core/auth-file/"}}
 				{{entry tree "/core/auth-none/"}}
 			</div>
 			<div>
-				<h3>Permissioning</h3>
+				<h3><a name="permissioning">Permissioning</a></h3>
 				{{entry tree "/core/permission-conf-simple/"}}
 				{{entry tree "/core/permission-conf-advanced/"}}
 			</div>
 		</div>
 
-		<h2>Working with deepstream</h2>
+		<h2><a name="working-with-deepstream">Working with deepstream</a></h2>
 		<div class="entries two-col">
 			{{entry tree "/core/active-data-providers/"}}
 			{{entry tree "/core/handling-data-conflicts/"}}
@@ -52,13 +78,13 @@
 			{{entry tree "/core/writing-a-client/"}}
 		</div>
 
-		<h2>Usage with other Servers</h2>
+		<h2><a name="usage-with-other-servers">Usage with other Servers</a></h2>
 		<div class="entries two-col">
 			{{entry tree "/integrations/other-http/" }}
 			{{entry tree "/integrations/other-nginx/" }}
 		</div>
 
-		<h2>Usage with Browser Frameworks</h2>
+		<h2><a name="browser-frameworks">Usage with Browser Frameworks</a></h2>
 		<div class="entries two-col">
 			{{entry tree "/integrations/frontend-angular/" }}
 			{{entry tree "/integrations/frontend-knockout/" }}
@@ -66,27 +92,27 @@
 			{{entry tree "/integrations/frontend-react/" }}
 		</div>
 
-		<h2>Using Connectors</h2>
+		<h2><a name="using-connectors">Using Connectors</a></h2>
 		<div class="entries two-col">
 			{{entry tree "/core/cluster-messaging/"}}
 			{{entry tree "/core/storing-data/"}}
 		</div>
 
-		<h2>Database Connectors</h2>
+		<h2><a name="database-connectors">Database Connectors</a></h2>
 		<div class="entries three-col">
 			{{entry tree "/integrations/db-elasticsearch/" }}
 			{{entry tree "/integrations/db-mongodb/" }}
 			{{entry tree "/integrations/db-rethinkdb/" }}
 		</div>
 
-		<h2>Cache Connectors</h2>
+		<h2><a name="cache-connectors">Cache Connectors</a></h2>
 		<div class="entries three-col">
 			{{entry tree "/integrations/cache-hazelcast/" }}
 			{{entry tree "/integrations/cache-memcached/" }}
 			{{entry tree "/integrations/cache-redis/" }}
 		</div>
 
-		<h2>Message Connectors</h2>
+		<h2><a name="message-connectors">Message Connectors</a></h2>
 		<div class="entries three-col">
 			{{entry tree "/integrations/msg-kafka/" }}
 			{{entry tree "/integrations/cache-redis/" }}

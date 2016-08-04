@@ -1,0 +1,12 @@
+{"index":{"_index":"pages","_type":"info","_id":"info_specs_parsing_parsing.md"}}
+{"filePath":"info/specs/parsing/parsing.md","title":"Parsing Features","description":"Cucumber features for Parsing in deepstream.io","content":"<h1>parsing</h1>\n{{> specs-paths messageSpecs.features.parsing }}"}
+{"index":{"_index":"pages","_type":"info","_id":"info_specs_rpc_rpc.md"}}
+{"filePath":"info/specs/rpc/rpc.md","title":"Rpc Features","description":"Cucumber features for Rpc in deepstream.io","content":"<h1>rpc</h1>\n{{> specs-paths messageSpecs.features.rpc }}"}
+{"index":{"_index":"pages","_type":"info","_id":"info_specs_records_records.md"}}
+{"filePath":"info/specs/records/records.md","title":"Records Features","description":"Cucumber features for Records in deepstream.io","content":"<h1>records</h1>\n{{> specs-paths messageSpecs.features.records }}"}
+{"index":{"_index":"pages","_type":"info","_id":"info_specs_events_events.md"}}
+{"filePath":"info/specs/events/events.md","title":"Events Features","description":"Cucumber features for Events in deepstream.io","content":"<h1>events</h1>\n{{> specs-paths messageSpecs.features.events }}"}
+{"index":{"_index":"pages","_type":"info","_id":"info_specs_connectivity_connectivity.md"}}
+{"filePath":"info/specs/connectivity/connectivity.md","title":"Connectivity Features","description":"Cucumber features for Connectivity in deepstream.io","content":"<h1>connectivity</h1>\n{{> specs-paths messageSpecs.features.connectivity }}"}
+{"index":{"_index":"pages","_type":"info","_id":"info_protocol_all-messages_all-messages.md"}}
+{"filePath":"info/protocol/all-messages/all-messages.md","title":"All Message Specs","description":"Message Specs in deepstream.io","content":"{{> specs-structure}}"}

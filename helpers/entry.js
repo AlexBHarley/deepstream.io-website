@@ -1,6 +1,11 @@
 var hbs = require('handlebars');
 
-function entry( tree, path ) {
+function entry( tree, icon, path ) {
+
+	if( arguments.length === 3 ) {
+		path = icon;
+		icon = false;
+	}
 
 	var err = () => { console.log( 'Failed to find ' + path ); };
 
@@ -22,7 +27,18 @@ function entry( tree, path ) {
 		err();
 	}
 
+	var iconHtml;
+
+	if( icon === false ) {
+		iconHtml = '';
+	} else if( icon.indexOf( 'ion' ) === -1 ) {
+		iconHtml = `<img src="${icon}" class="entry-icon" />`;
+	} else {
+		iconHtml = `<div class="${icon} entry-icon"></div>`;
+	}
+
 	var html = `<a class="entry" href="/${entry.indexPath}">
+		${iconHtml}
 		<div class="bg"></div>
 		<h4>${entry.title}</h4>
 		<p>${entry.description}</p>
