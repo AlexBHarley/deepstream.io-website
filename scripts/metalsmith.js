@@ -56,6 +56,13 @@ metalsmith.use( ( files, metalsmith, done ) => {
 } );
 
 /************************************
+* Generate a bulk file for elastic search
+***********************************/
+const elasticBatch = require( './elasticsearch-bulk' );
+metalsmith.use( elasticBatch() );
+
+
+/************************************
 * Generate Blog
 ***********************************/
 const blogGenerator = require( './blog-generator' );
