@@ -69,6 +69,7 @@ function searchAutocomplete() {
     })
     $('.main-search').autocomplete({
         appendTo: '.main-search-results',
+        position: { my : "right top", at: "right bottom" },
         source: function(request, response) {
             const requestData = {
                 query: {
@@ -119,12 +120,15 @@ function searchAutocomplete() {
             return false;
         }
     }).autocomplete('instance')._renderItem = function(ul, item) {
+        if( $( ul ).find( '.tip' ).length === 0 ) {
+            $( ul ).prepend( '<li class="tip"><div></div></li>' );
+        }
       return $('<li>')
-        .append("<strong>" + item.type + ":</strong> <a href='/" + item.link + "'>" + item.title + "</a>")
+        .append("<a href='/" + item.link + "'><em>" + item.title + '</em><small>' + item.type + '</small></a>')
         .appendTo(ul);
     };
     $('input.main-search').on('focus', function() {
-        $('ul.ui-autocomplete').show()
+        $('ul.ui-autocomplete').show();
     })
 }
 
