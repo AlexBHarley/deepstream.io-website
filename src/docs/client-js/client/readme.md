@@ -56,7 +56,7 @@ client.on('error', ( error, event, topic ) =>
   typ: Object
   opt: false
   des: |
-    An object with authentication parameters, e.g <br><code>{ username: &#39;peter&#39;, password: '&#39;'sesame&#39; }</code>
+    An object with authentication parameters, e.g <br><code>{ username: &#39;peter&#39;, password: &#39;sesame&#39; }</code>
 -
   arg: callback
   typ: Function
