@@ -1,5 +1,5 @@
 .overview-header{
-	background: #0FBBEC;
+	background: linear-gradient(0, #55d3f7, #0FBBEC);
     position: relative;
     height: 300px;
 }
@@ -50,16 +50,18 @@
 }
 
 
-.section-overview h2{
-	margin-top: 40px;
+.section-overview h2,
+.section-overview h2 a{
 	font-size: 20px;
 	font-weight: 300;
 }
 
+.section-overview h2{
+	margin-bottom: 8px;
+}
+
 .section-overview h2 a{
-	font-size: 16px;
-	font-weight: 300;
-	color: #aaa;
+	margin-bottom: 0;
 }
 
 .section-overview h3,
@@ -85,24 +87,11 @@
 
 .section-overview .entries{
 	overflow: hidden;
+    padding-left: 20px;
+    border-left: 1px solid #dadada;
+    margin-top: 30px;
 }
 
-.section-overview .entries > *{
-	float: left;
-	box-sizing: border-box;
-}
-
-.section-overview .one-col > *{
-	width: 100%;
-}
-
-.section-overview .two-col > *{
-	width: 50%;
-}
-
-.section-overview .three-col > *{
-	width: 33.3333333%;
-}
 
 .section-overview a.entry,
 .section-overview a.entry *{
@@ -110,41 +99,49 @@
 }
 
 .section-overview a.entry{
-    display: block;
+    display: inline-block;
     box-sizing: border-box;
-    padding-left: 6px;
-    padding-top: 4px;
-    margin: 8px 0;
-    border-right: 8px solid #fff;
-    position: relative;
     cursor: pointer;
-    border-left: 1px solid #7fc0ff;
+    padding: 10px;
+    width: 350px;
 }
 
-.section-overview a.entry .bg{
-	background: #fff;
-	width: 0%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	position: absolute;
-	z-index: 0;
-}
-
-.section-overview a.entry:hover .bg{
-	width: 100%;
-	background: #7fc0ff;
-}
-
-.section-overview a.entry h4,
-.section-overview a.entry p{
-	position: relative;
-	z-index: 1;
+.section-overview a.entry:hover{
+	background: #0FBBEC;
 }
 
 .section-overview a.entry:hover *{
-	color: #fff!important;
+	color: #fff !important;
 }
+
+.section-overview a.entry h3{
+	clear: both;
+	display: block;
+}
+
+.section-overview a.entry h4{
+	font-size: 16px;
+	color: #474b4c;
+	margin: 10px 0;
+	display: inline-block;
+	font-weight: 300;
+}
+
+.section-overview a.entry .entry-icon{
+    display: inline-block;
+    width: 30px;
+    color: #58c9e8;
+    font-size: 26px;
+    position: relative;
+    top: 4px;
+    margin-right: 10px;
+}
+
+.section-overview a.entry img.entry-icon{
+    top: 10px;
+    margin-right: 10px;
+}
+
 
 .section-overview .elton-overview{
 	position: absolute;

@@ -37,11 +37,9 @@ function entry( tree, icon, path ) {
 		iconHtml = `<div class="${icon} entry-icon"></div>`;
 	}
 
-	var html = `<a class="entry" href="/${entry.indexPath}">
+	var html = `<a class="entry" href="/${entry.indexPath}" title="${entry.description}">
 		${iconHtml}
-		<div class="bg"></div>
 		<h4>${entry.title}</h4>
-		<p>${entry.description}</p>
 	</a>`;
 
 	return new hbs.SafeString( html );
