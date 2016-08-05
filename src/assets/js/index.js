@@ -246,3 +246,13 @@ $(function(){
         $('.deepstream-star').removeClass('start');
     }, 16000 );
 });
+
+$(function(){
+    var icons = $( 'div.entry-icon' );
+    var hue, i;
+
+    for( i = 0; i < icons.length; i++ ) {
+        hue = 360 * Math.random();// * ( i / icons.length );
+        $( icons[ i ] ).css( 'color', 'hsl(' + hue + ', 76%, 63%)' );
+    }
+});
