@@ -132,9 +132,9 @@ h3.icon-divider span.text {
 }
 
 .edit-page-link {
-    float: right;
-    margin-right: 20px;
-    margin-top: 5px;
+		float: right;
+		margin-right: 20px;
+		margin-top: 5px;
 }
 
 /*************************
@@ -248,17 +248,17 @@ nav .links a{
 	width: 16px;
 	height: 16px;
 	margin-right:0;
-    padding: 10px 5px;
-    font-weight: 300;
-    font-family: Roboto;
-    border: none;
-    position: relative;
-    border-radius: 3px;
-    background-position: 98% center;
-    top: -2px;
-    color: #fff;
-    background-color: transparent;
-    text-indent: -9999px;
+		padding: 10px 5px;
+		font-weight: 300;
+		font-family: Roboto;
+		border: none;
+		position: relative;
+		border-radius: 3px;
+		background-position: 98% center;
+		top: -2px;
+		color: #fff;
+		background-color: transparent;
+		text-indent: -9999px;
 	font-size:12px;
 	-moz-transition: width .25s ease, margin .25s ease;
 	-webkit-transition: width .25s ease, margin .25s ease;
@@ -294,7 +294,7 @@ nav .links a{
 
 body .ui-menu{
 	margin-right: -10px;
-    margin-bottom: -10px;
+		margin-bottom: -10px;
 }
 
 body .ui-menu .ui-menu-item{
@@ -314,20 +314,20 @@ body .ui-menu .ui-state-active *{
 }
 
 .ui-autocomplete .tip div{
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 10px solid #fff;
-    position: absolute;
-    right: 0;
+		width: 0;
+		height: 0;
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		border-bottom: 10px solid #fff;
+		position: absolute;
+		right: 0;
 }
 
 body .ui-autocomplete .tip{
 	background-color: transparent;
-    height: 10px;
-    padding: 0;
-    margin: 0;
+		height: 10px;
+		padding: 0;
+		margin: 0;
 }
 
 .ui-autocomplete li{
@@ -338,24 +338,24 @@ body .ui-autocomplete .tip{
 .ui-autocomplete li a{
 	display: block;
 	overflow: hidden;
-    padding: 9px 7px;
+		padding: 9px 7px;
 }
 
 
 .ui-autocomplete li a em{
-    display: block;
-    float: left;
-    width: 80%;
-    color: #333;
-    font-style: normal;
+		display: block;
+		float: left;
+		width: 80%;
+		color: #333;
+		font-style: normal;
 }
 
 .ui-autocomplete li a small{
-    display: block;
-    float: left;
-    width: 20%;
-    text-align: right;
-    color: #bbb;
+		display: block;
+		float: left;
+		width: 20%;
+		text-align: right;
+		color: #bbb;
 }
 
 .main-search-results .ui-menu .ui-menu-item {
@@ -391,50 +391,47 @@ body .ui-autocomplete .tip{
 * ***********************/
 .overview-header{
 	background: linear-gradient(0, #55d3f7, #0FBBEC);
-    position: relative;
-    height: 300px;
+		position: relative;
+		height: 300px;
 }
 
 .overview-header img{
 	height: 100%;
-	min-width: 155px;
-    position: absolute;
-    left: 10%;
-    bottom: -15%;
+	min-width: 220px;
+	position: absolute;
+	left: 10%;
+	bottom: -15%;
 }
 
-.overview-header .elton-docs{
-	/* width: 18%; */
-    left: 12%;
+.overview-header .elton-overview {
+	left: 12%;
 }
 
-.overview-header .elton-blog{
-	/* width: 13%; */
-    left: 12%;
+.overview-header .elton-docs {
+	bottom: -17%;
 }
 
-.overview-header .elton-info{
-	/* height: 100%; */
-    left: 12%;
+.overview-header .elton-info {
+	bottom: -9%;
 }
 
 .overview-header h1{
 	font-size: 40px;
-    font-weight: 100;
-    color: #fff;
-    margin-bottom: 16px;
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    top: 30%;
+		font-weight: 100;
+		color: #fff;
+		margin-bottom: 16px;
+		position: absolute;
+		width: 100%;
+		text-align: center;
+		top: 30%;
 }
 
 .overview-header .tags{
 	text-align: center;
-    top: 54%;
-    width: 39%;
-    margin: 0 auto;
-    position: relative;
+		top: 54%;
+		width: 39%;
+		margin: 0 auto;
+		position: relative;
 }
 
 @media( max-width:420px ) {
@@ -442,20 +439,41 @@ body .ui-autocomplete .tip{
 		margin-top: 16px;
 	}
 
+	.overview-header .elton-tutorial {
+			max-width: 300px;
+	}
+
+	.overview-header .elton-info, .overview-header .elton-blog, .overview-header .elton-docs{
+		max-width: 295px;
+	}
+
+}
+
+
+@media( max-width:1000px ) {
 	.overview-header .tags{
 		display: none;
 	}
+
+	.overview-header .elton-tutorial {
+			left: 1%;
+	}
+
+	.overview-header .elton-info, .overview-header .elton-blog, .overview-header .elton-docs{
+		left: 1%;
+	}
+
 }
 
 
 .overview-header .tags a{
-    color: #fff;
-    display: inline-block;
-    border-right: 1px solid rgba( 255, 255, 255, 0.5 );
-    padding: 0 7px;
-    margin: 4px 0;
-    cursor: pointer;
-    transition: all 300ms ease;
+		color: #fff;
+		display: inline-block;
+		border-right: 1px solid rgba( 255, 255, 255, 0.5 );
+		padding: 0 7px;
+		margin: 4px 0;
+		cursor: pointer;
+		transition: all 300ms ease;
 }
 
 .overview-header .tags a:last-child {
