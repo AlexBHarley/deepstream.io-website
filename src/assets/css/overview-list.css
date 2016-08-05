@@ -1,62 +1,6 @@
-.overview-header{
-	background: linear-gradient(0, #55d3f7, #0FBBEC);
-    position: relative;
-    height: 300px;
-}
-
-.overview-header img{
-	width: 20%;
-    position: absolute;
-    left: 10%;
-    bottom: -15%;
-}
-
-.overview-header .elton-docs{
-	width: 18%;
-    left: 12%;
-}
-.overview-header h1{
-	font-size: 40px;
-    font-weight: 100;
-    color: #fff;
-    margin-bottom: 16px;
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    top: 30%;
-}
-
-.overview-header .tags{
-    text-align: center;
-    position: absolute;
-    top: 54%;
-    width: 700px;
-    left: 50%;
-    margin-left: -350px;
-}
-
-.overview-header .tags a{
-    color: #fff;
-    display: inline-block;
-    border-right: 1px solid rgba( 255, 255, 255, 0.5 );
-    padding: 0 7px;
-    margin: 4px 0;
-    cursor: pointer;
-    transition: all 300ms ease;
-}
-
-.overview-header .tags a:last-child {
-	border:none;
-}
-
-.overview-header .tags a:hover{
-	background-color: rgba( 255, 255, 255, 0.3 );
-}
-
 .section-overview{
 	position: relative;
 }
-
 
 .section-overview h2,
 .section-overview h2 a{
