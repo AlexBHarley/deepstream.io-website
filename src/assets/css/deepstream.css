@@ -185,6 +185,7 @@ nav .links a{
 	font-size: 21px;
 	font-weight: 400;
 	color: #C2EEFA;
+	font-style: normal;
 }
 
 /****************************
@@ -357,12 +358,112 @@ body .ui-autocomplete .tip{
     color: #bbb;
 }
 
+.main-search-results .ui-menu .ui-menu-item {
+	width: 100%;
+	padding: 10px;
+	background: #fff;
+}
+
+.main-search-results .ui-menu .ui-state-focus {
+	margin: 0;
+}
+
+.main-search-results .ui-menu-item.ui-state-focus {
+	background: rgba(0,0,0,0.05);
+}
+
+.main-search-results .ui-menu-item a {
+	padding: 0;
+	font-size: inherit;
+	color: inherit;
+}
+
 .ui-autocomplete{
 	box-shadow: 10px 10px 9px -9px rgba(0,0,0,0.3);
 }
 
 .ui-autocomplete li{
 	padding: 3px;
+}
+
+/*************************
+* Overview Header
+* ***********************/
+.overview-header{
+	background: linear-gradient(0, #55d3f7, #0FBBEC);
+    position: relative;
+    height: 300px;
+}
+
+.overview-header img{
+	height: 100%;
+	min-width: 155px;
+    position: absolute;
+    left: 10%;
+    bottom: -15%;
+}
+
+.overview-header .elton-docs{
+	/* width: 18%; */
+    left: 12%;
+}
+
+.overview-header .elton-blog{
+	/* width: 13%; */
+    left: 12%;
+}
+
+.overview-header .elton-info{
+	/* height: 100%; */
+    left: 12%;
+}
+
+.overview-header h1{
+	font-size: 40px;
+    font-weight: 100;
+    color: #fff;
+    margin-bottom: 16px;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 30%;
+}
+
+.overview-header .tags{
+	text-align: center;
+    top: 54%;
+    width: 39%;
+    margin: 0 auto;
+    position: relative;
+}
+
+@media( max-width:420px ) {
+	#support a {
+		margin-top: 16px;
+	}
+
+	.overview-header .tags{
+		display: none;
+	}
+}
+
+
+.overview-header .tags a{
+    color: #fff;
+    display: inline-block;
+    border-right: 1px solid rgba( 255, 255, 255, 0.5 );
+    padding: 0 7px;
+    margin: 4px 0;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+
+.overview-header .tags a:last-child {
+	border:none;
+}
+
+.overview-header .tags a:hover{
+	background-color: rgba( 255, 255, 255, 0.3 );
 }
 
 /*************************
