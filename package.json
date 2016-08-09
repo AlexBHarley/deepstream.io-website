@@ -25,6 +25,7 @@
     "aws4": "^1.4.1",
     "beepbeep": "^1.2.0",
     "browser-sync": "^2.13.0",
+    "cheerio": "^0.20.0",
     "colors": "^1.1.2",
     "commander": "^2.9.0",
     "csv-parse": "^1.1.1",
