@@ -33,6 +33,10 @@ const record = client.record.getRecord(recordName)
   typ: Boolean
   desc: True once the record has received its current data and emitted the `'ready'` event
 -
+  arg: hasProvider
+  typ: Boolean
+  desc: True once a listener accepts subscriptions to a record. Otherwise there are no active listeners. The `'hasProviderChanged'` event is proving the information whenever the values has been changed.
+-
   arg: isDestroyed
   typ: Boolean
   desc: True once the record has been discarded or deleted. The record would need to be retrieved again via `client.record.getRecord( name )
@@ -43,6 +47,9 @@ const record = client.record.getRecord(recordName)
 
 ### ready
 Emitted once the record has received its current data from the server.
+
+### hasProviderChanged
+Emitted whenever the `hasProvider` property has been changed. Argument is the `hasProvider` property.
 
 ### delete
 Emitted when the record was deleted, whether by this client or by another.
