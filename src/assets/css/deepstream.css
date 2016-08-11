@@ -370,7 +370,7 @@ body .ui-autocomplete .tip{
 }
 
 .main-search-results .ui-menu-item.ui-state-focus {
-	background: rgba(0,0,0,0.05);
+	background: #0EA9D5;
 }
 
 .main-search-results .ui-menu-item a {
