@@ -6,7 +6,7 @@ description: Learn how you can use records and access the powerful benefits of d
 Records are the main building blocks of deepstream's data-sync capabilities. They are atomic bits of JSON data that can be manipulated and observed. Any change to a record is instantly synced across all connected clients.
 
 ## Using records
-Records are requested using `client.record.getRecord(name)`. If a record with the specified name doesn't exist yet, it will be created on the fly. If you just want to check if a record exists without creating it, you can use `client.record.has(name, cb)`.
+Records are requested using `client.record.getRecord(name)`. If a record with the specified name doesn't exist yet, it will be created on the fly. If you just want to check if a record exists without creating it, you can use `client.record.has(name, callback)`.
 
 Records have `set()` and `get()` methods to interact with their data and `subscribe()` to inform you about updates. Here's what that would look like in action:
 
@@ -17,7 +17,7 @@ driver.subscribe('coords', updateMapPointer)
 ```
 
 ```javascript
-// ClientB: Delivery driver's smartphone feeds position into record
+// Client B: Delivery driver's smartphone feeds position into record
 const driver = client.record.getRecord('driver/jack')
 navigator.geolocation.watchPosition(position => {
   driver.set('coords', position.coords)
@@ -28,7 +28,7 @@ navigator.geolocation.watchPosition(position => {
 `get()`, `set()` and `subscribe()` can be used to get the entire record's data, but also support "paths". Paths let you access sub-parts of your record's data using JSON notation, e.g. `pets[1].fur.color`. If a value for a path that doesn't exist yet is set, the path will be created on the fly.
 
 ## Record lifecycle
-When calling `client.record.getRecord`, one of three things can happen:
+When calling `client.record.getRecord()`, one of three things can happen:
 
 - If the record doesn't exist on the client or the server yet, it will be created. The initial data of a newly created record is an empty object `{}`.
 
@@ -36,7 +36,7 @@ When calling `client.record.getRecord`, one of three things can happen:
 
 - If the record is already loaded on the client, its instance will be returned.
 
-Independent of whether the record has been loaded yet, `getRecord` will return a record instance straight away. You can already start setting values or subscribing to updates at this point, however `get()` calls might return `null`.
+Independent of whether the record has been loaded yet, `getRecord()` will return a record instance straight away. You can already start setting values or subscribing to updates at this point, however `get()` calls might return `null`.
 
 To ensure a record is fully loaded, use the `whenReady()` method. Please note: This method will execute synchronously when the record is already available or asynchronously if its still being loaded.
 
@@ -54,7 +54,7 @@ Records can be deleted using `delete()`. Deleting also discards the record. When
 `delete()` irreversibly deletes the record from the database and cache and notifies all servers and clients within the cluster of the deletion.
 
 ## Getting a snapshot
-If you just require a static one-off view into a record's data, but not bother with the entire lifecycle you can also use `client.record.snapshot(name, cb)`
+If you just require a static one-off view into a record's data, but not bother with the entire lifecycle you can also use `client.record.snapshot(name, callback)`
 
 ## Naming records
 Each record is identified by a name that needs to be unique across the entire system. So what does a great recordname look like? Something like this:
@@ -85,21 +85,33 @@ record:
 Records also support a concept called "listening". Every client can register as a listener for record name patterns, e.g. `^settings/.*`. Whenever other clients start subscribing to records that match said pattern, the listener will be notified.
 
 ```javascript
-client.record.listen('^settings/.*', (match, isSubscribed) => {
-  //start sending data to this record
+// Client B
+client.record.listen('settings/.*', (match, isSubscribed, response) => {
+  console.log(match) // 'settings/security'
+  if (isSubscribed) {
+    if (/* if you want to provide */) {
+      response.accept()
+      // star publishing to this record via `client.record.getRecord(match).set(/* data */)`
+    } else {
+      repsonse.reject() // let deepstream ask another provider
+    }
+  } else {
+    // stop publishing data
+    client.record.getRecord(match).discard()
+  }
 })
 ```
 
 This is useful to create "active" data providers - backend processes that only send out data that's actually requested. A few things worth mentioning about listening:
 
-- The listen-callback is called with `subscribed=true` once the first client subscribes to a matching record and with `subscribed=false` once the last subscriber for a matching record unsubscribes.
+- The listen-callback is called with `isSubscribed = true` once the first client subscribes to a matching record and with `isSubscribed = false` once the last subscriber for a matching record unsubscribes.
 
 - Listening also keeps state. Registering as a listener for a pattern that already has matching subscriptions will call the callback multiple times straight away, once for every matching subscription.
 
-**Important:** At the moment, listening is limited to subscriptions made on the same deepstream server. Subscriptions made on other servers within a cluster are not propagated. This is something that will be added in the future.
+**Important:** At the moment, listening is limited to subscriptions made on the same deepstream server. Subscriptions made on other servers within a cluster are not propagated. This is feature is comming soon.
 
 {{#infobox "important"}}
-The listen callback with `isSubscribed=false` is only triggered once the last subscriber has disconnected or discarded the record. If your active data provider is subscribed to the record as well in order to write to it, it counts as a subscriber and the callback won't be invoked.
+The listen callback with `isSubscribed = false` is only triggered once the last subscriber has disconnected or discarded the record. If your active data provider is subscribed to the record as well in order to write to it, it counts as a subscriber and the callback won't be invoked.
 
 This is a known limitation and will be addressed in future releases that will also introduce load-balancing for listeners, only-one rules etc. To create a high availability cluster of active data providers straight away, we recommend building a listener-orchestration server that tackles these tasks for now.
 {{/infobox}}

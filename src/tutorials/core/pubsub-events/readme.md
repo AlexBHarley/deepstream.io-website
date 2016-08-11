@@ -25,24 +25,26 @@ Having said that, pub/sub vs data-sync doesn't need to be an either/or decision.
 Subscription to events can be established with `client.event.subscribe` and removed with `client.event.unsubscribe`.
 
 ```javascript
-function eventCallback( data ) {
+// Client A
+function eventCallback(data) {
 	//callback for incoming events
 }
 
 //Subscribing to an event
-client.event.subscribe( 'news/sports', eventCallback );
+client.event.subscribe('news/sports', eventCallback)
 
 //Removing specific callback to the event
-client.event.unsubscribe( 'news/sports', eventCallback );
+client.event.unsubscribe('news/sports', eventCallback)
 
 //Removing all subscriptions to the event
-client.event.unsubscribe( 'news/sports' );
+client.event.unsubscribe('news/sports')
 ```
 
-Events can be published using `client.event.emit`. It's possible to send any kind of serializable data along with the event, e.g. Strings, JSON objects, Numbers, Booleans etc.
+Events can be published using `client.event.emit(eventName, data)`. It's possible to send any kind of serializable data along with the event, e.g. Strings, JSON objects, Numbers, Booleans etc.
 
 ```javascript
-client.event.emit( 'news/sports', 'football is happening' );
+// Client B
+client.event.emit('news/sports', 'football is happening')
 ```
 
 ## How to listen for event subscriptions
@@ -51,16 +53,26 @@ deepstream allows clients to "listen" for other clients' event subscriptions. Th
 Listeners can register for a pattern described by a regular expression, e.g. `'^news/.*'`.
 
 ```javascript
-client.event.listen( '^news/.*', ( match, subscribed ) => {
-    //match = 'news/sports'
-    //subscribed = true
+// Client B
+client.event.listen('^news/.*', (eventName, isSubscribed, response) => {
+  console.log(eventName) // 'news/sports'
+  if (isSubscribed) {
+    if (/* if you want to provide */) {
+      response.accept()
+      // start publishing data via `client.event.emit(eventName, /* data */)`
+    } else {
+      repsonse.reject() // let deepstream ask another provider
+    }
+  } else {
+    // stop publishing data
+  }
 })
 ```
 
-The listen-callback is called with `subscribed=true` once a matching event is subscribed to for the first time and with `subscribed=false` once the last subscriber for a matching event unsubscribes.
+The listen-callback is called with `isSubscribed = true` once a matching event is subscribed to for the first time and with `isSubscribed = false` once the last subscriber for a matching event unsubscribes.
 
 Listening also keeps state. Registering as a listener for a pattern that already has matching subscriptions will call the callback multiple times straight away, once for every matching subscription.
 
 {{#infobox "important"}}
-At the moment, listening is limited to subscriptions made on the same deepstream server. Subscriptions made on other servers within a cluster are not propagated. This is something that will be added in the future.
+At the moment, listening is limited to subscriptions made on the same deepstream server. Subscriptions made on other servers within a cluster are not propagated. This is feature is comming soon.
 {{/infobox}}

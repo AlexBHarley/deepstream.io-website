@@ -58,8 +58,9 @@ logic into the [whenReady](/tutorials/core/datasync-records/) callback.
 
 ```javascript
 const beatlesAlbums = client.record.getList('albums')
-beatlesAlbums.whenReady(() => console.log(beatlesAlbums.getEntries()))
-
+beatlesAlbums.whenReady(() => {
+  console.log(beatlesAlbums.getEntries())
+})
 /*
   [
     "album/i9l0z34v-109vblpqddy",
@@ -137,33 +138,32 @@ client.record.snapshot('user/johndoe', (error, data) => {
 {{#table mode="api"}}
 -
   arg: pattern
-  typ: String
+  typ: String (regex)
   opt: false
-  des: A RegExp as a string
+  des: The pattern to match records which subscription status you want to be informed of
 -
   arg: callback
   typ: Function
   opt: false
-  des: A function that will be called whenever a match is found. Arguments are (String) match and (Boolean) isSubscribed
+  des: A function that will be called whenever an event has been initially subscribed to or is no longer subscribed. Arguments are (String) match, (Boolean) isSubscribed and response (Object).
 {{/table}}
 ```
 
 Allows to listen for record subscriptions made by other clients. This is useful to create "active" data providers, e.g. providers that only provide data for records that users are actually interested in. You can find more about listening in the [record tutorial](/tutorials/core/datasync-records/).
 
+The callback is invoked with three arguments:
+- **match**: The name of the record that has been matched against the provided pattern
+- **isSubscribed**: A boolean indicating whether the record is subscribed or unsubscribed
+- **response**: contains two functions (`accept` and `reject`), one of them needs to be called
+
 ```javascript
-client.record.listen('raceHorse/.*', (match, isSubscribed) => {
-  console.log(match) // 'raceHorse/fast-betty'
-  if (isSubscribed) {
-    // start publishing data
-  } else {
-    // stop publishing data
-  }
+client.record.listen('raceHorse/.*', (match, isSubscribed, response) => {
+  // see tutorial for more details
 })
 ```
 
 <br/>
 {{#infobox "info"}}
-<br/>The listen callback will only be called once with `subscribed = true` for the first time a matching subscription is made and once with `subscribed = false` once all clients have unsubscribed from the record.
 <br/>The callback will be called for all matching subscriptions that already exist at the time its registered.
 {{/infobox}}
 
@@ -172,10 +172,9 @@ client.record.listen('raceHorse/.*', (match, isSubscribed) => {
 {{#table mode="api"}}
 -
   arg: pattern
-  typ: String
+  typ: String (regex)
   opt: false
-  def: '-'
-  des: A RegExp as a string
+  des: The previously registered pattern
 {{/table}}
 ```
 

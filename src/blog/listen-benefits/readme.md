@@ -29,22 +29,30 @@ Finally, this approach shines the most when the data being sent out is actually 
 The provider listens to events matching the name 'weather/'
 
 ```javascript
-ds.event.listen( '^weather/.*', onMatch );
+client.event.listen('^weather/.*', onMatch)
 ```
 
 And the `onMatch` callback will be notified for all the current matches in the system, new ones that come in and old ones that no one is interested in anymore.
 
 ```javascript
-function onMatch( subject, isInterested ) {
-    //Subject is the name of the event or record that is being subscribed to
-    //If isInterested is true it means you should start publishing data, if it's false it means you should stop
+function onMatch(subject, isSubscribed, response) {
+  if (isSubscribed) {
+    if (/* if you want to provide */) {
+      response.accept()
+      // start publishing data via `client.event.emit(subject, /* data */)`
+    } else {
+      repsonse.reject() // let deepstream ask another provider
+    }
+  } else {
+    // stop publishing data
+  }
 }
 ```
 
 If the provider can no longer provide the data, it can stop listening by calling:
 
 ```javascript
-ds.event.unlisten( '^weather/.*', onMatch );
+client.event.unlisten('^weather/.*', onMatch)
 ```
 
 #### How it scales
