@@ -15,7 +15,7 @@ But that's not the end of the world. Let's take a look at how to set up a small 
 
 #### What we'll create
 
-The outcome of this tutorial will be a cluster of two deepstream servers, running on EC2 Micro Nodes with an AWS Linux AMI, connecting to a ElastiCache Redis instance that will serve as both a cache and message bus und fronted by the new AWS Application ELB.
+The outcome of this tutorial will be a cluster of two deepstream servers, running on EC2 Micro Nodes with an AWS Linux AMI, connecting to an ElastiCache Redis instance that will serve as both a cache and message bus fronted by the new AWS Application ELB.
 
 ![Small cluster setup](setup.png)
 
@@ -63,7 +63,7 @@ resulting in
 ![install succesful](07-install-successful.png)
 
 ### Starting an ElastiCache instance
-To scale horizontally, deepstream needs an external cache that all nodes can access - and AWS provides just such a thing with [ElastiCache](https://aws.amazon.com/de/elasticache/). Using Redis as a caching engine we'll get a fast cache and messagebus at the same time.
+To scale horizontally, deepstream needs an external cache that all nodes can access - and AWS provides just such a thing with [ElastiCache](https://aws.amazon.com/de/elasticache/). Using Redis as a caching engine we'll get a fast cache and message bus at the same time.
 
 To start an ElastiCache cluster, navigate to ElastiCache in the AWS console and click:
 
