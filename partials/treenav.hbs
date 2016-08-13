@@ -7,9 +7,21 @@
 			</div>
 			<ul class="entry">
 				{{#each this.children}}
+					{{#if this.isCategory}}
+					<li class="entry category">
+						<span>{{name}}</span>
+					</li>
+					{{#each this.children}}
 					<li class="{{ifactive 'level3' 'active' @root @root.tree this.indexPath}}">
 						<a href="{{link this.indexPath}}" data-fetch="ajax">{{this.title}}</a>
 					</li>
+					{{/each}}
+					{{/if}}
+					{{#if this.isNotCategory}}
+					<li class="{{ifactive 'level3' 'active' @root @root.tree this.indexPath}}">
+						<a href="{{link this.indexPath}}" data-fetch="ajax">{{this.title}}</a>
+					</li>
+					{{/if}}
 				{{/each}}
 			</ul>
 		</li>

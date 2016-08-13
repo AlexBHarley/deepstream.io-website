@@ -175,6 +175,6 @@ metalsmith.use(function(done) {
  ***********************************/
 metalsmith.build(function(err){
 	if (err) {
-		console.log(err);
+		console.log(err.stack);
 	}
 });

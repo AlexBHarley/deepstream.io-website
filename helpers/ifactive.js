@@ -1,4 +1,6 @@
 module.exports = function( level, className, root, data, key ) {
+	return '';
+
 	if( level === 'level1' || level === 'level2' ) {
 		if( root[ level ] === data[ key ].name ) {
 			return className;

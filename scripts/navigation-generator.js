@@ -4,12 +4,15 @@
 var sort = function( nav ) {
 	var ordered = [];
 	var order = Object.keys( nav ).sort();
+
 	for( var i=0; i<order.length;i++) {
 		if( order[ i ] === 'undefined' ) continue;
+		if( typeof nav[ order[ i ] ] === 'string' ) continue;
 
-		if( !nav[ order[ i ] ].title ) {
+		if( !nav[ order[ i ] ].title || nav[ order[ i ] ].isCategory ) {
 			ordered.push( {
 				name: order[ i ],
+				isCategory: true,
 				children: sort( nav[ order[ i ] ] )
 			} );
 		} else {
@@ -60,7 +63,18 @@ module.exports = function() {
 			}
 
 			if( file.isLevel3 ) {
-				metadata.nav[ file.level1 ][ file.level2 ][ file.level3 ] = {
+				var navLevel3 = metadata.nav[ file.level1 ][ file.level2 ]
+				if( file.category ) {
+					if( !navLevel3[ file.category ] ) {
+						navLevel3[ file.category ] = {
+							title: file.category,
+							isCategory: true
+						};
+					}
+					navLevel3 = navLevel3[ file.category ];
+				}
+				navLevel3[ file.level3 ] = {
+					isNotCategory: true,
 					title: file.title || file.level3,
 					description: file.description || 'TODO: Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..',
 					path: `${file.level1}/${file.level2}/${file.level3}/${file.level3}.html`,
