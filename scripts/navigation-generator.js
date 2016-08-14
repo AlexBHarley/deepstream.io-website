@@ -10,11 +10,14 @@ var sort = function( nav ) {
 		if( typeof nav[ order[ i ] ] === 'string' ) continue;
 
 		if( !nav[ order[ i ] ].title || nav[ order[ i ] ].isCategory ) {
-			ordered.push( {
+			var obj = {
 				name: order[ i ],
-				isCategory: true,
 				children: sort( nav[ order[ i ] ] )
-			} );
+			};
+			if( nav[ order[ i ] ].isCategory ) {
+				obj.isCategory = true;
+			}
+			ordered.push( obj );
 		} else {
 			ordered.push( nav[ order[ i ] ] );
 		}
