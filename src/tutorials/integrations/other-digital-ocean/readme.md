@@ -1,10 +1,16 @@
-# How to setup a realtime server with deepstream.io, Redis and MongoDB on Ubuntu 16.04
+---
+title: Digital Ocean
+description: How to set up deepstream.io, Redis and MongoDB on Digital Ocean
+---
+
+How to setup a realtime server with deepstream.io, Redis and MongoDB on Ubuntu 16.04
+
+![Digital Ocean](digital-ocean-logo.png)
 
 ### Introduction
 
 In this tutorial we'll explain how to install and run a deepstream.io server on DigitalOcean.
-To provide a better performance we'll also setup a storage layer with MongoDB, a cache layer
-with Redis and a message layer with Redis to allow spinning up multiple deepstream servers.
+To provide a better performance we'll also setup a storage layer with MongoDB, a cache layer with Redis and a message layer with Redis to allow spinning up multiple deepstream servers.
 
 ## Prerequisites
 
@@ -18,14 +24,14 @@ __MongoDB__:
 - SSH keys: check at least one key
 - hostname: mongodb
 
-__redis__:
+__Redis__:
 
 - One-click App: Redis
 - Private Networking: checked
 - SSH keys: check at least one key
 - hostname: redis
 
-__depstream.io__:
+__deepstream.io__:
 
 - Disribution: Ubunutu 16.04 x64
 - Private Networking: checked
@@ -36,7 +42,6 @@ __depstream.io__:
 
 MongoDB has no authentication by defaut. This is okay since it only listens to connections for localhost.
 To allow deepstream to connect to the database we can change the IP address to the private network IP of the droplet:
-
 
 ```shell
 ssh root@mongodb_server_ip
