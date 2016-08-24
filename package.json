@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/deepstreamIO/deepstream.io-website#readme",
   "devDependencies": {
+    "aws4": "^1.4.1",
     "beepbeep": "^1.2.0",
     "browser-sync": "^2.13.0",
     "colors": "^1.1.2",

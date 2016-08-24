@@ -387,8 +387,6 @@ input[type="time"]:focus,
 input[type="datetime"]:focus,
 input[type="datetime-local"]:focus,
 textarea:focus {
-    border: #bbc7cc 1px solid;
-    background: #fff;
     outline: none;
     outline-width: 0;
 }

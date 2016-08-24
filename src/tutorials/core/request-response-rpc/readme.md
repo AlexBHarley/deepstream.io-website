@@ -18,7 +18,7 @@ RPCs are helpful on their own as a substitute for classic HTTP workflows, but ar
 ## Using RPCs
 Let's look at an example: adding two numbers (granted, not something you would strictly need to do on the backend, but lets keep things simple).
 
-Every RPC is identified by a unique name. For our example, we'll choose `'add-two-numbers'`. First, a process needs to register as a "provider" - something that's capable of fulfilling a request. This is done using `client.rpc.provide()`
+Every RPC is identified by a unique name. For our example, we'll choose `'add-two-numbers'`. First, a process needs to register as a "provider" - something that's capable of fulfilling a request. This is done using `client.rpc.provide()`. Each client can only provide the rpc once.
 
 ```javascript
 client.rpc.provide( 'add-two-numbers', ( data, response ) => {
@@ -32,6 +32,12 @@ Now any client can invoke the remote method. This is done using `client.rpc.make
 client.rpc.make( 'add-two-numbers', { numA: 7, numB: 13 }, ( err, result ) => {
     // result == 20;
 });
+```
+
+If you want to switch off your provider, you can pass the rpc name to unprovide.
+
+```javascript
+client.rpc.unprovide( 'add-two-numbers' );
 ```
 
 ## RPC routing

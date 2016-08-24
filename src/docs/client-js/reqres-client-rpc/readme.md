@@ -30,11 +30,11 @@ client.rpc.provide( 'add-two-numbers', function( data, response ){
     response.send( data.numA + data.numB );
 });
 ```
-
+<br/>
 {{#infobox "info"}}
-* Only one callback per client can be registered for the same RPC.
-* Data can be any serializable object
-* Documentation for the `response` object can be found [here](../reqres-response/)
+<br/>Only one callback per client can be registered for the same RPC
+<br/>Data can be any serializable object
+<br/>Documentation for the `response` object can be found [here](../reqres-response/)
 {{/infobox}}
 
 ### client.rpc.unprovide( name )

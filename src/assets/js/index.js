@@ -1,8 +1,10 @@
 /**
  * Main JS file for Casper behaviours
  */
-
 /* globals jQuery, document */
+
+window._history = window.History.createHistory();
+
 (function ($, undefined) {
     "use strict";
 
@@ -53,37 +55,93 @@
         });
 
     };
-
     searchAutocomplete();
 
 })(jQuery);
 
+
 // for docs pages
+var SEARCH_BASE = 'https://search-deepstream-website-fozmccbxnnchstaflr5wmac3l4.eu-central-1.es.amazonaws.com';
 function searchAutocomplete() {
-    $(".main-search").autocomplete({
-        appendTo: '.main-serach-results',
-        source: "/search",
+    $('.main-search-results').on('click', 'ul li a', function(e) {
+        // should be handled by the select handler
+        e.preventDefault();
+    })
+    $('.main-search').autocomplete({
+        appendTo: '.main-search-results',
+        position: { my : "right top", at: "right bottom" },
+        source: function(request, response) {
+            var requestData = {
+                query: {
+                    multi_match : {
+                        query : request.term,
+                        type: 'phrase_prefix',
+                        fields : [ 'title^3', 'content' ]
+                    }
+                }
+            };
+            $.ajax({
+              url: SEARCH_BASE + '/pages/_search',
+              data: JSON.stringify(requestData),
+              method: 'POST',
+              success: function(data, status) {
+                if (status === 'success') {
+                    var hits = data.hits.hits;
+                    return response(hits.map(function(item) {
+                        return {
+                            title: item._source.title,
+                            link: item._source.filePath.replace(/[^\/]*.md$/, ''),
+                            type: item._type
+                        }
+                    }));
+                }
+                return response([]);
+              }
+            })
+        },
         minLength: 3,
-        focus: function( event, ui ) {
+        focus: function(event, ui) {
             return false;
         },
-        select: function( event, ui ) {
-            window.location = '/' + ui.item.slug;
+        select: function(event, ui) {
+            var section = window.location.pathname.split('/').filter(function(i) {return i !== ''})[0];
+            var subsection = window.location.pathname.split('/').filter(function(i) {return i !== ''})[1];
+            var pathname = '/' + ui.item.link;
+            if ((ui.item.type === 'docs' || ui.item.type === 'tutorials') && subsection != null && section === ui.item.type) {
+                window._history.push( {
+                    pathname: pathname,
+                    state: {
+                        realPathname: pathname + getBaseName(pathname) + '.html'
+                    }
+                } );
+            } else {
+                window.location = pathname;
+            }
             return false;
         }
-    }).autocomplete( "instance" )._renderItem = function( ul, item ) {
-      var otherOccurrences = item.occurrences.length > 2 ? ' other occurrences' : ' other occurrence'
-      return $( "<li>" )
-        .append( "<a target='_blank' href='/" + item.slug + "' title='" + item.slug + "'>" +
-            '<strong>' + item.title + "</strong><br>" + '<em>' + (item.occurrences[0] || '') + '</em>' +
-            ((item.occurrences.length > 1) ? (' and ' + (item.occurrences.length - 1) + otherOccurrences) : '')
-            + "</a>"
-        )
-        .appendTo( ul );
+    }).autocomplete('instance')._renderItem = function(ul, item) {
+        if( $( ul ).find( '.tip' ).length === 0 ) {
+            $( ul ).prepend( '<li class="tip"><div></div></li>' );
+        }
+      return $('<li>')
+        .append("<a href='/" + item.link + "'><em>" + item.title + '</em><small>' + item.type + '</small></a>')
+        .appendTo(ul);
     };
-    $("input.main-search").on('focus', function() {
-        $("ul.ui-autocomplete").show()
+    $('input.main-search').on('focus', function() {
+        $('ul.ui-autocomplete').show();
     })
+}
+
+function getBaseName(basename) {
+    return basename.split( '/' ).filter( function( item ) {
+        return item !== '';
+    } ).reverse()[ 0 ];
+}
+
+function getDirname(basename) {
+    var array = basename.split( '/' );
+    array.pop();
+    return array.join('/') + '/';
 }
 
 $(function(){
@@ -91,7 +149,7 @@ $(function(){
         return;
     }
 
-    var history = window.History.createHistory();
+
     var adjustSize = function() {
         var windowWidth = $(window).width();
         if( windowWidth > 999 ) {
@@ -108,6 +166,9 @@ $(function(){
 
     adjustSize();
     $(window).resize( adjustSize );
+    window.setTimeout( function() {
+        $(window).resize( adjustSize );
+    }, 250 );
 
     $( '.sub-section-toggle' ).click(function(){
         $(this).parent().toggleClass( 'open' );
@@ -116,26 +177,20 @@ $(function(){
     $( '.tree-nav .entry a' ).click(function( e ){
         e.preventDefault();
         var pathname = $(this).attr( 'href' );
-        history.push( {
-            pathname: pathname.replace( /\/[^/]*\.html/, '/' ),
+        window._history.push( {
+            pathname: pathname,
             state: {
-                realPathname: pathname
+                realPathname: pathname + getBaseName( pathname ) + '.html',
             }
         } );
     });
 
-    var unlisten = history.listen(location => {
+    var unlisten = window._history.listen(function(location) {
         var pathname = (location.state || {}).realPathname
         if (pathname == null) {
             // the first page visit didn't set the state
             // so recover the ajax page from its basename
-            var splitted = location.pathname.split('/')
-            if (splitted[splitted.length - 1] === '') {
-                pathname = splitted[splitted.length - 2]
-            } else {
-                pathname = splitted[splitted.length - 1]
-            }
-            pathname = location.pathname + pathname + '.html'
+            pathname = location.pathname + getBaseName(location.pathname) + '.html'
         }
         changeEntryPage( {
             pathname: pathname
@@ -143,8 +198,8 @@ $(function(){
     })
 
     function changeEntryPage( location ) {
-        var pathname = location.pathname;
-        var link = $( '[href="' + pathname + '"]' )
+        var dirname = getDirname(location.pathname);
+        var link = $( '.tree-nav [href="' + dirname + '"]' )
         $( '.entry .active' ).removeClass( 'active' );
 
         link.parent().addClass( 'active' );
@@ -153,7 +208,7 @@ $(function(){
         link.parents('.sub-section-container').addClass('open')
 
         $( '.col.right .header h1' ).text( link.text() );
-        $.get( pathname, function( result ){
+        $.get( location.pathname, function( result ){
 
             //TODO Error handling
             $( '.breadcrumbs span:last-child' ).text( link.text() );
@@ -162,11 +217,13 @@ $(function(){
             $('.content pre code').each(function(i, block) {
                 Prism.highlightElement( block );
             });
+
+            updateDownloadLinks();
         });
     };
 });
 
-$(function(){
+function updateDownloadLinks() {
     $('a.install-link').each(function(){
         var url = 'https' + '://api.github.com/repos/deepstreamio/deepstream.io/releases/latest';
         var anchor = $(this);
@@ -181,10 +238,21 @@ $(function(){
                 .attr( 'href', asset.browser_download_url );
         });
     });
-});
+}
+updateDownloadLinks();
 
 $(function(){
     setTimeout(function(){
         $('.deepstream-star').removeClass('start');
     }, 16000 );
+});
+
+$(function(){
+    var icons = $( 'div.entry-icon' );
+    var hue, i;
+
+    for( i = 0; i < icons.length; i++ ) {
+        hue = 360 * Math.random();// * ( i / icons.length );
+        $( icons[ i ] ).css( 'color', 'hsl(' + hue + ', 76%, 63%)' );
+    }
 });

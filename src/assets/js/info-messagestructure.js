@@ -83,8 +83,8 @@
 			$( '.message-in-depth .event' ).text( message.topic );
 			$( '.message-in-depth .action' ).text( message.action );
 
-			var ml = message.data.length > 1 ? '</br>' : '';
-			$( '.message-in-depth .data' ).html( '[ ' + ml + message.data.join( ',</br>' ) + ml + ' ]' );
+			var ml = message.data.length > 1 ? '<br/>' : '';
+			$( '.message-in-depth .data' ).html( '[ ' + ml + message.data.join( ',<br/>' ) + ml + ' ]' );
 
 			var height = $( '.message-in-depth' ).height() + 10;
 			$( '.message-in-depth' )

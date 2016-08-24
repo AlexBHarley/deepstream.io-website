@@ -1,34 +1,45 @@
 <link rel="stylesheet" type="text/css" href="{{asset 'css/overview-list.css'}}">
+<div class="overview-header">
+	<img class="elton-info elton-overview" src="/assets/img/eltons/elton-info.svg" />
+	<h1>Info</h1>
+	<div class="tags">
+		<a href="#community">Community</a>
+		<a href="#performance">Performance</a>
+		<a href="#protocol">Protocol</a>
+		<a href="#specs">Specifications</a>
 
+	</div>
+</div>
 <section class="section-overview">
 	<div class="wrapper">
-		<h2>Community</h2>
-		<div class="entries two-col">
-			{{entry tree "/community/t-shirt/"}}
-			{{entry tree "/community/get-in-touch/"}}
-			{{entry tree "/community/cla/"}}
-			{{entry tree "/community/contribution-guidelines/"}}
+		
+		<div class="entries">
+			<h2><a name="community">Community</a></h2>
+			{{entry tree "ion-tshirt" "/community/t-shirt/"}}
+			{{entry tree "ion-chatbubbles" "/community/get-in-touch/"}}
+			{{entry tree "ion-clipboard" "/community/cla/"}}
+			{{entry tree "ion-upload" "/community/contribution-guidelines/"}}
 		</div>
-
-		<h2>Performance Test Results</h2>
-		<div class="entries two-col">
-			{{entry tree "/performance/overview/"}}
-			{{entry tree "/performance/single-node-vs-cluster/"}}
+		
+		<div class="entries">
+			<h2><a name="performance">Performance Test Results</a></h2>
+			{{entry tree "ion-speedometer" "/performance/overview/"}}
+			{{entry tree "ion-flash" "/performance/single-node-vs-cluster/"}}
 		</div>
-
-		<h2>The Deepstream Protocol</h2>
-		<div class="entries two-col">
-			{{entry tree "/protocol/all-messages/"}}
-			{{entry tree "/protocol/message-structure-overview/"}}
+		
+		<div class="entries">
+			<h2><a name="protocol">The Deepstream Protocol</a></h2>
+			{{entry tree "ion-email" "/protocol/all-messages/"}}
+			{{entry tree "ion-email" "/protocol/message-structure-overview/"}}
 		</div>
-
-		<h2>Client Behaviour Specifications</h2>
-		<div class="entries two-col">
-			{{entry tree "/specs/connectivity/"}}
-			{{entry tree "/specs/events/"}}
-			{{entry tree "/specs/parsing/"}}
-			{{entry tree "/specs/records/"}}
-			{{entry tree "/specs/rpc/"}}
+		
+		<div class="entries">
+			<h2><a name="specs">Client Behaviour Specifications</a></h2>
+			{{entry tree "ion-paper-airplane" "/specs/connectivity/"}}
+			{{entry tree "ion-paper-airplane" "/specs/events/"}}
+			{{entry tree "ion-paper-airplane" "/specs/parsing/"}}
+			{{entry tree "ion-paper-airplane" "/specs/records/"}}
+			{{entry tree "ion-paper-airplane" "/specs/rpc/"}}
 		</div>
 	</div>
 </section>

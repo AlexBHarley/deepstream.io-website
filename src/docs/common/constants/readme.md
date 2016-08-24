@@ -191,7 +191,7 @@ list:
 - ACTIONS.CREATEORREAD | CR | ✔ | ✔ |
 - ACTIONS.EVENT | EVT | ✔ | ✔ |
 - ACTIONS.ERROR | E | ✔ | ✔ |
-- ACTIONS.REQUEST | REQ | ✔ |  |
+- ACTIONS.REQUEST | REQ | ✔ | ✔|
 - ACTIONS.RESPONSE | RES | ✔ | ✔ |
 - ACTIONS.REJECTION | REJ | ✔ | ✔ |
 {{/table}}

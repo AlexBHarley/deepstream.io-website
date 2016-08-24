@@ -443,3 +443,10 @@ h1.post-title {
 		margin: 2rem 2rem;
 	}
 }
+
+.elton-blog{
+	position: fixed;
+	width: 10%;
+	bottom: 3%;
+	left: 3%;
+}

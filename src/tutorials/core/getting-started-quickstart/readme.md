@@ -44,27 +44,27 @@ Create an _index.html_ file and add the following to it, making sure to point to
 This page consists of one text field ready for user input. Inside the `script` tag, add the following JavaScript to login to your deepstream server:
 
 ```javascript
-const client = deepstream('localhost:6020').login()
+var client = deepstream('localhost:6020').login()
 ```
 
 Next up, we request a "record". Records are small bits of data that are synced
 across all connected client.
 
 ```javascript
-record = client.record.getRecord('some-name')
+var record = client.record.getRecord('some-name')
 ```
 
 Finally, let's wire it up to our input field. The goal is to open the same page in multiple browser windows and see the input stay in sync
 
 ```javascript
 
-const input = document.querySelector('input')
+var input = document.querySelector('input')
 
-input.onkeyup = () => {
+input.onkeyup = (function() {
   record.set('firstname', input.value)
-};
+})
 
-record.subscribe('firstname', value => {
+record.subscribe('firstname', function(value) {
   input.value = value
 })
 ```

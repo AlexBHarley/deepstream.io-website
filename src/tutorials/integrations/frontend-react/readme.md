@@ -13,6 +13,10 @@ To make this easier, we've developed **deepstream-react** - a mixin that let's y
 mixins: [DeepstreamReact]
 ```
 
+## Video Tutorial
+
+<iframe width="640" height="480" src="https://www.youtube.com/embed/Bg0nyf02jkw?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+
 ## How to use deepstream-react
 You can get deepstream-react from NPM or bower as `deepstream.io-tools-react` or [browse the source on Github](https://github.com/deepstreamIO/deepstream.io-tools-react).
 

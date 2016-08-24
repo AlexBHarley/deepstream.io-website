@@ -1,9 +1,27 @@
 -
-  eventName: "Reactive Realtime for Fun and Profit"
+  eventName: "Codemotion Berlin"
   date: October 24th 2016
   eventImage: codemotion.png
-  link: //berlin2016.codemotionworld.com/
+  link: http://berlin2016.codemotionworld.com/
   locationName: Berlin
+-
+  eventName: "Uprise Festival"
+  date: October 20th 2016
+  eventImage: uprise.png
+  link: http://uprisefestival.co/
+  locationName: Dublin
+-
+  eventName: "Codemotion Warsaw"
+  date: September 15th 2016
+  eventImage: codemotion2.png
+  link: http://warsaw2016.codemotionworld.com/speaker/2387/
+  locationName: Warsaw
+-
+  eventName: "Codetalks"
+  date: September 19th 2016
+  eventImage: codetalks.png
+  link: https://www.codetalks.de/
+  locationName: Hamburg
 -
   eventName: "Open Air Data - Tech Open Air Berlin"
   date: July 10th 2016
