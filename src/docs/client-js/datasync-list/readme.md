@@ -88,7 +88,7 @@ if( list.isEmpty() ) {
 Returns an array of the current entries in the list.
 
 ```javascript
-var entries = list.getEntries( entries )
+var entries = list.getEntries()
 console.log( entries ) // [ 'car/1', 'car2' ]
 ```
 
