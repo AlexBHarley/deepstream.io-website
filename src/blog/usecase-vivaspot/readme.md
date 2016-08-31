@@ -3,7 +3,7 @@ title: How Vivaspot used deepstream to add realtime analytics to real world shop
 dateISO: 20160118
 author: amyfleming
 thumbnail: thermostats.png
-draft: false
+draft: true
 ---
 Modern website analytic tools are fantastic. They show who’s visiting your site, where users come from, how they navigate your content and where they check out.
 
