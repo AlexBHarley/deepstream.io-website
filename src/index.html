@@ -4,6 +4,8 @@ description: A secure realtime server, supporting data-sync, RPCs and events
 ---
 
 <link rel="stylesheet" type="text/css" href="{{asset 'css/startpage.css'}}">
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+<script type="text/javascript" src="assets/js/startpage.js"></script>
 
 {{!-- The big featured header --}}
 <header class="main-header">
@@ -249,6 +251,29 @@ description: A secure realtime server, supporting data-sync, RPCs and events
 	</div>
 </section>
 
+<div id="book-a-meeting">
+	<form class="inner" action="#">
+		<p>Hi deepstream team,</p>
+
+		<p>
+			I'm <input class="name" type="text" placeholder="name" required/> from <input class="company" type="text" placeholder="company" required/>. It'd be good to meet at <span class="event-name">Websummit Lisbon</span> on <span class="date">November 7th</span> around <input type="text" class="time" placeholder="time" required/> o'clock.
+		</p>
+
+		<p>
+			You can reach me at <input type="email" class="email" placeholder="email" required/>,
+		</p>
+
+		<p>
+		best,
+		</p>
+		<p>
+			<span class="name">&nbsp;</span>
+		</p>
+
+		<button class="cancel">cancel</button>
+		<button class="send">send</button>
+	</form>
+</div>
 <section id="events" class="bright">
 	<div class="wrapper">
 		<a
