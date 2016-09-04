@@ -2,10 +2,21 @@
 * Header
 * ***********************/
 header.main-header{
-	background: #0FBBEC;
-	position: relative;
+	background-color: #0FBBEC;
+	background-image: url(../img/bg-main.png);
+	background-repeat: no-repeat;
+	background-position: center right;
 	width:100%;
 	min-height: 300px;
+	position: relative;
+}
+
+header.main-header .header-bg .bg-bus{
+    width: 50%;
+    height: 100%;
+    left: 25%;
+    position: absolute;
+    top: 22px;
 }
 
 header.main-header .elton{
