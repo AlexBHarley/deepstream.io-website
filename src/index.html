@@ -12,7 +12,7 @@ description: A secure realtime server, supporting data-sync, RPCs and events
 	<div class="main-header-text-wrapper">
 		<div class="main-header-text">
 			<h1 class="page-title">the open realtime server</h1>
-			<h2 class="page-description">deepstream<span> is an out-of-the-box backend for scalable realtime apps</span></h2>
+			<h2 class="page-description">deepstream<span> is an out-of-the-box backend for serious realtime apps</span></h2>
 			<a href="/install/">
 				<i class="ion-ios-navigate-outline"></i>
 				<span>install deepstream</span>
@@ -48,6 +48,32 @@ description: A secure realtime server, supporting data-sync, RPCs and events
 		<div class="col">
 			<video width="600" height="422" src="{{asset 'video/realtime-app-small.mp4'}}" autoplay loop/>
 		</div>
+	</div>
+</section>
+
+<section class="news">
+	<h2 class="section-headline">what's new?</h2>
+	<div class="wrapper">
+		<a href="#">
+			<img src="/assets/img/news/briteback.png" />
+			<p><em>Case Study:</em>How deepstream helped Briteback take enterprise communication to the next level</p>
+		</a>
+		<a href="#">
+			<img src="/assets/img/news/spaceshooter.png" />
+			<p><em>Tutorial:</em> Building a multiplayer spaceshooter with deepstream.io and pixi.js</p>
+		</a>
+		<a href="#">
+			<img src="/assets/img/news/vivaspot.png" />
+			<p><em>Case Study:</em>How deepstream helped Vivaspot build realtime analytics for shopping malls</p>
+		</a>
+		<a href="#">
+			<img src="/assets/img/news/hoxton-one.png" />
+			<p><em>Case Study:</em>Building a stock trading platform in the cloud using deepstream</p>
+		</a>
+		<a href="#">
+			<img src="/assets/img/news/digitalocean.png" />
+			<p><em>Tutorial:</em> Deploying deepstream with MongoDB and Redis on digital ocean</p>
+		</a>
 	</div>
 </section>
 
@@ -322,84 +348,40 @@ description: A secure realtime server, supporting data-sync, RPCs and events
 	</div>
 </section>
 
-<section id="community" class="bright">
-	<div class="wrapper">
-		<h2>community</h2>
-		<div class="two-col">
-			<div class="left">
-				<h3 class="icon-divider">
-					<span class="icon ion-ios-people-outline"></span>
-					<span class="divider"></span>
-					<span class="text">events &amp; workshops</span>
-				</h3>
-				{{> community-latestevents}}
 
-				<h3 class="icon-divider">
-					<span class="icon ion-ios-paper-outline"></span>
-					<span class="divider"></span>
-					<span class="text">blog</span>
-				</h3>
-				{{> blog-latest}}
+<section id="get-in-touch">
+	<div class="wrapper">
+		<h2 class="section-headline">Get in touch!</h2>
+		<div class="github">
+			<div class="git-text">Raise an issue, request a feature or browse the source on <a href="https://github.com/deepstreamIO/deepstream.io">GitHub</a>.
 			</div>
-			<div class="right">
-				<h3 class="icon-divider">
-					<span class="icon ion-ios-pulse"></span>
-					<span class="divider"></span>
-					<span class="text">pulse</span>
-				</h3>
-				<ul class="pictures">
-					<li><img src="{{asset 'img/community/a.png'}}" /></li>
-					<li><img src="{{asset 'img/community/b.png'}}" /></li>
-					<li><img src="{{asset 'img/community/c.png'}}" /></li>
-					<li><img src="{{asset 'img/community/d.png'}}" /></li>
-					<li><img src="{{asset 'img/community/e.png'}}" /></li>
-					<li><img src="{{asset 'img/community/f.png'}}" /></li>
-					<li><img src="{{asset 'img/community/g.png'}}" /></li>
-					<li><img src="{{asset 'img/community/h.png'}}" /></li>
-					<li><img src="{{asset 'img/community/i.png'}}" /></li>
-				</ul>
-				<div class="git-section">
-					<div class="git-text">Raise an issue, request a feature or browse the source on <a href="https://github.com/deepstreamIO/deepstream.io">GitHub</a>.
-					</div>
-					<div class="git-btn">
-						<a
-							class="github-button"
-							href="//github.com/deepstreamIO/deepstream.io"
-							data-icon="octicon-star"
-							data-style="mega"
-							data-count-href="/deepstreamIO/deepstream.io/stargazers"
-							data-count-api="/repos/deepstreamIO/deepstream.io#stargazers_count"
-							data-count-aria-label="# stargazers on GitHub"
-							aria-label="Star deepstreamIO/deepstream.io on GitHub">Star</a>
-					</div>
-				</div>
-				<h3 class="icon-divider">
-					<span class="icon ion-ios-heart-outline"></span>
-					<span class="divider"></span>
-					<span class="text">get in touch</span>
-				</h3>
-				<div class="links">
-					<a target="_blank" href="https://twitter.com/deepstreamIO">
-						<i class="ion-social-twitter-outline"></i>
-						twitter
-					</a>
-					<a target="_blank" href="https://www.facebook.com/deepstreamIO/">
-						<i class="ion-social-facebook-outline"></i>
-						facebook
-					</a>
-					<a target="_blank" href="https://deepstream-slack.herokuapp.com/">
-						<i class="ion-ios-grid-view-outline"></i>
-						slack
-					</a>
-					<a target="_blank" href="http://stackoverflow.com/questions/tagged/deepstream.io">
-						<i class="ion-social-buffer-outline"></i>
-						stack overflow
-					</a>
-				</div>
+			<div class="git-btn">
+				<a
+					class="github-button"
+					href="//github.com/deepstreamIO/deepstream.io"
+					data-icon="octicon-star"
+					data-style="mega"
+					data-count-href="/deepstreamIO/deepstream.io/stargazers"
+					data-count-api="/repos/deepstreamIO/deepstream.io#stargazers_count"
+					data-count-aria-label="# stargazers on GitHub"
+					aria-label="Star deepstreamIO/deepstream.io on GitHub">Star</a>
 			</div>
+		</div>
+		<div class="links">
+			<a class="twitter" target="_blank" href="https://twitter.com/deepstreamIO">
+				twitter
+			</a>
+			<a class="facebook" target="_blank" href="https://www.facebook.com/deepstreamIO/">
+				facebook
+			</a>
+			<a class="slack" target="_blank" href="https://deepstream-slack.herokuapp.com/">
+				slack
+			</a>
+			<a class="stackoverflow" target="_blank" href="http://stackoverflow.com/questions/tagged/deepstream.io">
+				stack overflow
+			</a>
 		</div>
 	</div>
 </section>
-
 
 <script async defer id="github-bjs" src="//buttons.github.io/buttons.js"></script>

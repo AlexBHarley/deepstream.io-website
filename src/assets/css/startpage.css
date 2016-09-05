@@ -210,6 +210,46 @@ header.main-header .page-description *{
 }
 
 /*************************
+* NEWS
+* ***********************/
+.news{
+	background: #f6f6f6;
+    padding: 0 0 40px;
+}
+
+.news a{
+	display: block;
+	float: left;
+	width: 20%;
+	box-sizing: border-box;
+	border-right: 1px solid #f6f6f6;
+	position: relative;
+	cursor: pointer;
+	transition: all 300ms ease;
+	overflow: hidden;
+}
+
+.news a:hover{
+	box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+.news a img{
+	width: 240px;
+}
+
+.news a p{
+	padding: 10px;
+	font-size: 15px;
+}
+
+.news a em{
+	font-size: 15px;
+	font-style: normal;
+	color: #474b4c;
+	font-weight: normal;
+}
+
+
+/*************************
 * FEATURES
 * ***********************/
 .features li{
@@ -486,174 +526,74 @@ header.main-header .page-description *{
 }
 
 /*************************
-* COMMUNITY
+* GET IN TOUCH
 * ***********************/
-#community {
+#get-in-touch{
 	padding-bottom: 40px;
-	background-color: #f6f6f6;
 }
 
-#community h2{
-	text-align: center;
-	margin: 10px 0 40px;
+#get-in-touch .github{
+	border: 1px solid #ddd;
+    background-image: url(../img/logos/github.png);
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    padding: 10px;
+    width: 50%;
+    margin: 0 auto;
+    padding-left: 80px;
 }
 
-#community .two-col > div {
-	box-sizing: border-box;
-	padding: 0 8%;
-	margin-bottom:30px
-}
-
-#community .pictures {
-	overflow: hidden;
-}
-
-#community .pictures img {
-	width: 109px;
-	height: 76px;
-	box-sizing: border-box;
-	border-right: 1px solid #fff;
-	border-bottom: 1px solid #fff;
-	float: left;
-}
-
-#community .events {
-	overflow: hidden;
-	height: 255px;
-}
-
-#community .events a {
-	display: block;
-	position: relative;
-	overflow: hidden;
-	padding-bottom: 10px;
-}
-
-#community .events a img {
-	width: 24%;
-	display: block;
-	float: left;
-}
-
-#community .events .inner {
-	overflow: hidden;
-}
-
-#community .events .community-event {
-	height: 85px;
-}
-
-#community .events a .event-details {
-	width: 76%;
-	padding-left: 10px;
-	box-sizing: border-box;
-	display: block;
-	float: left;
-}
-
-#community .events a .event-details * {
-	font-weight: 300;
-	display: block;
-	color: #333;
-}
-
-#community .events a .event-details time,
-#community .events a .event-details address {
-	font-size: 10px;
+#get-in-touch .github .git-text{
 	display: inline-block;
-	font-style: normal;
-	color: #666;
+	width: 372px;
+	font-size: 16px;
+	color: #647276;
 }
 
-#community .events a .event-details summary {
-	font-size: 14px;
-	margin: 10px 0;
+#get-in-touch .github .git-text a{
+	font-size: 16px;
+	color: #000;
 }
 
-#community .pagination {
-	text-align: center;
-	margin: 5px 0 30px;
-}
-
-#community .pagination li {
+#get-in-touch .github .git-btn{
 	display: inline-block;
-	padding: 3px 7px;
-	cursor: pointer;
-	font-size: 12px;
-	font-weight: 300;
 }
 
-#community .pagination li:hover {
-	color: #0FBBEC;
-}
-
-#community .pagination li.active {
-	color: #0FBBEC;
-	text-decoration: underline;
-}
-
-#community .git-section{
-	margin: 20px 0 35px;
-}
-
-#community .git-section *{
-	vertical-align: top;
-}
-
-#community .git-text {
-	font-size: 14px;
-	font-weight: 300;
+#get-in-touch .links{
 	width: 50%;
-	display: inline-block;
+    margin: 0 auto;
 }
 
-#community .git-text a {
-	color: #0FBBEC;
-	font-weight: 300;
-}
-
-#community .git-btn {
-	display: inline-block;
-	width: 30%;
-}
-
-#community .links {
-	overflow: hidden;
-}
-
-#community .links a {
-	display: block;
-	width: 50%;
-	padding: 13px 0;
-	box-sizing: border-box;
-	float: left;
-	font-size: 14px;
-	font-weight: 300;
+#get-in-touch .links a{
+    padding: 40px 14px 40px 67px;
 	cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    display: block;
+    width: 50%;
+    float: left;
+    font-size: 16px;
+	font-weight: 300;
 	transition: all 400ms ease;
 }
 
-#community .links a i {
-	position: relative;
-	top: 1px;
+#get-in-touch .links a:hover {
+	background-color: #0FBBEC;
+	color: #fff;
 }
 
-#community .links a:hover,
-#community .links a:hover i {
-	color: #0FBBEC;
+#get-in-touch .links a.twitter{
+	 background-image: url(../img/logos/twitter.png);
 }
 
-#community .blogposts a {
-    font-size: 14px;
-    font-weight: 300;
-    display: block;
-    margin-bottom: 5px;
-    padding-left: 20px;
-    position: relative;
+#get-in-touch .links a.facebook{
+	 background-image: url(../img/logos/facebook.png);
 }
 
-#community .blogposts i {
-	color: #999;
-    position: absolute;
-    left: 0px;
+#get-in-touch .links a.stackoverflow{
+	 background-image: url(../img/logos/stackoverflow.png);
+}
+
+#get-in-touch .links a.slack{
+	 background-image: url(../img/logos/slack.png);
 }
