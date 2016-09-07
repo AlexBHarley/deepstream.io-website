@@ -19,7 +19,7 @@ behaviour and movement patterns.
 
 All this information is made available to participating merchants via realtime dashboards that provide detailed insights about their current and approaching customers. 
 
-![customer survey)(vivaspot-b.png)
+![customer survey](vivaspot-b.png)
 
 ### A sizeable task
 Shopping malls haven’t exactly gotten smaller in recent years. Larger centres like the Dubai Mall peak at well over 47 Million annual visitors and even smaller to medium sized outlets are frequented by hundreds of thousands of shoppers each day.
