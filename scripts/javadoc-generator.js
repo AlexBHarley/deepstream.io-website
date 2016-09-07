@@ -4,8 +4,9 @@ var parse = require( 'csv-parse' );
 var walk = require( 'walk' );
 var cheerio = require( 'cheerio' );
 
+const javaDocPath = process.env.JAVA_DOC_PATH || '../dependencies/deepstream.io-client-java/build/docs/javadoc/io/deepstream';
 function walkFeatureTree ( files, next ) {
-	var inputDir =  path.join( __dirname, '../../deepstream.io-client-java/build/docs/javadoc/io/deepstream' );
+	var inputDir =  path.join( __dirname, javaDocPath );
 	var walker = walk.walk( inputDir, {} );
 	walker.on( 'file', processDocFile.bind( null, files ) );
 	walker.on( 'end', next );

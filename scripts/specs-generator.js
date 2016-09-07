@@ -49,8 +49,9 @@ function readMessageScenarios( loadedSpec, root, stats, next ) {
 	next();
 }
 
+const specsPath = process.env.WEBSITE_SPECS_PATH || '../dependencies/deepstream.io-client-specs/features';
 var walkFeatureTree = function( loadedSpec, next ) {
-	var inputDir =  path.join( __dirname, '../../deepstream.io-client-specs/features' );
+	var inputDir =  path.join( __dirname, specsPath );
 	var walker = walk.walk( inputDir, {} );
 	walker.on( 'file', readMessageScenarios.bind( null, loadedSpec ) );
 	walker.on( 'end', function() {
