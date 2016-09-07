@@ -1,0 +1,41 @@
+language: node_js
+
+before_install:
+  - chmod +x bin/setup-dependencies.sh && ./bin/setup-dependencies.sh
+
+node_js:
+  - "6"
+
+script:
+  - node bin/website
+
+deploy:
+  - provider: s3
+    access_key_id:
+      secure: "ZZNbjkyCE0DXnEyXJCu6nOSj68FoHSCm4T6cfilikB+91t2KcCl6DFr+rFH/iDt/KUEEmi8x3nPKbjXCOGtWwlR+xy2/IbPd7UCDZZ+Tzf+rNLpsJLSgDfOh5wgO7cFCFa/E9MsFx6h2ZPo9j3MWH9itLblbqbbEtYnAcSPBSdyas2vUdXI8ch1H8ENw/JUzpwKRgu9hEM9YRE0bfNfzGXAGUj3ekd8AK4yn86rlSWb2eJDjNZ/tgq4H1coCMSbF49iNMG1yb4jeMtOoH/AYY7DARJOaG/yN0aYkDMOSfanGzJJUgpKRE2hhWfaum5uXavM2at5XQIrjZ9OmFIejMmTCByvvRsWIFaHi/ZJloe1T/D5faJLBSkpP0J/x6LKrEDs9VLrDeMWZAQI0h0lhf/lw2oBa/aOqjk7piNwKNfEnZW6slLgIu0w0HQ3EoLzCfqhJWmzztqbPTCDKJCXoE3hTmkXAE5vuq+UrlEqnpOebbL+/jYrnz/tolU8NcdiS/lYHF398VWhFJenqQ+udzmLGm/qBg7kQHaU2E5wi3CbXIQ8sVZIJUU4GsiQneRlEqN4OITp00isLgvH6KO5wYObrvVv0H7VRIEq+ydzmhfDSoxGnwkXnxb43PpkeRusLvHngBAP0d86PTEYwQoQ0rS/VGF3Mtxr1Y/mKkBfK/ms="
+    secret_access_key:
+      secure: "cBHKPcgQtFmwakafUfk4yBEiOqnsCj64PIlMNr16HPqyyIoiKklvFXwYGQJVOhRDpsmzhztoeIQZk9HD+FNCVFHID+9nDMQypOsOuzwCFS1yFJsv8Nx0pkVaEpM4ObFEca4Q17LhfEmT/Cw2tpFl/H/aTvlBM8mosZXfgu+/yoM09zrZ+LWQo0GrxKxdI2mAj1vRPvLqHhpoPvHWusgPpBXXo0ENzAOq4NR974Jo/oRC0gtZlQ4Oqzl+/gjOYS7JRTptLSNOrbx8uokuikPNxyRkMp955PIwC7++VMy8wYJIwzsx10ytpFLnIWB9rgvq2Aha1udOoib7WRROMMtIkBoFRdah4GTHOMh1sVcZdHSOw9fxml4loZgRxiP7rWLxP/bdc2039NvUQMgOL4KrRZQYxCaAWCghlipo3SDeVDZoc1p5dGvzREMW6amqJMb5fWPWcbr9G/AdzrbFk3dZELs03Ia5BnsXC2H7S7KLc5Qg0q15pCpt+8E5S6O8pigrZ75XC2l6IhzvixAsH36t+fBGtuYC+j4vrPVGTqU7j8+9z58Fn7ys2Q3pr8ZMF80qC16Ev8LEA7kNf6q9HcXkPS/7bl4W6lfMe7F+IbY9eHAUZr9pERXAxZVxDSEc8+efE7XPYM7ziZSGwiFdnIhchbvLbX83n8+N8A1pd6XQatk="
+    bucket: deepstream.io-dev
+    skip_cleanup: true
+    acl: public_read
+    local_dir: dist
+    on:
+      branch: master
+
+  - provider: s3
+    access_key_id:
+      secure: "ZZNbjkyCE0DXnEyXJCu6nOSj68FoHSCm4T6cfilikB+91t2KcCl6DFr+rFH/iDt/KUEEmi8x3nPKbjXCOGtWwlR+xy2/IbPd7UCDZZ+Tzf+rNLpsJLSgDfOh5wgO7cFCFa/E9MsFx6h2ZPo9j3MWH9itLblbqbbEtYnAcSPBSdyas2vUdXI8ch1H8ENw/JUzpwKRgu9hEM9YRE0bfNfzGXAGUj3ekd8AK4yn86rlSWb2eJDjNZ/tgq4H1coCMSbF49iNMG1yb4jeMtOoH/AYY7DARJOaG/yN0aYkDMOSfanGzJJUgpKRE2hhWfaum5uXavM2at5XQIrjZ9OmFIejMmTCByvvRsWIFaHi/ZJloe1T/D5faJLBSkpP0J/x6LKrEDs9VLrDeMWZAQI0h0lhf/lw2oBa/aOqjk7piNwKNfEnZW6slLgIu0w0HQ3EoLzCfqhJWmzztqbPTCDKJCXoE3hTmkXAE5vuq+UrlEqnpOebbL+/jYrnz/tolU8NcdiS/lYHF398VWhFJenqQ+udzmLGm/qBg7kQHaU2E5wi3CbXIQ8sVZIJUU4GsiQneRlEqN4OITp00isLgvH6KO5wYObrvVv0H7VRIEq+ydzmhfDSoxGnwkXnxb43PpkeRusLvHngBAP0d86PTEYwQoQ0rS/VGF3Mtxr1Y/mKkBfK/ms="
+    secret_access_key:
+      secure: "cBHKPcgQtFmwakafUfk4yBEiOqnsCj64PIlMNr16HPqyyIoiKklvFXwYGQJVOhRDpsmzhztoeIQZk9HD+FNCVFHID+9nDMQypOsOuzwCFS1yFJsv8Nx0pkVaEpM4ObFEca4Q17LhfEmT/Cw2tpFl/H/aTvlBM8mosZXfgu+/yoM09zrZ+LWQo0GrxKxdI2mAj1vRPvLqHhpoPvHWusgPpBXXo0ENzAOq4NR974Jo/oRC0gtZlQ4Oqzl+/gjOYS7JRTptLSNOrbx8uokuikPNxyRkMp955PIwC7++VMy8wYJIwzsx10ytpFLnIWB9rgvq2Aha1udOoib7WRROMMtIkBoFRdah4GTHOMh1sVcZdHSOw9fxml4loZgRxiP7rWLxP/bdc2039NvUQMgOL4KrRZQYxCaAWCghlipo3SDeVDZoc1p5dGvzREMW6amqJMb5fWPWcbr9G/AdzrbFk3dZELs03Ia5BnsXC2H7S7KLc5Qg0q15pCpt+8E5S6O8pigrZ75XC2l6IhzvixAsH36t+fBGtuYC+j4vrPVGTqU7j8+9z58Fn7ys2Q3pr8ZMF80qC16Ev8LEA7kNf6q9HcXkPS/7bl4W6lfMe7F+IbY9eHAUZr9pERXAxZVxDSEc8+efE7XPYM7ziZSGwiFdnIhchbvLbX83n8+N8A1pd6XQatk="
+    bucket: deepstream.io
+    skip_cleanup: true
+    acl: public_read
+    local_dir: dist
+    on:
+      branch: tag
+
+addons:
+  apt:
+    packages:
+    - oracle-java8-installer
+    - git
