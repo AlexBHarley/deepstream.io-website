@@ -19,6 +19,7 @@ deploy:
     skip_cleanup: true
     acl: public_read
     local_dir: dist
+    region: eu-central-1
     on:
       branch: master
 
@@ -31,6 +32,7 @@ deploy:
     skip_cleanup: true
     acl: public_read
     local_dir: dist
+    region: eu-central-1
     on:
       branch: tag
 
