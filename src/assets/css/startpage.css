@@ -3,7 +3,7 @@
 * ***********************/
 header.main-header{
 	background-color: #0FBBEC;
-	background-image: url(../img/bg-main.png);
+	/*background-image: url(../img/bg-main.png);*/
 	background-repeat: no-repeat;
 	background-position: center right;
 	width:100%;
