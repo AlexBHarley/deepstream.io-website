@@ -1,9 +1,8 @@
 ---
 title: Building a stock trading platform using deepstream
-dateISO: 20160901
+dateISO: 20160908
 author: wolframhempel 
 thumbnail: themerchant-stocks.png
-draft: true
 ---
 
 When we started, we were a small team of investment banking and trading technologists with an ambitious goal: we wanted to build the best trading platform there was; fast, responsive, with a multitude of tools, clever workflows based on multi component linking, browser and mobile support, easily accessible, themeable and so on...
