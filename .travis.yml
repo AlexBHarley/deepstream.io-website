@@ -29,9 +29,9 @@ deploy:
   local_dir: dist
   region: eu-central-1
   on:
-    branch: tag
+    tags: true
 after_success:
-  - if [ -n "TRAVIS_TAG" ]; ./bin/elastic -b elasticsearch-bulk; fi
+  - if [ -z "${TRAVIS_TAG}" ]; then echo "Ignoring elasticsearch since not tag"; else ./bin/elastic -b elasticsearch-bulk; fi
 addons:
   apt:
     packages:
