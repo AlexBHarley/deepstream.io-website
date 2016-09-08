@@ -107,11 +107,3 @@ This is useful to create "active" data providers - backend processes that only s
 - The listen-callback is called with `isSubscribed = true` once the first client subscribes to a matching record and with `isSubscribed = false` once the last subscriber for a matching record unsubscribes.
 
 - Listening also keeps state. Registering as a listener for a pattern that already has matching subscriptions will call the callback multiple times straight away, once for every matching subscription.
-
-**Important:** At the moment, listening is limited to subscriptions made on the same deepstream server. Subscriptions made on other servers within a cluster are not propagated. This is feature is comming soon.
-
-{{#infobox "important"}}
-The listen callback with `isSubscribed = false` is only triggered once the last subscriber has disconnected or discarded the record. If your active data provider is subscribed to the record as well in order to write to it, it counts as a subscriber and the callback won't be invoked.
-
-This is a known limitation and will be addressed in future releases that will also introduce load-balancing for listeners, only-one rules etc. To create a high availability cluster of active data providers straight away, we recommend building a listener-orchestration server that tackles these tasks for now.
-{{/infobox}}

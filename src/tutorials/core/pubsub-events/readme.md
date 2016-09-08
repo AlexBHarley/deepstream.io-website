@@ -72,7 +72,3 @@ client.event.listen('^news/.*', (eventName, isSubscribed, response) => {
 The listen-callback is called with `isSubscribed = true` once a matching event is subscribed to for the first time and with `isSubscribed = false` once the last subscriber for a matching event unsubscribes.
 
 Listening also keeps state. Registering as a listener for a pattern that already has matching subscriptions will call the callback multiple times straight away, once for every matching subscription.
-
-{{#infobox "important"}}
-At the moment, listening is limited to subscriptions made on the same deepstream server. Subscriptions made on other servers within a cluster are not propagated. This is feature is comming soon.
-{{/infobox}}
