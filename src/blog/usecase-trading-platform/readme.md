@@ -35,7 +35,7 @@ What makes deepstream really stand out though is its versatility. Rather than ju
 
 ### Data-Sync 
 Data-Sync is a means of storing schemaless, stateful data-structures called “records” and sending changes in realtime. A record is identified by a unique name, e.g. “eq/goog” or “fx/gbpusd” and can contain any number of static (RIC, symbol, any fundamental data...) and dynamic fields (bid/ask price, sales margin...).
-deepstream uses a proprietary, minimalistic protocol to sync changes and send deltas with very little overhead. Benchmarks show that the average latency for a price update to travel from a provider through deepstream to a client is around 1ms (tested under load @ 10k messages per second, machines in immediate network proximity, more details here[])
+deepstream uses a proprietary, minimalistic protocol to sync changes and send deltas with very little overhead. Benchmarks show that the average latency for a price update to travel from a provider through deepstream to a client is around 1ms (tested under load @ 10k messages per second, machines in immediate network proximity, more details (here)[https://deepstream.io/info/performance/four-billion-messages-per-hour/])
 
 ### Pub-Sub
 Time-and-sales, transaction indicators on a ladder, popup notifications… a lot of the data within a trading platform is ephemeral one-off information. For this category, traditional pub/sub is still a great choice - and our server offers just that. deepstream’s “events” are distributed across the cluster. As with anything within deepstream, topics are created on the fly, simply by publishing or subscribing to them.
