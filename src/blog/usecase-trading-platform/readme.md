@@ -1,5 +1,5 @@
 ---
-title: Building a stock trading platform using deepstream
+title: How we used deepstream to build a lightning fast realtime trading platform
 dateISO: 20160908
 author: wolframhempel 
 thumbnail: themerchant-stocks.png
