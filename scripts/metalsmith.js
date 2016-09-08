@@ -36,6 +36,12 @@ const pathNormalise = require( './path-normalise' );
 metalsmith.use( pathNormalise() );
 
 /************************************
+* Generate JavaDoc
+***********************************/
+const javadocGenerator = require( './javadoc-generator' );
+metalsmith.use( javadocGenerator() );
+
+/************************************
 * Generate Specs
 ***********************************/
 const specsGenerator = require( './specs-generator' );
@@ -169,6 +175,6 @@ metalsmith.use(function(done) {
  ***********************************/
 metalsmith.build(function(err){
 	if (err) {
-		console.log(err);
+		console.log(err.stack);
 	}
 });
