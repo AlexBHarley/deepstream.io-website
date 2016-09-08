@@ -24,16 +24,13 @@ Events are deepstream's implementation of the publish/subscribe pattern. You can
 Subscribes to an event. Callback will receive the data passed to `emit()`
 
 ```javascript
-// client a
-client.event.subscribe( 'news/sports', function( news ){
-  // show news
-});
+// Client A
+client.event.subscribe('news/sports', data => {
+  // handle published data
+})
 
-// client b
-client.event.emit( 'news/sports', {
-  headline: 'New Olympics location announced',
-  content: 'In a surprising twist, the committee has chosen Antartica as the location of the next Olympics.'
-});
+// Client B
+client.event.emit('news/sports', /* data */)
 ```
 
 ### client.event.unsubscribe( event, callback )
@@ -53,7 +50,8 @@ client.event.emit( 'news/sports', {
 Unsubscribes from an event that was previously registered with `subscribe()`. This stops a client from receiving the event.
 
 ```javascript
-  client.event.unsubscribe( 'news/politics', callback );
+// Client A
+client.event.unsubscribe('news/politics', callback)
 ```
 
 ### client.event.emit( event, data )
@@ -73,48 +71,48 @@ Unsubscribes from an event that was previously registered with `subscribe()`. Th
 Sends the event to all subscribed clients
 
 ```javascript
-  client.event.emit( 'notifications', 'Maria just came online');
+// Client B
+client.event.emit('notifications', 'Maria just came online')
 ```
-
 
 ### client.event.listen( pattern, callback )
 {{#table mode="api"}}
 -
   arg: pattern
-  typ: RegExp
+  typ: String (regex)
   opt: false
   des: The pattern to match events which subscription status you want to be informed of
 -
   arg: callback
   typ: Function
   opt: false
-  des: A function that will be called whenever an event has been initially subscribed to or is no longer subscribed.
+  des: A function that will be called whenever an event has been initially subscribed to or is no longer subscribed. Arguments are (String) match, (Boolean) isSubscribed and response (Object).
 {{/table}}
 
 Registers the client as a listener for event subscriptions made by other clients. This is useful to create "active" data providers - processes that only send events if clients are actually interested in them. You can find more about listening in the [events tutorial](/tutorials/core/pubsub-events/#how-to-listen-for-event-subscriptions)
 
-The callback is invoked with two arguments:
+The callback is invoked with three arguments:
 - **eventName**: The name of the event that has been matched against the provided pattern
 - **isSubscribed**: A boolean indicating whether the event is subscribed or unsubscribed
+- **response**: contains two functions (`accept` and `reject`), one of them needs to be called
 
 ```javascript
-  client.event.listen( '^news/.*', function( eventName, isSubscribed ){
-    //start sending news for the relevant topic
-  });
+client.event.listen('^news/.*', (eventName, isSubscribed, response) => {
+  // see tutorial for more details
+})
 ```
 
 ### client.event.unlisten( pattern )
 {{#table mode="api"}}
 -
   arg: pattern
-  typ: RegEx
+  typ: String (regex)
   opt: false
   des: The previously registered pattern
-
 {{/table}}
 
 This removes a previously registered listening pattern and the user will no longer be listening for active/inactive subscriptions.
 
 ```javascript
-  client.event.unlisten( '^news/.*' );
+client.event.unlisten('^news/.*')
 ```
