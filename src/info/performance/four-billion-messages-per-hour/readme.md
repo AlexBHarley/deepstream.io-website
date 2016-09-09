@@ -7,11 +7,11 @@ When it comes to benchmarking realtime systems, there are three core metrics to 
 
 **Latency:** the speed at which updates traverse the system
 
-**Concurrency:** the number of simultanious clients
+**Concurrency:** the number of simultaneous clients
 
-**Throughput:** How many updates can be send to clients in a given time
+**Throughput:** How many updates can be sent to clients in a given time
 
-We’ve concentrated on latency and to some extend concurrency in [the last set of benchmarks](/info/performance/single-node-vs-cluster/), but now it’s time to look into throughput.
+We’ve concentrated on latency and to some extent concurrency in [the last set of benchmarks](/info/performance/single-node-vs-cluster/), but now it’s time to look into throughput.
 
 ## A real world test
 It’s important to stress that our benchmarking approach aims to identify the best possible performance for real-world messages and cost-efficient infrastructure setups. It is perfectly possible to increase the achieved test results by up to 400% by reducing messages to single character events and reserving dedicated, network optimized bare metal instances, but the use of these metrics would be of very debatable value.
@@ -37,7 +37,7 @@ High level metrics from the probe, e.g. messages received or send in the last se
 Our tests were run on Amazon Web Services infrastructure.
 Deepstream nodes are single-threaded processes with non-blocking I/O that scale via clustering. This makes it is possible to utilize multi-core CPUs by running multiple deepstream nodes on the same machine - but with the downside that nodes are subject to the limitations of that machine (ephemeral port limits, thread and memory allocation, single point of failure if the machine goes down etc.).
 
-We'd therefor went with the recommended approach of spreading deepstream servers across multiple smaller machines, leading to higher fault tolerance, better resource utilisation and horizontal scalability. After extensive evaluation we found that EC2 t2.medium instances provide the best performance-to-cost ratio and used this instance type to host the servers in our test.
+We therefore went with the recommended approach of spreading deepstream servers across multiple smaller machines, leading to higher fault tolerance, better resource utilisation and horizontal scalability. After extensive evaluation we found that EC2 t2.medium instances provide the best performance-to-cost ratio and used this instance type to host the servers in our test.
 
 ### Messages
 To allow for realistic message sizes, we’ve used simulated foreign exchange price update events as messages. Each event had a name such as fx/gbpusd (foreign exchange rate for pound against dollar) and transmitted a single floating point number with a five digit precision, e.g. 1.34325. This results in an average message size of ~23bytes.
@@ -59,7 +59,7 @@ But what about memory? Fortunately that isn't too much of a concern. Deepstream 
 
 ![Memory single node](memory-single-node.png)
 
-However, there's one thing to be aware of: Deepstream relies on garbage collection to free up dereferenced memory. If a machine's CPU is overutilized above 100% for a consecutive time, garbage collection will be delayed and memory can add up. If this continuous for a prolonged period, the server will run out of memory and eventually crash - so be generous enough when it comes to resource allocation to make sure that your processors get some breathing space every once in a while.
+However, there's one thing to be aware of: Deepstream relies on garbage collection to free up dereferenced memory. If a machine's CPU is overutilized above 100% for a consecutive time, garbage collection will be delayed and memory can add up. If this continues for a prolonged period, the server will run out of memory and eventually crash - so be generous enough when it comes to resource allocation to make sure that your processors get some breathing space every once in a while.
 
 ## Results - Cluster
 ![Cluster](cluster.png)
