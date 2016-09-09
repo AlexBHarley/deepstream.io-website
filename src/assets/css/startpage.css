@@ -11,6 +11,13 @@ header.main-header{
 	position: relative;
 }
 
+header.main-header .git-btn{
+	position: absolute;
+	left: 50%;
+	margin-left: -50px;
+	top: -50px;
+}
+
 header.main-header .header-bg .bg-bus{
     width: 50%;
     height: 100%;
@@ -112,6 +119,13 @@ header.main-header .page-description *{
 	letter-spacing: 1px;
 	max-width: 500px;
 }
+
+@media screen and (max-width:40em){
+	header.main-header .git-btn{
+		display: none;
+	}
+}
+
 
 @media screen and (min-width:40em){
 	header.main-header .elton{
