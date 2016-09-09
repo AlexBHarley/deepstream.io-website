@@ -11,7 +11,7 @@ When it comes to benchmarking realtime systems, there are three core metrics to 
 
 **Throughput:** How many updates can be send to clients in a given time
 
-We’ve concentrated on latency and to some extend concurrency in [the last set of benchmarks](latency), but now it’s time to look into throughput.
+We’ve concentrated on latency and to some extend concurrency in [the last set of benchmarks](/info/performance/single-node-vs-cluster/), but now it’s time to look into throughput.
 
 ## A real world test
 It’s important to stress that our benchmarking approach aims to identify the best possible performance for real-world messages and cost-efficient infrastructure setups. It is perfectly possible to increase the achieved test results by up to 400% by reducing messages to single character events and reserving dedicated, network optimized bare metal instances, but the use of these metrics would be of very debatable value.
