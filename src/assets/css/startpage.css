@@ -190,6 +190,222 @@ header.main-header .page-description *{
 }
 
 /*************************
+* CODE SAMPLES
+* ***********************/
+#code-samples{
+	padding: 30px 0;
+}
+
+#code-samples .wrapper{
+	height: 275px;
+	position: relative;
+}
+
+#code-samples h2 span{
+	font-size: 26px;
+    font-weight: 100;
+    color: #3A739B;
+    display: inline-block;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+#code-samples h2 span:hover{
+	background-color: #f7f7f7;
+}
+
+#code-samples h2 span i{
+	color: #3A739B;
+	font-size: 20px;
+	margin-right: 3px;
+}
+
+#code-samples .column{
+	float: left;
+	height: 100%;
+}
+
+#code-samples .col-a .inner{
+    width: 400px;
+    transform: rotate(90deg);
+    height: 20px;
+    transform-origin: left;
+    margin-top: 20px;
+}
+
+#code-samples .col-a{
+	width: 20px;
+	left: -20px;
+	position: absolute;
+}
+
+#code-samples .col-a a{
+    display: block;
+    width: 100px;
+    float: left;
+    padding: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 300;
+    position: relative;
+    opacity: 0.5;
+}
+
+#code-samples .col-a a.active,
+#code-samples .col-a a:hover{
+	opacity: 1;
+}
+
+#code-samples .col-a a img,
+#code-samples .col-a a i{
+    font-size: 20px;
+    color: #3A739B;
+    position: absolute;
+    top: 2px;
+    left: -22px;
+    width: 20px;
+    text-align: right;
+}
+
+#code-samples .col-b,
+#code-samples .col-d{
+	position: relative;
+	width: 40%;
+	border-radius: 5px;
+}
+
+#code-samples .col-d pre{
+	margin-left: 40px;
+}
+
+#code-samples .col-c{
+	width: 20%;
+	position: relative;
+}
+
+#code-samples .col-c img{
+	margin-top: 80px;
+}
+
+#code-samples .select-language{
+	position: absolute;
+	z-index: 2;
+	right: 16px;
+	top: 16px;
+}
+
+#code-samples .select-language i{
+	width: 16px;
+    display: inline-block;
+    font-size: 16px;
+    position: relative;
+    top: 2px;
+}
+
+#code-samples .select-language .arrow{
+	position: absolute;
+	left: -13px;
+	top: 7px;
+	color: #999;
+	cursor: pointer;
+}
+
+#code-samples .select-language{
+	cursor: pointer;
+}
+
+#code-samples .select-language li{
+	display: none;
+}
+
+#code-samples .select-language li.active{
+	display: block;
+}
+
+#code-samples .ion-social-javascript{
+	color: #F7DF1E;
+}
+
+#code-samples .ion-social-android{
+	color: #A4C639;
+}
+
+#code-samples .ion-social-apple{
+	color: #333;
+}
+
+#code-samples .col-c .server{
+    width: 110px;
+    height: 110px;
+    border-radius: 100px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    position: relative;
+    margin: -55px auto;
+    top: 50%;
+    background-color: #fff;
+}
+
+@-webkit-keyframes pulsate {
+  0%   { opacity: 0.4; }
+  100% { opacity: 0.7; }
+}
+@-moz-keyframes pulsate {
+  0%   { opacity: 0.4; }
+  100% { opacity: 0.7; }
+}
+@-o-keyframes pulsate {
+  0%   { opacity: 0.4; }
+  100% { opacity: 0.7; }
+}
+@keyframes pulsate {
+  0%   { opacity: 0.4; }
+  100% { opacity: 0.7; }
+}
+
+#code-samples .col-c .server img{
+	width: 80px;
+    opacity: 0.5;
+	animation-name: pulsate;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: ease-out;
+	animation-fill-mode: forwards;
+}
+
+#code-samples .col-c .connector{
+    height: 1px;
+    background: #ddd;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+}
+
+/** reset prism **/
+#code-samples pre {
+    border: none;
+    background: none;
+    margin-top: 20px;
+}
+
+#code-samples pre,
+#code-samples pre *{
+	font-size: 14px;
+    color: #333;
+    font-family: "Courier New", monospace;
+    font-weight: normal;
+}
+
+#code-samples pre b.comment{
+	color: #999;
+}
+
+#code-samples pre b.token,
+#code-samples pre b.string{
+	color: #3A739B;
+}
+/*************************
 * START PAGE USE CASES
 * ***********************/
 .use-cases{
@@ -197,6 +413,7 @@ header.main-header .page-description *{
 	border-bottom: 1px solid #ccc;
 	height: 450px;
 	padding: 0;
+	border-top: 1px solid #ddd;
 }
 
 .use-cases .two-col{
@@ -211,11 +428,26 @@ header.main-header .page-description *{
 }
 
 .use-cases .use-case-text{
-		position: absolute;
-		top: 50%;
-		margin-top: -70px;
-		width: 70%;
-		left: 15%;
+	position: absolute;
+	top: 50%;
+	margin-top: -70px;
+	width: 70%;
+	left: 15%;
+}
+
+.use-cases .use-case-text li{
+    color: #647276;
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: 300;
+}
+
+.use-cases .use-case-text li i{
+    color: #aaa;
+    font-size: 22px;
+    margin-right: 14px;
+    position: relative;
+    top: 3px;
 }
 
 .use-cases video{
@@ -288,17 +520,17 @@ header.main-header .page-description *{
 	text-align: center;
 }
 
-.features li .icon.data-sync svg{
+.features li .icon.data-sync img{
 	position: absolute;
-		width: 34px;
-		left: 20px;
-		top: 20px;
-		fill: #3A739B;
+	width: 34px;
+	left: 20px;
+	top: 20px;
+	fill: #3A739B;
 }
 
 .features li .icon i{
 	position: relative;
-		top: 19px;
+	top: 19px;
 	font-size: 35px;
 	color: #3A739B;
 }

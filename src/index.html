@@ -33,27 +33,79 @@ description: A secure realtime server, supporting data-sync, RPCs and events
 	<div class="elton">
 		<img src="{{asset 'img/deepstream-elton-logo-startpage.svg'}}"/>
 	</div>
-	{{!--
-	<div class="bottom">
-		<a class="github" target="_blank" href="https://github.com/deepstreamIO/deepstream.io">
-			<i class="ion-social-octocat"></i>2.5k stars on Github
-		</a>
-		<a class="twitter" target="_blank" href="https://twitter.com/deepstreamIO">
-			<i class="ion-social-twitter"></i>@deepstreamIO on Twitter
-		</a>
-		<a class="twitter" target="_blank" href="http://stackoverflow.com/questions/tagged/deepstream.io">
-			<i class="ion-social-buffer"></i>Ask on StackOverflow
-		</a>
-	</div>
-	--}}
+	
 </header>
+
+<section id="code-samples">
+	<h2 class="section-headline">deepstream makes <span><i class="ion-ios-arrow-down"></i>data-sync</span> a breeze...</h2>
+	<div class="wrapper">
+
+		<div class="column col-b">
+
+			<div class="select-language">
+				<div class="arrow ion-arrow-down-b"></div>
+				<ul>
+					<li class="active" title="JavaScript"><i class="ion-social-javascript"></i> </li>
+					<li title="Java/Android"><i class="ion-social-android"></i> </li>
+					<li title="iOS"><i class="ion-social-apple"></i></li>
+				</ul>
+			</div>
+
+			<pre>
+				<code>
+<b class="comment">// connect to the server and log in</b>
+<b class="token">var</b> ds = deepstream( <b class="string">'localhost:6020'</b> ).login();
+
+<b class="comment">// create or retrieve a record</b>
+<b class="token">var</b> myCar = ds.record.getRecord( <b class="string">'car/15'</b> );
+
+<b class="comment">// set a value</b>
+myCar.set( <b class="string">'speed'</b>, 200 );
+				</code>
+			</pre>
+		</div>
+
+		<div class="column col-c">
+			<img src="/assets/img/server-icon.png" />
+		</div>
+		<div class="column col-d">
+			<div class="select-language">
+				<div class="arrow ion-arrow-down-b"></div>
+				<ul>
+					<li title="JavaScript"><i class="ion-social-javascript"></i> </li>
+					<li class="active" title="Java/Android"><i class="ion-social-android"></i> </li>
+					<li title="iOS"><i class="ion-social-apple"></i></li>
+				</ul>
+			</div>
+
+			<pre>
+				<code>
+<b class="comment">// connect to the server and log in</b>
+<b class="token">var</b> ds = deepstream( <b class="string">'localhost:6020'</b> ).login();
+
+<b class="comment">// create or retrieve a record</b>
+<b class="token">var</b> myCar = ds.record.getRecord( <b class="string">'car/15'</b> );
+
+<b class="comment">// set a value</b>
+myCar.set( <b class="string">'speed'</b>, 200 );
+				</code>
+			</pre>
+		</div>
+		</div>
+	</div>
+</section>
 
 <section class="use-cases">
 	<div class="two-col wrapper">
 		<div class="col text">
 			<div class="use-case-text">
 				<h2>built for a new generation of apps</h2>
-				<p>deepstream powers a wide array of realtime usecases, from collaboration apps, multiplayer games and financial trading platforms to geo-tracking, IoT and digital messenger pigeons</p>
+				<ul>
+					<li><i class="ion-connection-bars"></i>scales to billions of messages</li>
+					<li><i class="ion-locked"></i>strong security, authentication and permissioning</li>
+					<li><i class="ion-cube"></i>connects to any database, cache and message bus</li>
+					<li><i class="ion-heart"></i>free as in beer, speech and love</li>
+				</ul>
 			</div>
 		</div>
 		<div class="col">
@@ -93,25 +145,7 @@ description: A secure realtime server, supporting data-sync, RPCs and events
 	<ul class="wrapper">
 		<li>
 			<div class="icon data-sync">
-				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-					 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-				<g>
-					<g>
-						<polygon points="139.2,379.9 127.6,391.3 202.1,464.7 276.6,391.3 265,379.9 210.3,433.7 210.3,191.6 193.9,191.6 193.9,433.7"/>
-					</g>
-					<g>
-						<path d="M399,164.4c0-1.2,0.2-2.3,0.2-3.5C399.2,97.4,346.3,46,282.4,46c-46.1,0-85.8,26.8-104.4,65.4c-8.1-4-17.1-6.3-26.8-6.3
-							c-29.6,0-54.1,23.3-58.9,51.3c-35.2,12-60.6,43.4-60.6,82.4c0,49.1,40.1,89.2,89.6,89.2l26.1,0v-16h-25.3
-							c-40.9,0-74.2-33.2-74.2-73.7c0-31.4,20.2-57.5,50.2-67.7l8.4-2.8l1.5-8.7c3.6-21.3,22.1-38.8,43.9-38.8c6.9,0,13.7,1.6,19.9,4.7
-							l13.5,6.7l6.5-13.6c16.6-34.4,52.1-56.6,90.4-56.6c55.3,0,100.9,42.8,100.9,97.6c0,13.1-0.2,20.1-0.2,20.1l15.2,0.1
-							c36.7,0.5,65.6,30,65.6,66.4c0,36.3-29.8,66.1-66.5,66.3l-3.2,0.1H348l0,16h49.7l0,0c45,0,81.9-37.2,81.9-82.1
-							C479.7,201,444.3,164.5,399,164.4z"/>
-					</g>
-					<g>
-						<polygon points="364.2,270.4 375.8,259 301.3,185.6 226.8,259 238.4,270.4 293.1,216.6 293.1,458.7 309.5,458.7 309.5,216.6 		"/>
-					</g>
-				</g>
-				</svg>
+				<img src="/assets/img/icon-data-sync.svg" />
 			</div>
 			<h3>data-sync</h3>
 			<p>Interactive JSON documents that can be edited and observed. Changes are persisted and synced across clients.</p>
