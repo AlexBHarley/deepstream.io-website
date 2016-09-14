@@ -193,7 +193,7 @@ header.main-header .page-description *{
 * CODE SAMPLES
 * ***********************/
 #code-samples{
-	padding: 30px 0;
+	padding: 30px 0 0;
 }
 
 #code-samples .wrapper{
@@ -201,23 +201,70 @@ header.main-header .page-description *{
 	position: relative;
 }
 
-#code-samples h2 span{
+#code-samples .select{
+	position: relative;
+    display: inline-block;
+    border: 1px solid #ddd;
+    padding: 5px 5px;
+    background-color: #fff;
+    border-radius: 3px;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+}
+
+#code-samples .select:hover{
+	background-color: #f7f7f7;
+}
+
+#code-samples .select .selected{
 	font-size: 26px;
     font-weight: 100;
     color: #3A739B;
     display: inline-block;
-    margin: 0 10px;
+}
+
+#code-samples .select .options{
+    position: absolute;
+    background: #fff;
+    z-index: 1;
+    box-shadow: 0 4px 7px 0px rgba(0,0,0,0.3);
+    left: 0px;
+    top: 100%;
+    height: 0;
+    overflow: hidden;
+    transition: all 300ms ease;
+}
+
+#code-samples .select .options.open{
+	height: 96px;	
+}
+
+#code-samples .select .options span{
+    font-size: 26px;
+    font-weight: 100;
+    padding: 0 12px;
+    line-height: normal;
+    color: #3A739B;
+    display: block;
+    text-align: left;
+    white-space: nowrap;
     cursor: pointer;
 }
 
-#code-samples h2 span:hover{
-	background-color: #f7f7f7;
+#code-samples .select .options span:hover{
+	background-color: #dee8ef;
 }
 
-#code-samples h2 span i{
+#code-samples .select .options span.active{
+	background-color: #3A739B;
+	color: #fff;
+}
+
+#code-samples .select i{
 	color: #3A739B;
 	font-size: 20px;
-	margin-right: 3px;
+	margin-left: 2px;
 }
 
 #code-samples .column{
@@ -287,50 +334,26 @@ header.main-header .page-description *{
 	margin-top: 80px;
 }
 
-#code-samples .select-language{
+#code-samples .select.language{
 	position: absolute;
 	z-index: 2;
 	right: 16px;
 	top: 16px;
 }
 
-#code-samples .select-language i{
-	width: 16px;
-    display: inline-block;
-    font-size: 16px;
-    position: relative;
-    top: 2px;
+#code-samples .select.language .arrow{
+	color: #AAA;
 }
 
-#code-samples .select-language .arrow{
-	position: absolute;
-	left: -13px;
-	top: 7px;
-	color: #999;
-	cursor: pointer;
-}
-
-#code-samples .select-language{
-	cursor: pointer;
-}
-
-#code-samples .select-language li{
-	display: none;
-}
-
-#code-samples .select-language li.active{
-	display: block;
-}
-
-#code-samples .ion-social-javascript{
+#code-samples .select.language .ion-social-javascript{
 	color: #F7DF1E;
 }
 
-#code-samples .ion-social-android{
+#code-samples .select.language .ion-social-android{
 	color: #A4C639;
 }
 
-#code-samples .ion-social-apple{
+#code-samples .select.language .ion-social-apple{
 	color: #333;
 }
 
@@ -346,47 +369,22 @@ header.main-header .page-description *{
     background-color: #fff;
 }
 
-@-webkit-keyframes pulsate {
-  0%   { opacity: 0.4; }
-  100% { opacity: 0.7; }
-}
-@-moz-keyframes pulsate {
-  0%   { opacity: 0.4; }
-  100% { opacity: 0.7; }
-}
-@-o-keyframes pulsate {
-  0%   { opacity: 0.4; }
-  100% { opacity: 0.7; }
-}
-@keyframes pulsate {
-  0%   { opacity: 0.4; }
-  100% { opacity: 0.7; }
-}
 
-#code-samples .col-c .server img{
-	width: 80px;
-    opacity: 0.5;
-	animation-name: pulsate;
-	animation-duration: 2s;
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
-	animation-timing-function: ease-out;
-	animation-fill-mode: forwards;
-}
 
-#code-samples .col-c .connector{
-    height: 1px;
-    background: #ddd;
-    position: absolute;
-    width: 100%;
-    top: 50%;
-}
 
 /** reset prism **/
 #code-samples pre {
     border: none;
     background: none;
     margin-top: 20px;
+}
+
+#code-samples pre code{
+	display: none;
+}
+
+#code-samples pre code.active{
+	display: block;
 }
 
 #code-samples pre,

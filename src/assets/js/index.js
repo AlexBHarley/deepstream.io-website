@@ -256,3 +256,34 @@ $(function(){
         $( icons[ i ] ).css( 'color', 'hsl(' + hue + ', 76%, 63%)' );
     }
 });
+
+$(function(){
+    $('body').click(function(){
+        $('.select .options').removeClass( 'open' );
+    });
+    $( '.select' ).each(function(){
+        var options = $( this ).find( '.options' );
+        var selected = $( this ).find( '.selected' );
+        
+        $( this ).click(function( e ){
+            e.stopPropagation();
+            e.preventDefault();
+            options.addClass( 'open' );
+        });
+
+        options.find( 'span' ).click(function( e ){
+            e.stopPropagation();
+            e.preventDefault();
+            options.find( 'span' ).removeClass( 'active' );
+            $(this).addClass( 'active' );
+            selected.html( $(this).html() );
+            options.removeClass( 'open' );
+            setCodeSamples();
+        });
+    });
+
+    function setCodeSamples() {
+        $( '#code-samples code.active' ).removeClass( 'active' );
+        
+    }
+});
