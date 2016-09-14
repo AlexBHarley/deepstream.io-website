@@ -26,17 +26,25 @@ The `path` key contains a path to the file relative to the config file, that def
 
 In the `hash` key add the hashing algorithm to hash the passwords, for example, using `md5` (or any other algorithm supported by your operating system). The `iterations` key sets how many times the algorithm should was applied to the user's password, and `keyLength` the length of the key generated. These should match how you hashed the passwords.
 
-In the _users_ file, create a list of your users, their hashed passwords (you can create hashes with your setting using deepstreams [hash command](/docs/server/command-line-interface/#deepstream-hash)), and any other user data that you would like to pass to permissioning about that user.
+In the _users_ file, create a list of your users and their hashed passwords (you can create hashes with your setting using deepstreams [hash command](/docs/server/command-line-interface/#deepstream-hash)). 
+
+You also have the option to specify:
+  - `clientData` – user data you want to be sent to the client upon successful login,
+  - `serverData` – user data you want to be sent to permissioning.
 
 ```yaml
 chris:
   password: tsA+ks76hGGSGHF8**/JHGusy78=75KQ2Mzm
-  data:
+  clientData:
+    favorite color: blue
+  serverData:
     department: admin
 
 fred:
   password: jhdGHJ7&0-9)GGSGHF8**/JHGusy78sjHJ&78
-  data:
+  clientData:
+    favorite color: red
+  serverData:
     department: finance
 ```
 
