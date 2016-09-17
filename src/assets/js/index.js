@@ -264,7 +264,7 @@ $(function(){
     $( '.select' ).each(function(){
         var options = $( this ).find( '.options' );
         var selected = $( this ).find( '.selected' );
-        
+
         $( this ).click(function( e ){
             e.stopPropagation();
             e.preventDefault();
@@ -284,6 +284,13 @@ $(function(){
 
     function setCodeSamples() {
         $( '#code-samples code.active' ).removeClass( 'active' );
-        
+        var concept = $( '.section-headline .select .options .active' ).data( 'concept' );
+        var colBLanguange = $( '.col-b .select .options .active' ).data( 'lang' );
+        var colDLanguange = $( '.col-d .select .options .active' ).data( 'lang' );
+
+        $( '.col-b code.' + concept + '.' + colBLanguange ).addClass( 'active' );
+        $( '.col-d code.' + concept + '.' + colDLanguange ).addClass( 'active' );
     }
+
+    setCodeSamples();
 });
