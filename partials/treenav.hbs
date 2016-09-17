@@ -1,9 +1,9 @@
 <ul class="tree-nav subsection">
 	{{#each tree}}
 		<li class="sub-section-container {{ifactive 'level2' 'open' @root @root.tree @index}}">
-			<div class="sub-section-toggle">
+			<div class="sub-section-toggle {{this.name}}">
 				<span class="icon ion-chevron-right"></span>
-				<span class="title">{{this.name}}</span>
+				<span class="title">{{replace this.name}}</span>
 			</div>
 			<ul class="entry">
 				{{#each this.children}}

@@ -53,7 +53,7 @@ module.exports = function() {
 				if( file.type.install || file.type.blog ) {
 					metadata.nav[ file.level1 ][ file.level2 ] = {
 						title: file.title || file.level2,
-						description: file.description || 'TODO: Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..',
+						description: file.description || 'a fast and scalable server for ambitios realtime apps',
 						path: `${file.level1}/${file.level2}/${file.level2}.html`,
 						indexPath: `${file.level1}/${file.level2}/`
 					};
@@ -79,7 +79,7 @@ module.exports = function() {
 				navLevel3[ file.level3 ] = {
 					isNotCategory: true,
 					title: file.title || file.level3,
-					description: file.description || 'TODO: Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..',
+					description: file.description || 'a fast and scalable server for ambitios realtime apps',
 					path: `${file.level1}/${file.level2}/${file.level3}/${file.level3}.html`,
 					indexPath: `${file.level1}/${file.level2}/${file.level3}/`
 				};
