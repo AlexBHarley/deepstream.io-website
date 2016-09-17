@@ -8,86 +8,86 @@ tags: real time, realtime, websockets, tcp, pubsub, datasync, rpc, microservices
 <script type="text/javascript" src="assets/js/startpage.js"></script>
 
 {{!-- The big featured header --}}
-<header class="main-header">
-	<div class="main-header-text-wrapper">
-		<div class="main-header-text">
-			<h1 class="page-title">the open realtime server</h1>
-			<h2 class="page-description">deepstream<span> is an out-of-the-box backend for serious realtime apps</span></h2>
-			<div class="buttons">
-				<a href="/tutorials/core/getting-started-quickstart/">
-					<i class="ion-lightbulb"></i>
-					get started
-				</a>
-				<a href="/install/">
-					<i class="ion-ios-navigate-outline"></i>
-					install
-				</a>
-			</div>
-		</div>
-	</div>
-	<div class="git-btn">
-		<a
-			class="github-button"
-			href="//github.com/deepstreamIO/deepstream.io"
-			data-icon="octicon-star"
-			data-style="mega"
-			data-count-href="/deepstreamIO/deepstream.io/stargazers"
-			data-count-api="/repos/deepstreamIO/deepstream.io#stargazers_count"
-			data-count-aria-label="# stargazers on GitHub"
-			aria-label="Star deepstreamIO/deepstream.io on GitHub">Star</a>
-	</div>
+<header class="main-header clearfix">
+  <div class="main-header-text-wrapper">
+    <div class="main-header-text">
+      <h1 class="page-title">the open realtime server</h1>
+      <h2 class="page-description">deepstream<span> is an out-of-the-box backend for serious realtime apps</span></h2>
+      <div class="buttons">
+        <a href="/tutorials/core/getting-started-quickstart/">
+          <i class="ion-lightbulb"></i>
+          get started
+        </a>
+        <a href="/install/">
+          <i class="ion-ios-navigate-outline"></i>
+          install
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="git-btn">
+    <a
+      class="github-button"
+      href="//github.com/deepstreamIO/deepstream.io"
+      data-icon="octicon-star"
+      data-style="mega"
+      data-count-href="/deepstreamIO/deepstream.io/stargazers"
+      data-count-api="/repos/deepstreamIO/deepstream.io#stargazers_count"
+      data-count-aria-label="# stargazers on GitHub"
+      aria-label="Star deepstreamIO/deepstream.io on GitHub">Star</a>
+  </div>
 
-	<div class="elton">
-		<img src="{{asset 'img/deepstream-elton-logo-startpage.svg'}}"/>
-	</div>
+  <div class="elton">
+    <img src="{{asset 'img/deepstream-elton-logo-startpage.svg'}}"/>
+  </div>
 
 </header>
 
 <section id="code-samples">
-	<h2 class="section-headline">deepstream makes <div class="select">
+  <h2 class="section-headline">deepstream makes <div class="select">
 
-			<div class="selected">data-sync</div>
-			<div class="options">
-				<span data-concept="datasync" class="active">data-sync</span>
-				<span data-concept="reqres">request-response</span>
-				<span data-concept="pubsub">publish-subscribe</span>
-			</div>
-			<i class="ion-ios-arrow-down"></i>
-		</div> a breeze...</h2>
-	<div class="wrapper">
+      <div class="selected">data-sync</div>
+      <div class="options">
+        <span data-concept="datasync" class="active">data-sync</span>
+        <span data-concept="reqres">request-response</span>
+        <span data-concept="pubsub">publish-subscribe</span>
+      </div>
+      <i class="ion-ios-arrow-down"></i>
+    </div> a breeze...</h2>
+  <div class="wrapper">
 
-		<div class="column col-b">
+    <div class="column col-b">
 
-			<div class="select language">
-				<div class="selected"><i title="JavaScript" class="ion-social-javascript"></i></div>
-				<div class="options">
-					<span class="active" data-lang="javascript"><i title="JavaScript" class="ion-social-javascript"></i> </span>
-					<span data-lang="java"><i title="Java/Android" class="ion-social-android"></i></span>
-					{{!--<span><i title="iOS" class="ion-social-apple"></i></span>--}}
-				</div>
-				<i class="arrow ion-arrow-down-b"></i>
-			</div>
-			<div class="pre">
+      <div class="select language">
+        <div class="selected"><i title="JavaScript" class="ion-social-javascript"></i></div>
+        <div class="options">
+          <span class="active" data-lang="javascript"><i title="JavaScript" class="ion-social-javascript"></i> </span>
+          <span data-lang="java"><i title="Java/Android" class="ion-social-android"></i></span>
+          {{!--<span><i title="iOS" class="ion-social-apple"></i></span>--}}
+        </div>
+        <i class="arrow ion-arrow-down-b"></i>
+      </div>
+      <div class="pre">
 <code class="javascript datasync">
 <b class="comment">// get the record</b>
 <b class="token">var</b> driver = client.record.getRecord( <b class="string">'driver/14'</b> );
 
 <b class="comment">// subscribe to any changes within position</b>
 driver.subscribe( <b class="string">'position'</b>, <b class="token">function</b>( position ){
-	updateMarker( position.x, position.y );
+  updateMarker( position.x, position.y );
 });
 </code>
 <code class="javascript pubsub">
 <b class="comment">// subscribe to the event</b>
 client.event.subscribe( <b class="string">'chat-msg'</b>, <b class="token">function</b>( msgText ){
-	console.log( msgText );
+  console.log( msgText );
 });
 </code>
 <code class="javascript reqres">
 <b class="comment">// remote procedure call for "times-three" with 7</b>
 client.rpc.make( <b class="string">"times-three"</b>, 7, <b class="token">function</b>( err, result ){
-	<b class="comment">// And get 21 back</b>
-	console.log( result );
+  <b class="comment">// And get 21 back</b>
+  console.log( result );
 });
 </code>
 <code class="java datasync">
@@ -97,7 +97,7 @@ client.rpc.make( <b class="string">"times-three"</b>, 7, <b class="token">functi
 <b class="comment">// subscribe to any changes within position</b>
 r.subscribe( <b class="string">"position"</b>, <b class="token">new</b> RecordPathChangedCallback() {
     <b class="token">public void</b> onRecordPathChanged(String recordName,
-    	String path, JsonElement position) {
+      String path, JsonElement position) {
 
         updateMapMarker( position );
     }
@@ -119,407 +119,407 @@ client.event.subscribe(<b class="string">"chat-msg"</b>, <b class="token">new</b
 <b class="comment">// And get 21 back</b>
 System.out.println( rpcResponse.getData() );
 </code>
-			</div>
-		</div>
+      </div>
+    </div>
 
-		<div class="column col-c">
-			<img src="/assets/img/server-icon.png" />
-		</div>
-		<div class="column col-d">
-			<div class="select language">
-				<div class="selected"><i title="JavaScript" class="ion-social-android"></i></div>
-				<div class="options">
-					<span data-lang="javascript"><i title="JavaScript" class="ion-social-javascript"></i> </span>
-					<span class="active" data-lang="java"><i title="Java/Android" class="ion-social-android"></i></span>
-					{{!--<span><i title="iOS" class="ion-social-apple"></i></span>--}}
-				</div>
-				<i class="arrow ion-arrow-down-b"></i>
-			</div>
+    <div class="column col-c">
+      <img src="/assets/img/server-icon.png" />
+    </div>
+    <div class="column col-d">
+      <div class="select language">
+        <div class="selected"><i title="JavaScript" class="ion-social-android"></i></div>
+        <div class="options">
+          <span data-lang="javascript"><i title="JavaScript" class="ion-social-javascript"></i> </span>
+          <span class="active" data-lang="java"><i title="Java/Android" class="ion-social-android"></i></span>
+          {{!--<span><i title="iOS" class="ion-social-apple"></i></span>--}}
+        </div>
+        <i class="arrow ion-arrow-down-b"></i>
+      </div>
 
-			<div class="pre">
-				<code class="javascript datasync">
+      <div class="pre">
+        <code class="javascript datasync">
 <b class="comment">// get the record</b>
 <b class="token">var</b> driver = client.record.getRecord( <b class="string">'driver/14'</b> );
 <b class="comment">// and every time the driver moves</b>
 navigator.geolocation.watchPosition(<b class="token">function</b>( pos ){
-	<b class="comment">// send its position</b>
-	driver.set( <b class="string">'position.x'</b>, pos.coords.latitude );
-	driver.set( <b class="string">'position.y'</b>, pos.coords.longitude );
+  <b class="comment">// send its position</b>
+  driver.set( <b class="string">'position.x'</b>, pos.coords.latitude );
+  driver.set( <b class="string">'position.y'</b>, pos.coords.longitude );
 });
-				</code>
-				<code class="javascript pubsub">
+        </code>
+        <code class="javascript pubsub">
 <b class="comment">// emit events with any kind of serializable data</b>
 client.event.emit( <b class="string">'chat-msg'</b>, <b class="string">'how\'s life?'</b> );
-				</code>
-				<code class="javascript reqres">
+        </code>
+        <code class="javascript reqres">
 <b class="comment">// register as a provider</b>
 client.rpc.provide( <b class="string">'times-three'</b>, <b class="token">function</b>( num, response ){
-	<b class="comment">// ...and respond to requests</b>
-	response.send( num * 3 );
+  <b class="comment">// ...and respond to requests</b>
+  response.send( num * 3 );
 });
-				</code>
-				<code class="java datasync">
+        </code>
+        <code class="java datasync">
 <b class="comment">// implements android.location.LocationListener</b>
 <b class="token">public void</b> onLocationChanged(<b class="token">Location</b> location) {
-	<b class="comment">// get the record</b>
-	<b class="token">Record</b> record = client.record.getRecord( "driver/14" );
-	<b class="comment">// any kind of data path works</b>
-	record.set( <b class="string">"position.x"</b>, location.getLongitude() );
-	<b class="comment">//as well as any kind of serializable datatype</b>
-	record.set( <b class="string">"position.y"</b>, location.getLatitude() );
+  <b class="comment">// get the record</b>
+  <b class="token">Record</b> record = client.record.getRecord( "driver/14" );
+  <b class="comment">// any kind of data path works</b>
+  record.set( <b class="string">"position.x"</b>, location.getLongitude() );
+  <b class="comment">//as well as any kind of serializable datatype</b>
+  record.set( <b class="string">"position.y"</b>, location.getLatitude() );
 }
-				</code>
-				<code class="java pubsub">
+        </code>
+        <code class="java pubsub">
 <b class="comment">// emit events with any kind of serializable data</b>
 client.event.emit( <b class="string">"chat-msg"</b>, <b class="string">"how's life?"</b> );
-				</code>
-				<code class="java reqres">
+        </code>
+        <code class="java reqres">
 <b class="comment">// register as a provider</b>
 client.rpc.provide(<b class="string">"times-three"</b>, <b class="token">new</b> RpcRequestedListener() {
-	<b class="comment">// this method will be invoked once another client calls rpc.make</b>
-	<b class="token">public void</b> onRPCRequested(<b class="token">String</b> rpcName, <b class="token">Object</b> data, <b class="token">RpcResponse</b> response) {
-		<b class="comment">// data can be any kind of serializable object</b>
-		response.send( (Double) data * 3 );
-	}
+  <b class="comment">// this method will be invoked once another client calls rpc.make</b>
+  <b class="token">public void</b> onRPCRequested(<b class="token">String</b> rpcName, <b class="token">Object</b> data, <b class="token">RpcResponse</b> response) {
+    <b class="comment">// data can be any kind of serializable object</b>
+    response.send( (Double) data * 3 );
+  }
 });
-				</code>
-			</div>
-		</div>
-	</div>
+        </code>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="use-cases">
-	<div class="two-col wrapper">
-		<div class="col text">
-			<div class="use-case-text">
-				<h2>built for a new generation of apps</h2>
-				<ul>
-					<li><i class="ion-connection-bars"></i>scales to billions of messages</li>
-					<li><i class="ion-locked"></i>strong security, authentication and permissioning</li>
-					<li><i class="ion-cube"></i>connects to any database, cache and message bus</li>
-					<li><i class="ion-heart"></i>free as in beer, speech and love</li>
-				</ul>
-			</div>
-		</div>
-		<div class="col">
-			<video width="600" height="422" src="{{asset 'video/realtime-app-small.mp4'}}" autoplay loop/>
-		</div>
-	</div>
+  <div class="two-col wrapper">
+    <div class="col text">
+      <div class="use-case-text">
+        <h2>built for a new generation of apps</h2>
+        <ul>
+          <li><i class="ion-connection-bars"></i>scales to billions of messages</li>
+          <li><i class="ion-locked"></i>strong security, authentication and permissioning</li>
+          <li><i class="ion-cube"></i>connects to any database, cache and message bus</li>
+          <li><i class="ion-heart"></i>free as in beer, speech and love</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col">
+      <video width="600" height="422" src="{{asset 'video/realtime-app-small.mp4'}}" autoplay loop/>
+    </div>
+  </div>
 </section>
 
 <section class="news">
-	<h2 class="section-headline">what's new?</h2>
-	<div class="wrapper">
-		<a href="/blog/usecase-briteback/">
-			<img src="/assets/img/news/briteback.png" />
-			<p><em>Case Study:</em>How deepstream helped Briteback take enterprise communication to the next level</p>
-		</a>
-		<a href="http://tutorials.pluralsight.com/front-end-javascript/building-a-multiplayer-space-shooter-part-i">
-			<img src="/assets/img/news/spaceshooter.png" />
-			<p><em>Tutorial:</em> Building a multiplayer spaceshooter with deepstream.io and pixi.js</p>
-		</a>
-		<a href="/blog/usecase-vivaspot/">
-			<img src="/assets/img/news/vivaspot.png" />
-			<p><em>Case Study:</em>How deepstream helped iValue8 build realtime analytics for shopping malls</p>
-		</a>
-		<a href="/blog/usecase-trading-platform/">
-			<img src="/assets/img/news/hoxton-one.png" />
-			<p><em>Case Study:</em>Building a stock trading platform in the cloud using deepstream</p>
-		</a>
-		<a href="/tutorials/integrations/other-digital-ocean/">
-			<img src="/assets/img/news/digitalocean.png" />
-			<p><em>Tutorial:</em> Deploying deepstream with MongoDB and Redis on digital ocean</p>
-		</a>
-	</div>
+  <h2 class="section-headline">what's new?</h2>
+  <div class="wrapper">
+    <a href="/blog/usecase-briteback/">
+      <img src="/assets/img/news/briteback.png" />
+      <p><em>Case Study:</em>How deepstream helped Briteback take enterprise communication to the next level</p>
+    </a>
+    <a href="http://tutorials.pluralsight.com/front-end-javascript/building-a-multiplayer-space-shooter-part-i">
+      <img src="/assets/img/news/spaceshooter.png" />
+      <p><em>Tutorial:</em> Building a multiplayer spaceshooter with deepstream.io and pixi.js</p>
+    </a>
+    <a href="/blog/usecase-vivaspot/">
+      <img src="/assets/img/news/vivaspot.png" />
+      <p><em>Case Study:</em>How deepstream helped iValue8 build realtime analytics for shopping malls</p>
+    </a>
+    <a href="/blog/usecase-trading-platform/">
+      <img src="/assets/img/news/hoxton-one.png" />
+      <p><em>Case Study:</em>Building a stock trading platform in the cloud using deepstream</p>
+    </a>
+    <a href="/tutorials/integrations/other-digital-ocean/">
+      <img src="/assets/img/news/digitalocean.png" />
+      <p><em>Tutorial:</em> Deploying deepstream with MongoDB and Redis on digital ocean</p>
+    </a>
+  </div>
 </section>
 
 <section class="features">
-	<h2 class="section-headline">core concepts</h2>
-	<ul class="wrapper">
-		<li>
-			<div class="icon data-sync">
-				<img src="/assets/img/icon-data-sync.svg" />
-			</div>
-			<h3>data-sync</h3>
-			<p>Interactive JSON documents that can be edited and observed. Changes are persisted and synced across clients.</p>
-		</li>
-		<li>
-			<div class="icon">
-				<i class="ion-ios-paperplane-outline"></i>
-			</div>
-			<h3>publish-subscribe</h3>
-			<p>Many clients can subscribe to topics and receive data whenever other clients publish it to the same topic.</p>
-		</li>
-		<li>
-			<div class="icon">
-				<i class="ion-ios-loop"></i>
-			</div>
-			<h3>request-response</h3>
-			<p>Clients can register functions to be called by other clients. Deepstream will smartly route requests and responses.
-			</p>
-		</li>
-	</ul>
+  <h2 class="section-headline">core concepts</h2>
+  <ul class="wrapper">
+    <li>
+      <div class="icon data-sync">
+        <img src="/assets/img/icon-data-sync.svg" />
+      </div>
+      <h3>data-sync</h3>
+      <p>Interactive JSON documents that can be edited and observed. Changes are persisted and synced across clients.</p>
+    </li>
+    <li>
+      <div class="icon">
+        <i class="ion-ios-paperplane-outline"></i>
+      </div>
+      <h3>publish-subscribe</h3>
+      <p>Many clients can subscribe to topics and receive data whenever other clients publish it to the same topic.</p>
+    </li>
+    <li>
+      <div class="icon">
+        <i class="ion-ios-loop"></i>
+      </div>
+      <h3>request-response</h3>
+      <p>Clients can register functions to be called by other clients. Deepstream will smartly route requests and responses.
+      </p>
+    </li>
+  </ul>
 </section>
 
 <section id="getting-started">
-	<div class="wrapper">
-		<h2 class="section-headline">getting started</h2>
-		<div class="main">
-			<a href="/tutorials/core/getting-started-quickstart/" class="first">
-				<div class="icon ion-ios-speedometer-outline"></div>
-				<h3>Quickstart</h3>
-				<p>Get up and running with deepstream in 10 minutes or less</p>
-			</a>
-			<a href="/tutorials/">
-				<div class="icon ion-ios-book-outline"></div>
-				<h3>Tutorials</h3>
-				<p>Learn more about deepstream's features and integrations</p>
-			</a>
-<!-- 			<a href="/guides/">
-				<div class="icon ion-ios-book-outline"></div>
-				<h3>The Guide ( Coming soon! )</h3>
-				<p>Learn how to develop, run, test and deploy a realtime todo-list app</p>
-			</a> -->
-		</div>
-	</div>
+  <div class="wrapper">
+    <h2 class="section-headline">getting started</h2>
+    <div class="main">
+      <a href="/tutorials/core/getting-started-quickstart/" class="first">
+        <div class="icon ion-ios-speedometer-outline"></div>
+        <h3>Quickstart</h3>
+        <p>Get up and running with deepstream in 10 minutes or less</p>
+      </a>
+      <a href="/tutorials/">
+        <div class="icon ion-ios-book-outline"></div>
+        <h3>Tutorials</h3>
+        <p>Learn more about deepstream's features and integrations</p>
+      </a>
+<!--       <a href="/guides/">
+        <div class="icon ion-ios-book-outline"></div>
+        <h3>The Guide ( Coming soon! )</h3>
+        <p>Learn how to develop, run, test and deploy a realtime todo-list app</p>
+      </a> -->
+    </div>
+  </div>
 </section>
 
 <section id="learn-about" class="bright">
-	<div class="wrapper">
-		<h3>
-			learn about deepstream and...
-			<div class="border"></div>
-		</h3>
-		<div class="grid">
-			<a href="/tutorials/core/auth-file/">
-				<i style="color: #234BEF" class="icon ion-person"></i>
-				<span>Authentication<span>
-			</a>
-			<a href="tutorials/core/permission-conf-simple/">
-				<i style="color: #FF8508" class="icon ion-lock-combination"></i>
-				<span>Permissions<span>
-			</a>
-			<a href="/docs/client-js/datasync-record/">
-				<i style="color: #FFB508" class="icon ion-document-text"></i>
-				<span>Records<span>
-			</a>
-			<a href="/docs/client-js/pubsub-client-event/">
-				<i style="color: #B810EE" class="icon ion-chatboxes"></i>
-				<span>Events<span>
-			</a>
-			<a href="/docs/client-js/reqres-client-rpc/">
-				<i style="color: #027899" class="icon ion-arrow-swap"></i>
-				<span>RPCs<span>
-			</a>
-			{{!--
-			<a href="#">
-				<img src="{{asset 'img/logos/webrtc.png'}}" />
-				<span>WebRTC<span>
-			</a>
-			<a href="#">
-				<img src="{{asset 'img/logos/express.png'}}" />
-				<span>Express<span>
-			</a>
-			--}}
-			<a href="/tutorials/integrations/frontend-react/">
-				<img src="{{asset 'img/logos/react.png'}}" />
-				<span>React<span>
-			</a>
-			<a href="/tutorials/integrations/frontend-polymer/">
-				<img src="{{asset 'img/logos/polymer.png'}}" />
-				<span>Polymer<span>
-			</a>
-			<a href="/tutorials/integrations/frontend-angular/">
-				<img src="{{asset 'img/logos/angular.png'}}" />
-				<span>Angular<span>
-			</a>
-			<a href="/tutorials/integrations/frontend-knockout/">
-				<img src="{{asset 'img/logos/knockout.png'}}" />
-				<span>Knockout<span>
-			</a>
-			{{!--
-			<a href="/tutorials/integrations/other-aws/">
-				<img src="{{asset 'img/logos/aws.png'}}" />
-				<span>AWS<span>
-			</a>
-			<a href="/tutorials/integrations/db-couchdb/">
-				<img src="{{asset 'img/logos/couchdb.png'}}" />
-				<span>CouchDB<span>
-			</a>
-			--}}
-			<a href="/tutorials/integrations/db-elasticsearch/">
-				<img src="{{asset 'img/logos/elasticsearch.png'}}" />
-				<span>Elasticsearch<span>
-			</a>
-			<a href="/tutorials/integrations/msg-kafka/">
-				<img src="{{asset 'img/logos/kafka.png'}}" />
-				<span>Apache Kafka<span>
-			</a>
-			<a href="/tutorials/integrations/cache-memcached/">
-				<img src="{{asset 'img/logos/memcached.png'}}" />
-				<span>Memcached<span>
-			</a>
-			<a href="/install/docker-image/">
-				<img src="{{asset 'img/logos/docker.png'}}" />
-				<span>Docker<span>
-			</a>
-			<a href="/tutorials/integrations/other-nginx/">
-				<img src="{{asset 'img/logos/nginx.png'}}" />
-				<span>Nginx<span>
-			</a>
-			<a href="/tutorials/integrations/cache-hazelcast/">
-				<img src="{{asset 'img/logos/hazelcast.png'}}" />
-				<span>Hazelcast<span>
-			</a>
-			<a href="/install/npm/">
-				<img src="{{asset 'img/logos/node.png'}}" />
-				<span>Node.js<span>
-			</a>
-			<a href="/tutorials/integrations/db-mongodb/">
-				<img src="{{asset 'img/logos/mongodb.png'}}" />
-				<span>MongoDB<span>
-			</a>
-			<a href="/tutorials/integrations/msg-amqp/">
-				<img src="{{asset 'img/logos/rabbitmq.png'}}" />
-				<span>RabbitMQ<span>
-			</a>
-			<a href="/tutorials/integrations/cache-redis/">
-				<img src="{{asset 'img/logos/redis.png'}}" />
-				<span>Redis<span>
-			</a>
-			<a href="/tutorials/integrations/db-rethinkdb/">
-				<img src="{{asset 'img/logos/rethinkdb.png'}}" />
-				<span>RethinkDB<span>
-			</a>
-			{{!--
-			<a href="/tutorials/integrations/db-dynamodb/">
-				<img src="{{asset 'img/logos/dynamodb.png'}}" />
-				<span>DynamoDB<span>
-			</a>
-			<a href="/tutorials/integrations/other-sns/">
-				<img src="{{asset 'img/logos/sns.png'}}" />
-				<span>SNS<span>
-			</a>
-			<a href="/tutorials/integrations/other-arduino/">
-				<img src="{{asset 'img/logos/arduino.png'}}" />
-				<span>Arduinos<span>
-			</a>
+  <div class="wrapper">
+    <h3>
+      learn about deepstream and...
+      <div class="border"></div>
+    </h3>
+    <div class="grid">
+      <a href="/tutorials/core/auth-file/">
+        <i style="color: #234BEF" class="icon ion-person"></i>
+        <span>Authentication<span>
+      </a>
+      <a href="tutorials/core/permission-conf-simple/">
+        <i style="color: #FF8508" class="icon ion-lock-combination"></i>
+        <span>Permissions<span>
+      </a>
+      <a href="/docs/client-js/datasync-record/">
+        <i style="color: #FFB508" class="icon ion-document-text"></i>
+        <span>Records<span>
+      </a>
+      <a href="/docs/client-js/pubsub-client-event/">
+        <i style="color: #B810EE" class="icon ion-chatboxes"></i>
+        <span>Events<span>
+      </a>
+      <a href="/docs/client-js/reqres-client-rpc/">
+        <i style="color: #027899" class="icon ion-arrow-swap"></i>
+        <span>RPCs<span>
+      </a>
+      {{!--
+      <a href="#">
+        <img src="{{asset 'img/logos/webrtc.png'}}" />
+        <span>WebRTC<span>
+      </a>
+      <a href="#">
+        <img src="{{asset 'img/logos/express.png'}}" />
+        <span>Express<span>
+      </a>
+      --}}
+      <a href="/tutorials/integrations/frontend-react/">
+        <img src="{{asset 'img/logos/react.png'}}" />
+        <span>React<span>
+      </a>
+      <a href="/tutorials/integrations/frontend-polymer/">
+        <img src="{{asset 'img/logos/polymer.png'}}" />
+        <span>Polymer<span>
+      </a>
+      <a href="/tutorials/integrations/frontend-angular/">
+        <img src="{{asset 'img/logos/angular.png'}}" />
+        <span>Angular<span>
+      </a>
+      <a href="/tutorials/integrations/frontend-knockout/">
+        <img src="{{asset 'img/logos/knockout.png'}}" />
+        <span>Knockout<span>
+      </a>
+      {{!--
+      <a href="/tutorials/integrations/other-aws/">
+        <img src="{{asset 'img/logos/aws.png'}}" />
+        <span>AWS<span>
+      </a>
+      <a href="/tutorials/integrations/db-couchdb/">
+        <img src="{{asset 'img/logos/couchdb.png'}}" />
+        <span>CouchDB<span>
+      </a>
+      --}}
+      <a href="/tutorials/integrations/db-elasticsearch/">
+        <img src="{{asset 'img/logos/elasticsearch.png'}}" />
+        <span>Elasticsearch<span>
+      </a>
+      <a href="/tutorials/integrations/msg-kafka/">
+        <img src="{{asset 'img/logos/kafka.png'}}" />
+        <span>Apache Kafka<span>
+      </a>
+      <a href="/tutorials/integrations/cache-memcached/">
+        <img src="{{asset 'img/logos/memcached.png'}}" />
+        <span>Memcached<span>
+      </a>
+      <a href="/install/docker-image/">
+        <img src="{{asset 'img/logos/docker.png'}}" />
+        <span>Docker<span>
+      </a>
+      <a href="/tutorials/integrations/other-nginx/">
+        <img src="{{asset 'img/logos/nginx.png'}}" />
+        <span>Nginx<span>
+      </a>
+      <a href="/tutorials/integrations/cache-hazelcast/">
+        <img src="{{asset 'img/logos/hazelcast.png'}}" />
+        <span>Hazelcast<span>
+      </a>
+      <a href="/install/npm/">
+        <img src="{{asset 'img/logos/node.png'}}" />
+        <span>Node.js<span>
+      </a>
+      <a href="/tutorials/integrations/db-mongodb/">
+        <img src="{{asset 'img/logos/mongodb.png'}}" />
+        <span>MongoDB<span>
+      </a>
+      <a href="/tutorials/integrations/msg-amqp/">
+        <img src="{{asset 'img/logos/rabbitmq.png'}}" />
+        <span>RabbitMQ<span>
+      </a>
+      <a href="/tutorials/integrations/cache-redis/">
+        <img src="{{asset 'img/logos/redis.png'}}" />
+        <span>Redis<span>
+      </a>
+      <a href="/tutorials/integrations/db-rethinkdb/">
+        <img src="{{asset 'img/logos/rethinkdb.png'}}" />
+        <span>RethinkDB<span>
+      </a>
+      {{!--
+      <a href="/tutorials/integrations/db-dynamodb/">
+        <img src="{{asset 'img/logos/dynamodb.png'}}" />
+        <span>DynamoDB<span>
+      </a>
+      <a href="/tutorials/integrations/other-sns/">
+        <img src="{{asset 'img/logos/sns.png'}}" />
+        <span>SNS<span>
+      </a>
+      <a href="/tutorials/integrations/other-arduino/">
+        <img src="{{asset 'img/logos/arduino.png'}}" />
+        <span>Arduinos<span>
+      </a>
 
-			<a href="#">
-				<img src="{{asset 'img/logos/oauth.png'}}" />
-				<span>oAuth<span>
-			</a>
-			--}}
-		</div>
-	</div>
+      <a href="#">
+        <img src="{{asset 'img/logos/oauth.png'}}" />
+        <span>oAuth<span>
+      </a>
+      --}}
+    </div>
+  </div>
 </section>
 
 <a class="typeform-share button" href="https://deepstream.typeform.com/to/mTJ6tj" data-mode="1" target="_blank">Launch me!</a>
 <script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'share.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}id=id+'_';if(!gi.call(d,id)){qs=ce.call(d,'link');qs.rel='stylesheet';qs.id=id;qs.href=b+'share-button.css';s=gt.call(d,'head')[0];s.appendChild(qs,s)}})()</script>
 <a name="events"></a>
 <section id="events" class="bright">
-	<div class="wrapper">
-		<a
-			href="https://websummit.net/"
-			style="background-image: url(/assets/img/events/big/websummit.png)">
-			<button>schedule a meeting</button>
-			<label>
-				Websummit Lisbon November 7th-10th 2016
-			</label>
-		</a>
-		<a
-			href="http://berlin2016.codemotionworld.com/"
-			style="background-image: url(/assets/img/events/big/codemotion-berlin.png)">
-			<button>schedule a meeting</button>
-			<label>
-				Codemotion Berlin October 24th 2016
-			</label>
-		</a>
-		<a
-			href="http://uprisefestival.co/"
-			style="background-image: url(/assets/img/events/big/uprise.png)">
-			<button>schedule a meeting</button>
-			<label>
-				Uprise Festival Dublin October 20th 2016
-			</label>
-		</a>
-		<a
-			href="https://www.codetalks.de/"
-			style="background-image: url(/assets/img/events/big/codetalks.png)">
-			<button>schedule a meeting</button>
-			<label>
-				Codetalks Hamburg September 19th 2016
-			</label>
-		</a>
-		<a
-			href="http://warsaw2016.codemotionworld.com/speaker/2387/"
-			style="background-image: url(/assets/img/events/big/codemotion.png)">
-			<button>schedule a meeting</button>
-			<label>
-				Codemotion Warsaw 14-16th September 2016
-			</label>
-		</a>
-		<a
-			href="https://www.meetup.com/Berlin-Realtime-Web-Meetup/"
-			style="background-image: url(/assets/img/events/big/meetup.png)">
-			<button>schedule a meeting</button>
-			<label>
-				deepstream.io meetup Berlin
-			</label>
-		</a>
-		<a
-			href="https://medium.com/@BlueYard/open-air-data-join-us-for-a-conversation-at-tech-open-air-e321f604fd71#.nq74of200"
-			style="background-image: url(/assets/img/events/big/tech-open-air.png)">
-			<button>schedule a meeting</button>
-			<label>
-				Tech Open Air Berlin July 10th 2016
-			</label>
-		</a>
-		<a
-			href="#"
-			style="background-image: url(/assets/img/events/big/other-meetups.png)">
-			<button>schedule a meeting</button>
-			<label>
-				Various smaller talks and meetups.
-			</label>
-		</a>
-	</div>
+  <div class="wrapper">
+    <a
+      href="https://websummit.net/"
+      style="background-image: url(/assets/img/events/big/websummit.png)">
+      <button>schedule a meeting</button>
+      <label>
+        Websummit Lisbon November 7th-10th 2016
+      </label>
+    </a>
+    <a
+      href="http://berlin2016.codemotionworld.com/"
+      style="background-image: url(/assets/img/events/big/codemotion-berlin.png)">
+      <button>schedule a meeting</button>
+      <label>
+        Codemotion Berlin October 24th 2016
+      </label>
+    </a>
+    <a
+      href="http://uprisefestival.co/"
+      style="background-image: url(/assets/img/events/big/uprise.png)">
+      <button>schedule a meeting</button>
+      <label>
+        Uprise Festival Dublin October 20th 2016
+      </label>
+    </a>
+    <a
+      href="https://www.codetalks.de/"
+      style="background-image: url(/assets/img/events/big/codetalks.png)">
+      <button>schedule a meeting</button>
+      <label>
+        Codetalks Hamburg September 19th 2016
+      </label>
+    </a>
+    <a
+      href="http://warsaw2016.codemotionworld.com/speaker/2387/"
+      style="background-image: url(/assets/img/events/big/codemotion.png)">
+      <button>schedule a meeting</button>
+      <label>
+        Codemotion Warsaw 14-16th September 2016
+      </label>
+    </a>
+    <a
+      href="https://www.meetup.com/Berlin-Realtime-Web-Meetup/"
+      style="background-image: url(/assets/img/events/big/meetup.png)">
+      <button>schedule a meeting</button>
+      <label>
+        deepstream.io meetup Berlin
+      </label>
+    </a>
+    <a
+      href="https://medium.com/@BlueYard/open-air-data-join-us-for-a-conversation-at-tech-open-air-e321f604fd71#.nq74of200"
+      style="background-image: url(/assets/img/events/big/tech-open-air.png)">
+      <button>schedule a meeting</button>
+      <label>
+        Tech Open Air Berlin July 10th 2016
+      </label>
+    </a>
+    <a
+      href="#"
+      style="background-image: url(/assets/img/events/big/other-meetups.png)">
+      <button>schedule a meeting</button>
+      <label>
+        Various smaller talks and meetups.
+      </label>
+    </a>
+  </div>
 </section>
 
 
 <section id="get-in-touch">
-	<div class="wrapper">
-		<h2 class="section-headline">Get in touch!</h2>
-		<div class="github">
-			<div class="git-text">Raise an issue, request a feature or browse the source on <a href="https://github.com/deepstreamIO/deepstream.io">GitHub</a>.
-			</div>
-			<div class="git-btn">
-				<a
-					class="github-button"
-					href="//github.com/deepstreamIO/deepstream.io"
-					data-icon="octicon-star"
-					data-style="mega"
-					data-count-href="/deepstreamIO/deepstream.io/stargazers"
-					data-count-api="/repos/deepstreamIO/deepstream.io#stargazers_count"
-					data-count-aria-label="# stargazers on GitHub"
-					aria-label="Star deepstreamIO/deepstream.io on GitHub">Star</a>
-			</div>
-		</div>
-		<div class="links">
-			<a class="twitter" target="_blank" href="https://twitter.com/deepstreamIO">
-				twitter
-			</a>
-			<a class="facebook" target="_blank" href="https://www.facebook.com/deepstreamIO/">
-				facebook
-			</a>
-			<a class="slack" target="_blank" href="https://deepstream-slack.herokuapp.com/">
-				slack
-			</a>
-			<a class="stackoverflow" target="_blank" href="http://stackoverflow.com/questions/tagged/deepstream.io">
-				stack overflow
-			</a>
-		</div>
-	</div>
+  <div class="wrapper">
+    <h2 class="section-headline">Get in touch!</h2>
+    <div class="github">
+      <div class="git-text">Raise an issue, request a feature or browse the source on <a href="https://github.com/deepstreamIO/deepstream.io">GitHub</a>.
+      </div>
+      <div class="git-btn">
+        <a
+          class="github-button"
+          href="//github.com/deepstreamIO/deepstream.io"
+          data-icon="octicon-star"
+          data-style="mega"
+          data-count-href="/deepstreamIO/deepstream.io/stargazers"
+          data-count-api="/repos/deepstreamIO/deepstream.io#stargazers_count"
+          data-count-aria-label="# stargazers on GitHub"
+          aria-label="Star deepstreamIO/deepstream.io on GitHub">Star</a>
+      </div>
+    </div>
+    <div class="links">
+      <a class="twitter" target="_blank" href="https://twitter.com/deepstreamIO">
+        twitter
+      </a>
+      <a class="facebook" target="_blank" href="https://www.facebook.com/deepstreamIO/">
+        facebook
+      </a>
+      <a class="slack" target="_blank" href="https://deepstream-slack.herokuapp.com/">
+        slack
+      </a>
+      <a class="stackoverflow" target="_blank" href="http://stackoverflow.com/questions/tagged/deepstream.io">
+        stack overflow
+      </a>
+    </div>
+  </div>
 </section>
 
 <script async defer id="github-bjs" src="//buttons.github.io/buttons.js"></script>
