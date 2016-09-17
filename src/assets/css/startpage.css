@@ -795,7 +795,7 @@ header.main-header .page-description *{
 }
 
 #events a{
-    height: 300px;
+	height: 200px;
     width: 70%;
     margin: 5% 15%;
     display: block;
@@ -843,7 +843,6 @@ header.main-header .page-description *{
 
 @media screen and (min-width:47em){
 	#events a{
-		height: 200px;
 		width: 25%;
 		margin: 0;
 	}
