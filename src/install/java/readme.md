@@ -68,4 +68,4 @@ public class Application {
 }
 ```
 
-For a deeper look into the Java package, take a look at our [quick start tutorial](../../tutorial/java).
+For a deeper look into the Java package, take a look at our [quick start tutorial](../../tutorials/core/getting-started-java).

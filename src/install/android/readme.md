@@ -52,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 }
-
 ```
 
-For a deeper look into the the Java/Android package, take a look at our [quick start tutorial](../../tutorial/java).
+For a deeper look into the Java package, take a look at our [quick start tutorial](../../tutorials/core/getting-started-java).
