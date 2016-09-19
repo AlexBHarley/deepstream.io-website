@@ -1,3 +1,90 @@
+h2.main{
+    text-align: center;
+    margin: 40px 0;
+}
+
+#tut-overview {
+    margin: 40px 0 0;
+    padding-bottom: 0;
+}
+
+#tut-overview .wrapper{
+    overflow: hidden;
+}
+
+#tut-overview a{
+    display: block;
+    float: left;
+    width: 199px;
+    height: 100px;
+    border-right: 1px solid #fff;
+    border-top: 1px solid #fff;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+
+#tut-overview .wrapper:hover a{
+    opacity: 0.5;
+}
+
+body #tut-overview .wrapper a:hover{
+    opacity: 1;
+}
+
+#tut-overview a.quickstart{
+    background-image: url(/assets/img/tutorials/quickstart.png);
+}
+#tut-overview a.config{
+    background-image: url(/assets/img/tutorials/server.png);
+}
+#tut-overview a.intro{
+    background-image: url(/assets/img/tutorials/introduction.png);
+}
+#tut-overview a.security{
+    background-image: url(/assets/img/tutorials/security.png);
+}
+#tut-overview a.react{
+    background-image: url(/assets/img/tutorials/react.png);
+}
+#tut-overview a.angular{
+    background-image: url(/assets/img/tutorials/angular.png);
+}
+#tut-overview a.knockout{
+    background-image: url(/assets/img/tutorials/knockout.png);
+}
+#tut-overview a.polymer{
+    background-image: url(/assets/img/tutorials/polymer.png);
+}
+#tut-overview a.spaceshooter{
+    background-image: url(/assets/img/tutorials/spaceshooter.png);
+}
+#tut-overview a.issuetracker{
+    background-image: url(/assets/img/tutorials/gittracker.png);
+}
+#tut-overview a.arduino{
+    background-image: url(/assets/img/tutorials/arduino.png);
+}
+
+#tut-overview a h3{
+    width: 100px;
+    padding-left: 10px;
+    height: 100%;
+    display: table;
+}
+
+#tut-overview a h3 span{
+    font-weight: 300;
+    vertical-align: middle;
+    display: table-cell;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+#tut-overview a h3 span.bright{
+    color: #fff;
+}
+
+
 .section-overview{
 	position: relative;
 }

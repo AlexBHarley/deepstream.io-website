@@ -7,36 +7,50 @@ tags: Getting Started, Data-Sync, Pub-Sub, Request-Response, Authentication, Per
 <link rel="stylesheet" type="text/css" href="{{asset 'css/overview-list.css'}}">
 <div class="overview-header">
 	<img class="elton-tutorial elton-overview" src="/assets/img/eltons/elton-tutorials.svg" />
-	<h1>Tutorials</h1>
-	<div class="tags">
-		<a href="#getting-started">Getting Started</a>
-		<a href="#data-sync">Data-Sync</a>
-		<a href="#events-rpc">Pub-Sub</a>
-		<a href="#events-rpc">Request-Response</a>
-		<a href="#authentication">Authentication</a>
-		<a href="#permissioning">Permissioning</a>
-		<a href="#working-with-deepstream">Working with deepstream</a>
-		<a href="#usage-with-other-servers">Usage with other Servers</a>
-		<a href="#browser-frameworks">React</a>
-		<a href="#browser-frameworks">Angular</a>
-		<a href="#browser-frameworks">Knockout</a>
-		<a href="#browser-frameworks">Polymer</a>
-		<a href="#using-connectors">Using Connectors</a>
-		<a href="#database-connectors">Database Connectors</a>
-		<a href="#cache-connectors">Cache Connectors</a>
-		<a href="#message-connectors">Message Connectors</a>
-	</div>
+	<h1>Tutorials &amp; Guides</h1>
 </div>
-
-<section class="section-overview">
-
+<h2 class="main">Tutorials</h2>
+<section id="tut-overview">
 	<div class="wrapper">
-		<div class="entries">
-			<h2><a name="getting-started">Getting Started</a></h2>
-			{{entry tree "ion-paper-airplane" "/core/getting-started-quickstart/"}}
-			{{entry tree "ion-log-in" "/core/getting-started-config/"}}
-		</div>
+		<a href="/core/getting-started-quickstart/" class="quickstart">
+			<h3><span class="bright">Getting Started</span></h3>
+		</a>
+		<a href="/core/getting-started-config/" class="config">
+			<h3><span>Server Quickstart</span></h3>
+		</a>
+		<a href="/core/getting-started-config/" class="intro">
+			<h3><span class="bright">Introduction</span></h3>
+		</a>
+		<a href="/tutorials/core/security-overview/" class="security">
+			<h3><span>Security Overview</span></h3>
+		</a>
+		<a href="/tutorials/integrations/frontend-react/" class="react">
+			<h3><span class="bright">Usage with ReactJS</span></h3>
+		</a>
+		<a href="/tutorials/integrations/frontend-angular/" class="angular">
+			<h3><span>Usage with AngularJS</span></h3>
+		</a>
+		<a href="/tutorials/integrations/frontend-polymer/" class="polymer">
+			<h3><span>Usage with Polymer</span></h3>
+		</a>
+		<a href="/tutorials/integrations/frontend-knockout/" class="knockout">
+			<h3><span>Usage with KnockoutJS</span></h3>
+		</a>
+		<a href="http://tutorials.pluralsight.com/front-end-javascript/building-a-multiplayer-space-shooter-part-i" class="spaceshooter">
+			<h3><span class="bright">Multiplayer Spaceshooter</span></h3>
+		</a>
+		<a href="https://dzone.com/articles/building-a-realtime-github-integration-using-java" class="issuetracker">
+			<h3><span>Github integration using Java</span></h3>
+		</a>
+		<a href="/blog/controlling-an-arduino-from-the-browser-using-deepstream/" class="arduino">
+			<h3><span class="bright">Browser to Arduino</span></h3>
+		</a>
+	</div>
+</section>
 
+<h2 class="main" style="margin-top:80px">Guides</h2>
+<section class="section-overview" style="padding-top-top:0">
+	<div class="wrapper">
 		<div class="entries">
 			<h2>Core Concepts</h2>
 			<h3><a name="data-sync">Data-Sync</a></h3>
@@ -52,7 +66,7 @@ tags: Getting Started, Data-Sync, Pub-Sub, Request-Response, Authentication, Per
 
 		<div class="entries">
 			<h2>Security</h2>
-			{{entry tree "ion-ios-bookmarks" "/core/security-overview/"}}
+
 			<h3><a name="authentication">Authentication</a></h3>
 			{{entry tree "ion-code" "/core/auth-http-webhook/"}}
 			{{entry tree "ion-document" "/core/auth-file/"}}
@@ -76,14 +90,6 @@ tags: Getting Started, Data-Sync, Pub-Sub, Request-Response, Authentication, Per
 			<h2><a name="usage-with-other-servers">Usage with other Servers</a></h2>
 			{{entry tree "/assets/img/logos/express.png" "/integrations/other-http/" }}
 			{{entry tree "/assets/img/logos/nginx.png" "/integrations/other-nginx/" }}
-		</div>
-
-		<div class="entries">
-			<h2><a name="browser-frameworks">Usage with Browser Frameworks</a></h2>
-			{{entry tree "/assets/img/logos/react.png" "/integrations/frontend-react/" }}
-			{{entry tree "/assets/img/logos/angular.png" "/integrations/frontend-angular/" }}
-			{{entry tree "/assets/img/logos/knockout.png" "/integrations/frontend-knockout/" }}
-			{{entry tree "/assets/img/logos/polymer.png" "/integrations/frontend-polymer/" }}
 		</div>
 
 		<div class="entries">
