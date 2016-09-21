@@ -9,8 +9,9 @@ tags: Getting Started, Data-Sync, Pub-Sub, Request-Response, Authentication, Per
 	<img class="elton-tutorial elton-overview" src="/assets/img/eltons/elton-tutorials.svg" />
 	<h1>Tutorials &amp; Guides</h1>
 </div>
-<h2 class="main">Tutorials</h2>
+
 <section id="tut-overview">
+	<h2 class="main">Tutorials</h2>
 	<div class="wrapper">
 		<a href="/core/getting-started-quickstart/" class="quickstart">
 			<h3><span class="bright">Getting Started</span></h3>
@@ -18,9 +19,11 @@ tags: Getting Started, Data-Sync, Pub-Sub, Request-Response, Authentication, Per
 		<a href="/core/getting-started-config/" class="config">
 			<h3><span>Server Quickstart</span></h3>
 		</a>
+		<!--
 		<a href="/core/getting-started-config/" class="intro">
 			<h3><span class="bright">Introduction</span></h3>
 		</a>
+		-->
 		<a href="/tutorials/core/security-overview/" class="security">
 			<h3><span>Security Overview</span></h3>
 		</a>
@@ -49,74 +52,83 @@ tags: Getting Started, Data-Sync, Pub-Sub, Request-Response, Authentication, Per
 </section>
 
 <h2 class="main" style="margin-top:80px">Guides</h2>
-<section class="section-overview" style="padding-top-top:0">
-	<div class="wrapper">
-		<div class="entries">
+<section class="section-overview" style="padding-top:0">
+	<div class="wrapper" style="overflow:hidden">
+		<div class="entries" style="float: left">
 			<h2>Core Concepts</h2>
-			<h3><a name="data-sync">Data-Sync</a></h3>
-			{{entry tree "ion-document-text" "/core/datasync-records/"}}
-			{{entry tree "ion-ios-paper" "/core/datasync-lists/"}}
-			{{entry tree "ion-ios-copy" "/core/datasync-anonymous-records/"}}
-
-			<h3><a name="events-rpc">Events &amp; RPCs</a></h3>
-			{{entry tree "ion-chatboxes" "/core/pubsub-events/"}}
-			{{entry tree "ion-arrow-swap" "/core/request-response-rpc/"}}
-
+			<div class="category">
+				<h3><a name="data-sync">Data-Sync</a></h3>
+				{{entry tree "ion-document-text" "/core/datasync-records/"}}
+				{{entry tree "ion-ios-paper" "/core/datasync-lists/"}}
+				{{entry tree "ion-ios-copy" "/core/datasync-anonymous-records/"}}
+			</div>
+			<div class="category">
+				<h3><a name="events-rpc">Events &amp; RPCs</a></h3>
+				{{entry tree "ion-chatboxes" "/core/pubsub-events/"}}
+				{{entry tree "ion-arrow-swap" "/core/request-response-rpc/"}}
+			</div>
 		</div>
 
 		<div class="entries">
 			<h2>Security</h2>
-
-			<h3><a name="authentication">Authentication</a></h3>
-			{{entry tree "ion-code" "/core/auth-http-webhook/"}}
-			{{entry tree "ion-document" "/core/auth-file/"}}
-			{{entry tree "ion-unlocked" "/core/auth-none/"}}
-
-			<h3><a name="permissioning">Permissioning</a></h3>
-			{{entry tree "ion-locked" "/core/permission-conf-simple/"}}
-			{{entry tree "ion-lock-combination" "/core/permission-conf-advanced/"}}
+			<div class="category">
+				<h3><a name="authentication">Authentication</a></h3>
+				{{entry tree "ion-code" "/core/auth-http-webhook/"}}
+				{{entry tree "ion-document" "/core/auth-file/"}}
+				{{entry tree "ion-unlocked" "/core/auth-none/"}}
+			</div>
+			<div class="category">
+				<h3><a name="permissioning">Permissioning</a></h3>
+				{{entry tree "ion-locked" "/core/permission-conf-simple/" "Valve simple"}}
+				{{entry tree "ion-lock-combination" "/core/permission-conf-advanced/" "Valve advanced"}}
+			</div>
 		</div>
 
 		<div class="entries">
-			<h2><a name="working-with-deepstream">Working with deepstream</a></h2>
-			{{entry tree "ion-fork-repo" "/core/active-data-providers/"}}
-			{{entry tree "ion-android-done-all" "/core/handling-data-conflicts/"}}
-			{{entry tree "ion-search" "/core/searching-and-querying/"}}
-			{{entry tree "ion-shuffle" "/core/transforming-data/"}}
-			{{entry tree "ion-compose" "/core/writing-a-client/"}}
+			<h2>Connectors</h2>
+			<div class="category">
+				<h3><a name="database-connectors">Database Connectors</a></h3>
+				{{entry tree "/assets/img/logos/elasticsearch.png" "/integrations/db-elasticsearch/" "ElasticSearch" }}
+				{{entry tree "/assets/img/logos/mongodb.png" "/integrations/db-mongodb/" "MongoDB" }}
+				{{entry tree "/assets/img/logos/rethinkdb.png" "/integrations/db-rethinkdb/" "RethinkDB" }}
+			</div>
+			<div class="category">
+				<h3><a name="cache-connectors">Cache Connectors</a></h3>
+				{{entry tree "/assets/img/logos/redis.png" "/integrations/cache-redis/" "Redis" }}
+				{{entry tree "/assets/img/logos/hazelcast.png" "/integrations/cache-hazelcast/" "Hazelcast" }}
+				{{entry tree "/assets/img/logos/memcached.png" "/integrations/cache-memcached/" "Memcached" }}
+			</div>
+
+			<div class="category">
+				<h3><a name="message-connectors">Message Connectors</a></h3>
+				{{entry tree "/assets/img/logos/kafka.png" "/integrations/msg-kafka/" "Kafka" }}
+				{{entry tree "/assets/img/logos/rabbitmq.png" "/integrations/amqp/" "AMQP"}}
+				{{entry tree "/assets/img/logos/redis.png" "/integrations/cache-redis/" "Redis" }}
+			</div>
 		</div>
 
 		<div class="entries">
-			<h2><a name="usage-with-other-servers">Usage with other Servers</a></h2>
-			{{entry tree "/assets/img/logos/express.png" "/integrations/other-http/" }}
-			{{entry tree "/assets/img/logos/nginx.png" "/integrations/other-nginx/" }}
-		</div>
+			<h2>Working with deepstream</h2>
+			<div class="category">
+				<h3><a name="other-concepts">Other concepts</a></h3>
+				{{entry tree "ion-fork-repo" "/core/active-data-providers/"}}
+				{{entry tree "ion-android-done-all" "/core/handling-data-conflicts/"}}
+				{{entry tree "ion-search" "/core/searching-and-querying/"}}
+				{{entry tree "ion-shuffle" "/core/transforming-data/"}}
+				{{entry tree "ion-compose" "/core/writing-a-client/"}}
+			</div>
 
-		<div class="entries">
-			<h2><a name="using-connectors">Using Connectors</a></h2>
-			{{entry tree "ion-grid" "/core/cluster-messaging/"}}
-			{{entry tree "ion-soup-can-outline" "/core/storing-data/"}}
-		</div>
+			<div class="category">
+				<h3><a name="usage-with-other-servers">Usage with other Servers</a></h3>
+				{{entry tree "/assets/img/logos/express.png" "/integrations/other-http/" }}
+				{{entry tree "/assets/img/logos/nginx.png" "/integrations/other-nginx/" }}
+			</div>
 
-		<div class="entries">
-			<h2><a name="database-connectors">Database Connectors</a></h2>
-			{{entry tree "/assets/img/logos/elasticsearch.png" "/integrations/db-elasticsearch/" }}
-			{{entry tree "/assets/img/logos/mongodb.png" "/integrations/db-mongodb/" }}
-			{{entry tree "/assets/img/logos/rethinkdb.png" "/integrations/db-rethinkdb/" }}
-		</div>
-
-		<div class="entries">
-			<h2><a name="cache-connectors">Cache Connectors</a></h2>
-			{{entry tree "/assets/img/logos/redis.png" "/integrations/cache-redis/" }}
-			{{entry tree "/assets/img/logos/hazelcast.png" "/integrations/cache-hazelcast/" }}
-			{{entry tree "/assets/img/logos/memcached.png" "/integrations/cache-memcached/" }}
-		</div>
-
-		<div class="entries">
-			<h2><a name="message-connectors">Message Connectors</a></h2>
-			{{entry tree "/assets/img/logos/kafka.png" "/integrations/msg-kafka/" }}
-			{{entry tree "/assets/img/logos/rabbitmq.png" "/integrations/amqp/" }}
-			{{entry tree "/assets/img/logos/redis.png" "/integrations/cache-redis/" }}
+			<div class="category">
+				<h3><a name="using-connectors">Using Connectors</a></h3>
+				{{entry tree "ion-grid" "/core/cluster-messaging/"}}
+				{{entry tree "ion-soup-can-outline" "/core/storing-data/"}}
+			</div>
 		</div>
 
 		<div class="entries">

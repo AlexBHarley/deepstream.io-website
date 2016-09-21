@@ -1,11 +1,7 @@
 var hbs = require('handlebars');
 
-function entry( tree, icon, path ) {
+function entry( tree, icon, path, title ) {
 
-	if( arguments.length === 3 ) {
-		path = icon;
-		icon = false;
-	}
 
 	var err = () => { console.log( 'Failed to find ' + path ); };
 
@@ -37,9 +33,12 @@ function entry( tree, icon, path ) {
 		iconHtml = `<div class="${icon} entry-icon"></div>`;
 	}
 
+	var finalTitle = typeof title === 'string' ? title : entry.title;
+
+
 	var html = `<a class="entry" href="/${entry.indexPath}" title="${entry.description}">
 		${iconHtml}
-		<h4>${entry.title}</h4>
+		<h4>${finalTitle}</h4>
 	</a>`;
 
 	return new hbs.SafeString( html );
