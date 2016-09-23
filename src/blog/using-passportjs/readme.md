@@ -3,6 +3,7 @@ title: Using PassportJS for Facebook and Twitter oAuth
 dateISO: 20160420
 author: yasserf
 thumbnail: passportjs.png
+description: How to use PassportJS for OpenAuth integration with deepstream.io
 ---
 
 Let's face it, we each have multiple user profiles and maintaining all those different passwords just never worked. So when OAuth got introduced we let out a sigh of relief knowing those days are behind us. Behold, the second sigh, where deepstream can use the same OAuth-tokens to authenticate your users!

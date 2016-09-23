@@ -3,6 +3,7 @@ title: What is realtime?
 dateISO: 20160208
 author: wolframhempel
 thumbnail: gastanks.jpg
+description: A half philosophical, half scientific, half hopeless attempt at ending the "there is no such thing as realtime" debate
 ---
 
 As the guys behind deepstream.io we spent an awful lot of time at conferences and meetups with cool names like up.front, 12min.me or HackNTell. And we talk to an awful lot of people. What do we talk about? You’ve guessed it: Realtime technologies.
