@@ -1,0 +1,749 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>https://deepstream.io/</loc>
+  <lastmod>2016-09-21T08:06:39+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/install/</loc>
+  <lastmod>2016-09-21T08:04:13+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/tutorials/</loc>
+  <lastmod>2016-09-23T11:42:16+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/</loc>
+  <lastmod>2016-09-23T11:40:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/blog/</loc>
+  <lastmod>2016-09-23T11:40:39+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/info/</loc>
+  <lastmod>2016-09-23T11:41:37+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/tutorials/core/getting-started-quickstart/</loc>
+  <lastmod>2016-09-23T09:08:11+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/blog/usecase-briteback/</loc>
+  <lastmod>2016-09-23T11:40:23+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/blog/usecase-vivaspot/</loc>
+  <lastmod>2016-09-23T11:40:28+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/blog/usecase-trading-platform/</loc>
+  <lastmod>2016-09-23T11:40:24+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/tutorials/integrations/other-digital-ocean/</loc>
+  <lastmod>2016-09-23T11:42:14+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/tutorials/core/auth-file/</loc>
+  <lastmod>2016-09-23T11:41:39+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/tutorials/core/permission-conf-simple/</loc>
+  <lastmod>2016-09-23T11:41:53+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-js/datasync-record/</loc>
+  <lastmod>2016-09-23T11:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-js/pubsub-client-event/</loc>
+  <lastmod>2016-09-23T11:40:52+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-js/reqres-client-rpc/</loc>
+  <lastmod>2016-09-23T11:40:52+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/tutorials/integrations/frontend-react/</loc>
+  <lastmod>2016-09-23T09:08:31+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/tutorials/integrations/frontend-polymer/</loc>
+  <lastmod>2016-09-23T11:42:09+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/tutorials/integrations/frontend-angular/</loc>
+  <lastmod>2016-09-23T11:42:07+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/tutorials/integrations/frontend-knockout/</loc>
+  <lastmod>2016-09-23T11:42:08+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/tutorials/integrations/db-elasticsearch/</loc>
+  <lastmod>2016-09-23T11:42:03+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/tutorials/integrations/msg-kafka/</loc>
+  <lastmod>2016-09-23T11:42:13+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/tutorials/integrations/cache-memcached/</loc>
+  <lastmod>2016-09-23T11:42:01+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/install/docker-image/</loc>
+  <lastmod>2016-09-23T11:40:41+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/tutorials/integrations/other-nginx/</loc>
+  <lastmod>2016-09-23T11:42:15+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/tutorials/integrations/cache-hazelcast/</loc>
+  <lastmod>2016-09-23T11:42:00+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/install/npm/</loc>
+  <lastmod>2016-09-23T11:40:42+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/tutorials/integrations/db-mongodb/</loc>
+  <lastmod>2016-09-23T11:42:05+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/tutorials/integrations/msg-amqp/</loc>
+  <lastmod>2016-09-23T11:42:12+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/tutorials/integrations/cache-redis/</loc>
+  <lastmod>2016-09-23T11:42:02+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/tutorials/integrations/db-rethinkdb/</loc>
+  <lastmod>2016-09-23T11:42:06+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/install/osx/</loc>
+  <lastmod>2016-09-23T11:40:46+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/install/windows/</loc>
+  <lastmod>2016-09-23T11:40:42+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/install/ubuntu/</loc>
+  <lastmod>2016-09-23T11:40:47+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/install/centos/</loc>
+  <lastmod>2016-09-23T11:40:44+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/install/debian/</loc>
+  <lastmod>2016-09-23T11:40:40+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/install/aws-linux/</loc>
+  <lastmod>2016-09-23T11:40:44+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/install/docker-compose/</loc>
+  <lastmod>2016-09-23T11:40:45+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/tutorials/core/getting-started-config/</loc>
+  <lastmod>2016-09-23T11:41:49+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/tutorials/core/security-overview/</loc>
+  <lastmod>2016-09-23T11:41:56+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/blog/controlling-an-arduino-from-the-browser-using-deepstream/</loc>
+  <lastmod>2016-09-23T11:40:03+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/tutorials/core/datasync-records/</loc>
+  <lastmod>2016-09-23T11:41:48+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/tutorials/core/datasync-lists/</loc>
+  <lastmod>2016-09-23T11:41:46+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/tutorials/core/datasync-anonymous-records/</loc>
+  <lastmod>2016-09-23T11:41:45+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/tutorials/core/pubsub-events/</loc>
+  <lastmod>2016-09-23T11:41:53+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/tutorials/core/request-response-rpc/</loc>
+  <lastmod>2016-09-23T11:41:54+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/tutorials/core/auth-http-webhook/</loc>
+  <lastmod>2016-09-23T11:41:40+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/tutorials/core/auth-none/</loc>
+  <lastmod>2016-09-23T11:41:42+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/tutorials/core/permission-conf-advanced/</loc>
+  <lastmod>2016-09-23T11:41:52+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/tutorials/core/active-data-providers/</loc>
+  <lastmod>2016-09-23T11:41:38+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/tutorials/core/handling-data-conflicts/</loc>
+  <lastmod>2016-09-23T11:41:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/tutorials/core/searching-and-querying/</loc>
+  <lastmod>2016-09-23T11:41:55+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/tutorials/core/transforming-data/</loc>
+  <lastmod>2016-09-23T11:41:58+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/tutorials/core/writing-a-client/</loc>
+  <lastmod>2016-09-23T11:41:57+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/tutorials/integrations/other-http/</loc>
+  <lastmod>2016-09-23T11:42:15+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/tutorials/core/cluster-messaging/</loc>
+  <lastmod>2016-09-23T11:41:43+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/tutorials/core/storing-data/</loc>
+  <lastmod>2016-09-23T11:41:56+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-js/client/</loc>
+  <lastmod>2016-09-23T11:40:48+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-java/DeepstreamClient/</loc>
+  <lastmod>2016-09-23T11:41:04+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/server/configuration/</loc>
+  <lastmod>2016-09-23T11:40:56+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/blog/using-new-aws-application-load-balancer-with-deepstream/</loc>
+  <lastmod>2016-09-23T11:40:36+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/blog/load-balancing-websocket-connections/</loc>
+  <lastmod>2016-09-23T11:40:11+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/blog/realtime-framework-overview/</loc>
+  <lastmod>2016-09-21T08:03:38+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/blog/using-passportjs/</loc>
+  <lastmod>2016-09-23T11:40:37+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/blog/deepstreamhub-raises-one-million-seed-round/</loc>
+  <lastmod>2016-09-23T11:40:05+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/blog/realtime-microservices/</loc>
+  <lastmod>2016-09-23T11:40:19+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/blog/listen-benefits/</loc>
+  <lastmod>2016-09-23T11:40:08+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/blog/what-is-realtime/</loc>
+  <lastmod>2016-09-23T11:40:38+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/blog/migrating-parse-com-to-deepstream-io/</loc>
+  <lastmod>2016-09-23T11:40:12+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/blog/the-unsexy-iot/</loc>
+  <lastmod>2016-09-23T11:40:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/blog/publishing-aws-sns-messages-to-browsers-tutorial/</loc>
+  <lastmod>2016-09-23T11:40:16+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/blog/introducing-deepstreamhub/</loc>
+  <lastmod>2016-09-23T11:40:07+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/info/community/t-shirt/</loc>
+  <lastmod>2016-09-23T11:41:24+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/info/community/get-in-touch/</loc>
+  <lastmod>2016-09-23T11:41:23+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/info/community/cla/</loc>
+  <lastmod>2016-09-23T11:41:25+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/info/community/contribution-guidelines/</loc>
+  <lastmod>2016-09-23T11:41:22+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/info/performance/four-billion-messages-per-hour/</loc>
+  <lastmod>2016-09-23T11:41:28+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/info/performance/overview/</loc>
+  <lastmod>2016-09-23T11:41:26+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/info/performance/single-node-vs-cluster/</loc>
+  <lastmod>2016-09-23T11:41:27+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/info/protocol/all-messages/</loc>
+  <lastmod>2016-09-23T11:41:32+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/info/protocol/message-structure-overview/</loc>
+  <lastmod>2016-09-23T11:41:32+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/info/specs/connectivity/</loc>
+  <lastmod>2016-09-23T11:41:37+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/info/specs/events/</loc>
+  <lastmod>2016-09-23T11:41:36+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/info/specs/parsing/</loc>
+  <lastmod>2016-09-23T11:41:34+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/info/specs/records/</loc>
+  <lastmod>2016-09-23T11:41:35+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/info/specs/rpc/</loc>
+  <lastmod>2016-09-23T11:41:35+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/tutorials/core/getting-started-java/</loc>
+  <lastmod>2016-09-23T11:41:49+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/tutorials/guides/what-is-deepstream/</loc>
+  <lastmod>2016-09-23T11:41:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/tutorials/core/</loc>
+  <lastmod>2016-09-23T11:41:58+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/tutorials/integrations/</loc>
+  <lastmod>2016-09-23T11:42:16+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/server/command-line-interface/</loc>
+  <lastmod>2016-09-23T11:40:55+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-java/AnonymousRecord/</loc>
+  <lastmod>2016-09-23T11:41:00+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-java/DeepstreamFactory/</loc>
+  <lastmod>2016-09-23T11:41:06+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-java/EventHandler/</loc>
+  <lastmod>2016-09-23T11:41:09+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-java/List/</loc>
+  <lastmod>2016-09-23T11:41:11+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-java/LoginResult/</loc>
+  <lastmod>2016-09-23T11:41:13+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-java/Record/</loc>
+  <lastmod>2016-09-23T11:41:15+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-java/RecordHandler/</loc>
+  <lastmod>2016-09-23T11:41:16+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-java/RpcHandler/</loc>
+  <lastmod>2016-09-23T11:41:19+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-java/RpcResponse/</loc>
+  <lastmod>2016-09-23T11:41:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-java/RpcResult/</loc>
+  <lastmod>2016-09-23T11:41:21+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-java/Actions/</loc>
+  <lastmod>2016-09-23T11:41:00+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-java/ConfigOptions/</loc>
+  <lastmod>2016-09-23T11:41:02+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-java/ConnectionState/</loc>
+  <lastmod>2016-09-23T11:41:03+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-java/EndpointType/</loc>
+  <lastmod>2016-09-23T11:41:08+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-java/Event/</loc>
+  <lastmod>2016-09-23T11:41:09+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-java/MergeStrategy/</loc>
+  <lastmod>2016-09-23T11:41:14+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-java/Topic/</loc>
+  <lastmod>2016-09-23T11:41:22+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-java/AnonymousRecordUninitialized/</loc>
+  <lastmod>2016-09-23T11:41:02+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-java/DeepstreamError/</loc>
+  <lastmod>2016-09-23T11:41:05+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-java/DeepstreamException/</loc>
+  <lastmod>2016-09-23T11:41:06+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-java/DeepstreamRecordDestroyedException/</loc>
+  <lastmod>2016-09-23T11:41:07+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-java/InvalidDeepstreamConfig/</loc>
+  <lastmod>2016-09-23T11:41:10+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-java/RecordMergeStrategyException/</loc>
+  <lastmod>2016-09-23T11:41:18+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-java/AnonymousRecordNameChangedListener/</loc>
+  <lastmod>2016-09-23T11:41:01+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-java/ConnectionStateListener/</loc>
+  <lastmod>2016-09-23T11:41:04+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-java/DeepstreamRuntimeErrorHandler/</loc>
+  <lastmod>2016-09-23T11:41:07+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-java/EventListener/</loc>
+  <lastmod>2016-09-23T11:41:10+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-java/ListChangedListener/</loc>
+  <lastmod>2016-09-23T11:41:11+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-java/ListEntryChangedListener/</loc>
+  <lastmod>2016-09-23T11:41:12+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-java/ListenListener/</loc>
+  <lastmod>2016-09-23T11:41:13+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-java/RecordChangedCallback/</loc>
+  <lastmod>2016-09-23T11:41:15+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-java/RecordEventsListener/</loc>
+  <lastmod>2016-09-23T11:41:16+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-java/RecordMergeStrategy/</loc>
+  <lastmod>2016-09-23T11:41:17+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-java/RecordPathChangedCallback/</loc>
+  <lastmod>2016-09-23T11:41:18+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-java/RpcRequestedListener/</loc>
+  <lastmod>2016-09-23T11:41:19+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-js/datasync-anonymous-record/</loc>
+  <lastmod>2016-09-23T11:40:48+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-js/datasync-client-record/</loc>
+  <lastmod>2016-09-23T11:40:49+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-js/datasync-list/</loc>
+  <lastmod>2016-09-23T11:40:49+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-js/options/</loc>
+  <lastmod>2016-09-23T11:40:51+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-js/other-eventemitter/</loc>
+  <lastmod>2016-09-23T11:40:51+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-js/reqres-response/</loc>
+  <lastmod>2016-09-23T11:40:53+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/common/constants/</loc>
+  <lastmod>2016-09-23T11:40:54+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/common/errors/</loc>
+  <lastmod>2016-09-23T11:40:54+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/server/data-transforms/</loc>
+  <lastmod>2016-09-23T11:40:57+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/server/node-api/</loc>
+  <lastmod>2016-09-23T11:40:57+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/server/user-file/</loc>
+  <lastmod>2016-09-23T11:40:58+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/server/valve-permissions/</loc>
+  <lastmod>2016-09-23T11:40:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/client-js/</loc>
+  <lastmod>2016-09-23T11:40:53+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/install/android/</loc>
+  <lastmod>2016-09-23T11:40:43+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/install/java/</loc>
+  <lastmod>2016-09-23T11:40:45+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/server/</loc>
+  <lastmod>2016-09-23T11:40:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/info/community/</loc>
+  <lastmod>2016-09-23T11:41:24+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/info/performance/</loc>
+  <lastmod>2016-09-23T11:41:31+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/info/protocol/</loc>
+  <lastmod>2016-09-23T11:41:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/docs/common/</loc>
+  <lastmod>2016-09-23T11:40:55+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/info/specs/</loc>
+  <lastmod>2016-09-23T11:41:37+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://deepstream.io/tutorials/guides/</loc>
+  <lastmod>2016-09-23T11:42:00+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+</urlset>
