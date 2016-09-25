@@ -40,7 +40,7 @@ __deepstream.io__:
 
 ## Step 1 — Configure MongoDB
 
-MongoDB has no authentication by defaut. This is okay since it only listens to connections for localhost.
+MongoDB has no authentication by default. This is okay since it only listens to connections for localhost.
 To allow deepstream to connect to the database we can change the IP address to the private network IP of the droplet:
 
 ```shell
