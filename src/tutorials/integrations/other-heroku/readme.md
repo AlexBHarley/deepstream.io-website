@@ -1,20 +1,23 @@
 ---
-title: Deploy a deepstream.io server on Heroku
+title: Heroku
+description: Learn how to deploy a deepstream cluster with MongoDB and Redis on Heroku
+tags: PaaS, IaaS, Heroku, deepstream, realtime, MongoDB, Redis
 ---
 
-In this tutorial you'll see how easy it is to setup a deepstream server on Heroku, including
-a MongoDB storage layer and a redis cache layer.
+In this tutorial we'll setup a deepstream server on Heroku, backed by
+a MongoDB storage layer and a Redis cache layer.
 
-## Starting from scracth
+![Heroku Deepstream](heroku-deepstream.png)
+
+## Starting from scratch
 Let's start from scratch with an empty directory:
 
 ```shell
-mkdir ds-demo-heroku
-cd ds-demo-heroku
+mkdir ds-demo-Heroku
+cd ds-demo-Heroku
 ```
 
-Currently there are no Heroku add-on or buildpacks for deepstream,
-so you're going to use a Heroku buildpack which is based on Node.js.
+At the time of writing, a deepstream Heroku addon/ build-pack is on the agenda, but not quite there yet, so let's start with a NodeJS based one
 
 To create a _package.json_ file you can just run this command:
 
@@ -24,14 +27,13 @@ npm init
 
 If you don't have Node.js (and npm) installed you can also use the package.json listed at the end of this article.
 
-Now deepstream server is ready to be installed via
+Now the deepstream server is ready to be installed via
 
 ```shell
 npm install deepstream --save
 ```
 
-Heroku provides different versions of Node.js which can be specified in the package.json.
-So let's add a property to the _package.json_ to define that it needs to use the latest stable Node.js version:
+Heroku provides different versions of Node.js which can be specified in the package.json. So let's add a property to the _package.json_ to define that it needs to use the latest stable Node.js version:
 
 ```javascript
   //...
@@ -41,8 +43,7 @@ So let's add a property to the _package.json_ to define that it needs to use the
   //...
 ```
 
-Heroku applications also need a [Procfile](https://devcenter.heroku.com/articles/procfile) in the root directory which contains the application type and command.
-Since deepstream is a server it needs to be defined as a `web` type.
+Heroku applications also need a [Procfile](https://devcenter.Heroku.com/articles/procfile) in the root directory which contains the application type and command. Since deepstream is a server it needs to be defined as a `web` type.
 
 ```
 web: npm start
@@ -58,9 +59,8 @@ Now let's create the npm start script in the _package.json_:
   //..
 ```
 
-On Heroku you can't expose a port directly. Instead heroku will set an environment
-variable (`PORT`) which you need to use for your server. This means you need to overwrite
-the default deepstream port. You can do this in the deepstream configuration file.
+On Heroku you can't expose a port directly. Instead Heroku will set an environment variable called `PORT` which you'll need to use for your server. This means you need to overwrite the default deepstream port. You can do this in the deepstream configuration file.
+
 Let's copy the default configuration file to our project directory:
 
 ```shell
@@ -75,22 +75,20 @@ port: ${PORT}
 
 __NOTE__
 
-If you want to access a Heroku app from an external network you need to use port
-**80**, because all connections will be automatically redirecteed to the internal
-port of the environment variable.
+If you want to access a Heroku app from an external network you need to use port **80**, because all connections will be automatically redirected to the internal port of the environment variable.
 
 ## Create a git repository
 
-Deployment with Heroku is based on git repositories. So you need to inizialize
+Deployment with Heroku is based on git repositories. So you need to initialize
 the current directory as a git repository via `git init`.
 
-Then you need to ignore the *node_modules* by adding this line to a _.gitignore_ file:
+Don't forget to add your *node_modules* folder to your _.gitignore_ file by adding this line:
 
 ```
 node_modules
 ```
 
-Now you need to commit all other files in the current directory:
+Next up we'll commit all other files in the current directory:
 
 ```shell
 git commit -a -m "init commit"
@@ -101,20 +99,19 @@ For more details on how to use git you can follow this [beginner's guide](https:
 ## Creating and deploying a Heroku app
 
 If you're not logged in already with the Heroku CLI then download
-the [Heroku toolbelt](https://toolbelt.heroku.com/)
+the [Heroku toolbelt](https://toolbelt.Heroku.com/)
 and login with your Heroku credentials via `heroku login`.
 
-For the next step you will create the Heroku app. You should consider to choose a [region](https://devcenter.heroku.com/articles/regions) in order to avoid unnecessary bigger network delays as most of the connection will come from the United States which is the default value (USA).
+For the next step you will create the Heroku app. You should consider to choose a [region](https://devcenter.Heroku.com/articles/regions) in order to avoid unnecessary bigger network delays as most of the connection will come from the United States which is the default value (USA).
 
 This command creates an app with the name **deepstream-test** in Europe:
 
 
 ```shell
-heroku apps:create deepstream-test --region eu
+Heroku apps:create deepstream-test --region eu
 ```
 
-A git remote (Heroku) is also created and associated with your local git repository.
-You can see it in your _.git/config_ file.
+A git remote (Heroku) is also created and associated with your local git repository. You can see it in your _.git/config_ file.
 
 Now you can push the code (from our local repository) to the remote repository at Heroku:
 
@@ -133,24 +130,17 @@ is because the stdout is streamed asynchronously, so just ignore it ;)
 
 [![asciicast](https://asciinema.org/a/1vu68mmlip64a408i7mxzryis.png)](https://asciinema.org/a/1vu68mmlip64a408i7mxzryis)
 
-## Connect to the deepstream server
+## Connecting to the deepstream server
 
 To connect the the server you can open this [codepen example](http://codepen.io/timaschew/pen/RRrzjg?editors=1010) and change the `DEEPSTREAM_HOST` to your own host.
 
-You can play around with the codepen and uncomment the `record.set` line and change
-the value. If you comment out that line again you should still get the same output.
+You can play around with the codepen and uncomment the `record.set` line and change its value. If you comment out that line again you should still get the same output.
 
-But if you deploy some code changes or your [Heroku dyno goes on Standby](https://devcenter.heroku.com/articles/free-dyno-hours) and when it wakes up again the record data
-will be lost. To avoid losing any data you need to add a storage connector.
+By default, deepstream only stores data in memory, so if your [dyno goes into standby](https://devcenter.Heroku.com/articles/free-dyno-hours) and wakes up again the record's data will be lost. To avoid this you'll need to add a "storage connector".
 
-## Add a deepstream storage connector
+## Adding a deepstream storage connector
 
-Heroku provides [free addons](https://elements.heroku.com/addons) for databases, logging
-and more. Choose a free plan of
-[mongolab](https://elements.heroku.com/addons/mongolab) which provides a MongoDB
-instance in the cloud. The Heroku CLI provides a way do to the whole setup for you,
-so you don't need to create an account nor do you need to care about the credentials,
-which are automatically added to your Heroku app via a environment variable
+Heroku provides [addons](https://elements.Heroku.com/addons) for databases, logging and more. Choose a free plan of [mongolab](https://elements.Heroku.com/addons/mongolab) which provides a MongoDB instance in the cloud. The Heroku CLI provides a way do to the whole setup for you, so you don't need to create an account nor do you need to care about the credentials, which are automatically added to your Heroku app via an environment variable
 (`MONGODB_URI`).
 
 ```shell
@@ -158,10 +148,9 @@ heroku addons:create mongolab:sandbox
 ```
 
 You need to verify your account on Heroku to use this addon. Otherwise you can
-setup the account on mongolab by yourself and set the `MONGODB_URI` environment variable
-to your Heroku app.
+setup the account on mongolab by yourself and set the `MONGODB_URI` environment variable to your Heroku app.
 
-Now let's install the MongoDB connector for deepstream:
+Alright, time to install the MongoDB connector for deepstream:
 
 ```shell
 npm install deepstream.io-storage-mongodb --save
@@ -180,33 +169,31 @@ plugins:
       splitChar: "/"
 ```
 
-That's it, now you need to add the changes to master branch via
+That's it, the only thing left is to add the changes to master branch via
 
 ```shell
 git commit -a -m "add mongodb connector"
-git push heroku master
+git push Heroku master
 ```
 
 Now all the record data will be persisted (if you add and change them via the codepen example), even if you stop or restart your Heroku app.
 
 ## Add a deepstream cache connector
 
-Databases are sometimes too slow for realtime requirements, as the focus of a database
-is to store data. So if you want to speed up your app you can add a cache layer.
-We're going to use another addon on Heroku: [rediscloud service](https://elements.heroku.com/addons/rediscloud) provides a free redis server for you Heroku apps.
-The credentials will be saved in the `REDISCLOUD_URL` environment variable:
+Databases are sometimes too slow for realtime requirements, as the focus of a database is to store data. So if you want to speed up your app you can add a cache layer.
+We're going to use another addon on Heroku: [rediscloud service](https://elements.Heroku.com/addons/rediscloud) provides a free redis server for your Heroku apps. The credentials will be saved in the `REDISCLOUD_URL` environment variable:
 
 ```shell
-heroku addons:create rediscloud:30
+Heroku addons:create rediscloud:30
 ```
 
-Install the redis cache connector for deepstream:
+Install the Redis cache connector for deepstream:
 
 ```shell
 npm install deepstream.io-cache-redis --save
 ```
 
-To enable redis with deepstream you need the redis configuraiton to the plugins
+To enable Redis with deepstream you need the redis configuration to the plugins
 object in the _conf/config.yml_:
 
 ```yaml
@@ -232,14 +219,14 @@ INFO | storage ready
 
 ## Resources
 
-Here is the final _package.json_ incase you couldn't or don't want to use npm
+Here is the final _package.json_ in case you couldn't or don't want to use npm
 on your local machine:
 
 ```json
 {
-  "name": "ds-demo-heroku",
+  "name": "ds-demo-Heroku",
   "version": "1.0.0",
-  "description": "Deploy a deepstream.io server on heroku",
+  "description": "Deploy a deepstream.io server on Heroku",
   "main": "index.js",
   "scripts": {
     "start": "deepstream start"
@@ -257,4 +244,4 @@ on your local machine:
 }
 ```
 
-You can also checkout the final sourcecode on GitHub: https://github.com/deepstreamIO/ds-demo-heroku
+You can also checkout the final sourcecode on GitHub: https://github.com/deepstreamIO/ds-demo-Heroku
