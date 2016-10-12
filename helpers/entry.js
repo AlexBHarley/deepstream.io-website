@@ -11,8 +11,13 @@ function entry( tree, icon, path, title ) {
 
 	try{
 		var entry = tree
-		.filter( item => {return item.name === parts[ 0 ]; })[ 0 ]
-		.children
+		.filter( item => {return item.name === parts[ 0 ]; })[ 0 ];
+
+		if( !entry ) {
+			console.log( 'No children for ' + path );
+			return;
+		}
+		entry = entry.children
 		.filter( item => { return item.path.indexOf( parts[ 1 ] ) > -1; })[ 0 ];
 	} catch( e ) {
 		console.log( 'ERROR', e );

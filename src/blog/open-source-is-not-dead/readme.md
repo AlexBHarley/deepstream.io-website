@@ -3,6 +3,7 @@ title: Open Source is not dead! On the recent demise of RethinkDB
 dateISO: 20161012
 author: wolframhempel
 thumbnail: bird.jpg
+description: The shutdown of RethinkDB send shockwaves through the industry
 ---
 The [recent demise of RethinkDB](https://rethinkdb.com/blog/rethinkdb-shutdown/) has not only send shockwaves through the open source community, it also got its wider ecosystem thinking.
 
