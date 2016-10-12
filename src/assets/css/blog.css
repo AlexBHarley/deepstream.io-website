@@ -28,6 +28,12 @@
 	line-height: 20px;
 }
 
+.post-excerpt p a{
+	font-size: 16px;
+    font-weight: 300;
+    color: #647276;
+}
+
 /* Every post, on every page, gets this style on its <article> tag */
 .post {
 	max-width: 780px;
