@@ -8,13 +8,18 @@ With deepstream, things can be equally tricky at times - but for different reaso
 
 The good news is that deepstream makes realtime permissions extremely easy using a permission language called "Valve". This tutorial assumes that you already know your way around Valve. If you haven't come across it yet, make sure to read the [Simple Valve](./permission-conf-simple/) and [Advanced Valve](./permission-conf-advanced/) tutorial first.
 
-This tutorial aims to provide a step by step guide of setting up dynamic permissions.
+## Why?
+For most apps, you'll want the same set of permissions in two places:
+* On the client to provide instant validation and a defensive design that avoids user frustration by making forbidden options unavailable.
+* On the server to enforce the permission-rules as clients aren't trusted.
 
-## Why dynamic permissions?
-For most apps, you want the same set of permissions in two places:
-* On the client to provide instant validation and a defensive design that avoids user-frustration by making forbidden options unavailable.
-* On the server to enforce the permission-rules as clients aren't trusted
+In a realtime system you'll also want to make your permissions and any changes to them available in realtime as well.
 
-In a realtime system you'd want to make your permissions and any changes to them available in realtime as well.
+## What?
+This tutorial won't be using The Simpsons or any other metaphor. Instead, it will use colors (hurray). Here's what we want to achieve:
 
-## Oka
+* three different users have credentials to log into the system
+* there is one global color setting that can be set to red, green or blue
+* each user gets three buttons, one for each color.
+* on click the global color is set
+* an admin user can decide which user is allowed to set the global color to which value
